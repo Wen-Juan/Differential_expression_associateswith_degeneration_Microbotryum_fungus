@@ -1,3 +1,9 @@
+##before launching the matrix perl script, you need to load edgeR and qvalue packages from R.
+#source("https://bioconductor.org/biocLite.R")
+#biocLite("edgeR")
+#source("https://bioconductor.org/biocLite.R")
+#biocLite("qvalue")
+
 module add UHTS/Assembler/trinityrnaseq/2.5.1
 module add UHTS/Analysis/kallisto/0.44.0
 module add R/3.5.1
