@@ -251,9 +251,9 @@ mapData2 <- subset(mapData, mapData$start!='NA')
 nrow(mapData2)
 annotation2 <- subset(annotation, annotation$chr!='NA' & annotation$start!='NA')
 
-mapLength <- sum(max(mapData2$start[mapData2$chr=='MAT']), max(mapData2$start[mapData2$chr=='Chr01']), max(mapData2$start[mapData2$chr=='Chr02']), max(mapData2$start[mapData2$chr=='Chr03']), max(mapData2$start[mapData2$chr=='Chr04']), max(mapData2$start[mapData2$chr=='Chr05']), max(mapData2$start[mapData2$chr=='Chr06']), max(mapData2$start[mapData2$chr=='Chr07']), max(mapData2$start[mapData2$chr=='Chr08']), max(mapData2$start[mapData2$chr=='Chr09']), max(mapData2$start[mapData2$chr=='Chr10']), max(mapData2$start[mapData2$chr=='Chr11']), max(mapData2$start[mapData2$chr=='Chr12']), max(mapData2$start[mapData2$chr=='Chr13']), max(mapData2$start[mapData2$chr=='Chr14']), max(mapData2$start[mapData2$chr=='Chr15']), max(mapData2$start[mapData2$chr=='Chr16']), max(mapData2$start[mapData2$chr=='Chr17']),max(mapData2$start[mapData2$chr=='Chr18']),max(mapData2$start[mapData2$chr=='Random']))
+mapLength <- sum(max(mapData2$start[mapData2$chr=='aMAT']), max(mapData2$start[mapData2$chr=='Chr01']), max(mapData2$start[mapData2$chr=='Chr02']), max(mapData2$start[mapData2$chr=='Chr03']), max(mapData2$start[mapData2$chr=='Chr04']), max(mapData2$start[mapData2$chr=='Chr05']), max(mapData2$start[mapData2$chr=='Chr06']), max(mapData2$start[mapData2$chr=='Chr07']), max(mapData2$start[mapData2$chr=='Chr08']), max(mapData2$start[mapData2$chr=='Chr09']), max(mapData2$start[mapData2$chr=='Chr10']), max(mapData2$start[mapData2$chr=='Chr11']), max(mapData2$start[mapData2$chr=='Chr12']), max(mapData2$start[mapData2$chr=='Chr13']), max(mapData2$start[mapData2$chr=='Chr14']), max(mapData2$start[mapData2$chr=='Chr15']), max(mapData2$start[mapData2$chr=='Chr16']), max(mapData2$start[mapData2$chr=='Chr17']),max(mapData2$start[mapData2$chr=='Chr18']),max(mapData2$start[mapData2$chr=='Random']))
 
-chr_0_end <- max(mapData2$start[mapData2$chr=='MAT'])
+chr_0_end <- max(mapData2$start[mapData2$chr=='aMAT'])
 chr_1_end <- chr_0_end + max(mapData2$start[mapData2$chr=='Chr01'])
 chr_2_end <- chr_1_end + max(mapData2$start[mapData2$chr=='Chr02'])
 chr_3_end <- chr_2_end + max(mapData2$start[mapData2$chr=='Chr03'])
@@ -287,14 +287,14 @@ for(k in 1:ncol(cmat)) {
 # Chisq comparison Chr1 with others
 for(k in 1:npanel) {
 de_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='MAT'] !='na', na.rm=T)
-de_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='MAT'] !='na', na.rm=T)
-nonde_chr1 <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='MAT'] !='na', na.rm=T)
-nonde_chrother <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_nonde[[k]]$chr) & list_nonde[[k]]$chr!='MAT'] !='na', na.rm=T)
+de_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='aMAT'] !='na', na.rm=T)
+nonde_chr1 <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='aMAT'] !='na', na.rm=T)
+nonde_chrother <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_nonde[[k]]$chr) & list_nonde[[k]]$chr!='aMAT'] !='na', na.rm=T)
 
-up_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='MAT'] > 0, na.rm=T)
-up_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='MAT'] > 0, na.rm=T)
-down_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='MAT'] < 0, na.rm=T)
-down_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='MAT'] < 0, na.rm=T)
+up_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='aMAT'] > 0, na.rm=T)
+up_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='aMAT'] > 0, na.rm=T)
+down_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='aMAT'] < 0, na.rm=T)
+down_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='aMAT'] < 0, na.rm=T)
 
 total_significant <- de_chr1 + de_chrother
 total_chr1 <- sum(de_chr1 + nonde_chr1)
@@ -307,7 +307,7 @@ if (sum(de_chr1 + de_chrother) > 10 & de_chr1 != 0) { # if 0 error in chisqtest 
 Obs <- c(de_chr1, de_chrother)
 Exp <- c(exp_chr1, exp_chrother)
 chi_obs_data <- rbind(Obs, Exp)
-colnames(chi_obs_data) <- c('MAT', 'Chr other')
+colnames(chi_obs_data) <- c('aMAT', 'Chr other')
 chi_test <- chisq.test(c(de_chr1, de_chrother), p=c(total_chr1/(total_chr1+total_chrother), total_chrother/(total_chr1+total_chrother)))
 pasteX <- paste('chisq =', round(chi_test$p.value, digits=2), sep=" ")
 
@@ -330,7 +330,7 @@ exp_chrother_up <- round(total_significant_up * total_chrother/(total_chr1+total
 Obs_up <- c(up_chr1, up_chrother)
 Exp_up <- c(exp_chr1_up, exp_chrother_up)
 chi_obs_data_up <- rbind(Obs_up, Exp_up)
-colnames(chi_obs_data_up) <- c('MAT', 'Chr other')
+colnames(chi_obs_data_up) <- c('aMAT', 'Chr other')
 chi_test_up <- chisq.test(c(up_chr1, up_chrother), p=c(total_chr1/(total_chr1+total_chrother), total_chrother/(total_chr1+total_chrother)))
 pasteX_up <- paste('chisq =', round(chi_test_up$p.value, digits=2), sep=" ")
 mp_up <- barplot(chi_obs_data_up, col=c(cbgreen,cbblue), main = paste('Up ',strsplit(colnames(cmat)[k], '\\.')[[1]][1], '\nFDR=', FDR2use, ' logFC=', logFC_use, sep=""), beside=T, cex.main=1.8, cex.lab=1, ylab="Gene number")
@@ -349,7 +349,7 @@ exp_chrother_down <- round(total_significant_down * total_chrother/(total_chr1+t
 Obs_down <- c(down_chr1, down_chrother)
 Exp_down <- c(exp_chr1_down, exp_chrother_down)
 chi_obs_data_down <- rbind(Obs_down, Exp_down)
-colnames(chi_obs_data_down) <- c('MAT', 'Chr other')
+colnames(chi_obs_data_down) <- c('aMAT', 'Chr other')
 chi_test_down <- chisq.test(c(down_chr1, down_chrother), p=c(total_chr1/(total_chr1+total_chrother), total_chrother/(total_chr1+total_chrother)))
 pasteX_down <- paste('chisq =', round(chi_test_down$p.value, digits=2), sep=" ")
 mp_down <- barplot(chi_obs_data_down, col=c(cbgreen,cbblue), main = paste('Down ',strsplit(colnames(cmat)[k], '\\.')[[1]][2], '\nFDR=', FDR2use, ' logFC=', logFC_use, sep=""), beside=T, cex.main=1.8, cex.lab=1, ylab="Gene number")
@@ -372,10 +372,10 @@ write.table(list_de[[k]]$gene, file=file.path(outpath, paste('gene_FDR_', FDR2us
 # physical map
 par(mar=c(5,5,4,3))
 pdf(file.path(outpath, paste('Chr_location_FDR_', FDR2use, '_logFC_', logFC_use, '_',colnames(cmat)[k], '_',  sub_analyse, '.pdf', sep="")), width=12, height=8)
-plot(c(0, chr_10_end), c(min(1-log(restab[[paste('FDR.',colnames(cmat)[k], sep="")]])), max(1-log(restab[[paste('FDR.',colnames(cmat)[k], sep="")]]))), axes=F, lwd=2, xlab="Chromosome", ylab="1-log(p)", type="null", col="black", main=paste(strsplit(colnames(cmat)[k], '\\.')[[1]][1], 'vs', strsplit(colnames(cmat)[k], '\\.')[[1]][2]))
-axis(2, c(0, chr_10_end, 5,10,15))
+plot(c(0, chr_random_end), c(min(1-log(restab[[paste('FDR.',colnames(cmat)[k], sep="")]])), max(1-log(restab[[paste('FDR.',colnames(cmat)[k], sep="")]]))), axes=F, lwd=2, xlab="Chromosome", ylab="1-log(p)", type="null", col="black", main=paste(strsplit(colnames(cmat)[k], '\\.')[[1]][1], 'vs', strsplit(colnames(cmat)[k], '\\.')[[1]][2]))
+axis(2, c(0, chr_random_end, 0,5,10))
 
-points(list_nonde[[k]]$start[list_nonde[[k]]$chr=='MAT'], 1-log(list_nonde[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='MAT']), pch=20, lwd=2, type="p",col="1", main="")
+points(list_nonde[[k]]$start[list_nonde[[k]]$chr=='aMAT'], 1-log(list_nonde[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='aMAT']), pch=20, lwd=2, type="p",col="1", main="")
 points(chr_0_end + list_nonde[[k]]$start[list_nonde[[k]]$chr=='Chr01'], 1-log(list_nonde[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='Chr01']), pch=20, lwd=2, type="p",col="8", main="")
 points(chr_1_end + list_nonde[[k]]$start[list_nonde[[k]]$chr=='Chr02'], 1-log(list_nonde[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='Chr02']), pch=20, lwd=2, type="p",col="8", main="")
 points(chr_2_end + list_nonde[[k]]$start[list_nonde[[k]]$chr=='Chr03'], 1-log(list_nonde[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='Chr03']), pch=20, lwd=2, type="p",col="1", main="")
@@ -398,14 +398,14 @@ points(chr_18_end + list_nonde[[k]]$start[list_nonde[[k]]$chr=='Random'], 1-log(
 
 # abline (h = c(300), col='blue', lty='dashed')
 
-chrPosition <- c(chr_1_end/2, chr_1_end/2 + chr_2_end/2, chr_2_end/2 + chr_3_end/2, chr_3_end/2 + chr_4_end/2, chr_4_end/2 + chr_5_end/2, chr_5_end/2 + chr_6_end/2, chr_6_end/2 + chr_7_end/2, chr_7_end/2 + chr_8_end/2, chr_8_end/2 + chr_9_end/2, chr_9_end/2 + chr_10_end/2)
+chrPosition <- c(chr_0_end/2, chr_0_end/2 + chr_1_end/2, chr_1_end/2 + chr_2_end/2, chr_2_end/2 + chr_3_end/2, chr_3_end/2 + chr_4_end/2, chr_4_end/2 + chr_5_end/2, chr_5_end/2 + chr_6_end/2, chr_6_end/2 + chr_7_end/2, chr_7_end/2 + chr_8_end/2, chr_8_end/2 + chr_9_end/2, chr_9_end/2 + chr_10_end/2, chr_10_end/2 + chr_11_end/2, chr_11_end/2 + chr_12_end/2, chr_12_end/2 + chr_13_end/2, chr_13_end/2 + chr_14_end/2, chr_14_end/2 + chr_15_end/2, chr_15_end/2 + chr_16_end/2, chr_16_end/2 + chr_17_end/2, chr_17_end/2 + chr_18_end/2, chr_18_end/2 + chr_random_end/2)
 
-chromosomes<-c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+chromosomes<-c("aMAT","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "Random")
 axis (side=1, lty=0, at = chrPosition, cex.axis=.5, las=1, labels=chromosomes)
 
 # outliers
-points(list_de[[k]]$start[list_de[[k]]$chr=='MAT' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use], 1-log(list_de[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='MAT' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use]), pch=24, lwd=1, cex=0.8, type="p",col=col4, main="")
-points(list_de[[k]]$start[list_de[[k]]$chr=='MAT' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > -logFC_use], 1-log(list_de[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='MAT' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use]), pch=24, lwd=1, cex=0.8, type="p",col=col4, main="")
+points(list_de[[k]]$start[list_de[[k]]$chr=='aMAT' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use], 1-log(list_de[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='aMAT' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use]), pch=24, lwd=1, cex=0.8, type="p",col=col4, main="")
+points(list_de[[k]]$start[list_de[[k]]$chr=='aMAT' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > -logFC_use], 1-log(list_de[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='aMAT' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use]), pch=24, lwd=1, cex=0.8, type="p",col=col4, main="")
 points(chr_0_end + list_de[[k]]$start[list_de[[k]]$chr=='Chr01' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use], 1-log(list_de[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='Chr01' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use]), pch=24, lwd=1, type="p", cex=0.8, col=col4, main="")
 points(chr_0_end + list_de[[k]]$start[list_de[[k]]$chr=='Chr01' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] < -logFC_use], 1-log(list_de[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='Chr01' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] < -logFC_use]), pch=25, lwd=1, type="p",col=col2, cex=0.8, main="")
 points(chr_1_end + list_de[[k]]$start[list_de[[k]]$chr=='Chr02' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use], 1-log(list_de[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='Chr02' & list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]] > logFC_use]), pch=24, lwd=1, type="p", cex=0.8, col=col4, main="")
@@ -454,7 +454,7 @@ dev.off()
 # subset by chromosome
 se <- function(x,y) sqrt(x * (1-x)/y)
 for(k in 1:ncol(cmat)) {
-M_F_A_nonDE_Chr0 <- nrow(subset(list_nonde[[k]], list_nonde[[k]]$chr == 'MAT'))
+M_F_A_nonDE_Chr0 <- nrow(subset(list_nonde[[k]], list_nonde[[k]]$chr == 'aMAT'))
 M_F_A_nonDE_Chr1 <- nrow(subset(list_nonde[[k]], list_nonde[[k]]$chr == 'Chr01'))
 M_F_A_nonDE_Chr2 <- nrow(subset(list_nonde[[k]], list_nonde[[k]]$chr == 'Chr02'))
 M_F_A_nonDE_Chr3 <- nrow(subset(list_nonde[[k]], list_nonde[[k]]$chr == 'Chr03'))
@@ -475,7 +475,7 @@ M_F_A_nonDE_Chr17 <- nrow(subset(list_nonde[[k]], list_nonde[[k]]$chr == 'Chr17'
 M_F_A_nonDE_Chr18 <- nrow(subset(list_nonde[[k]], list_nonde[[k]]$chr == 'Chr18'))
 M_F_A_nonDE_random <- nrow(subset(list_nonde[[k]], list_nonde[[k]]$chr == 'Random'))
 
-M_F_A_Chr0All <- nrow(subset(restab, restab$chr=='MAT'))
+M_F_A_Chr0All <- nrow(subset(restab, restab$chr=='aMAT'))
 M_F_A_Chr1All <- nrow(subset(restab, restab$chr=='Chr01'))
 M_F_A_Chr2All <- nrow(subset(restab, restab$chr=='Chr02'))
 M_F_A_Chr3All <- nrow(subset(restab, restab$chr=='Chr03'))
@@ -498,8 +498,8 @@ M_F_A_randomAll <- nrow(subset(restab, restab$chr=='Random'))
 
 chr_all <-cbind( M_F_A_Chr0All, M_F_A_Chr1All, M_F_A_Chr2All, M_F_A_Chr3All, M_F_A_Chr4All, M_F_A_Chr5All, M_F_A_Chr6All, M_F_A_Chr7All, M_F_A_Chr8All, M_F_A_Chr9All, M_F_A_Chr10All, M_F_A_Chr11All, M_F_A_Chr12All, M_F_A_Chr13All, M_F_A_Chr14All, M_F_A_Chr15All, M_F_A_Chr16All, M_F_A_Chr17All, M_F_A_Chr18All, M_F_A_randomAll)
 
-M_F_A_Chr0up <- nrow(subset(list_de[[k]], list_de[[k]]$chr=='MAT' & list_de[[k]][[paste('logFC.',colnames(cmat)[k], sep="")]] > 0))
-M_F_A_Chr0down <- nrow(subset(list_de[[k]], list_de[[k]]$chr=='MAT' & list_de[[k]][[paste('logFC.',colnames(cmat)[k], sep="")]] < 0))
+M_F_A_Chr0up <- nrow(subset(list_de[[k]], list_de[[k]]$chr=='aMAT' & list_de[[k]][[paste('logFC.',colnames(cmat)[k], sep="")]] > 0))
+M_F_A_Chr0down <- nrow(subset(list_de[[k]], list_de[[k]]$chr=='aMAT' & list_de[[k]][[paste('logFC.',colnames(cmat)[k], sep="")]] < 0))
 M_F_A_Chr1up <- nrow(subset(list_de[[k]], list_de[[k]]$chr=='Chr01' & list_de[[k]][[paste('logFC.',colnames(cmat)[k], sep="")]] > 0))
 M_F_A_Chr1down <- nrow(subset(list_de[[k]], list_de[[k]]$chr=='Chr01' & list_de[[k]][[paste('logFC.',colnames(cmat)[k], sep="")]] < 0))
 M_F_A_Chr2up <- nrow(subset(list_de[[k]], list_de[[k]]$chr=='Chr02' & list_de[[k]][[paste('logFC.',colnames(cmat)[k], sep="")]] > 0))
@@ -545,9 +545,9 @@ up <- cbind(M_F_A_Chr0up,M_F_A_Chr1up, M_F_A_Chr2up, M_F_A_Chr3up, M_F_A_Chr4up,
 
 pc_down <- cbind(M_F_A_Chr0down/M_F_A_Chr0All,M_F_A_Chr1down/M_F_A_Chr1All, M_F_A_Chr2down/M_F_A_Chr2All, M_F_A_Chr3down/M_F_A_Chr3All, M_F_A_Chr4down/M_F_A_Chr4All, M_F_A_Chr5down/M_F_A_Chr5All, M_F_A_Chr6down/M_F_A_Chr6All, M_F_A_Chr7down/M_F_A_Chr7All, M_F_A_Chr8down/M_F_A_Chr8All, M_F_A_Chr9down/M_F_A_Chr9All, M_F_A_Chr10down/M_F_A_Chr10All, M_F_A_Chr11down/M_F_A_Chr11All, M_F_A_Chr12down/M_F_A_Chr12All, M_F_A_Chr13down/M_F_A_Chr13All, M_F_A_Chr14down/M_F_A_Chr14All, M_F_A_Chr15down/M_F_A_Chr15All, M_F_A_Chr16down/M_F_A_Chr16All, M_F_A_Chr17down/M_F_A_Chr17All, M_F_A_Chr18down/M_F_A_Chr18All, M_F_A_randomdown/M_F_A_randomAll)
 
-down <- cbind(M_F_A_Chr1down, M_F_A_Chr2down, M_F_A_Chr3down, M_F_A_Chr4down, M_F_A_Chr5down, M_F_A_Chr6down, M_F_A_Chr7down, M_F_A_Chr8down, M_F_A_Chr9down, M_F_A_Chr10down)
+down <- cbind(M_F_A_Chr0down,M_F_A_Chr1down, M_F_A_Chr2down, M_F_A_Chr3down, M_F_A_Chr4down, M_F_A_Chr5down, M_F_A_Chr6down, M_F_A_Chr7down, M_F_A_Chr8down, M_F_A_Chr9down, M_F_A_Chr10down, M_F_A_Chr11down, M_F_A_Chr12down, M_F_A_Chr13down, M_F_A_Chr14down, M_F_A_Chr15down, M_F_A_Chr16down, M_F_A_Chr17down, M_F_A_Chr18down, M_F_A_randomdown)
 
-non_DE <- cbind(M_F_A_Chr0down,M_F_A_Chr1down, M_F_A_Chr2down, M_F_A_Chr3down, M_F_A_Chr4down, M_F_A_Chr5down, M_F_A_Chr6down, M_F_A_Chr7down, M_F_A_Chr8down, M_F_A_Chr9down, M_F_A_Chr10down, M_F_A_Chr11down, M_F_A_Chr12down, M_F_A_Chr13down, M_F_A_Chr14down, M_F_A_Chr15down, M_F_A_Chr16down, M_F_A_Chr17down, M_F_A_Chr18down, M_F_A_randomdown)
+non_DE <- cbind(M_F_A_nonDE_Chr0, M_F_A_nonDE_Chr1, M_F_A_nonDE_Chr2, M_F_A_nonDE_Chr3, M_F_A_nonDE_Chr4, M_F_A_nonDE_Chr5, M_F_A_nonDE_Chr6,	M_F_A_nonDE_Chr7, M_F_A_nonDE_Chr8, M_F_A_nonDE_Chr9, M_F_A_nonDE_Chr10, M_F_A_nonDE_Chr11, M_F_A_nonDE_Chr12, M_F_A_nonDE_Chr13, M_F_A_nonDE_Chr14, M_F_A_nonDE_Chr15, M_F_A_nonDE_Chr16, M_F_A_nonDE_Chr17, M_F_A_nonDE_Chr18, M_F_A_nonDE_random)
 
 se_up <- se(pc_up, chr_all)
 se_down <- se(pc_down, chr_all)
@@ -673,3 +673,4 @@ plot(Pv_clust_fit3_46) # dendogram with p values
 dev.off()
 dev.off()
 dev.off()
+
