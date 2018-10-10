@@ -1,0 +1,4 @@
+DE_numbers	
+NUM_DE	54
+NUM_UP_DE	20
+NUM_DOWN_DE	34
