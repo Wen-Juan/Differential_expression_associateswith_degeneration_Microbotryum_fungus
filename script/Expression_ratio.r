@@ -121,11 +121,67 @@ dev.off()
 #autosome chromosome1
 pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr01_ratio_sliding40genes.pdf", width=7,height=5)
 
-Chr_pos <- rollmean(smooth(Chr01_sort$start),20)
-Chr_ratio <- rollmean(smooth(na.approx(Chr01_sort$ratio)),20)
+Chr_pos <- rollmean(smooth(Chr01_sort$start),40)
+Chr_ratio <- rollmean(smooth(na.approx(Chr01_sort$ratio)),40)
 plot(Chr01_sort$start, Chr01_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr01")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
 dev.off()
+
+##autosome chromosome2
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr02_ratio_sliding40genes.pdf", width=7,height=5)
+
+Chr_pos <- rollmean(smooth(Chr02_sort$start),40)
+Chr_ratio <- rollmean(smooth(na.approx(Chr02_sort$ratio)),40)
+plot(Chr02_sort$start, Chr02_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Log2-ratio(A1/A2)",main="Chr02")
+lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+abline(h=lowCI,lty=2)
+abline(h=highCI,lty=2)
+dev.off()
+
+#autosome chromosome3
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr03_ratio_sliding40genes.pdf", width=7,height=5)
+
+Chr_pos <- rollmean(smooth(Chr03_sort$start),40)
+Chr_ratio <- rollmean(smooth(na.approx(Chr03_sort$ratio)),40)
+plot(Chr03_sort$start, Chr03_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr03")
+lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+abline(h=lowCI,lty=2)
+abline(h=highCI,lty=2)
+dev.off()
+
+#autosome chromosome4
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr04_ratio_sliding40genes.pdf", width=7,height=5)
+
+Chr_pos <- rollmean(smooth(Chr04_sort$start),40)
+Chr_ratio <- rollmean(smooth(na.approx(Chr04_sort$ratio)),40)
+plot(Chr04_sort$start, Chr04_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr04")
+lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+abline(h=lowCI,lty=2)
+abline(h=highCI,lty=2)
+dev.off()
+
+#autosome chromosome5
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr05_ratio_sliding40genes.pdf", width=7,height=5)
+
+Chr_pos <- rollmean(smooth(Chr05_sort$start),40)
+Chr_ratio <- rollmean(smooth(na.approx(Chr05_sort$ratio)),40)
+plot(Chr05_sort$start, Chr05_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr05")
+lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+abline(h=lowCI,lty=2)
+abline(h=highCI,lty=2)
+dev.off()
+
+#autosome chromosome6
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr06_ratio_sliding40genes.pdf", width=7,height=5)
+
+Chr_pos <- rollmean(smooth(Chr06_sort$start),40)
+Chr_ratio <- rollmean(smooth(na.approx(Chr06_sort$ratio)),40)
+plot(Chr06_sort$start, Chr06_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr06")
+lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+abline(h=lowCI,lty=2)
+abline(h=highCI,lty=2)
+dev.off()
+
 
