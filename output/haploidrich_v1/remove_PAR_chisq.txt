@@ -1,0 +1,15 @@
+###removing genes on the PAR
+> chisq.test(cbind(c(47,564),c(35,576)),p=0.05, B=2000)
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  cbind(c(47, 564), c(35, 576))
+X-squared = 1.5818, df = 1, p-value = 0.2085
+
+###with genes on the PAR
+> chisq.test(cbind(c(56,564),c(30,630)),p=0.05, B=2000)
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  cbind(c(56, 564), c(30, 630))
+X-squared = 9.5653, df = 1, p-value = 0.001983
