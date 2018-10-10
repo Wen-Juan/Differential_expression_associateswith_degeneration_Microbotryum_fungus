@@ -102,7 +102,7 @@ colnames(y) <- paste(colnames(y), design$group, sep="\n")
 #cols = c(col.M23, col.F23,col.M27,col.F27, col.M31, col.F31,col.M43,col.F43,col.R43,col.M46,col.F46,col.R46)#for tvedora
 cols = c(col.Rich_A1, col.Rich_A2)#
 pchs = c(18,5) #for tvedora
-plotMDS(y, pch=pchs[design$group],col=cols[design$group], cex=2.0, main="Tvedora MDS plot",cex.main=1, cex.lab=1,lty=2, lwd=3)
+plotMDS(y, pch=pchs[design$group],col=cols[design$group], cex=2.0, main="MDS plot",cex.main=1, cex.lab=1,lty=2, lwd=3)
 legend('bottom', inset=0.02, legend=levels(design$group), pch = pchs, col=cols)
 dev.off()
 
