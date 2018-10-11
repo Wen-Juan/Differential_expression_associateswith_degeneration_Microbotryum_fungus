@@ -84,13 +84,13 @@ Chr06_sort <- Chr6[order(Chr6$start),]
 
 library(zoo)
 
-aMATRT<- rollmean(smooth(na.approx(aMAT_sort$ratio)),40)
-Chr1RT<- rollmean(smooth(na.approx(Chr01_sort$ratio)),40)
-Chr2RT<- rollmean(smooth(na.approx(Chr02_sort$ratio)),40)
-Chr3RT<- rollmean(smooth(na.approx(Chr03_sort$ratio)),40)
-Chr4RT<- rollmean(smooth(na.approx(Chr04_sort$ratio)),40)
-Chr5RT<- rollmean(smooth(na.approx(Chr05_sort$ratio)),40)
-Chr6RT<- rollmean(smooth(na.approx(Chr06_sort$ratio)),40)
+aMATRT<- rollmean(smooth(na.approx(aMAT_sort$ratio)),10)
+Chr1RT<- rollmean(smooth(na.approx(Chr01_sort$ratio)),10)
+Chr2RT<- rollmean(smooth(na.approx(Chr02_sort$ratio)),10)
+Chr3RT<- rollmean(smooth(na.approx(Chr03_sort$ratio)),10)
+Chr4RT<- rollmean(smooth(na.approx(Chr04_sort$ratio)),10)
+Chr5RT<- rollmean(smooth(na.approx(Chr05_sort$ratio)),10)
+Chr6RT<- rollmean(smooth(na.approx(Chr06_sort$ratio)),10)
 
 Rt<- c(aMATRT,Chr1RT,Chr2RT,Chr3RT,Chr4RT,Chr5RT,Chr6RT)
 
@@ -108,11 +108,11 @@ highCI <- sorted.perm[975]
 RMpalette <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac")
 
 #mating type chromosome
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_MAT_ratio_5genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_MAT_ratio_10genes.pdf", width=7,height=5)
 
-Chr_pos <- rollmean(smooth(aMAT_sort$start),5)
-Chr_ratio <- rollmean(smooth(na.approx(aMAT_sort$ratio)),5)
-plot(aMAT_sort$start, aMAT_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-2.5,2.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="MAT")
+Chr_pos <- rollmean(smooth(aMAT_sort$start),10)
+Chr_ratio <- rollmean(smooth(na.approx(aMAT_sort$ratio)),10)
+plot(aMAT_sort$start, aMAT_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="MAT")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
