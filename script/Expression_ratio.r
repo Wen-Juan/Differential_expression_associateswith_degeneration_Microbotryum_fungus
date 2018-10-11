@@ -10,8 +10,8 @@ library(easyGgplot2)
 col1 <- rgb(red = 0, green = 0, blue = 0, alpha = 0.1)
 col2 <- rgb(red = 1, green = 0, blue = 0, alpha = 0.6)
 
-datapath <- '/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/haploidrich/'
-kdata <- read.table("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/haploidrich/LogCPM_0.05_haploidrich copy.txt",header = T)
+datapath <- '/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/haploidwater_v1/'
+kdata <- read.table("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/haploidwater_v1/LogCPM_0.05_haploidwater_mod.txt",header = T)
 str(kdata)
 
 ###restrict the analysis to sex-biaxed genes
@@ -33,11 +33,11 @@ map.data$ratio <- log2(group1.expr/group2.expr)
 map.data$ratio[mapply(is.infinite, map.data$ratio)] <- NA
 
 #gene expression ratio Log2(XY/XX)
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/log2ratio_A1_A2.pdf", width=8, height=8)
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_log2ratio_A1_A2.pdf", width=8, height=8)
 ggplot(map.data, aes(x=chr, y=ratio, fill=chr)) +
   scale_fill_manual(values = c("red","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey")) +
   scale_y_continuous(limits = c(-0.3,0.3)) + 
-  geom_boxplot(notch = TRUE,outlier.shape=NA,)+
+  geom_boxplot(notch = FALSE,outlier.shape=NA,)+
   theme(legend.position="none") +
   labs(x='Chromosome', y='Log2 ratio of A1/A2 gene expression') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
@@ -47,7 +47,7 @@ dev.off()
 #stats
 ##
 wilcox.test(map.data$ratio[map.data$chr=='aMAT'],map.data$ratio[map.data$chr!='aMAT'],exact = FALSE) 
-##W = 1260900, p-value = 0.9041
+##W = 1596900, p-value = 1.542e-05
 
 #calculate means by sliding windows
 install.packages("RcppRoll")
@@ -108,32 +108,32 @@ highCI <- sorted.perm[975]
 RMpalette <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac")
 
 #mating type chromosome
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MAT_ratio.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_MAT_ratio_5genes.pdf", width=7,height=5)
 
-Chr_pos <- rollmean(smooth(aMAT_sort$start),10)
-Chr_ratio <- rollmean(smooth(na.approx(aMAT_sort$ratio)),10)
-plot(aMAT_sort$start, aMAT_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="MAT")
+Chr_pos <- rollmean(smooth(aMAT_sort$start),5)
+Chr_ratio <- rollmean(smooth(na.approx(aMAT_sort$ratio)),5)
+plot(aMAT_sort$start, aMAT_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-2.5,2.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="MAT")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
 dev.off()
 
 #autosome chromosome1
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr01_ratio_sliding40genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_Chr01_ratio_sliding20genes.pdf", width=7,height=5)
 
-Chr_pos <- rollmean(smooth(Chr01_sort$start),40)
-Chr_ratio <- rollmean(smooth(na.approx(Chr01_sort$ratio)),40)
-plot(Chr01_sort$start, Chr01_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr01")
+Chr_pos <- rollmean(smooth(Chr01_sort$start),20)
+Chr_ratio <- rollmean(smooth(na.approx(Chr01_sort$ratio)),20)
+plot(Chr01_sort$start, Chr01_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-2.5,2.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr01")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
 dev.off()
 
 ##autosome chromosome2
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr02_ratio_sliding40genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_Chr02_ratio_sliding40genes.pdf", width=7,height=5)
 
-Chr_pos <- rollmean(smooth(Chr02_sort$start),40)
-Chr_ratio <- rollmean(smooth(na.approx(Chr02_sort$ratio)),40)
+Chr_pos <- rollmean(smooth(Chr02_sort$start),20)
+Chr_ratio <- rollmean(smooth(na.approx(Chr02_sort$ratio)),20)
 plot(Chr02_sort$start, Chr02_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Log2-ratio(A1/A2)",main="Chr02")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
@@ -141,18 +141,18 @@ abline(h=highCI,lty=2)
 dev.off()
 
 #autosome chromosome3
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr03_ratio_sliding40genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_Chr03_ratio_sliding40genes.pdf", width=7,height=5)
 
 Chr_pos <- rollmean(smooth(Chr03_sort$start),40)
 Chr_ratio <- rollmean(smooth(na.approx(Chr03_sort$ratio)),40)
-plot(Chr03_sort$start, Chr03_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr03")
+plot(Chr03_sort$start, Chr03_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-2.5,2.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr03")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
 dev.off()
 
 #autosome chromosome4
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr04_ratio_sliding40genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_Chr04_ratio_sliding40genes.pdf", width=7,height=5)
 
 Chr_pos <- rollmean(smooth(Chr04_sort$start),40)
 Chr_ratio <- rollmean(smooth(na.approx(Chr04_sort$ratio)),40)
@@ -163,7 +163,7 @@ abline(h=highCI,lty=2)
 dev.off()
 
 #autosome chromosome5
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr05_ratio_sliding40genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_Chr05_ratio_sliding40genes.pdf", width=7,height=5)
 
 Chr_pos <- rollmean(smooth(Chr05_sort$start),40)
 Chr_ratio <- rollmean(smooth(na.approx(Chr05_sort$ratio)),40)
@@ -174,11 +174,11 @@ abline(h=highCI,lty=2)
 dev.off()
 
 #autosome chromosome6
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr06_ratio_sliding40genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_Chr06_ratio_sliding40genes.pdf", width=7,height=5)
 
 Chr_pos <- rollmean(smooth(Chr06_sort$start),40)
 Chr_ratio <- rollmean(smooth(na.approx(Chr06_sort$ratio)),40)
-plot(Chr06_sort$start, Chr06_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr06")
+plot(Chr06_sort$start, Chr06_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-2.5,2.5), xlab="Position(bp)", ylab="Ratio(A1/A2)",main="Chr06")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
