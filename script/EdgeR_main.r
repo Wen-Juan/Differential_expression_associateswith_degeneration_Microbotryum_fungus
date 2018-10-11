@@ -28,14 +28,14 @@ sub_analyse = paste(args[1])
 FDR2use = as.numeric(paste(args[2]))
 
 # example
-# sub_analyse <- 'haploidrich'
+# sub_analyse <- 'haploidwater'
 # FDR2use  <- 0.05
 
 datapath <- "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/"
 outpath <- paste("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/", sub_analyse, sep="")
 dir.create(file.path(outpath))
 
-annotation <- read.delim(file.path(datapath, "haploidrich_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
+annotation <- read.delim(file.path(datapath, "haploidwater_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
 
 count <- read.table(file.path(datapath, paste(sub_analyse,'_count.txt', sep="")), header=T, row.names=1)
 count <- round(count, digits=0)
@@ -286,7 +286,7 @@ for(k in 1:ncol(cmat)) {
 
 # Chisq comparison Chr1 with others
 for(k in 1:npanel) {
-de_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='MAT'] !='na', na.rm=T)
+de_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='aMAT'] !='na', na.rm=T)
 de_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='aMAT'] !='na', na.rm=T)
 nonde_chr1 <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='aMAT'] !='na', na.rm=T)
 nonde_chrother <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_nonde[[k]]$chr) & list_nonde[[k]]$chr!='aMAT'] !='na', na.rm=T)
