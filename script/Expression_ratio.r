@@ -10,8 +10,8 @@ library(easyGgplot2)
 col1 <- rgb(red = 0, green = 0, blue = 0, alpha = 0.1)
 col2 <- rgb(red = 1, green = 0, blue = 0, alpha = 0.6)
 
-datapath <- '/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A1hemi/'
-kdata <- read.table("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A1hemi/LogCPM_0.05_A1hemi_mod.txt",header = T)
+datapath <- '/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A2hemi/'
+kdata <- read.table("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A2hemi/LogCPM_0.05_A2hemi_mod.txt",header = T)
 str(kdata)
 
 ###restrict the analysis to sex-biaxed genes
@@ -110,16 +110,17 @@ highCI <- sorted.perm[975]
 RMpalette <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac")
 
 #mating type chromosome
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/1nwatervs1nrich_MAT_ratio_5genes_log2line.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/1nwatervs1nrich_MATA2_ratio_5genes_log2line.pdf", width=7,height=5)
 
 Chr_pos <- rollmean(smooth(MAT_sort$start),5)
 Chr_ratio <- rollmean(smooth(na.approx(MAT_sort$ratio)),5)
-plot(MAT_sort$start, MAT_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(haploidwater/haploidrich)",main="Hemizygous genes")
+plot(MAT_sort$start, MAT_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(haploidwater/rich)",main="A2 Hemizygous genes")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
 abline(h=0.5,lty=2,col="red")
 abline(h=-0.5,lty=2,col="red")
+abline(h=-1,lty=2,col="blue")
 
 dev.off()
 

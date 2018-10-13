@@ -28,14 +28,14 @@ sub_analyse = paste(args[1])
 FDR2use = as.numeric(paste(args[2]))
 
 # example
-# sub_analyse <- 'haploidwater'
+# sub_analyse <- 'A2hemi'
 # FDR2use  <- 0.05
 
 datapath <- "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/"
 outpath <- paste("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/", sub_analyse, sep="")
 dir.create(file.path(outpath))
 
-annotation <- read.delim(file.path(datapath, "haploidwater_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
+annotation <- read.delim(file.path(datapath, "A2hemi_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
 
 count <- read.table(file.path(datapath, paste(sub_analyse,'_count.txt', sep="")), header=T, row.names=1)
 count <- round(count, digits=0)
@@ -71,7 +71,7 @@ write(paste(nrow(sum10), "_", sep=""), filter_file, append=T)
 write(summary(rowSums(cpm(sum10)/ncol(sum10))), filter_file, append=T, sep='\t', ncol=6)
 
 dgl <- dgl[aveLogCPM(dgl) > 0,] # filter by average reads
-dgl <- dgl[rowSums(cpm(dgl)>1) > 2,] #filter by at least half of the samples cpm have to be no less than 1 for each sex.
+#dgl <- dgl[rowSums(cpm(dgl)>1) > 2,] #filter by at least half of the samples cpm have to be no less than 1 for each sex.
 
 write(paste("dgl"), filter_file, append=T)
 write(paste(nrow(dgl), "_", sep=""), filter_file, append=T)
@@ -83,10 +83,10 @@ summary(rowSums(dgl$count))
 # colours
 col.Rich_A1   <- rgb(206/255, 34/255, 43/255, 3/4)
 col.Rich_A2  <- rgb(206/255, 34/255, 43/255, 3/4)
-#col.M27 <- rgb(209/255, 127/255, 21/255, 3/4)
-#col.F27 <- rgb(209/255, 127/255, 21/255, 3/4)
-#col.M31 <- rgb(23/255, 87/255, 120/255, 3/4)
-#col.F31 <- rgb(23/255, 87/255, 120/255, 3/4)
+col.Water_A1 <- rgb(209/255, 127/255, 21/255, 3/4)
+col.Water_A1 <- rgb(209/255, 127/255, 21/255, 3/4)
+col.Di <- rgb(23/255, 87/255, 120/255, 3/4)
+col.Di <- rgb(23/255, 87/255, 120/255, 3/4)
 #col.M43 <- rgb(88/255, 135/255, 37/255, 3/4)
 #col.F43 <- rgb(88/255, 135/255, 37/255, 3/4)
 #col.R43 <- rgb(88/255, 135/255, 37/255, 3/4) #for tvedora

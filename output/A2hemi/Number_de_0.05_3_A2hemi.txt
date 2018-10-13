@@ -1,0 +1,4 @@
+DE_numbers	logFC.water.rich	logFC.water.diploid	logFC.rich.diploid
+NUM_DE	61	75	45
+NUM_UP_DE	28	27	15
+NUM_DOWN_DE	33	48	30
