@@ -28,14 +28,14 @@ sub_analyse = paste(args[1])
 FDR2use = as.numeric(paste(args[2]))
 
 # example
-# sub_analyse <- 'A2hemi'
+# sub_analyse <- 'A1hapdi'
 # FDR2use  <- 0.05
 
 datapath <- "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/"
 outpath <- paste("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/", sub_analyse, sep="")
 dir.create(file.path(outpath))
 
-annotation <- read.delim(file.path(datapath, "A2hemi_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
+annotation <- read.delim(file.path(datapath, "A1hapdi_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
 
 count <- read.table(file.path(datapath, paste(sub_analyse,'_count.txt', sep="")), header=T, row.names=1)
 count <- round(count, digits=0)
@@ -84,9 +84,9 @@ summary(rowSums(dgl$count))
 col.Rich_A1   <- rgb(206/255, 34/255, 43/255, 3/4)
 col.Rich_A2  <- rgb(206/255, 34/255, 43/255, 3/4)
 col.Water_A1 <- rgb(209/255, 127/255, 21/255, 3/4)
-col.Water_A1 <- rgb(209/255, 127/255, 21/255, 3/4)
-col.Di <- rgb(23/255, 87/255, 120/255, 3/4)
-col.Di <- rgb(23/255, 87/255, 120/255, 3/4)
+col.Water_A2 <- rgb(209/255, 127/255, 21/255, 3/4)
+col.Di1 <- rgb(23/255, 87/255, 120/255, 3/4)
+col.Di2 <- rgb(23/255, 87/255, 120/255, 3/4)
 #col.M43 <- rgb(88/255, 135/255, 37/255, 3/4)
 #col.F43 <- rgb(88/255, 135/255, 37/255, 3/4)
 #col.R43 <- rgb(88/255, 135/255, 37/255, 3/4) #for tvedora
@@ -100,7 +100,7 @@ par(mar=c(5,5,4,3))
 y <- dgl
 colnames(y) <- paste(colnames(y), design$group, sep="\n")
 #cols = c(col.M23, col.F23,col.M27,col.F27, col.M31, col.F31,col.M43,col.F43,col.R43,col.M46,col.F46,col.R46)#for tvedora
-cols = c(col.Rich_A1, col.Rich_A2)#
+cols = c(col.Rich_A1, col.Rich_A2,col.Water_A1,col.Water_A2,col.Di1,col.Di2)#
 pchs = c(18,5) #for tvedora
 plotMDS(y, pch=pchs[design$group],col=cols[design$group], cex=2.0, main="MDS plot",cex.main=1, cex.lab=1,lty=2, lwd=3)
 legend('bottom', inset=0.02, legend=levels(design$group), pch = pchs, col=cols)

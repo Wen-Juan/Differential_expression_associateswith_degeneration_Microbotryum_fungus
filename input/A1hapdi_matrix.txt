@@ -1,0 +1,4 @@
+model_coefficients	water.rich	water.diploid	rich.diploid
+Water	1	1	0
+Rich	-1	0	1
+Diploid	0	-1	-1
