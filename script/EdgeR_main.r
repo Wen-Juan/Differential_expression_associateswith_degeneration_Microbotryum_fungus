@@ -71,7 +71,7 @@ write(paste(nrow(sum10), "_", sep=""), filter_file, append=T)
 write(summary(rowSums(cpm(sum10)/ncol(sum10))), filter_file, append=T, sep='\t', ncol=6)
 
 dgl <- dgl[aveLogCPM(dgl) > 0,] # filter by average reads
-#dgl <- dgl[rowSums(cpm(dgl)>1) > 2,] #filter by at least half of the samples cpm have to be no less than 1 for each sex.
+dgl <- dgl[rowSums(cpm(dgl)>1) > 1,] #filter by at least half of the samples cpm have to be no less than 1 for each sex.
 
 write(paste("dgl"), filter_file, append=T)
 write(paste(nrow(dgl), "_", sep=""), filter_file, append=T)
@@ -94,14 +94,14 @@ col.Di2 <- rgb(23/255, 87/255, 120/255, 3/4)
 #col.F46 <- rgb(113/255, 250/255, 241/255, 3/4)
 #col.R46 <- rgb(113/255, 250/255, 241/255, 3/4)
 
-pdf(file.path(outpath,paste('MDS_', sub_analyse, '.pdf', sep="")), width=8, height=8)
+pdf(file.path(outpath,paste('MDS_', sub_analyse, '.pdf', sep="")))
 par(mar=c(5,5,4,3))
 
 y <- dgl
 colnames(y) <- paste(colnames(y), design$group, sep="\n")
 #cols = c(col.M23, col.F23,col.M27,col.F27, col.M31, col.F31,col.M43,col.F43,col.R43,col.M46,col.F46,col.R46)#for tvedora
-cols = c(col.Rich_A1, col.Rich_A2,col.Water_A1,col.Water_A2,col.Di1,col.Di2)#
-pchs = c(18,5) #for tvedora
+cols = c(col.Water_A1,col.Water_A2,col.Rich_A1, col.Rich_A2,col.Di1,col.Di2)#
+pchs = c(18,5,18,5,18,5) #for tvedora
 plotMDS(y, pch=pchs[design$group],col=cols[design$group], cex=2.0, main="MDS plot",cex.main=1, cex.lab=1,lty=2, lwd=3)
 legend('bottom', inset=0.02, legend=levels(design$group), pch = pchs, col=cols)
 dev.off()
