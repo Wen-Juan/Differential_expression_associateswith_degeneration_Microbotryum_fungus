@@ -23,7 +23,7 @@ map.data <- subset(kdata, kdata$start!='NA')
 chr1.data <- data.frame(subset(map.data, map.data$chr=='aMAT')) 
 #chr2.data <- subset(map.data, map.data$chr!='aMAT') 
 
-group1.expr.minus <- (map.data$water1 + map.data$water2) / 2
+group1.expr.minus <- (map.data$rich1 + map.data$rich2) / 2
 group2.expr.minus <- (map.data$di1 + map.data$di2) / 2
 
 group1.expr <- group1.expr.minus + min(abs(c(group1.expr.minus, group2.expr.minus)))
@@ -34,10 +34,10 @@ map.data$ratio <- log2(group1.expr/group2.expr)
 #map.data$ratio[mapply(is.infinite, map.data$ratio)] <- NA
 
 #
-write.csv (map.data, "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A1allgenes/Logcpm_A1_mapdata.csv")
+write.csv (map.data, "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A1allgenes/Logcpm_A1_richmapdata.csv")
 
 #gene expression ratio Log2(XY/XX)
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwaterdi_allgenes_log2ratio.pdf", width=8, height=8)
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidrichdi_allgenes_log2ratio.pdf", width=8, height=8)
 ggplot(map.data, aes(x=chr, y=ratio, fill=chr)) +
   scale_fill_manual(values = c("red","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey")) +
   scale_y_continuous(limits = c(-0.3,0.3)) + 
@@ -163,7 +163,7 @@ abline(h=2,lty=2,col="blue")
 dev.off()
 
 #autosome chromosome1
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater/2n_Chr01_ratio_sliding20genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/2n_Chr01_ratio_sliding20genes.pdf", width=7,height=5)
 
 Chr_pos <- rollmean(smooth(Chr01_sort$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr01_sort$ratio)),20)
@@ -178,7 +178,7 @@ abline(h=2,lty=2,col="blue")
 dev.off()
 
 ##autosome chromosome2
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater2n_Chr02_ratio_20genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidrich2n_Chr02_ratio_20genes.pdf", width=7,height=5)
 
 Chr_pos <- rollmean(smooth(Chr02_sort$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr02_sort$ratio)),20)
@@ -193,7 +193,7 @@ abline(h=2,lty=2,col="blue")
 dev.off()
 
 #autosome chromosome3
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater2n_Chr03_ratio_20genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidrich2n_Chr03_ratio_20genes.pdf", width=7,height=5)
 
 Chr_pos <- rollmean(smooth(Chr03_sort$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr03_sort$ratio)),20)
@@ -238,7 +238,7 @@ abline(h=2,lty=2,col="blue")
 dev.off()
 
 #autosome chromosome6
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater2n_Chr06_ratio_20genes.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidrich2n_Chr06_ratio_20genes.pdf", width=7,height=5)
 
 Chr_pos <- rollmean(smooth(Chr06_sort$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr06_sort$ratio)),20)
