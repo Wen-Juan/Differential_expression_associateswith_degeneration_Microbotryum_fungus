@@ -31,7 +31,7 @@ group2.expr <- group2.expr.minus + min(abs(c(group1.expr.minus, group2.expr.minu
 
 map.data$ratio <- log2(group1.expr/group2.expr)
 #map.data$ratio <- group1.expr/group2.expr
-#map.data$ratio[mapply(is.infinite, map.data$ratio)] <- NA
+map.data$ratio[mapply(is.infinite, map.data$ratio)] <- NA
 
 #
 write.csv (map.data, "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A1allgenes/Logcpm_A1_richmapdata.csv")
@@ -147,12 +147,13 @@ highCI <- sorted.perm[975]
 RMpalette <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac")
 
 #mating type chromosome
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/1nwatervs2n_ratio_20genes_log2line.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/1nrichvs2n_ratio_20genes_log2line.pdf", width=7,height=5)
 
-Chr_pos <- rollmean(smooth(MAT_sort$start),20)
+Chr_pos <- rollmean(smooth(MAT_sort$start[-1034]),20)
 Chr_ratio <- rollmean(smooth(na.approx(MAT_sort$ratio)),20)
+data.frame(Chr_pos,Chr_ratio)
 plot(MAT_sort$start, MAT_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-5,5), xlab="Position(bp)", ylab="Ratio(haploidwater/dikaryon)",main="All A1 genes")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+lines(Chr_pos, MATRT,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
 abline(h=1,lty=2,col="red")
@@ -251,5 +252,6 @@ abline(h=-1,lty=2,col="red")
 abline(h=-2,lty=2,col="blue")
 abline(h=2,lty=2,col="blue")
 dev.off()
+
 
 
