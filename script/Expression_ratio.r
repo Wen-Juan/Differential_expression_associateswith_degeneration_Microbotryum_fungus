@@ -10,8 +10,8 @@ library(easyGgplot2)
 col1 <- rgb(red = 0, green = 0, blue = 0, alpha = 0.1)
 col2 <- rgb(red = 1, green = 0, blue = 0, alpha = 0.6)
 
-datapath <- '/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A2hemi/'
-kdata <- read.table("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A2hemi/LogCPM_0.05_A2hemi_mod.txt",header = T)
+datapath <- '/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A1allgenes/'
+kdata <- read.table("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/A1allgenes/LogCPM_0.05_A1allgenes copy.txt",header = T)
 str(kdata)
 
 ###restrict the analysis to sex-biaxed genes
@@ -20,11 +20,11 @@ str(kdata)
 #kdata$logFC.XY43.XX43
 
 map.data <- subset(kdata, kdata$start!='NA')
-chr1.data <- data.frame(subset(map.data, map.data$chr=='MAT')) 
+chr1.data <- data.frame(subset(map.data, map.data$chr=='aMAT')) 
 chr2.data <- subset(map.data, map.data$chr!='aMAT') 
 
 group1.expr.minus <- (map.data$water1 + map.data$water2) / 2
-group2.expr.minus <- (map.data$rich1 + map.data$rich2) / 2
+group2.expr.minus <- (map.data$di1 + map.data$di2) / 2
 
 group1.expr <- group1.expr.minus + min(abs(c(group1.expr.minus, group2.expr.minus)))
 group2.expr <- group2.expr.minus + min(abs(c(group1.expr.minus, group2.expr.minus)))
@@ -34,9 +34,9 @@ map.data$ratio <- log2(group1.expr/group2.expr)
 map.data$ratio[mapply(is.infinite, map.data$ratio)] <- NA
 
 #gene expression ratio Log2(XY/XX)
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwater_log2ratio_A1_A2.pdf", width=8, height=8)
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/haploidwaterdi_allgenes_log2ratio.pdf", width=8, height=8)
 ggplot(map.data, aes(x=chr, y=ratio, fill=chr)) +
-  scale_fill_manual(values = c("red")) +
+  scale_fill_manual(values = c("red","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey","grey")) +
   scale_y_continuous(limits = c(-0.3,0.3)) + 
   geom_boxplot(notch = FALSE,outlier.shape=NA,)+
   theme(legend.position="none") +
@@ -62,7 +62,7 @@ install.packages("rtracklayer")
 library("rtracklayer")
 
 ##Assigning Transcripts to Chromosomes###
-MAT <- subset(map.data, map.data$chr=="MAT")
+MAT <- subset(map.data, map.data$chr=="aMAT")
 Chr1 <- subset(map.data, map.data$chr=="Chr01")
 Chr2 <- subset(map.data, map.data$chr=="Chr02")
 Chr3 <- subset(map.data, map.data$chr=="Chr03")
@@ -85,13 +85,13 @@ Chr06_sort <- Chr6[order(Chr6$start),]
 
 library(zoo)
 
-MATRT<- rollmean(smooth(na.approx(MAT_sort$ratio)),5)
-Chr1RT<- rollmean(smooth(na.approx(Chr01_sort$ratio)),10)
-Chr2RT<- rollmean(smooth(na.approx(Chr02_sort$ratio)),10)
-Chr3RT<- rollmean(smooth(na.approx(Chr03_sort$ratio)),10)
-Chr4RT<- rollmean(smooth(na.approx(Chr04_sort$ratio)),10)
-Chr5RT<- rollmean(smooth(na.approx(Chr05_sort$ratio)),10)
-Chr6RT<- rollmean(smooth(na.approx(Chr06_sort$ratio)),10)
+MATRT<- rollmean(smooth(na.approx(MAT_sort$ratio)),20)
+Chr1RT<- rollmean(smooth(na.approx(Chr01_sort$ratio)),20)
+Chr2RT<- rollmean(smooth(na.approx(Chr02_sort$ratio)),20)
+Chr3RT<- rollmean(smooth(na.approx(Chr03_sort$ratio)),20)
+Chr4RT<- rollmean(smooth(na.approx(Chr04_sort$ratio)),20)
+Chr5RT<- rollmean(smooth(na.approx(Chr05_sort$ratio)),20)
+Chr6RT<- rollmean(smooth(na.approx(Chr06_sort$ratio)),20)
 
 Rt<- c(MATRT)
 #,Chr1RT,Chr2RT,Chr3RT,Chr4RT,Chr5RT,Chr6RT)
@@ -110,17 +110,18 @@ highCI <- sorted.perm[975]
 RMpalette <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac")
 
 #mating type chromosome
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/1nwatervs1nrich_MATA2_ratio_5genes_log2line.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/1nwatervs2n_ratio_20genes_log2line.pdf", width=7,height=5)
 
-Chr_pos <- rollmean(smooth(MAT_sort$start),5)
-Chr_ratio <- rollmean(smooth(na.approx(MAT_sort$ratio)),5)
-plot(MAT_sort$start, MAT_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-1.5,1.5), xlab="Position(bp)", ylab="Ratio(haploidwater/rich)",main="A2 Hemizygous genes")
+Chr_pos <- rollmean(smooth(MAT_sort$start),20)
+Chr_ratio <- rollmean(smooth(na.approx(MAT_sort$ratio)),20)
+plot(MAT_sort$start, MAT_sort$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-3,3), xlab="Position(bp)", ylab="Ratio(haploidwater/dikaryon)",main="All A1 genes")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
 abline(h=0.5,lty=2,col="red")
 abline(h=-0.5,lty=2,col="red")
 abline(h=-1,lty=2,col="blue")
+abline(h=1,lty=2,col="blue")
 
 dev.off()
 
