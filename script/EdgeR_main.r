@@ -35,7 +35,7 @@ datapath <- "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Ha
 outpath <- paste("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/", sub_analyse, sep="")
 dir.create(file.path(outpath))
 
-annotation <- read.delim(file.path(datapath, "A1hapdi_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
+annotation <- read.delim(file.path(datapath, "A1allgenes_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
 
 count <- read.table(file.path(datapath, paste(sub_analyse,'_count.txt', sep="")), header=T, row.names=1)
 count <- round(count, digits=0)
@@ -660,17 +660,17 @@ write.table(DE_counts, file=file.path(outpath, paste('clusters',FDR2use, '_', su
 }
 
 #pvclust is an R package for assessing the uncertainty in hierarchical cluster analysis. 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/bootstrap_forheatm_g46_complete.pdf", width=8, height=8)
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/bootstrap_forheatm_g46_average.pdf", width=8, height=8)
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/bootstrap_forheatm_g46_ward.pdf", width=8, height=8)
-Pv_clust_fit1_46 <- pvclust(d, method.hclust="average", method.dist="euclidean", nboot=10000) ## put nboot to 10000 for serious work
-Pv_clust_fit2_46 <- pvclust(d, method.hclust="ward.D2", method.dist="euclidean", nboot=10000) ## put nboot to 10000 for serious work
-Pv_clust_fit3_46 <- pvclust(d, method.hclust="complete", method.dist="euclidean", nboot=10000) ## put nboot to 10000 for serious work
+#pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/bootstrap_forheatm_g46_complete.pdf", width=8, height=8)
+#pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/bootstrap_forheatm_g46_average.pdf", width=8, height=8)
+#pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/bootstrap_forheatm_g46_ward.pdf", width=8, height=8)
+#Pv_clust_fit1_46 <- pvclust(d, method.hclust="average", method.dist="euclidean", nboot=10000) ## put nboot to 10000 for serious work
+#Pv_clust_fit2_46 <- pvclust(d, method.hclust="ward.D2", method.dist="euclidean", nboot=10000) ## put nboot to 10000 for serious work
+#Pv_clust_fit3_46 <- pvclust(d, method.hclust="complete", method.dist="euclidean", nboot=10000) ## put nboot to 10000 for serious work
 
-plot(Pv_clust_fit1_46) # dendogram with p values
-plot(Pv_clust_fit2_46) # dendogram with p values
-plot(Pv_clust_fit3_46) # dendogram with p values
-dev.off()
-dev.off()
-dev.off()
+#plot(Pv_clust_fit1_46) # dendogram with p values
+#plot(Pv_clust_fit2_46) # dendogram with p values
+#plot(Pv_clust_fit3_46) # dendogram with p values
+#dev.off()
+#dev.off()
+#dev.off()
 
