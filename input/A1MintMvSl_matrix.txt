@@ -1,0 +1,3 @@
+model_coefficients	MvSl.Mint
+MvSl	1
+Mint	-1
