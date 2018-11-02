@@ -353,12 +353,68 @@ dev.off()
 a1a2_LogFC_de_nonde_count <- read.table("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/water_haploid_de_nonde_a1_a2_list_intron_fi.txt", header = TRUE)
 str(a1a2_LogFC_de_nonde_count)
 
-ggplot(a1a2_LogFC_de_nonde_count, aes(x = ave_count, y=log2(intron_a1sum), group=Group), cex=2) + 
-  geom_point(size = 2, aes(color=Group),alpha = 0.6)+ 
-  scale_color_manual(values=c("red","grey")) +
-  labs (y = "Log2(intron_total length)", x= "Intron number", size =2) +
-  theme(axis.text.x = element_text(size = 12,color = "black"))  + 
-  theme(axis.text.y = element_text(size = 12,color = "black")) +
-  theme(text = element_text(size=14)) +
-  theme(legend.text=element_text(size=11, color="black")) 
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/DE_NONde_log2fc_A2intron_number_boxplot.pdf", width=7,height=5)
+ggplot(a1a2_LogFC_de_nonde_count, aes(x = LogFC, y= intron_a2nr, fill=Group), cex=2) + scale_fill_manual(values = c("firebrick2","grey40"),labels=c("DE genes","Non-DE genes")) +
+  geom_boxplot(notch=TRUE,outlier.shape=NA,width=0.4,alpha=0.8, varwidth = TRUE)+ 
+  ylim(0,11) +
+  labs(y="Log2(Intron number_A2 genome)") +
+    scale_x_discrete(labels=c("DE genes","Non-DE genes"),name="Log2FC(A1/A2)") + 
+    theme(axis.title.x = element_text(size=16,colour = "black"),axis.title.y = element_text(size=16,colour = "black")) +
+    theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11)) +
+    theme(legend.position = "right")
 dev.off()
+
+model_a2_1 <- lm(LogFC ~ intron_a2nr*Group, a1a2_LogFC_de_nonde_count)
+anova(model_a2_1)
+
+##
+Response: LogFC
+Df  Sum Sq Mean Sq F value    Pr(>F)    
+intron_a2nr          1    5.96  5.9613  22.072 2.670e-06 ***
+  Group                1   15.97 15.9715  59.135 1.646e-14 ***
+  intron_a2nr:Group    1   18.99 18.9934  70.323 < 2.2e-16 ***
+  Residuals         8065 2178.25  0.2701  
+##
+
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/DE_NONde_log2fc_A2intron_meanlength_boxplot.pdf", width=7,height=5)
+ggplot(a1a2_LogFC_de_nonde_count, aes(x = LogFC, y=log2(intron_a2mean), fill=Group), cex=2) + scale_fill_manual(values = c("firebrick2","grey40"),labels=c("DE genes","Non-DE genes")) +
+  geom_boxplot(notch=TRUE,outlier.shape=NA,width=0.4,alpha=0.8, varwidth = TRUE)+ 
+  ylim(5,8) +
+  labs(y="Log2(Intron mean length_A2 genome)") +
+  scale_x_discrete(labels=c("DE genes","Non-DE genes"),name="Log2FC(A1/A2)") + 
+  theme(axis.title.x = element_text(size=16,colour = "black"),axis.title.y = element_text(size=16,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11)) +
+  theme(legend.position = "right")
+dev.off()
+
+model_a2_2 <- lm(LogFC ~ intron_a2mean*Group, a1a2_LogFC_de_nonde_count)
+anova(model_a2_2)
+##
+Df  Sum Sq Mean Sq F value    Pr(>F)    
+intron_a2mean          1    2.17  2.1722  7.9606  0.004792 ** 
+  Group                  1   15.66 15.6639 57.4033 3.944e-14 ***
+  intron_a2mean:Group    1    0.62  0.6163  2.2585  0.132923    
+Residuals           8065 2200.73  0.2729 
+##
+
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/DE_NONde_log2fc_A2intron_totallength_boxplot.pdf", width=7,height=5)
+ggplot(a1a2_LogFC_de_nonde_count, aes(x = LogFC, y= log2(intron_a2sum), fill=Group), cex=2) + scale_fill_manual(values = c("firebrick2","grey40"),labels=c("DE genes","Non-DE genes")) +
+  geom_boxplot(notch=TRUE,outlier.shape=NA,width=0.4,alpha=0.8, varwidth = TRUE)+ 
+  ylim(5,12) +
+  labs(y="Log2(Intron total length_A2 genome)") +
+  scale_x_discrete(labels=c("DE genes","Non-DE genes"),name="Log2FC(A1/A2)") + 
+  theme(axis.title.x = element_text(size=16,colour = "black"),axis.title.y = element_text(size=16,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11)) +
+  theme(legend.position = "right")
+dev.off()
+
+model_a2_3 <- lm(LogFC ~ intron_a2sum*Group, a1a2_LogFC_de_nonde_count)
+anova(model_a2_3)
+##
+Response: LogFC
+Df  Sum Sq Mean Sq F value    Pr(>F)    
+intron_a2sum          1    3.15  3.1504  11.594 0.0006648 ***
+  Group                 1   16.48 16.4785  60.644 7.689e-15 ***
+  intron_a2sum:Group    1    8.08  8.0848  29.754 5.051e-08 ***
+  Residuals          8065 2191.47  0.2717 
+##
