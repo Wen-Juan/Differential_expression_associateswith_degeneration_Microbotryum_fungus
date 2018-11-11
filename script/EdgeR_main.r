@@ -284,15 +284,15 @@ for(k in 1:ncol(cmat)) {
 
 # Chisq comparison Chr1 with others
 for(k in 1:npanel) {
-de_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='aPR'] !='na', na.rm=T)
-de_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='aPR'] !='na', na.rm=T)
-nonde_chr1 <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='aPR'] !='na', na.rm=T)
-nonde_chrother <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_nonde[[k]]$chr) & list_nonde[[k]]$chr!='aPR'] !='na', na.rm=T)
+de_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='bHD'] !='na', na.rm=T)
+de_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='bHD'] !='na', na.rm=T)
+nonde_chr1 <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='bHD'] !='na', na.rm=T)
+nonde_chrother <- sum(list_nonde[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_nonde[[k]]$chr) & list_nonde[[k]]$chr!='bHD'] !='na', na.rm=T)
 
-up_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='aPR'] > 0, na.rm=T)
-up_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='aPR'] > 0, na.rm=T)
-down_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='aPR'] < 0, na.rm=T)
-down_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='aPR'] < 0, na.rm=T)
+up_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='bHD'] > 0, na.rm=T)
+up_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='bHD'] > 0, na.rm=T)
+down_chr1 <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][list_de[[k]]$chr=='bHD'] < 0, na.rm=T)
+down_chrother <- sum(list_de[[k]][[paste('logFC.', colnames(cmat)[k], sep="")]][!grepl('scaf*', list_de[[k]]$chr) & list_de[[k]]$chr!='bHD'] < 0, na.rm=T)
 
 total_significant <- de_chr1 + de_chrother
 total_chr1 <- sum(de_chr1 + nonde_chr1)
@@ -305,7 +305,7 @@ if (sum(de_chr1 + de_chrother) > 10 & de_chr1 != 0) { # if 0 error in chisqtest 
 Obs <- c(de_chr1, de_chrother)
 Exp <- c(exp_chr1, exp_chrother)
 chi_obs_data <- rbind(Obs, Exp)
-colnames(chi_obs_data) <- c('aPR', 'Chr other')
+colnames(chi_obs_data) <- c('bHD', 'Chr other')
 chi_test <- chisq.test(c(de_chr1, de_chrother), p=c(total_chr1/(total_chr1+total_chrother), total_chrother/(total_chr1+total_chrother)))
 pasteX <- paste('chisq =', round(chi_test$p.value, digits=2), sep=" ")
 
@@ -328,7 +328,7 @@ exp_chrother_up <- round(total_significant_up * total_chrother/(total_chr1+total
 Obs_up <- c(up_chr1, up_chrother)
 Exp_up <- c(exp_chr1_up, exp_chrother_up)
 chi_obs_data_up <- rbind(Obs_up, Exp_up)
-colnames(chi_obs_data_up) <- c('aPR', 'Chr other')
+colnames(chi_obs_data_up) <- c('bHD', 'Chr other')
 chi_test_up <- chisq.test(c(up_chr1, up_chrother), p=c(total_chr1/(total_chr1+total_chrother), total_chrother/(total_chr1+total_chrother)))
 pasteX_up <- paste('chisq =', round(chi_test_up$p.value, digits=2), sep=" ")
 mp_up <- barplot(chi_obs_data_up, col=c(cbgreen,cbblue), main = paste('Up ',strsplit(colnames(cmat)[k], '\\.')[[1]][1], '\nFDR=', FDR2use, ' logFC=', logFC_use, sep=""), beside=T, cex.main=1.8, cex.lab=1, ylab="Gene number")
@@ -347,7 +347,7 @@ exp_chrother_down <- round(total_significant_down * total_chrother/(total_chr1+t
 Obs_down <- c(down_chr1, down_chrother)
 Exp_down <- c(exp_chr1_down, exp_chrother_down)
 chi_obs_data_down <- rbind(Obs_down, Exp_down)
-colnames(chi_obs_data_down) <- c('aPR', 'Chr other')
+colnames(chi_obs_data_down) <- c('bHD', 'Chr other')
 chi_test_down <- chisq.test(c(down_chr1, down_chrother), p=c(total_chr1/(total_chr1+total_chrother), total_chrother/(total_chr1+total_chrother)))
 pasteX_down <- paste('chisq =', round(chi_test_down$p.value, digits=2), sep=" ")
 mp_down <- barplot(chi_obs_data_down, col=c(cbgreen,cbblue), main = paste('Down ',strsplit(colnames(cmat)[k], '\\.')[[1]][2], '\nFDR=', FDR2use, ' logFC=', logFC_use, sep=""), beside=T, cex.main=1.8, cex.lab=1, ylab="Gene number")
