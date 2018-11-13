@@ -155,12 +155,12 @@ highCI <- sorted.perm[975]
 RMpalette <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac")
 
 #mating type chromosome
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mint_Mvsl_singlecopyorthologsMAT_expratio.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mint_Mvsl_genegainsMAT_expratio.pdf", width=7,height=5)
 
-MAT_ortholog <- subset(MAT_sort, MAT_sort$ortholog != "genegain")
+MAT_ortholog <- subset(MAT_sort, MAT_sort$ortholog == "genegain")
 Chr_pos <- rollmean(smooth(MAT_ortholog$start),10)
 Chr_ratio <- rollmean(smooth(na.approx(MAT_ortholog$ratio)),10)
-plot(MAT_ortholog$start, MAT_ortholog$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-4,5), xlab="Position(bp)", ylab="Log2(haploidwater/dikaryon)",main="Mint and MvSl single copy orthologs on Chr01")
+plot(MAT_ortholog$start, MAT_ortholog$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-4,5), xlab="Position(bp)", ylab="Log2(haploidwater/dikaryon)",main="Mint and MvSl gene gains on MAT")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 abline(h=lowCI,lty=2)
 abline(h=highCI,lty=2)
