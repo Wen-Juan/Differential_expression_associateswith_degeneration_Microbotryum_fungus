@@ -94,6 +94,7 @@ Chr14 <- subset(map.data, map.data$chr=="Chr14")
 Chr15 <- subset(map.data, map.data$chr=="Chr15")
 Chr16 <- subset(map.data, map.data$chr=="Chr16")
 Chr17 <- subset(map.data, map.data$chr=="Chr17")
+Chr18 <- subset(map.data, map.data$chr=="Chr18")
 
 
 ## Sort According to Position ####
@@ -157,7 +158,7 @@ RMpalette <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac")
 #mating type chromosome
 pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mint_Mvsl_genegainsMAT_expratio.pdf", width=7,height=5)
 
-MAT_ortholog <- subset(MAT_sort, MAT_sort$ortholog == "genegain")
+MAT_ortholog <- subset(MAT_sort, MAT_sort$ortholog != "genegain")
 Chr_pos <- rollmean(smooth(MAT_ortholog$start),10)
 Chr_ratio <- rollmean(smooth(na.approx(MAT_ortholog$ratio)),10)
 plot(MAT_ortholog$start, MAT_ortholog$ratio,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-4,5), xlab="Position(bp)", ylab="Log2(haploidwater/dikaryon)",main="Mint and MvSl gene gains on MAT")
@@ -168,6 +169,44 @@ abline(h=highCI,lty=2)
 #abline(h=-1,lty=2,col="red")
 
 dev.off()
+wilcox.test(MAT$ratio[MAT$ortholog=='genegain'],MAT$ratio[MAT$ortholog=='sortholog'],exact = FALSE) 
+#W = 127120, p-value < 2.2e-16
+wilcox.test(Chr1$ratio[Chr1$ortholog=='genegain'],Chr1$ratio[Chr1$ortholog=='sortholog'],exact = FALSE) 
+#W = 123760, p-value = 0.004411
+wilcox.test(Chr2$ratio[Chr2$ortholog=='genegain'],Chr2$ratio[Chr2$ortholog=='sortholog'],exact = FALSE) 
+#W = 62361, p-value = 1.176e-07
+wilcox.test(Chr3$ratio[Chr3$ortholog=='genegain'],Chr3$ratio[Chr3$ortholog=='sortholog'],exact = FALSE) 
+#W = 54221, p-value = 0.0001812
+wilcox.test(Chr4$ratio[Chr4$ortholog=='genegain'],Chr4$ratio[Chr4$ortholog=='sortholog'],exact = FALSE) 
+#W = 36785, p-value = 0.01385
+wilcox.test(Chr5$ratio[Chr5$ortholog=='genegain'],Chr5$ratio[Chr5$ortholog=='sortholog'],exact = FALSE) 
+#W = 29252, p-value = 0.09072
+wilcox.test(Chr6$ratio[Chr6$ortholog=='genegain'],Chr6$ratio[Chr6$ortholog=='sortholog'],exact = FALSE) 
+#W = 26027, p-value = 0.005781
+wilcox.test(Chr7$ratio[Chr7$ortholog=='genegain'],Chr7$ratio[Chr7$ortholog=='sortholog'],exact = FALSE) 
+#W = 26027, p-value = 0.005781
+wilcox.test(Chr8$ratio[Chr8$ortholog=='genegain'],Chr8$ratio[Chr8$ortholog=='sortholog'],exact = FALSE) 
+#W = 26733, p-value = 0.6509
+wilcox.test(Chr9$ratio[Chr9$ortholog=='genegain'],Chr9$ratio[Chr9$ortholog=='sortholog'],exact = FALSE) 
+#W = 22003, p-value = 0.0002844
+wilcox.test(Chr10$ratio[Chr10$ortholog=='genegain'],Chr10$ratio[Chr10$ortholog=='sortholog'],exact = FALSE) 
+#W = 19022, p-value = 0.08431
+wilcox.test(Chr11$ratio[Chr11$ortholog=='genegain'],Chr11$ratio[Chr11$ortholog=='sortholog'],exact = FALSE) 
+#W = 18539, p-value = 0.02587
+wilcox.test(Chr12$ratio[Chr12$ortholog=='genegain'],Chr12$ratio[Chr12$ortholog=='sortholog'],exact = FALSE)
+#W = 20210, p-value = 0.7273
+wilcox.test(Chr13$ratio[Chr13$ortholog=='genegain'],Chr13$ratio[Chr13$ortholog=='sortholog'],exact = FALSE)
+#W = 11970, p-value = 0.4994
+wilcox.test(Chr14$ratio[Chr14$ortholog=='genegain'],Chr14$ratio[Chr14$ortholog=='sortholog'],exact = FALSE)
+#W = 3768, p-value = 0.08985
+wilcox.test(Chr15$ratio[Chr15$ortholog=='genegain'],Chr15$ratio[Chr15$ortholog=='sortholog'],exact = FALSE)
+#W = 675, p-value = 0.001431
+wilcox.test(Chr16$ratio[Chr16$ortholog=='genegain'],Chr16$ratio[Chr16$ortholog=='sortholog'],exact = FALSE)
+#W = 3, p-value = 0.04296
+wilcox.test(Chr17$ratio[Chr17$ortholog=='genegain'],Chr17$ratio[Chr17$ortholog=='sortholog'],exact = FALSE)
+#W = 17, p-value = 0.1706
+wilcox.test(Chr18$ratio[Chr18$ortholog=='genegain'],Chr18$ratio[Chr18$ortholog=='sortholog'],exact = FALSE)
+#W = 17, p-value = 0.1706
 
 #autosome chromosome1
 pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mint_Mvsl_genegainsChr01_expratio.pdf", width=7,height=5)
