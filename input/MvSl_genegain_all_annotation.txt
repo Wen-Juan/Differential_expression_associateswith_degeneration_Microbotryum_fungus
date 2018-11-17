@@ -1,0 +1,2496 @@
+MvSl-1064-A1-R4_A1g00003	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00010	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00019	NA
+MvSl-1064-A1-R4_A1g00022	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_A1g00023	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00026	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00030	NA
+MvSl-1064-A1-R4_A1g00041	NA
+MvSl-1064-A1-R4_A1g00042	NA
+MvSl-1064-A1-R4_A1g00043	CDR ABC transporter
+MvSl-1064-A1-R4_A1g00045	carbohydrate esterase family 4 protein
+MvSl-1064-A1-R4_A1g00060	NA
+MvSl-1064-A1-R4_A1g00071	FAD binding domain 
+MvSl-1064-A1-R4_A1g00081	NA
+MvSl-1064-A1-R4_A1g00087	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00088	Mitochondrial intermembrane chaperone that participates in the import and insertion of some multi-pass transmembrane proteins into the mitochondrial inner membrane. Also required for the transfer of beta-barrel precursors from the TOM complex to the sorting and assembly machinery (SAM complex) of the outer membrane. Acts as a chaperone-like protein that protects the hydrophobic precursors from aggregation and guide them through the mitochondrial intermembrane space. The TIM8-TIM13 complex is non essential and only mediates the import of few proteins, while the predominant TIM9-TIM10 70 kDa complex is crucial and mediates the import of much more proteins (By similarity)
+MvSl-1064-A1-R4_A1g00095	Transcriptional activator of glycolytic enzymes
+MvSl-1064-A1-R4_A1g00097	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00099	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00102	NA
+MvSl-1064-A1-R4_A1g00118	NA
+MvSl-1064-A1-R4_A1g00123	NA
+MvSl-1064-A1-R4_A1g00124	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00125	Atypical RIO RIO1 protein kinase
+MvSl-1064-A1-R4_A1g00132	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00134	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00136	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00139	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00142	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00147	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_A1g00149	NA
+MvSl-1064-A1-R4_A1g00151	Uncharacterised protein family (UPF0160)
+MvSl-1064-A1-R4_A1g00156	NA
+MvSl-1064-A1-R4_A1g00157	NA
+MvSl-1064-A1-R4_A1g00160	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g00168	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00169	Pfam:MFAP1_C
+MvSl-1064-A1-R4_A1g00172	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00176	Helicase conserved C-terminal domain
+MvSl-1064-A1-R4_A1g00179	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00180	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g00181	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g00183	NA
+MvSl-1064-A1-R4_A1g00189	NA
+MvSl-1064-A1-R4_A1g00190	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g00194	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00197	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00198	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00200	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00201	NA
+MvSl-1064-A1-R4_A1g00203	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00205	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00208	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00212	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00213	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00214	NA
+MvSl-1064-A1-R4_A1g00218	NA
+MvSl-1064-A1-R4_A1g00219	NA
+MvSl-1064-A1-R4_A1g00220	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00221	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00223	NA
+MvSl-1064-A1-R4_A1g00226	Mitochondrial intermembrane chaperone that participates in the import and insertion of some multi-pass transmembrane proteins into the mitochondrial inner membrane. Also required for the transfer of beta-barrel precursors from the TOM complex to the sorting and assembly machinery (SAM complex) of the outer membrane. Acts as a chaperone-like protein that protects the hydrophobic precursors from aggregation and guide them through the mitochondrial intermembrane space. The TIM8-TIM13 complex is non essential and only mediates the import of few proteins, while the predominant TIM9-TIM10 70 kDa complex is crucial and mediates the import of much more proteins (By similarity)
+MvSl-1064-A1-R4_A1g00227	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00228	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00235	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00236	NA
+MvSl-1064-A1-R4_A1g00237	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00240	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00244	Inherit from fuNOG: negative regulator of mitosis
+MvSl-1064-A1-R4_A1g00247	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00249	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00250	Helicase conserved C-terminal domain
+MvSl-1064-A1-R4_A1g00252	Helicase conserved C-terminal domain
+MvSl-1064-A1-R4_A1g00253	NA
+MvSl-1064-A1-R4_A1g00260	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00263	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00267	rADc
+MvSl-1064-A1-R4_A1g00274	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00275	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_A1g00282	Protein phosphatase 2C
+MvSl-1064-A1-R4_A1g00283	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00285	NA
+MvSl-1064-A1-R4_A1g00291	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g00294	NA
+MvSl-1064-A1-R4_A1g00295	NA
+MvSl-1064-A1-R4_A1g00300	NA
+MvSl-1064-A1-R4_A1g00302	NA
+MvSl-1064-A1-R4_A1g00304	kinesin family member 21A
+MvSl-1064-A1-R4_A1g00307	ribosomal protein
+MvSl-1064-A1-R4_A1g00310	NA
+MvSl-1064-A1-R4_A1g00315	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00316	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00329	G_patch
+MvSl-1064-A1-R4_A1g00331	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00333	LYAR-type C2HC zinc finger 
+MvSl-1064-A1-R4_A1g00335	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00339	NA
+MvSl-1064-A1-R4_A1g00344	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00347	NA
+MvSl-1064-A1-R4_A1g00348	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00353	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00357	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00358	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_A1g00360	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00366	NA
+MvSl-1064-A1-R4_A1g00370	Gaa1-like, GPI transamidase component 
+MvSl-1064-A1-R4_A1g00375	NA
+MvSl-1064-A1-R4_A1g00383	Inherit from fuNOG: TRAF-like signal transducer
+MvSl-1064-A1-R4_A1g00408	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00409	Inherit from fuNOG: Pfam:DUF889
+MvSl-1064-A1-R4_A1g00414	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00416	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00417	Inherit from fuNOG: Capsid protein (CA) is the structural component of the virus-like particle (VLP), forming the shell that encapsulates the retrotransposons dimeric RNA genome. The particles are assembled from trimer-clustered units and there are holes in the capsid shells that allow for the diffusion of macromolecules. CA has also nucleocapsid-like chaperone activity, promoting primer tRNA(i)-Met annealing to the multipartite primer-binding site (PBS), dimerization of
+MvSl-1064-A1-R4_A1g00419	Major Facilitator Superfamily
+MvSl-1064-A1-R4_A1g00422	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00423	Inherit from opiNOG: paternally expressed 10
+MvSl-1064-A1-R4_A1g00426	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00428	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00430	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00436	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_A1g00454	NA
+MvSl-1064-A1-R4_A1g00458	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_A1g00459	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00460	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00463	Pfam:DUF889
+MvSl-1064-A1-R4_A1g00470	Pfam:DUF889
+MvSl-1064-A1-R4_A1g00474	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_A1g00479	glycoside hydrolase family 28 protein
+MvSl-1064-A1-R4_A1g00481	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00482	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00483	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00484	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00487	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00489	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00491	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00492	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00496	Domain of unknown function (DUF1996)
+MvSl-1064-A1-R4_A1g00498	NA
+MvSl-1064-A1-R4_A1g00500	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00535	Involved in transport from the ER to the Golgi apparatus as well as in intra-Golgi transport. It belongs to a super-family of proteins called t-SNAREs or soluble NSF (N-ethylmaleimide- sensitive factor) attachment protein receptor (By similarity)
+MvSl-1064-A1-R4_A1g00540	NA
+MvSl-1064-A1-R4_A1g00549	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00551	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00553	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00554	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00556	NA
+MvSl-1064-A1-R4_A1g00557	NA
+MvSl-1064-A1-R4_A1g00558	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00559	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00560	Component of the eukaryotic translation initiation factor 3 (eIF-3) complex
+MvSl-1064-A1-R4_A1g00562	NA
+MvSl-1064-A1-R4_A1g00569	Fungal_trans
+MvSl-1064-A1-R4_A1g00570	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00572	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00574	NA
+MvSl-1064-A1-R4_A1g00584	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00594	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_A1g00595	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00596	NA
+MvSl-1064-A1-R4_A1g00599	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00603	Glycosyl transferases group 1
+MvSl-1064-A1-R4_A1g00605	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00610	NA
+MvSl-1064-A1-R4_A1g00611	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00614	NA
+MvSl-1064-A1-R4_A1g00615	WD domain, G-beta repeat
+MvSl-1064-A1-R4_A1g00620	NA
+MvSl-1064-A1-R4_A1g00625	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00626	NA
+MvSl-1064-A1-R4_A1g00628	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00630	Transposase family tnp2
+MvSl-1064-A1-R4_A1g00633	Inherit from fuNOG: Pogo transposable element
+MvSl-1064-A1-R4_A1g00635	NA
+MvSl-1064-A1-R4_A1g00638	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00639	Involved in the biogenesis of the 60S ribosomal subunit (By similarity)
+MvSl-1064-A1-R4_A1g00649	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00650	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00652	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00656	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00660	Uncharacterised protein family (UPF0160)
+MvSl-1064-A1-R4_A1g00661	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_A1g00663	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_A1g00666	NA
+MvSl-1064-A1-R4_A1g00667	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00670	FAD dependent oxidoreductase
+MvSl-1064-A1-R4_A1g00671	Transposase family tnp2
+MvSl-1064-A1-R4_A1g00674	Spc97 / Spc98 family
+MvSl-1064-A1-R4_A1g00677	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00678	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00681	RPOLD
+MvSl-1064-A1-R4_A1g00682	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00688	Putative adipose-regulatory protein (Seipin)
+MvSl-1064-A1-R4_A1g00690	NA
+MvSl-1064-A1-R4_A1g00692	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_A1g00699	NA
+MvSl-1064-A1-R4_A1g00700	NA
+MvSl-1064-A1-R4_A1g00705	NA
+MvSl-1064-A1-R4_A1g00706	NA
+MvSl-1064-A1-R4_A1g00711	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00713	NA
+MvSl-1064-A1-R4_A1g00715	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00719	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_A1g00721	NA
+MvSl-1064-A1-R4_A1g00723	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00724	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00725	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00727	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00728	NA
+MvSl-1064-A1-R4_A1g00731	NA
+MvSl-1064-A1-R4_A1g00734	Major Facilitator Superfamily
+MvSl-1064-A1-R4_A1g00735	NA
+MvSl-1064-A1-R4_A1g00736	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00739	RPOLD
+MvSl-1064-A1-R4_A1g00740	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00747	Variant SH3 domain
+MvSl-1064-A1-R4_A1g00753	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00754	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00756	Eukaryotic aspartyl protease
+MvSl-1064-A1-R4_A1g00757	Eukaryotic aspartyl protease
+MvSl-1064-A1-R4_A1g00764	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00766	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00767	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00769	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00771	NA
+MvSl-1064-A1-R4_A1g00774	NA
+MvSl-1064-A1-R4_A1g00775	RING
+MvSl-1064-A1-R4_A1g00776	glycoside hydrolase family 3 protein
+MvSl-1064-A1-R4_A1g00781	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00783	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00784	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00785	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00786	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00789	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00798	NA
+MvSl-1064-A1-R4_A1g00800	Alcohol dehydrogenase GroES-like domain
+MvSl-1064-A1-R4_A1g00802	NA
+MvSl-1064-A1-R4_A1g00803	NA
+MvSl-1064-A1-R4_A1g00804	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00805	ZnF_C2HC
+MvSl-1064-A1-R4_A1g00806	NA
+MvSl-1064-A1-R4_A1g00808	NA
+MvSl-1064-A1-R4_A1g00812	NA
+MvSl-1064-A1-R4_A1g00813	NA
+MvSl-1064-A1-R4_A1g00815	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00818	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00819	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00821	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00822	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00833	Histone deacetylation protein Rxt3
+MvSl-1064-A1-R4_A1g00834	NA
+MvSl-1064-A1-R4_A1g00837	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_A1g00857	Glycosyl hydrolases family 28
+MvSl-1064-A1-R4_A1g00858	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00859	NA
+MvSl-1064-A1-R4_A1g00861	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00862	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00863	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00865	KR domain
+MvSl-1064-A1-R4_A1g00866	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00873	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00876	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00877	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00879	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00880	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00882	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00883	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00884	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00888	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_A1g00890	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00892	Transposase family tnp2
+MvSl-1064-A1-R4_A1g00893	FAD dependent oxidoreductase
+MvSl-1064-A1-R4_A1g00897	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00898	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00899	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g00903	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00904	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00905	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00906	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00907	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00908	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00910	Pfam:DUF889
+MvSl-1064-A1-R4_A1g00914	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g00924	NA
+MvSl-1064-A1-R4_A1g00925	NA
+MvSl-1064-A1-R4_A1g00927	ZnF_C2HC
+MvSl-1064-A1-R4_A1g00930	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00931	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00932	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00933	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00934	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00937	PQ loop repeat 
+MvSl-1064-A1-R4_A1g00938	NA
+MvSl-1064-A1-R4_A1g00940	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00941	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00943	Ribosomal L32p protein family
+MvSl-1064-A1-R4_A1g00944	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00945	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00946	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00947	NA
+MvSl-1064-A1-R4_A1g00949	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00950	NA
+MvSl-1064-A1-R4_A1g00952	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00953	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00963	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00964	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00965	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g00966	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00973	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g00974	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g00977	Uncharacterised protein family (UPF0160)
+MvSl-1064-A1-R4_A1g00979	NA
+MvSl-1064-A1-R4_A1g00985	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00987	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_A1g00989	NA
+MvSl-1064-A1-R4_A1g00991	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00992	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g00995	Provides the precursors necessary for DNA synthesis. Catalyzes the biosynthesis of deoxyribonucleotides from the corresponding ribonucleotides (By similarity)
+MvSl-1064-A1-R4_A1g01001	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01003	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01004	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01005	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01006	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01007	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01008	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01009	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01011	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01013	Inherit from fuNOG: Capsid protein (CA) is the structural component of the virus-like particle (VLP), forming the shell that encapsulates the retrotransposons dimeric RNA genome. The particles are assembled from trimer-clustered units and there are holes in the capsid shells that allow for the diffusion of macromolecules. CA has also nucleocapsid-like chaperone activity, promoting primer tRNA(i)-Met annealing to the multipartite primer-binding site (PBS), dimerization of
+MvSl-1064-A1-R4_A1g01015	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01016	ZnF_C2HC
+MvSl-1064-A1-R4_A1g01019	NA
+MvSl-1064-A1-R4_A1g01022	Zinc-finger of the MIZ type in Nse subunit
+MvSl-1064-A1-R4_A1g01023	Transposase family tnp2
+MvSl-1064-A1-R4_A1g01024	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01025	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01026	NA
+MvSl-1064-A1-R4_A1g01027	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01029	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01030	Inherit from opiNOG: paternally expressed 10
+MvSl-1064-A1-R4_A1g01031	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01032	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01033	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01040	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01041	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01044	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01045	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01046	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01047	Pfam:DUF889
+MvSl-1064-A1-R4_A1g01049	Protein of unknown function (DUF1682)
+MvSl-1064-A1-R4_A1g01053	Inherit from opiNOG: paternally expressed 10
+MvSl-1064-A1-R4_A1g01054	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01055	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01056	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01057	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01058	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01059	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_A1g01062	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01063	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01064	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_A1g01065	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01067	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_A1g01068	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01070	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01071	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01074	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01076	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01078	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01081	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01083	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01084	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01085	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01088	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01089	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01093	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01095	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01096	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01097	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01099	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01100	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01101	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01102	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01104	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01108	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01111	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01112	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01113	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01114	NA
+MvSl-1064-A1-R4_A1g01120	NA
+MvSl-1064-A1-R4_A1g01122	NA
+MvSl-1064-A1-R4_A1g01123	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g01124	MatE
+MvSl-1064-A1-R4_A1g01126	Zinc knuckle
+MvSl-1064-A1-R4_A1g01131	Sfi1 spindle body protein
+MvSl-1064-A1-R4_A1g01134	NA
+MvSl-1064-A1-R4_A1g01139	Pfam:DUF889
+MvSl-1064-A1-R4_A1g01141	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01142	NA
+MvSl-1064-A1-R4_A1g01143	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01146	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_A1g01147	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_A1g01149	NA
+MvSl-1064-A1-R4_A1g01152	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01153	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01158	NA
+MvSl-1064-A1-R4_A1g01164	NA
+MvSl-1064-A1-R4_A1g01166	IPPc
+MvSl-1064-A1-R4_A1g01168	NA
+MvSl-1064-A1-R4_A1g01172	WD domain, G-beta repeat
+MvSl-1064-A1-R4_A1g01176	Pfam:3_5_exonuc
+MvSl-1064-A1-R4_A1g01178	NA
+MvSl-1064-A1-R4_A1g01182	Inherit from opiNOG: paternally expressed 10
+MvSl-1064-A1-R4_A1g01183	Component of the ESCRT-0 complex which is the sorting receptor for ubiquitinated cargo proteins at the multivesicular body (MVB) (By similarity)
+MvSl-1064-A1-R4_A1g01188	Transferase family
+MvSl-1064-A1-R4_A1g01193	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01196	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01197	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01200	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01201	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01202	Component of the cleavage factor I (CF I) involved in pre-mRNA 3'-end processing (By similarity)
+MvSl-1064-A1-R4_A1g01203	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01204	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01205	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01213	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01215	NA
+MvSl-1064-A1-R4_A1g01220	LIM domain
+MvSl-1064-A1-R4_A1g01224	NA
+MvSl-1064-A1-R4_A1g01225	NA
+MvSl-1064-A1-R4_A1g01226	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01230	NA
+MvSl-1064-A1-R4_A1g01231	Pfam:DUF889
+MvSl-1064-A1-R4_A1g01237	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01241	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01243	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01246	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01247	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01248	Inherit from fuNOG: magnesium dependent phosphatase
+MvSl-1064-A1-R4_A1g01255	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01257	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01260	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01262	Pfam:DUF889
+MvSl-1064-A1-R4_A1g01266	NA
+MvSl-1064-A1-R4_A1g01268	expressed protein
+MvSl-1064-A1-R4_A1g01269	FYVE zinc finger
+MvSl-1064-A1-R4_A1g01275	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01276	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01277	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01278	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01279	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01280	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01283	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_A1g01285	NA
+MvSl-1064-A1-R4_A1g01289	Inherit from fuNOG: glucokinase regulator family protein
+MvSl-1064-A1-R4_A1g01296	NA
+MvSl-1064-A1-R4_A1g01297	Inherit from NOG: negative regulation of cellular process
+MvSl-1064-A1-R4_A1g01298	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01299	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01300	Inherit from opiNOG: paternally expressed 10
+MvSl-1064-A1-R4_A1g01301	DWNN domain
+MvSl-1064-A1-R4_A1g01302	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01303	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01306	Transcriptional activator of glycolytic enzymes
+MvSl-1064-A1-R4_A1g01309	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01310	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01311	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01314	NA
+MvSl-1064-A1-R4_A1g01315	NA
+MvSl-1064-A1-R4_A1g01316	Multiple RNA-binding domain-containing protein 1
+MvSl-1064-A1-R4_A1g01318	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g01319	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01320	Peptidyl-prolyl cis-trans isomerase
+MvSl-1064-A1-R4_A1g01324	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01325	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01327	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01329	Mitochondrial large subunit ribosomal protein (Img2)
+MvSl-1064-A1-R4_A1g01331	DNA repair and recombination protein pif1
+MvSl-1064-A1-R4_A1g01332	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01334	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01335	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01336	protein transport protein sec31
+MvSl-1064-A1-R4_A1g01340	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01341	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01343	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01344	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01354	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01355	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01359	Condensation domain
+MvSl-1064-A1-R4_A1g01361	NA
+MvSl-1064-A1-R4_A1g01372	NA
+MvSl-1064-A1-R4_A1g01373	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01374	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01375	NA
+MvSl-1064-A1-R4_A1g01376	NA
+MvSl-1064-A1-R4_A1g01377	CMGC CLK protein kinase
+MvSl-1064-A1-R4_A1g01379	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_A1g01381	NA
+MvSl-1064-A1-R4_A1g01383	NA
+MvSl-1064-A1-R4_A1g01387	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g01391	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01396	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01398	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01400	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01401	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01403	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01409	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01410	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01416	NA
+MvSl-1064-A1-R4_A1g01418	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g01420	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_A1g01423	Bystin
+MvSl-1064-A1-R4_A1g01424	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01429	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01430	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_A1g01433	glycoside hydrolase family 3 protein
+MvSl-1064-A1-R4_A1g01434	NA
+MvSl-1064-A1-R4_A1g01438	NA
+MvSl-1064-A1-R4_A1g01439	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01448	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_A1g01454	DNA-directed RNA polymerase
+MvSl-1064-A1-R4_A1g01456	DNA-directed RNA polymerase
+MvSl-1064-A1-R4_A1g01464	NA
+MvSl-1064-A1-R4_A1g01479	Inherit from opiNOG: paternally expressed 10
+MvSl-1064-A1-R4_A1g01481	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01493	Inherit from fuNOG: CBF NF-Y family transcription factor
+MvSl-1064-A1-R4_A1g01494	Transposase family tnp2
+MvSl-1064-A1-R4_A1g01495	NA
+MvSl-1064-A1-R4_A1g01503	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_A1g01510	ER to Golgi transport-related protein
+MvSl-1064-A1-R4_A1g01511	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01512	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_A1g01514	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_A1g01516	cytochrome C oxidase
+MvSl-1064-A1-R4_A1g01517	NA
+MvSl-1064-A1-R4_C24g01519	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01523	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01524	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01525	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01526	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01527	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01528	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01529	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01530	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01531	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01532	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01533	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C24g01534	NA
+MvSl-1064-A1-R4_C27g01555	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C27g01558	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_C27g01559	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C27g01560	Phosphotransferase enzyme family
+MvSl-1064-A1-R4_C27g01563	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C27g01564	Component of the cleavage factor I (CF I) involved in pre-mRNA 3'-end processing (By similarity)
+MvSl-1064-A1-R4_C27g01567	NA
+MvSl-1064-A1-R4_C27g01568	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C33g01592	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C33g01599	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C36g01613	Pirin
+MvSl-1064-A1-R4_C36g01617	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_C36g01618	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_C36g01620	Pirin
+MvSl-1064-A1-R4_C37g01627	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C37g01628	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C37g01629	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C39g01646	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C39g01647	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C39g01648	FAD-binding domain
+MvSl-1064-A1-R4_C39g01649	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C40g01652	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C40g01653	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C40g01654	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C40g01655	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C41g01657	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C41g01660	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C41g01662	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C42g01667	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C42g01669	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C42g01670	DWNN domain
+MvSl-1064-A1-R4_C44g01682	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_C48g01690	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_C48g01696	NA
+MvSl-1064-A1-R4_MC01-1g01697	Removes the N-terminal methionine from nascent proteins (By similarity)
+MvSl-1064-A1-R4_MC01-1g01701	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC01-1g01703	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC01-1g01705	Phosphotransferase enzyme family
+MvSl-1064-A1-R4_MC01-1g01717	Domain of unknown function (DUF1981)
+MvSl-1064-A1-R4_MC01-1g01719	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC01-1g01720	NA
+MvSl-1064-A1-R4_MC01-1g01721	Inherit from fuNOG: Pfam:DUF889
+MvSl-1064-A1-R4_MC01-1g01723	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01740	Plays a central role in 2-thiolation of mcm(5)S(2)U at tRNA wobble positions of tRNA(Lys), tRNA(Glu) and tRNA(Gln). Directly binds tRNAs and probably acts by catalyzing adenylation of tRNAs, an intermediate required for 2-thiolation. It is unclear whether it acts as a sulfurtransferase that transfers sulfur from thiocarboxylated URM1 onto the uridine of tRNAs at wobble position. Prior mcm(5) tRNA modification by the elongator complex is required for 2-thiolation. May also be involved in protein urmylation (By similarity)
+MvSl-1064-A1-R4_MC01-1g01741	Pfam:Mis12_component
+MvSl-1064-A1-R4_MC01-1g01742	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01749	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC01-1g01750	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC01-1g01758	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g01761	NA
+MvSl-1064-A1-R4_MC01-1g01762	NA
+MvSl-1064-A1-R4_MC01-1g01764	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g01765	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g01774	NA
+MvSl-1064-A1-R4_MC01-1g01775	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01776	NA
+MvSl-1064-A1-R4_MC01-1g01777	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01778	NA
+MvSl-1064-A1-R4_MC01-1g01779	NA
+MvSl-1064-A1-R4_MC01-1g01782	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC01-1g01786	CTD kinase subunit gamma CTK3
+MvSl-1064-A1-R4_MC01-1g01787	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g01788	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01790	Radical SAM superfamily
+MvSl-1064-A1-R4_MC01-1g01792	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01794	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01795	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01807	Platelet-activating factor acetylhydrolase, isoform II
+MvSl-1064-A1-R4_MC01-1g01829	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01830	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g01835	The SPT4-SPT5 complex mediates both activation and inhibition of transcription elongation, and plays a role in pre- mRNA processing. This complex seems to be important for the stability of the RNA polymerase II elongation machinery on the chromatin template but not for the inherent ability of this machinery to translocate down the gene (By similarity)
+MvSl-1064-A1-R4_MC01-1g01836	NA
+MvSl-1064-A1-R4_MC01-1g01842	Pfam:Exonuc_X-T
+MvSl-1064-A1-R4_MC01-1g01848	Berberine and berberine like 
+MvSl-1064-A1-R4_MC01-1g01929	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g01950	Fn3-like domain (DUF1034)
+MvSl-1064-A1-R4_MC01-1g01956	Protein of unknown function (DUF1237)
+MvSl-1064-A1-R4_MC01-1g01970	Pfam:DDE
+MvSl-1064-A1-R4_MC01-1g01975	NA
+MvSl-1064-A1-R4_MC01-1g01976	Pfam:Sec3
+MvSl-1064-A1-R4_MC01-1g01978	NA
+MvSl-1064-A1-R4_MC01-1g01980	Transposase family tnp2
+MvSl-1064-A1-R4_MC01-1g01986	Cell division protein 48 (CDC48), N-terminal domain
+MvSl-1064-A1-R4_MC01-1g02004	Inherit from KOG: myosin, heavy chain
+MvSl-1064-A1-R4_MC01-1g02008	NA
+MvSl-1064-A1-R4_MC01-1g02012	DegT/DnrJ/EryC1/StrS aminotransferase family
+MvSl-1064-A1-R4_MC01-1g02026	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02027	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02028	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02038	Inherit from COG: Hydrolase
+MvSl-1064-A1-R4_MC01-1g02040	NA
+MvSl-1064-A1-R4_MC01-1g02042	Zinc finger, C3HC4 type (RING finger)
+MvSl-1064-A1-R4_MC01-1g02059	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC01-1g02063	NA
+MvSl-1064-A1-R4_MC01-1g02064	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02066	NA
+MvSl-1064-A1-R4_MC01-1g02097	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC01-1g02099	WD domain, G-beta repeat
+MvSl-1064-A1-R4_MC01-1g02121	Acetyltransferase (GNAT) family
+MvSl-1064-A1-R4_MC01-1g02154	Protein kinase domain
+MvSl-1064-A1-R4_MC01-1g02169	Geranylgeranyl diphosphate synthase, type III
+MvSl-1064-A1-R4_MC01-1g02171	NA
+MvSl-1064-A1-R4_MC01-1g02174	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02175	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02176	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g02179	NA
+MvSl-1064-A1-R4_MC01-1g02180	tRNA intron endonuclease, catalytic C-terminal domain
+MvSl-1064-A1-R4_MC01-1g02186	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02226	AMP-binding enzyme
+MvSl-1064-A1-R4_MC01-1g02235	Ribosomal protein S18
+MvSl-1064-A1-R4_MC01-1g02247	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02254	NA
+MvSl-1064-A1-R4_MC01-1g02258	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC01-1g02260	NA
+MvSl-1064-A1-R4_MC01-1g02262	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02264	Fungal trichothecene efflux pump (TRI12)
+MvSl-1064-A1-R4_MC01-1g02267	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02284	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC01-1g02325	Initiator tRNA phosphoribosyl transferase 
+MvSl-1064-A1-R4_MC01-1g02337	SNF2 family N-terminal domain
+MvSl-1064-A1-R4_MC01-1g02339	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g02352	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC01-1g02359	NA
+MvSl-1064-A1-R4_MC01-1g02360	NA
+MvSl-1064-A1-R4_MC01-1g02362	Catalytic component of the NuA4 histone acetyltransferase (HAT) complex which is involved in epigenetic transcriptional activation of selected genes principally by acetylation of nucleosomal histones H4, H3, H2B, H2A and H2A variant H2A.Z. Acetylates histone H4 to form H4K5ac, H4K8ac, H4K12ac and H4K16ac, histone H3 to form H3K14ac, and histone H2A to form H2AK4ac and H2AK7ac. Acetylation of histone H4 is essential for DNA double-strand break repair through homologous recombination. Involved in cell cycle progression. Recruitment to promoters depends on H3K4me (By similarity)
+MvSl-1064-A1-R4_MC01-1g02385	Regulator of chromosome condensation (RCC1) repeat
+MvSl-1064-A1-R4_MC01-1g02409	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC01-1g02414	NA
+MvSl-1064-A1-R4_MC01-1g02415	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02416	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02417	NA
+MvSl-1064-A1-R4_MC01-1g02419	NA
+MvSl-1064-A1-R4_MC01-1g02440	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC01-1g02452	ribosomal protein L19
+MvSl-1064-A1-R4_MC01-1g02465	NA
+MvSl-1064-A1-R4_MC01-1g02504	R,R-butanediol dehydrogenase
+MvSl-1064-A1-R4_MC01-1g02512	Involved in transport from the ER to the Golgi apparatus as well as in intra-Golgi transport. It belongs to a super-family of proteins called t-SNAREs or soluble NSF (N-ethylmaleimide- sensitive factor) attachment protein receptor (By similarity)
+MvSl-1064-A1-R4_MC01-1g02526	ENTH
+MvSl-1064-A1-R4_MC01-1g02548	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02552	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02587	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02597	Protein phosphatase 2A regulatory B subunit (B56 family)
+MvSl-1064-A1-R4_MC01-1g02604	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02605	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02606	NA
+MvSl-1064-A1-R4_MC01-1g02610	Domain of unknown function (DUF1996)
+MvSl-1064-A1-R4_MC01-1g02628	Ribosomal protein L9, N-terminal domain
+MvSl-1064-A1-R4_MC01-1g02634	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02637	Transcription factor IIA, alpha/beta subunit
+MvSl-1064-A1-R4_MC01-1g02651	Pfam:Inhibitor_PI31
+MvSl-1064-A1-R4_MC01-1g02653	ZnF_C2HC
+MvSl-1064-A1-R4_MC01-1g02658	NA
+MvSl-1064-A1-R4_MC01-1g02668	cytochrome P450
+MvSl-1064-A1-R4_MC01-1g02669	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02680	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02686	NA
+MvSl-1064-A1-R4_MC01-1g02706	Nucleotide-sugar transporter
+MvSl-1064-A1-R4_MC01-1g02715	NA
+MvSl-1064-A1-R4_MC01-1g02716	NA
+MvSl-1064-A1-R4_MC01-1g02728	NA
+MvSl-1064-A1-R4_MC01-1g02733	SHNi-TPR
+MvSl-1064-A1-R4_MC01-1g02738	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g02739	Ribosomal protein L9, N-terminal domain
+MvSl-1064-A1-R4_MC01-1g02743	NA
+MvSl-1064-A1-R4_MC01-1g02751	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02754	Pfam:DUF889
+MvSl-1064-A1-R4_MC01-1g02756	NA
+MvSl-1064-A1-R4_MC01-1g02757	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g02758	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02759	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g02760	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g02761	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC01-1g02778	Pyridoxal-phosphate dependent enzyme
+MvSl-1064-A1-R4_MC01-1g02788	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02789	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02798	NA
+MvSl-1064-A1-R4_MC01-1g02804	Zinc knuckle
+MvSl-1064-A1-R4_MC01-1g02805	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02806	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02807	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC01-1g02811	NA
+MvSl-1064-A1-R4_MC01-1g02829	NA
+MvSl-1064-A1-R4_MC01-1g02830	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC01-1g02831	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC01-1g02836	NA
+MvSl-1064-A1-R4_MC01-1g02838	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02839	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02840	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02841	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02842	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02845	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02846	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g02848	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g02849	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-1g02850	Thaumatin family
+MvSl-1064-A1-R4_MC01-1g02852	NA
+MvSl-1064-A1-R4_MC01-1g02853	DNA polymerase phi
+MvSl-1064-A1-R4_MC01-1g02854	ZnF_C2H2
+MvSl-1064-A1-R4_MC01-1g02860	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC01-1g02861	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02862	NA
+MvSl-1064-A1-R4_MC01-1g02868	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02870	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02871	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02872	NA
+MvSl-1064-A1-R4_MC01-1g02874	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC01-1g02876	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC01-1g02877	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-1g02883	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02884	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02885	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02886	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02887	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02888	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02889	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02890	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02891	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02892	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02893	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02894	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02896	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02898	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02899	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02900	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02901	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02902	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02903	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02904	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02907	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02909	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02910	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02911	Inherit from fuNOG: Capsid protein (CA) is the structural component of the virus-like particle (VLP), forming the shell that encapsulates the retrotransposons dimeric RNA genome. The particles are assembled from trimer-clustered units and there are holes in the capsid shells that allow for the diffusion of macromolecules. CA has also nucleocapsid-like chaperone activity, promoting primer tRNA(i)-Met annealing to the multipartite primer-binding site (PBS), dimerization of
+MvSl-1064-A1-R4_MC01-1g02912	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02914	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02915	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02916	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02917	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02918	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02919	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02920	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02921	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02923	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02924	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02925	Inherit from fuNOG: Capsid protein (CA) is the structural component of the virus-like particle (VLP), forming the shell that encapsulates the retrotransposons dimeric RNA genome. The particles are assembled from trimer-clustered units and there are holes in the capsid shells that allow for the diffusion of macromolecules. CA has also nucleocapsid-like chaperone activity, promoting primer tRNA(i)-Met annealing to the multipartite primer-binding site (PBS), dimerization of
+MvSl-1064-A1-R4_MC01-1g02926	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02927	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02928	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02929	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02930	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02931	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02932	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_MC01-1g02933	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02934	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02935	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02937	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02939	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-1g02940	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02946	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02947	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02948	FAD-binding domain
+MvSl-1064-A1-R4_MC01-2g02949	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02950	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02952	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-2g02953	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-2g02954	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-2g02955	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC01-2g02956	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02957	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-2g02958	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02960	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-2g02961	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02962	NA
+MvSl-1064-A1-R4_MC01-2g02969	NA
+MvSl-1064-A1-R4_MC01-2g02970	NA
+MvSl-1064-A1-R4_MC01-2g02971	NA
+MvSl-1064-A1-R4_MC01-2g02973	NA
+MvSl-1064-A1-R4_MC01-2g02982	NA
+MvSl-1064-A1-R4_MC01-2g02986	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02987	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-2g02988	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02990	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC01-2g02998	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g02999	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g03000	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g03002	NA
+MvSl-1064-A1-R4_MC01-2g03008	HSCB C-terminal oligomerisation domain
+MvSl-1064-A1-R4_MC01-2g03022	RING
+MvSl-1064-A1-R4_MC01-2g03023	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC01-2g03033	NA
+MvSl-1064-A1-R4_MC01-2g03034	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC01-2g03035	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC01-2g03066	Fn3-like domain (DUF1034)
+MvSl-1064-A1-R4_MC01-2g03068	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC01-2g03069	NA
+MvSl-1064-A1-R4_MC01-2g03070	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g03083	UBCc
+MvSl-1064-A1-R4_MC01-2g03089	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g03090	Zinc knuckle
+MvSl-1064-A1-R4_MC01-2g03091	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g03102	NA
+MvSl-1064-A1-R4_MC01-2g03103	NA
+MvSl-1064-A1-R4_MC01-2g03114	Inherit from fuNOG: GDSL-like Lipase/Acylhydrolase
+MvSl-1064-A1-R4_MC01-2g03123	Plays a role in maintenance of chromatin structure during RNA polymerase II transcription elongation thereby repressing transcription initiation from cryptic promoters. Mediates the reassembly of nucleosomes onto the promoters of at least a selected set of genes during repression
+MvSl-1064-A1-R4_MC01-2g03143	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC01-2g03153	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_MC01-2g03166	NA
+MvSl-1064-A1-R4_MC01-2g03168	Imidazoleglycerol-phosphate dehydratase
+MvSl-1064-A1-R4_MC02g03180	Domain of unknown function (DUF1767)
+MvSl-1064-A1-R4_MC02g03184	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03215	Fungal specific transcription factor domain 
+MvSl-1064-A1-R4_MC02g03222	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_MC02g03226	Core component of nucleosome. Nucleosomes wrap and compact DNA into chromatin, limiting DNA accessibility to the cellular machineries which require DNA as a template. Histones thereby play a central role in transcription regulation, DNA repair, DNA replication and chromosomal stability. DNA accessibility is regulated via a complex set of post-translational modifications of histones, also called histone code, and nucleosome remodeling
+MvSl-1064-A1-R4_MC02g03264	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g03274	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC02g03285	NA
+MvSl-1064-A1-R4_MC02g03286	mRNA cap
+MvSl-1064-A1-R4_MC02g03288	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03289	Serine carboxypeptidase
+MvSl-1064-A1-R4_MC02g03298	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g03303	DNA topoisomerase
+MvSl-1064-A1-R4_MC02g03319	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03320	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03343	NA
+MvSl-1064-A1-R4_MC02g03344	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03345	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03346	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03348	Thaumatin family
+MvSl-1064-A1-R4_MC02g03349	NA
+MvSl-1064-A1-R4_MC02g03350	NA
+MvSl-1064-A1-R4_MC02g03356	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g03360	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC02g03361	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC02g03362	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC02g03363	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03367	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03369	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC02g03370	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03371	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03372	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03374	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03375	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03376	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03377	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC02g03392	NA
+MvSl-1064-A1-R4_MC02g03395	Zinc knuckle
+MvSl-1064-A1-R4_MC02g03396	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03397	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03398	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03399	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03400	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03401	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03402	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03403	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03404	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03406	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03407	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03408	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03411	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_MC02g03412	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03413	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03414	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03415	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03416	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03417	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03418	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03419	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03420	Inherit from opiNOG: Nucleoporin 54kDa
+MvSl-1064-A1-R4_MC02g03422	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03423	Inherit from opiNOG: Nucleoporin 54kDa
+MvSl-1064-A1-R4_MC02g03424	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03425	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03426	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03427	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03430	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03431	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03432	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03433	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03434	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03435	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03437	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03438	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03439	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03441	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03442	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03443	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03444	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03445	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03447	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03449	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03450	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03452	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_MC02g03454	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03456	Chromo (CHRromatin Organisation MOdifier) domain
+MvSl-1064-A1-R4_MC02g03461	SIT4 phosphatase-associated protein
+MvSl-1064-A1-R4_MC02g03470	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03471	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC02g03472	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03473	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC02g03475	NA
+MvSl-1064-A1-R4_MC02g03480	Glycosyl transferases group 1
+MvSl-1064-A1-R4_MC02g03482	Translation-initiation factor 2
+MvSl-1064-A1-R4_MC02g03491	Glycosyl transferases group 1
+MvSl-1064-A1-R4_MC02g03493	Mitochondrial large subunit ribosomal protein (Img2)
+MvSl-1064-A1-R4_MC02g03495	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_MC02g03496	NA
+MvSl-1064-A1-R4_MC02g03500	NA
+MvSl-1064-A1-R4_MC02g03511	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC02g03512	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC02g03513	NA
+MvSl-1064-A1-R4_MC02g03518	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g03520	Gtr1/RagA G protein conserved region
+MvSl-1064-A1-R4_MC02g03522	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03523	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03526	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g03533	Not1 N-terminal domain, CCR4-Not complex component 
+MvSl-1064-A1-R4_MC02g03540	Aminotransferase class I and II
+MvSl-1064-A1-R4_MC02g03545	Aminotransferase class I and II
+MvSl-1064-A1-R4_MC02g03548	protoplast regeneration and killer toxin resistance
+MvSl-1064-A1-R4_MC02g03560	Lipase (class 3)
+MvSl-1064-A1-R4_MC02g03564	Calcineurin-like phosphoesterase
+MvSl-1064-A1-R4_MC02g03567	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g03574	GNL3L/Grn1 putative GTPase
+MvSl-1064-A1-R4_MC02g03577	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC02g03578	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g03595	Inherit from fuNOG: Cytochrome c oxidase-assembly factor cox23
+MvSl-1064-A1-R4_MC02g03606	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03609	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03611	MatE
+MvSl-1064-A1-R4_MC02g03630	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03638	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g03642	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03644	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03647	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03652	NA
+MvSl-1064-A1-R4_MC02g03653	Sugar (and other) transporter
+MvSl-1064-A1-R4_MC02g03661	NA
+MvSl-1064-A1-R4_MC02g03662	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g03663	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC02g03665	adenosylhomocysteinase
+MvSl-1064-A1-R4_MC02g03668	adenosylhomocysteinase
+MvSl-1064-A1-R4_MC02g03674	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g03675	NA
+MvSl-1064-A1-R4_MC02g03676	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_MC02g03699	glutamate decarboxylase
+MvSl-1064-A1-R4_MC02g03701	ATP-binding RNA helicase involved in the biogenesis of 60S ribosomal subunits. Required for the normal formation of 18S rRNA through the processing of pre-rRNAs at sites A0, A1 and A2, and the normal formation of 25S and 5.8S rRNAs through the processing of pre-rRNAs at sites C1 and C2 (By similarity)
+MvSl-1064-A1-R4_MC02g03705	Ribosomal protein L15
+MvSl-1064-A1-R4_MC02g03712	Acyl-CoA dehydrogenase, N-terminal domain
+MvSl-1064-A1-R4_MC02g03717	NA
+MvSl-1064-A1-R4_MC02g03732	Pfam:TBC
+MvSl-1064-A1-R4_MC02g03755	OPT oligopeptide transporter protein
+MvSl-1064-A1-R4_MC02g03782	NA
+MvSl-1064-A1-R4_MC02g03805	NA
+MvSl-1064-A1-R4_MC02g03806	Transposase family tnp2
+MvSl-1064-A1-R4_MC02g03818	NA
+MvSl-1064-A1-R4_MC02g03819	NA
+MvSl-1064-A1-R4_MC02g03820	ZnF_C2HC
+MvSl-1064-A1-R4_MC02g03834	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_MC02g03835	NA
+MvSl-1064-A1-R4_MC02g03842	NA
+MvSl-1064-A1-R4_MC02g03849	Domain of unknown function (DUF1793)
+MvSl-1064-A1-R4_MC02g03851	Phenazine biosynthesis-like protein
+MvSl-1064-A1-R4_MC02g03855	Bystin
+MvSl-1064-A1-R4_MC02g03875	Fungal_trans
+MvSl-1064-A1-R4_MC02g03891	NA
+MvSl-1064-A1-R4_MC02g03893	NA
+MvSl-1064-A1-R4_MC02g03924	Protein similar to CwfJ C-terminus 2
+MvSl-1064-A1-R4_MC02g03941	NA
+MvSl-1064-A1-R4_MC02g03959	Snf7
+MvSl-1064-A1-R4_MC02g03968	Amino acid permease
+MvSl-1064-A1-R4_MC02g03975	Protein tyrosine kinase
+MvSl-1064-A1-R4_MC02g03996	mitochondrial 54S ribosomal protein YmL39
+MvSl-1064-A1-R4_MC02g03999	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04000	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04001	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC02g04013	NA
+MvSl-1064-A1-R4_MC02g04025	Mitochondrial carrier protein
+MvSl-1064-A1-R4_MC02g04030	RHO
+MvSl-1064-A1-R4_MC02g04042	Ribosomal protein L9, N-terminal domain
+MvSl-1064-A1-R4_MC02g04061	NA
+MvSl-1064-A1-R4_MC02g04065	NA
+MvSl-1064-A1-R4_MC02g04072	NA
+MvSl-1064-A1-R4_MC02g04080	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC02g04082	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC02g04109	Acyl CoA binding protein
+MvSl-1064-A1-R4_MC02g04115	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g04137	SNF5 / SMARCB1 / INI1
+MvSl-1064-A1-R4_MC02g04173	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g04182	kinesin family member 21A
+MvSl-1064-A1-R4_MC02g04184	NA
+MvSl-1064-A1-R4_MC02g04185	NA
+MvSl-1064-A1-R4_MC02g04187	Septin ring protein
+MvSl-1064-A1-R4_MC02g04193	Replication factor-A C terminal domain
+MvSl-1064-A1-R4_MC02g04197	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04201	insulin-degrading enzyme
+MvSl-1064-A1-R4_MC02g04205	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04207	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g04213	NA
+MvSl-1064-A1-R4_MC02g04216	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g04217	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g04218	STYKc
+MvSl-1064-A1-R4_MC02g04219	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04220	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04221	Eukaryotic aspartyl protease
+MvSl-1064-A1-R4_MC02g04226	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g04227	ribonuclease
+MvSl-1064-A1-R4_MC02g04233	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC02g04234	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC02g04239	STYKc
+MvSl-1064-A1-R4_MC02g04240	Protein tyrosine kinase
+MvSl-1064-A1-R4_MC02g04244	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04245	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC02g04248	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC02g04249	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04252	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC02g04253	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC02g04263	STYKc
+MvSl-1064-A1-R4_MC02g04264	Protein tyrosine kinase
+MvSl-1064-A1-R4_MC02g04268	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04269	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC02g04270	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC03g04271	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04272	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC03g04273	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04274	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04275	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04276	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04277	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04279	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04280	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04281	DWNN domain
+MvSl-1064-A1-R4_MC03g04322	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC03g04323	Integrase core domain
+MvSl-1064-A1-R4_MC03g04324	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC03g04325	Diaphanous FH3 Domain
+MvSl-1064-A1-R4_MC03g04326	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g04327	Zn_pept
+MvSl-1064-A1-R4_MC03g04334	Sugar (and other) transporter
+MvSl-1064-A1-R4_MC03g04335	NA
+MvSl-1064-A1-R4_MC03g04338	NA
+MvSl-1064-A1-R4_MC03g04341	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04344	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04347	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04348	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04351	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC03g04373	STYKc
+MvSl-1064-A1-R4_MC03g04374	AMP-binding enzyme
+MvSl-1064-A1-R4_MC03g04385	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC03g04391	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_MC03g04392	Tetratricopeptide repeat
+MvSl-1064-A1-R4_MC03g04400	Histone H2A
+MvSl-1064-A1-R4_MC03g04401	Core component of nucleosome. Nucleosomes wrap and compact DNA into chromatin, limiting DNA accessibility to the cellular machineries which require DNA as a template. Histones thereby play a central role in transcription regulation, DNA repair, DNA replication and chromosomal stability. DNA accessibility is regulated via a complex set of post-translational modifications of histones, also called histone code, and nucleosome remodeling
+MvSl-1064-A1-R4_MC03g04424	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04427	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04428	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04442	NA
+MvSl-1064-A1-R4_MC03g04444	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04446	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04454	NA
+MvSl-1064-A1-R4_MC03g04455	NA
+MvSl-1064-A1-R4_MC03g04489	NA
+MvSl-1064-A1-R4_MC03g04530	NA
+MvSl-1064-A1-R4_MC03g04539	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04547	Cytochrome oxidase c subunit VIb
+MvSl-1064-A1-R4_MC03g04548	Core component of nucleosome. Nucleosomes wrap and compact DNA into chromatin, limiting DNA accessibility to the cellular machineries which require DNA as a template. Histones thereby play a central role in transcription regulation, DNA repair, DNA replication and chromosomal stability. DNA accessibility is regulated via a complex set of post-translational modifications of histones, also called histone code, and nucleosome remodeling
+MvSl-1064-A1-R4_MC03g04549	Histone H2A
+MvSl-1064-A1-R4_MC03g04550	Inherit from fuNOG: Endoribonuclease L-PSP
+MvSl-1064-A1-R4_MC03g04561	Transcription initiation factor TFIIE alpha subunit
+MvSl-1064-A1-R4_MC03g04562	Inherit from fuNOG: phosphoserine phosphatase
+MvSl-1064-A1-R4_MC03g04565	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC03g04581	Involved in transport from the ER to the Golgi apparatus as well as in intra-Golgi transport. It belongs to a super-family of proteins called t-SNAREs or soluble NSF (N-ethylmaleimide- sensitive factor) attachment protein receptor (By similarity)
+MvSl-1064-A1-R4_MC03g04585	NA
+MvSl-1064-A1-R4_MC03g04586	NA
+MvSl-1064-A1-R4_MC03g04592	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04605	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC03g04612	Vacuolar membrane protein
+MvSl-1064-A1-R4_MC03g04616	Thiolase, N-terminal domain
+MvSl-1064-A1-R4_MC03g04618	Thiolase, N-terminal domain
+MvSl-1064-A1-R4_MC03g04628	NA
+MvSl-1064-A1-R4_MC03g04629	CS domain
+MvSl-1064-A1-R4_MC03g04641	NA
+MvSl-1064-A1-R4_MC03g04658	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g04681	Cyclin
+MvSl-1064-A1-R4_MC03g04682	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g04683	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g04684	Mitochondrial carrier protein
+MvSl-1064-A1-R4_MC03g04713	DNA ligase
+MvSl-1064-A1-R4_MC03g04717	AN1-like Zinc finger
+MvSl-1064-A1-R4_MC03g04729	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC03g04730	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC03g04740	RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+MvSl-1064-A1-R4_MC03g04759	NA
+MvSl-1064-A1-R4_MC03g04791	NA
+MvSl-1064-A1-R4_MC03g04792	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC03g04807	Helicase conserved C-terminal domain
+MvSl-1064-A1-R4_MC03g04808	Tetratricopeptide repeat
+MvSl-1064-A1-R4_MC03g04811	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC03g04815	NA
+MvSl-1064-A1-R4_MC03g04819	haloacid dehalogenase-like hydrolase
+MvSl-1064-A1-R4_MC03g04840	NA
+MvSl-1064-A1-R4_MC03g04861	NA
+MvSl-1064-A1-R4_MC03g04865	Involved in transport from the ER to the Golgi apparatus as well as in intra-Golgi transport. It belongs to a super-family of proteins called t-SNAREs or soluble NSF (N-ethylmaleimide- sensitive factor) attachment protein receptor (By similarity)
+MvSl-1064-A1-R4_MC03g04871	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g04873	NA
+MvSl-1064-A1-R4_MC03g04876	Zinc finger C-x8-C-x5-C-x3-H type (and similar)
+MvSl-1064-A1-R4_MC03g04877	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04878	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04880	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04882	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04883	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04886	CAP-Gly domain
+MvSl-1064-A1-R4_MC03g04887	CAP-Gly domain
+MvSl-1064-A1-R4_MC03g04894	Histone H2A
+MvSl-1064-A1-R4_MC03g04897	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04902	NA
+MvSl-1064-A1-R4_MC03g04905	NA
+MvSl-1064-A1-R4_MC03g04908	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04910	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04912	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04931	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC03g04936	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g04938	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC03g04940	other AgaK1 protein kinase
+MvSl-1064-A1-R4_MC03g04941	NA
+MvSl-1064-A1-R4_MC03g04945	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04947	NA
+MvSl-1064-A1-R4_MC03g04948	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04951	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g04952	NA
+MvSl-1064-A1-R4_MC03g04953	NA
+MvSl-1064-A1-R4_MC03g04961	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g04966	Formyl transferase
+MvSl-1064-A1-R4_MC03g04987	Cytidine and deoxycytidylate deaminase zinc-binding region
+MvSl-1064-A1-R4_MC03g05014	EXS family
+MvSl-1064-A1-R4_MC03g05015	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g05017	NA
+MvSl-1064-A1-R4_MC03g05020	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC03g05021	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g05022	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC03g05029	HMG (high mobility group) box
+MvSl-1064-A1-R4_MC03g05036	NA
+MvSl-1064-A1-R4_MC03g05042	NA
+MvSl-1064-A1-R4_MC03g05056	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g05070	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC03g05094	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC03g05096	NA
+MvSl-1064-A1-R4_MC03g05097	Removes the N-terminal methionine from nascent proteins (By similarity)
+MvSl-1064-A1-R4_MC03g05107	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC03g05108	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g05109	Inherit from fuNOG: Sin3 complex subunit Stb2
+MvSl-1064-A1-R4_MC03g05110	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g05116	Putative methyltransferase
+MvSl-1064-A1-R4_MC03g05117	Cofilin/tropomyosin-type actin-binding protein
+MvSl-1064-A1-R4_MC03g05121	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g05127	Common central domain of tyrosinase
+MvSl-1064-A1-R4_MC03g05128	NA
+MvSl-1064-A1-R4_MC03g05130	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC03g05131	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC03g05133	NA
+MvSl-1064-A1-R4_MC03g05140	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC03g05149	Transposase family tnp2
+MvSl-1064-A1-R4_MC03g05151	NA
+MvSl-1064-A1-R4_MC03g05165	Involved in the regulation of enzymes involved in acetate assimilation like gluconeogenesis, the glyoxylate cycle, and acetyl-CoA metabolism (By similarity)
+MvSl-1064-A1-R4_MC03g05179	NA
+MvSl-1064-A1-R4_MC03g05181	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC03g05182	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC03g05189	NA
+MvSl-1064-A1-R4_MC03g05200	NA
+MvSl-1064-A1-R4_MC03g05202	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g05203	NA
+MvSl-1064-A1-R4_MC03g05207	NA
+MvSl-1064-A1-R4_MC03g05209	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g05212	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC03g05215	NA
+MvSl-1064-A1-R4_MC03g05219	NA
+MvSl-1064-A1-R4_MC03g05232	NA
+MvSl-1064-A1-R4_MC03g05233	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC03g05238	NA
+MvSl-1064-A1-R4_MC03g05244	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC03g05257	NA
+MvSl-1064-A1-R4_MC03g05258	NA
+MvSl-1064-A1-R4_MC03g05259	ZnF_C2HC
+MvSl-1064-A1-R4_MC03g05261	Mur ligase middle domain
+MvSl-1064-A1-R4_MC03g05268	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC04-1g05272	NA
+MvSl-1064-A1-R4_MC04-1g05273	Glycosyl transferases group 1
+MvSl-1064-A1-R4_MC04-1g05275	NA
+MvSl-1064-A1-R4_MC04-1g05276	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05279	NA
+MvSl-1064-A1-R4_MC04-1g05283	NA
+MvSl-1064-A1-R4_MC04-1g05284	NA
+MvSl-1064-A1-R4_MC04-1g05285	ER to Golgi transport-related protein
+MvSl-1064-A1-R4_MC04-1g05286	NA
+MvSl-1064-A1-R4_MC04-1g05287	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05289	NA
+MvSl-1064-A1-R4_MC04-1g05290	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC04-1g05293	NA
+MvSl-1064-A1-R4_MC04-1g05303	BRLZ
+MvSl-1064-A1-R4_MC04-1g05304	NA
+MvSl-1064-A1-R4_MC04-1g05317	NA
+MvSl-1064-A1-R4_MC04-1g05319	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g05321	NA
+MvSl-1064-A1-R4_MC04-1g05322	Alpha amylase, catalytic domain
+MvSl-1064-A1-R4_MC04-1g05323	Raffinose synthase or seed imbibition protein Sip1
+MvSl-1064-A1-R4_MC04-1g05338	Hepatocellular carcinoma-associated antigen 59
+MvSl-1064-A1-R4_MC04-1g05339	Fungal Zn(2)-Cys(6) binuclear cluster domain
+MvSl-1064-A1-R4_MC04-1g05340	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05349	Protein of unknown function (DUF2456)
+MvSl-1064-A1-R4_MC04-1g05359	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g05361	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC04-1g05374	NA
+MvSl-1064-A1-R4_MC04-1g05379	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05380	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05381	NA
+MvSl-1064-A1-R4_MC04-1g05384	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05386	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05387	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05388	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05390	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05391	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05392	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05393	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05394	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05395	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05396	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05397	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05400	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05401	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05402	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05403	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05404	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05405	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05406	NA
+MvSl-1064-A1-R4_MC04-1g05407	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05408	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05409	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05410	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05411	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05412	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05413	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05414	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05415	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05416	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05417	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05418	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05419	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05420	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05421	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05422	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05423	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05424	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05425	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05426	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05427	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05428	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05429	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC04-1g05431	ARP2 3 complex 21 kDa subunit
+MvSl-1064-A1-R4_MC04-1g05434	ZnF_C2HC
+MvSl-1064-A1-R4_MC04-1g05442	Importin-beta N-terminal domain
+MvSl-1064-A1-R4_MC04-1g05444	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC04-1g05445	NA
+MvSl-1064-A1-R4_MC04-1g05446	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_MC04-1g05447	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g05449	Mitochondrial carrier protein
+MvSl-1064-A1-R4_MC04-1g05457	Indoleamine 2,3-dioxygenase
+MvSl-1064-A1-R4_MC04-1g05461	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC04-1g05462	NA
+MvSl-1064-A1-R4_MC04-1g05467	Eukaryotic rRNA processing protein EBP2
+MvSl-1064-A1-R4_MC04-1g05468	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g05485	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC04-1g05486	Protein of unknown function (DUF3421)
+MvSl-1064-A1-R4_MC04-1g05492	NA
+MvSl-1064-A1-R4_MC04-1g05493	NA
+MvSl-1064-A1-R4_MC04-1g05494	ZnF_C2HC
+MvSl-1064-A1-R4_MC04-1g05495	Cell division control protein 16
+MvSl-1064-A1-R4_MC04-1g05503	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC04-1g05504	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC04-1g05505	Fungal Zn(2)-Cys(6) binuclear cluster domain
+MvSl-1064-A1-R4_MC04-1g05510	Pfam:DUF1783
+MvSl-1064-A1-R4_MC04-1g05511	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC04-1g05533	Isoprenylcysteine carboxyl methyltransferase (ICMT) family 
+MvSl-1064-A1-R4_MC04-1g05536	NA
+MvSl-1064-A1-R4_MC04-1g05537	NA
+MvSl-1064-A1-R4_MC04-1g05543	Pfam:TBC
+MvSl-1064-A1-R4_MC04-1g05560	Bicoid-interacting protein 3 (Bin3)
+MvSl-1064-A1-R4_MC04-1g05588	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g05591	F-box domain
+MvSl-1064-A1-R4_MC04-1g05604	LA
+MvSl-1064-A1-R4_MC04-1g05649	Methyltransferase domain
+MvSl-1064-A1-R4_MC04-1g05656	ZnF_C2HC
+MvSl-1064-A1-R4_MC04-1g05668	Cellulase (glycosyl hydrolase family 5)
+MvSl-1064-A1-R4_MC04-1g05674	Autophagy-related protein 3
+MvSl-1064-A1-R4_MC04-1g05689	ZnF_C2H2
+MvSl-1064-A1-R4_MC04-1g05690	Chitin synthase
+MvSl-1064-A1-R4_MC04-1g05719	Carbohydrate esterase family 9 protein
+MvSl-1064-A1-R4_MC04-1g05728	NA
+MvSl-1064-A1-R4_MC04-1g05742	NA
+MvSl-1064-A1-R4_MC04-1g05743	NA
+MvSl-1064-A1-R4_MC04-1g05756	dynein heavy chain
+MvSl-1064-A1-R4_MC04-1g05764	GMC oxidoreductase
+MvSl-1064-A1-R4_MC04-1g05765	GMC oxidoreductase
+MvSl-1064-A1-R4_MC04-1g05766	GMC oxidoreductase
+MvSl-1064-A1-R4_MC04-1g05776	NA
+MvSl-1064-A1-R4_MC04-1g05777	NA
+MvSl-1064-A1-R4_MC04-1g05778	ZnF_C2HC
+MvSl-1064-A1-R4_MC04-1g05779	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC04-1g05804	Hydantoinase B/oxoprolinase
+MvSl-1064-A1-R4_MC04-1g05826	Zinc knuckle
+MvSl-1064-A1-R4_MC04-1g05831	NA
+MvSl-1064-A1-R4_MC04-1g05832	Fungal specific transcription factor domain 
+MvSl-1064-A1-R4_MC04-1g05836	NA
+MvSl-1064-A1-R4_MC04-1g05844	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC04-1g05849	Peroxisome assembly protein per8
+MvSl-1064-A1-R4_MC04-1g05858	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC04-1g05863	Not1 N-terminal domain, CCR4-Not complex component 
+MvSl-1064-A1-R4_MC04-1g05873	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC04-1g05879	Tyrosine phosphatase family
+MvSl-1064-A1-R4_MC04-1g05894	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g05900	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g05905	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05908	NA
+MvSl-1064-A1-R4_MC04-1g05912	NA
+MvSl-1064-A1-R4_MC04-1g05917	Fungal Zn(2)-Cys(6) binuclear cluster domain
+MvSl-1064-A1-R4_MC04-1g05952	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g05957	NA
+MvSl-1064-A1-R4_MC04-1g05978	NA
+MvSl-1064-A1-R4_MC04-1g05981	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC04-1g05982	NA
+MvSl-1064-A1-R4_MC04-1g06008	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g06014	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g06015	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g06019	replication factor
+MvSl-1064-A1-R4_MC04-1g06023	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC04-1g06025	RED-like protein N-terminal region
+MvSl-1064-A1-R4_MC04-1g06026	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g06027	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC04-1g06040	NA
+MvSl-1064-A1-R4_MC04-1g06046	NA
+MvSl-1064-A1-R4_MC04-1g06050	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC04-1g06054	NA
+MvSl-1064-A1-R4_MC04-1g06058	NA
+MvSl-1064-A1-R4_MC04-1g06059	NA
+MvSl-1064-A1-R4_MC04-1g06062	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC04-1g06064	Protein kinase domain
+MvSl-1064-A1-R4_MC04-1g06069	NA
+MvSl-1064-A1-R4_MC04-1g06070	NA
+MvSl-1064-A1-R4_MC04-1g06072	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-1g06073	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-2g06080	NA
+MvSl-1064-A1-R4_MC04-2g06081	NA
+MvSl-1064-A1-R4_MC04-2g06083	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-2g06086	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC04-2g06087	Zinc knuckle
+MvSl-1064-A1-R4_MC04-2g06089	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-2g06090	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-2g06091	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC04-2g06104	Isoprenylcysteine carboxyl methyltransferase (ICMT) family 
+MvSl-1064-A1-R4_MC05-1g06112	Phenazine biosynthesis-like protein
+MvSl-1064-A1-R4_MC05-1g06113	Phenazine biosynthesis-like protein
+MvSl-1064-A1-R4_MC05-1g06114	NA
+MvSl-1064-A1-R4_MC05-1g06115	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC05-1g06116	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC05-1g06126	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC05-1g06127	NA
+MvSl-1064-A1-R4_MC05-1g06137	NA
+MvSl-1064-A1-R4_MC05-1g06138	NA
+MvSl-1064-A1-R4_MC05-1g06144	NA
+MvSl-1064-A1-R4_MC05-1g06145	NA
+MvSl-1064-A1-R4_MC05-1g06152	Alcohol dehydrogenase GroES-like domain
+MvSl-1064-A1-R4_MC05-1g06163	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC05-1g06164	NA
+MvSl-1064-A1-R4_MC05-1g06167	Endonuclease/Exonuclease/phosphatase family
+MvSl-1064-A1-R4_MC05-1g06175	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-1g06183	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC05-1g06184	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-1g06185	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC05-1g06198	NA
+MvSl-1064-A1-R4_MC05-1g06200	amine oxidase
+MvSl-1064-A1-R4_MC05-1g06210	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-1g06211	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC05-1g06213	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC05-1g06244	NA
+MvSl-1064-A1-R4_MC05-1g06249	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-1g06251	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC05-1g06252	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-1g06254	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC05-1g06257	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06260	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06261	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06262	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06263	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06264	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC05-1g06266	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06267	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06269	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC05-1g06270	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06271	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06272	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06273	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06274	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06275	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06276	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06277	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06278	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06279	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06281	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06282	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06283	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06284	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06285	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06286	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06287	Inherit from opiNOG: Nucleoporin 54kDa
+MvSl-1064-A1-R4_MC05-1g06288	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06289	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06290	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06291	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-1g06292	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06296	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06297	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06298	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06299	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06300	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06301	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06302	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06304	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06305	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC05-2g06306	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC05-2g06309	NA
+MvSl-1064-A1-R4_MC05-2g06311	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC05-2g06312	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06313	NA
+MvSl-1064-A1-R4_MC05-2g06314	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC05-2g06317	Chromo (CHRromatin Organisation MOdifier) domain
+MvSl-1064-A1-R4_MC05-2g06318	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC05-2g06326	NA
+MvSl-1064-A1-R4_MC05-2g06327	NA
+MvSl-1064-A1-R4_MC05-2g06330	DnaJ domain
+MvSl-1064-A1-R4_MC05-2g06331	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC05-2g06333	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-2g06335	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC05-2g06343	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06346	Atypical RIO RIO1 protein kinase
+MvSl-1064-A1-R4_MC05-2g06348	NA
+MvSl-1064-A1-R4_MC05-2g06349	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06353	Antibiotic biosynthesis monooxygenase
+MvSl-1064-A1-R4_MC05-2g06365	NA
+MvSl-1064-A1-R4_MC05-2g06366	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC05-2g06373	NA
+MvSl-1064-A1-R4_MC05-2g06375	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-2g06388	60S ribosomal protein L26
+MvSl-1064-A1-R4_MC05-2g06389	NA
+MvSl-1064-A1-R4_MC05-2g06391	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-2g06393	NA
+MvSl-1064-A1-R4_MC05-2g06396	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC05-2g06397	Amidase
+MvSl-1064-A1-R4_MC05-2g06398	Amidase
+MvSl-1064-A1-R4_MC05-2g06405	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC05-2g06420	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_MC05-2g06429	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-2g06430	WD domain, G-beta repeat
+MvSl-1064-A1-R4_MC05-2g06437	NA
+MvSl-1064-A1-R4_MC05-2g06438	NA
+MvSl-1064-A1-R4_MC05-2g06439	Mitochondrial carrier protein
+MvSl-1064-A1-R4_MC05-2g06442	Eukaryotic rRNA processing protein EBP2
+MvSl-1064-A1-R4_MC05-2g06449	NA
+MvSl-1064-A1-R4_MC05-2g06451	short chain dehydrogenase
+MvSl-1064-A1-R4_MC05-2g06452	Fungal trichothecene efflux pump (TRI12)
+MvSl-1064-A1-R4_MC05-2g06456	Helicase conserved C-terminal domain
+MvSl-1064-A1-R4_MC05-2g06461	NA
+MvSl-1064-A1-R4_MC05-2g06462	Inherit from fuNOG: Capsid protein (CA) is the structural component of the virus-like particle (VLP), forming the shell that encapsulates the retrotransposons dimeric RNA genome. The particles are assembled from trimer-clustered units and there are holes in the capsid shells that allow for the diffusion of macromolecules. CA has also nucleocapsid-like chaperone activity, promoting primer tRNA(i)-Met annealing to the multipartite primer-binding site (PBS), dimerization of
+MvSl-1064-A1-R4_MC05-2g06471	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-2g06483	Splicing factor 3B subunit 1
+MvSl-1064-A1-R4_MC05-2g06485	NA
+MvSl-1064-A1-R4_MC05-2g06489	NA
+MvSl-1064-A1-R4_MC05-3g06500	NA
+MvSl-1064-A1-R4_MC05-3g06521	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC05-3g06522	NA
+MvSl-1064-A1-R4_MC05-3g06532	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-3g06538	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-3g06558	Transmembrane amino acid transporter protein
+MvSl-1064-A1-R4_MC05-3g06559	Transmembrane amino acid transporter protein
+MvSl-1064-A1-R4_MC05-3g06564	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-3g06566	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC05-3g06585	NA
+MvSl-1064-A1-R4_MC05-3g06598	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-3g06600	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-3g06608	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-3g06640	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC05-3g06642	Pfam:DUF889
+MvSl-1064-A1-R4_MC05-3g06645	Helicase conserved C-terminal domain
+MvSl-1064-A1-R4_MC05-3g06666	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-3g06697	NA
+MvSl-1064-A1-R4_MC05-3g06716	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC05-3g06725	Inherit from euNOG: DNA replication and checkpoint protein
+MvSl-1064-A1-R4_MC05-3g06731	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-3g06733	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC05-3g06742	AAA domain (Cdc48 subfamily)
+MvSl-1064-A1-R4_MC05-3g06745	NA
+MvSl-1064-A1-R4_MC05-3g06746	NA
+MvSl-1064-A1-R4_MC05-3g06747	NA
+MvSl-1064-A1-R4_MC05-3g06756	Putative integral membrane protein conserved region (DUF2404)
+MvSl-1064-A1-R4_MC05-3g06760	Pfam:Acid_phosphat_A
+MvSl-1064-A1-R4_MC05-3g06761	secretory lipase (family LIP)
+MvSl-1064-A1-R4_MC05-3g06787	NA
+MvSl-1064-A1-R4_MC05-3g06788	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-3g06789	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC05-3g06792	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-3g06794	CTD kinase subunit gamma CTK3
+MvSl-1064-A1-R4_MC05-3g06795	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC05-3g06800	GAF domain
+MvSl-1064-A1-R4_MC05-3g06802	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-3g06811	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC05-3g06816	CTD kinase subunit gamma CTK3
+MvSl-1064-A1-R4_MC05-3g06817	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC05-3g06818	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC05-3g06830	NA
+MvSl-1064-A1-R4_MC05-3g06834	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC05-3g06836	Type III restriction enzyme, res subunit
+MvSl-1064-A1-R4_MC05-3g06841	NA
+MvSl-1064-A1-R4_MC06g06859	Pirin
+MvSl-1064-A1-R4_MC06g06861	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g06865	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC06g06866	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g06868	Pirin
+MvSl-1064-A1-R4_MC06g06871	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g06872	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g06874	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC06g06875	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC06g06880	Pirin
+MvSl-1064-A1-R4_MC06g06882	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC06g06883	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC06g06890	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g06895	Inherit from opiNOG: LYR motif containing 4
+MvSl-1064-A1-R4_MC06g06900	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC06g06905	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC06g06907	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC06g06910	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g06917	NA
+MvSl-1064-A1-R4_MC06g06922	NA
+MvSl-1064-A1-R4_MC06g06927	NA
+MvSl-1064-A1-R4_MC06g06939	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g06942	Acyl-CoA dehydrogenase, N-terminal domain
+MvSl-1064-A1-R4_MC06g06947	Peptidase family M1
+MvSl-1064-A1-R4_MC06g06971	NA
+MvSl-1064-A1-R4_MC06g06976	Inherit from COG: rare lipoprotein a
+MvSl-1064-A1-R4_MC06g06985	Inherit from fuNOG: 26S proteasome regulatory subunit
+MvSl-1064-A1-R4_MC06g06990	Spc19
+MvSl-1064-A1-R4_MC06g06998	NA
+MvSl-1064-A1-R4_MC06g07003	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC06g07019	Fungal trichothecene efflux pump (TRI12)
+MvSl-1064-A1-R4_MC06g07022	Protein of unknown function DUF262
+MvSl-1064-A1-R4_MC06g07032	Fungal specific transcription factor domain 
+MvSl-1064-A1-R4_MC06g07033	LRR
+MvSl-1064-A1-R4_MC06g07035	Helicase conserved C-terminal domain
+MvSl-1064-A1-R4_MC06g07048	Protein kinase domain
+MvSl-1064-A1-R4_MC06g07052	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g07053	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g07060	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC06g07063	NA
+MvSl-1064-A1-R4_MC06g07064	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC06g07067	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07068	Inherit from fuNOG: Histones H3 and H4 chaperone involved in the nucleosome formation and heterochromatin silencing. Required for the deposition of H3K56ac-carrying H3-H4 complex onto newly-replicated DNA. Plays a role in the transcriptional regulation of the cell- cycle dependent histone genes by creating a repressive structure at the core histone gene promoter (By similarity)
+MvSl-1064-A1-R4_MC06g07070	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07072	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07073	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07074	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07075	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07076	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07077	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07078	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07079	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07080	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07081	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07082	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07083	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07084	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07086	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07087	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07088	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07089	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07090	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07091	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07093	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07094	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07095	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07096	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07097	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07098	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07100	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07101	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07102	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07103	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07105	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07106	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07107	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07108	NA
+MvSl-1064-A1-R4_MC06g07109	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07110	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07111	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07112	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07116	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g07124	NA
+MvSl-1064-A1-R4_MC06g07126	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC06g07128	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g07140	NA
+MvSl-1064-A1-R4_MC06g07146	Fungal_trans
+MvSl-1064-A1-R4_MC06g07149	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC06g07164	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC06g07174	NA
+MvSl-1064-A1-R4_MC06g07180	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_MC06g07209	Inherit from fuNOG: conserved hypothetical protein
+MvSl-1064-A1-R4_MC06g07214	Pectinesterase
+MvSl-1064-A1-R4_MC06g07215	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC06g07216	Pectinesterase
+MvSl-1064-A1-R4_MC06g07224	NOL1/NOP2/sun family
+MvSl-1064-A1-R4_MC06g07236	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC06g07238	NA
+MvSl-1064-A1-R4_MC06g07239	ZnF_C2HC
+MvSl-1064-A1-R4_MC06g07252	Protein tyrosine kinase
+MvSl-1064-A1-R4_MC06g07287	Vaculolar membrane protein 
+MvSl-1064-A1-R4_MC06g07296	Catalytic component of the NuA4 histone acetyltransferase (HAT) complex which is involved in epigenetic transcriptional activation of selected genes principally by acetylation of nucleosomal histones H4, H3, H2B, H2A and H2A variant H2A.Z. Acetylates histone H4 to form H4K5ac, H4K8ac, H4K12ac and H4K16ac, histone H3 to form H3K14ac, and histone H2A to form H2AK4ac and H2AK7ac. Acetylation of histone H4 is essential for DNA double-strand break repair through homologous recombination. Involved in cell cycle progression. Recruitment to promoters depends on H3K4me (By similarity)
+MvSl-1064-A1-R4_MC06g07297	Bystin
+MvSl-1064-A1-R4_MC06g07318	NA
+MvSl-1064-A1-R4_MC06g07320	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g07321	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC06g07324	Required for multiple vacuole delivery pathways including the cytoplasm to vacuole transport (Cvt), autophagy, pexophagy and endocytosis (By similarity)
+MvSl-1064-A1-R4_MC06g07348	Nucleosome assembly protein
+MvSl-1064-A1-R4_MC06g07355	KilA-N domain
+MvSl-1064-A1-R4_MC06g07366	Succinate dehydrogenase flavoprotein subunit
+MvSl-1064-A1-R4_MC06g07407	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC06g07409	Sugar (and other) transporter
+MvSl-1064-A1-R4_MC06g07410	NA
+MvSl-1064-A1-R4_MC06g07434	ZnF_C2HC
+MvSl-1064-A1-R4_MC06g07438	Pectinesterase
+MvSl-1064-A1-R4_MC06g07458	Pfam:DUF821
+MvSl-1064-A1-R4_MC06g07469	Inherit from KOG: PAP associated domain containing
+MvSl-1064-A1-R4_MC06g07471	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC06g07483	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g07485	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g07487	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC06g07491	GMC oxidoreductase
+MvSl-1064-A1-R4_MC06g07501	NA
+MvSl-1064-A1-R4_MC06g07507	FAD-binding domain
+MvSl-1064-A1-R4_MC06g07509	Helix-loop-helix DNA-binding domain
+MvSl-1064-A1-R4_MC06g07517	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC06g07518	NA
+MvSl-1064-A1-R4_MC06g07535	Type III restriction enzyme, res subunit
+MvSl-1064-A1-R4_MC06g07538	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC06g07539	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC06g07543	NA
+MvSl-1064-A1-R4_MC06g07545	Chromo (CHRromatin Organisation MOdifier) domain
+MvSl-1064-A1-R4_MC06g07547	NA
+MvSl-1064-A1-R4_MC07g07548	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC07g07549	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC07g07569	Zinc-binding dehydrogenase
+MvSl-1064-A1-R4_MC07g07571	Zinc-binding dehydrogenase
+MvSl-1064-A1-R4_MC07g07590	Dehydratase family
+MvSl-1064-A1-R4_MC07g07591	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC07g07593	Phytanoyl-CoA dioxygenase (PhyH)
+MvSl-1064-A1-R4_MC07g07595	Inherit from fuNOG: AAA family ATPase
+MvSl-1064-A1-R4_MC07g07596	Fungal specific transcription factor domain 
+MvSl-1064-A1-R4_MC07g07597	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC07g07598	Inherit from NOG: Conserved hypothetical, protein
+MvSl-1064-A1-R4_MC07g07600	Phytanoyl-CoA dioxygenase (PhyH)
+MvSl-1064-A1-R4_MC07g07601	FAD binding domain
+MvSl-1064-A1-R4_MC07g07604	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC07g07606	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC07g07608	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC07g07637	Not1 N-terminal domain, CCR4-Not complex component 
+MvSl-1064-A1-R4_MC07g07642	NA
+MvSl-1064-A1-R4_MC07g07644	NA
+MvSl-1064-A1-R4_MC07g07645	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC07g07661	RWD
+MvSl-1064-A1-R4_MC07g07664	Eukaryotic aspartyl protease
+MvSl-1064-A1-R4_MC07g07665	Sugar (and other) transporter
+MvSl-1064-A1-R4_MC07g07667	Autophagy-related protein 3
+MvSl-1064-A1-R4_MC07g07673	Poly A polymerase head domain
+MvSl-1064-A1-R4_MC07g07674	Zinc knuckle
+MvSl-1064-A1-R4_MC07g07677	guanine nucleotide-binding protein alpha-4 subunit
+MvSl-1064-A1-R4_MC07g07693	Eukaryotic aspartyl protease
+MvSl-1064-A1-R4_MC07g07700	Acts as a component of the essential kinetochore- associated NDC80 complex, which is required for chromosome segregation and spindle checkpoint activity (By similarity)
+MvSl-1064-A1-R4_MC07g07702	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC07g07712	Sugar (and other) transporter
+MvSl-1064-A1-R4_MC07g07749	NA
+MvSl-1064-A1-R4_MC07g07752	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC07g07767	NA
+MvSl-1064-A1-R4_MC07g07775	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC07g07783	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC07g07792	NA
+MvSl-1064-A1-R4_MC07g07794	CAMK CAMKL CHK1 protein kinase
+MvSl-1064-A1-R4_MC07g07802	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC07g07809	ABC transporter transmembrane region
+MvSl-1064-A1-R4_MC07g07810	ABC transporter transmembrane region
+MvSl-1064-A1-R4_MC07g07811	ABC transporter transmembrane region
+MvSl-1064-A1-R4_MC07g07820	ZnF_C2HC
+MvSl-1064-A1-R4_MC07g07821	NA
+MvSl-1064-A1-R4_MC07g07852	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC07g07868	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC07g07888	Urb2/Npa2 family
+MvSl-1064-A1-R4_MC07g07931	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC07g07932	NA
+MvSl-1064-A1-R4_MC07g07935	Flavin reductase like domain
+MvSl-1064-A1-R4_MC07g07957	Spc7 kinetochore protein
+MvSl-1064-A1-R4_MC07g07960	Cytochrome p450
+MvSl-1064-A1-R4_MC07g07961	Cytochrome p450
+MvSl-1064-A1-R4_MC07g07965	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC07g07966	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC07g07972	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC07g07973	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC07g07978	chitin deacetylase
+MvSl-1064-A1-R4_MC07g07984	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC07g07986	NA
+MvSl-1064-A1-R4_MC07g08009	NA
+MvSl-1064-A1-R4_MC07g08014	Protein of unknown function (DUF1674)
+MvSl-1064-A1-R4_MC07g08023	P MRP protein subunit
+MvSl-1064-A1-R4_MC07g08026	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC07g08027	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC07g08038	LA
+MvSl-1064-A1-R4_MC07g08042	STYKc
+MvSl-1064-A1-R4_MC07g08047	Protein of unknown function (DUF2420)
+MvSl-1064-A1-R4_MC07g08052	Zinc knuckle
+MvSl-1064-A1-R4_MC07g08079	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC07g08084	phosphomannomutase
+MvSl-1064-A1-R4_MC07g08140	CFEM domain
+MvSl-1064-A1-R4_MC07g08151	NA
+MvSl-1064-A1-R4_MC07g08153	HSF
+MvSl-1064-A1-R4_MC07g08175	Beta-lactamase
+MvSl-1064-A1-R4_MC07g08185	NA
+MvSl-1064-A1-R4_MC07g08186	40S ribosomal protein S14
+MvSl-1064-A1-R4_MC07g08189	UBCc
+MvSl-1064-A1-R4_MC07g08190	NA
+MvSl-1064-A1-R4_MC07g08201	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC07g08204	CPDc
+MvSl-1064-A1-R4_MC07g08209	Transcriptional activator of glycolytic enzymes
+MvSl-1064-A1-R4_MC07g08219	Transcription factor subunit Med10 of Mediator complex
+MvSl-1064-A1-R4_MC07g08227	Glycosyl transferases group 1
+MvSl-1064-A1-R4_MC07g08232	Aldehyde dehydrogenase family
+MvSl-1064-A1-R4_MC07g08233	NA
+MvSl-1064-A1-R4_MC07g08244	NA
+MvSl-1064-A1-R4_MC07g08247	Type III restriction enzyme, res subunit
+MvSl-1064-A1-R4_MC07g08251	NA
+MvSl-1064-A1-R4_MC07g08255	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC07g08256	Phenazine biosynthesis-like protein
+MvSl-1064-A1-R4_MC08g08257	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC08g08263	NA
+MvSl-1064-A1-R4_MC08g08269	Basic region leucine zipper
+MvSl-1064-A1-R4_MC08g08272	This protein is an auxiliary protein of DNA polymerase delta and is involved in the control of eukaryotic DNA replication by increasing the polymerase's processibility during elongation of the leading strand (By similarity)
+MvSl-1064-A1-R4_MC08g08287	4F5 protein family
+MvSl-1064-A1-R4_MC08g08303	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC08g08304	NA
+MvSl-1064-A1-R4_MC08g08306	NA
+MvSl-1064-A1-R4_MC08g08308	NA
+MvSl-1064-A1-R4_MC08g08311	Pfam:3_5_exonuc
+MvSl-1064-A1-R4_MC08g08312	GLE1-like protein
+MvSl-1064-A1-R4_MC08g08313	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC08g08323	NA
+MvSl-1064-A1-R4_MC08g08327	Involved in transport from the ER to the Golgi apparatus as well as in intra-Golgi transport. It belongs to a super-family of proteins called t-SNAREs or soluble NSF (N-ethylmaleimide- sensitive factor) attachment protein receptor (By similarity)
+MvSl-1064-A1-R4_MC08g08368	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08369	Fungal specific transcription factor domain 
+MvSl-1064-A1-R4_MC08g08377	Uncharacterised conserved protein (DUF2315)
+MvSl-1064-A1-R4_MC08g08387	NA
+MvSl-1064-A1-R4_MC08g08391	NA
+MvSl-1064-A1-R4_MC08g08420	NA
+MvSl-1064-A1-R4_MC08g08423	GAL4
+MvSl-1064-A1-R4_MC08g08429	short chain dehydrogenase
+MvSl-1064-A1-R4_MC08g08436	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC08g08437	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC08g08446	Predicted AdoMet-dependent methyltransferase
+MvSl-1064-A1-R4_MC08g08450	NA
+MvSl-1064-A1-R4_MC08g08455	Protein of unknown function (DUF1279)
+MvSl-1064-A1-R4_MC08g08457	FAD linked oxidases, C-terminal domain
+MvSl-1064-A1-R4_MC08g08476	NA
+MvSl-1064-A1-R4_MC08g08477	Sugar (and other) transporter
+MvSl-1064-A1-R4_MC08g08478	Protein of unknown function (DUF3421)
+MvSl-1064-A1-R4_MC08g08479	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC08g08485	NA
+MvSl-1064-A1-R4_MC08g08486	ZnF_C2HC
+MvSl-1064-A1-R4_MC08g08523	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC08g08524	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC08g08527	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC08g08536	NA
+MvSl-1064-A1-R4_MC08g08563	Zinc knuckle
+MvSl-1064-A1-R4_MC08g08570	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC08g08571	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC08g08578	NA
+MvSl-1064-A1-R4_MC08g08639	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC08g08644	NA
+MvSl-1064-A1-R4_MC08g08645	NA
+MvSl-1064-A1-R4_MC08g08651	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC08g08658	Hydrolyzes fatty acids from S-acylated cysteine residues in proteins with a strong preference for palmitoylated G-alpha proteins over other acyl substrates (By similarity)
+MvSl-1064-A1-R4_MC08g08677	UV excision repair protein
+MvSl-1064-A1-R4_MC08g08694	Protein kinase domain
+MvSl-1064-A1-R4_MC08g08696	NA
+MvSl-1064-A1-R4_MC08g08701	Choline/ethanolamine kinase
+MvSl-1064-A1-R4_MC08g08712	DHHA1 domain
+MvSl-1064-A1-R4_MC08g08719	NA
+MvSl-1064-A1-R4_MC08g08745	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC08g08746	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08747	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08748	NA
+MvSl-1064-A1-R4_MC08g08752	NA
+MvSl-1064-A1-R4_MC08g08755	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC08g08756	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC08g08758	Eukaryotic aspartyl protease
+MvSl-1064-A1-R4_MC08g08760	Ion channel regulatory protein UNC-93
+MvSl-1064-A1-R4_MC08g08768	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08769	NA
+MvSl-1064-A1-R4_MC08g08781	Acyl CoA binding protein
+MvSl-1064-A1-R4_MC08g08782	Acyl CoA binding protein
+MvSl-1064-A1-R4_MC08g08783	Acyl CoA binding protein
+MvSl-1064-A1-R4_MC08g08786	regulatory subunit
+MvSl-1064-A1-R4_MC08g08811	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08812	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC08g08815	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC08g08832	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC08g08835	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC08g08837	Proteasome maturation factor UMP1
+MvSl-1064-A1-R4_MC08g08840	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC08g08844	Inherit from fuNOG: Capsid protein (CA) is the structural component of the virus-like particle (VLP), forming the shell that encapsulates the retrotransposons dimeric RNA genome. The particles are assembled from trimer-clustered units and there are holes in the capsid shells that allow for the diffusion of macromolecules. CA has also nucleocapsid-like chaperone activity, promoting primer tRNA(i)-Met annealing to the multipartite primer-binding site (PBS), dimerization of
+MvSl-1064-A1-R4_MC08g08855	Pfam:DUF1605
+MvSl-1064-A1-R4_MC08g08861	NA
+MvSl-1064-A1-R4_MC08g08876	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC08g08877	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC08g08878	SHQ1 protein
+MvSl-1064-A1-R4_MC08g08881	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC08g08883	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC08g08884	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08885	XPGN
+MvSl-1064-A1-R4_MC08g08886	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08887	NA
+MvSl-1064-A1-R4_MC08g08889	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08890	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08891	Inherit from opiNOG: Nucleoporin 54kDa
+MvSl-1064-A1-R4_MC08g08892	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08893	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08894	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08895	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC08g08896	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08897	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08898	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08899	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08900	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08901	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08902	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC08g08903	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-1g08904	Phenazine biosynthesis-like protein
+MvSl-1064-A1-R4_MC09-1g08907	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC09-1g08910	NA
+MvSl-1064-A1-R4_MC09-1g08914	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC09-1g08917	Phosphotransferase enzyme family
+MvSl-1064-A1-R4_MC09-2g08924	Phosphotransferase enzyme family
+MvSl-1064-A1-R4_MC09-2g08926	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC09-2g08930	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC09-2g08943	NA
+MvSl-1064-A1-R4_MC09-2g08946	Pfam:DDE
+MvSl-1064-A1-R4_MC09-2g08947	Pfam:DDE
+MvSl-1064-A1-R4_MC09-2g08965	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC09-2g08967	Aldehyde dehydrogenase
+MvSl-1064-A1-R4_MC09-2g08968	Aldehyde dehydrogenase
+MvSl-1064-A1-R4_MC09-2g08971	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g08974	Phenol hydroxylase, C-terminal dimerisation domain 
+MvSl-1064-A1-R4_MC09-2g08984	Pfam:DUF821
+MvSl-1064-A1-R4_MC09-2g08994	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC09-2g08995	Pfam:DUF821
+MvSl-1064-A1-R4_MC09-2g08998	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC09-2g08999	Pfam:DUF821
+MvSl-1064-A1-R4_MC09-2g09000	NA
+MvSl-1064-A1-R4_MC09-2g09002	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC09-2g09003	Pfam:DUF821
+MvSl-1064-A1-R4_MC09-2g09004	NA
+MvSl-1064-A1-R4_MC09-2g09006	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC09-2g09007	Pfam:DUF821
+MvSl-1064-A1-R4_MC09-2g09008	NA
+MvSl-1064-A1-R4_MC09-2g09010	NA
+MvSl-1064-A1-R4_MC09-2g09012	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC09-2g09013	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC09-2g09014	NA
+MvSl-1064-A1-R4_MC09-2g09015	Inherit from KOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC09-2g09078	Pfam:TBC
+MvSl-1064-A1-R4_MC09-2g09098	Uncharacterised protein family (UPF0160)
+MvSl-1064-A1-R4_MC09-2g09101	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09110	Inherit from fuNOG: pre-rRNA processing protein Esf1
+MvSl-1064-A1-R4_MC09-2g09122	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09127	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC09-2g09144	NA
+MvSl-1064-A1-R4_MC09-2g09155	Inherit from opiNOG: N-acyl phosphatidylethanolamine phospholipase D
+MvSl-1064-A1-R4_MC09-2g09157	CMGC GSK protein kinase
+MvSl-1064-A1-R4_MC09-2g09175	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC09-2g09190	Chitin synthase
+MvSl-1064-A1-R4_MC09-2g09194	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09216	NA
+MvSl-1064-A1-R4_MC09-2g09242	ZnF_C2HC
+MvSl-1064-A1-R4_MC09-2g09247	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09259	NA
+MvSl-1064-A1-R4_MC09-2g09261	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09264	Glycoside hydrolase family 18 protein
+MvSl-1064-A1-R4_MC09-2g09267	Glycoside hydrolase family 18 protein
+MvSl-1064-A1-R4_MC09-2g09295	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC09-2g09296	coatomer
+MvSl-1064-A1-R4_MC09-2g09319	NA
+MvSl-1064-A1-R4_MC09-2g09320	ZnF_C2HC
+MvSl-1064-A1-R4_MC09-2g09330	Pfam:TBC
+MvSl-1064-A1-R4_MC09-2g09332	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09360	MUTSac
+MvSl-1064-A1-R4_MC09-2g09373	NA
+MvSl-1064-A1-R4_MC09-2g09401	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC09-2g09436	NA
+MvSl-1064-A1-R4_MC09-2g09438	NA
+MvSl-1064-A1-R4_MC09-2g09445	Cellulase (glycosyl hydrolase family 5)
+MvSl-1064-A1-R4_MC09-2g09464	Sugar (and other) transporter
+MvSl-1064-A1-R4_MC09-2g09466	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09467	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09468	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09469	Tubulin-tyrosine ligase family
+MvSl-1064-A1-R4_MC09-2g09479	secretory lipase (family LIP)
+MvSl-1064-A1-R4_MC09-2g09480	DHH family
+MvSl-1064-A1-R4_MC09-2g09482	secretory lipase (family LIP)
+MvSl-1064-A1-R4_MC09-2g09531	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09540	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09541	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09542	NA
+MvSl-1064-A1-R4_MC09-2g09543	NA
+MvSl-1064-A1-R4_MC09-2g09544	Carboxylesterase family
+MvSl-1064-A1-R4_MC09-2g09545	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09547	NA
+MvSl-1064-A1-R4_MC09-2g09565	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09566	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09567	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09569	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09570	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09572	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09573	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC09-2g09575	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09576	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09578	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09579	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09580	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09582	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC09-2g09583	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09585	Phenazine biosynthesis-like protein
+MvSl-1064-A1-R4_MC10-1g09586	Phenazine biosynthesis-like protein
+MvSl-1064-A1-R4_MC10-1g09587	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC10-1g09590	NA
+MvSl-1064-A1-R4_MC10-1g09591	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC10-1g09595	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC10-1g09596	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC10-1g09597	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC10-1g09598	NA
+MvSl-1064-A1-R4_MC10-1g09600	HpcH/HpaI aldolase/citrate lyase family
+MvSl-1064-A1-R4_MC10-1g09616	other AgaK1 protein kinase
+MvSl-1064-A1-R4_MC10-1g09617	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-1g09618	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-1g09619	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-1g09622	Component of IIS longevity pathway SMK-1
+MvSl-1064-A1-R4_MC10-1g09623	NA
+MvSl-1064-A1-R4_MC10-1g09625	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09626	NA
+MvSl-1064-A1-R4_MC10-1g09638	NA
+MvSl-1064-A1-R4_MC10-1g09664	HAL protein kinase
+MvSl-1064-A1-R4_MC10-1g09668	Inherit from opiNOG: importin 13
+MvSl-1064-A1-R4_MC10-1g09674	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC10-1g09679	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09680	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09696	CMGC CDK CRK7 protein kinase
+MvSl-1064-A1-R4_MC10-1g09726	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC10-1g09731	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09734	Pfam:DUF889
+MvSl-1064-A1-R4_MC10-1g09754	DNA replication
+MvSl-1064-A1-R4_MC10-1g09756	NA
+MvSl-1064-A1-R4_MC10-1g09772	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-1g09774	NA
+MvSl-1064-A1-R4_MC10-1g09778	NA
+MvSl-1064-A1-R4_MC10-1g09779	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC10-1g09784	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC10-1g09794	Zinc knuckle
+MvSl-1064-A1-R4_MC10-1g09802	Chromatin assembly complex protein
+MvSl-1064-A1-R4_MC10-1g09806	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC10-1g09814	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC10-1g09815	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC10-1g09819	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC10-1g09820	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC10-1g09821	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09822	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09823	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC10-1g09824	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09825	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09829	Lipid particle protein
+MvSl-1064-A1-R4_MC10-1g09831	NA
+MvSl-1064-A1-R4_MC10-1g09832	pre-mRNA-splicing factor CWC22
+MvSl-1064-A1-R4_MC10-1g09833	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-1g09834	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09835	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09836	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09837	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09838	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09839	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09840	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09841	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09842	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09845	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09846	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09847	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09848	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09849	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09850	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09852	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09853	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09854	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-1g09855	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09858	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09859	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09862	Inherit from opiNOG: Nucleoporin 54kDa
+MvSl-1064-A1-R4_MC10-2g09863	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09864	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09865	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09866	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09867	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09868	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09871	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-2g09873	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-2g09874	WD domain, G-beta repeat
+MvSl-1064-A1-R4_MC10-2g09875	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC10-2g09877	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09878	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09879	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC10-2g09897	NA
+MvSl-1064-A1-R4_MC10-2g09901	LETM1-like protein
+MvSl-1064-A1-R4_MC10-2g09902	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-2g09910	NA
+MvSl-1064-A1-R4_MC10-2g09911	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g09913	LETM1-like protein
+MvSl-1064-A1-R4_MC10-2g09923	NA
+MvSl-1064-A1-R4_MC10-2g09938	NA
+MvSl-1064-A1-R4_MC10-2g09941	NA
+MvSl-1064-A1-R4_MC10-2g09942	NA
+MvSl-1064-A1-R4_MC10-2g09945	Inherit from fuNOG: n-acetylglucosamine-6-phosphate deacetylase
+MvSl-1064-A1-R4_MC10-2g09972	NA
+MvSl-1064-A1-R4_MC10-2g09979	guanine nucleotide exchange
+MvSl-1064-A1-R4_MC10-2g09992	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC10-2g10001	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_MC10-2g10057	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g10067	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC10-2g10077	NA
+MvSl-1064-A1-R4_MC10-2g10078	NA
+MvSl-1064-A1-R4_MC10-2g10079	ZnF_C2HC
+MvSl-1064-A1-R4_MC10-2g10109	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC10-2g10118	NA
+MvSl-1064-A1-R4_MC10-2g10120	NA
+MvSl-1064-A1-R4_MC10-2g10123	Zinc knuckle
+MvSl-1064-A1-R4_MC10-2g10124	NA
+MvSl-1064-A1-R4_MC10-2g10131	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g10132	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g10133	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g10134	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-2g10135	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-2g10136	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g10138	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-2g10139	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-2g10140	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g10143	Phosphotransferase enzyme family
+MvSl-1064-A1-R4_MC10-2g10144	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g10145	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC10-2g10148	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC10-2g10149	NA
+MvSl-1064-A1-R4_MC10-2g10152	Component of the cleavage factor I (CF I) involved in pre-mRNA 3'-end processing (By similarity)
+MvSl-1064-A1-R4_MC10-2g10153	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10156	NA
+MvSl-1064-A1-R4_MC11g10161	Tetratricopeptide repeat
+MvSl-1064-A1-R4_MC11g10166	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10173	Inherit from opiNOG: Snurportin 1
+MvSl-1064-A1-R4_MC11g10175	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10177	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10178	fructose-bisphosphate aldolase
+MvSl-1064-A1-R4_MC11g10181	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10183	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC11g10185	NA
+MvSl-1064-A1-R4_MC11g10187	Tetratricopeptide repeat
+MvSl-1064-A1-R4_MC11g10188	NA
+MvSl-1064-A1-R4_MC11g10189	Helicase conserved C-terminal domain
+MvSl-1064-A1-R4_MC11g10190	Sin3 associated polypeptide p18 (SAP18)
+MvSl-1064-A1-R4_MC11g10192	NA
+MvSl-1064-A1-R4_MC11g10202	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC11g10204	NA
+MvSl-1064-A1-R4_MC11g10218	NA
+MvSl-1064-A1-R4_MC11g10220	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC11g10221	cellular lipid catabolic process
+MvSl-1064-A1-R4_MC11g10222	NA
+MvSl-1064-A1-R4_MC11g10228	3-dehydrosphinganine reductase activity
+MvSl-1064-A1-R4_MC11g10231	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10232	NA
+MvSl-1064-A1-R4_MC11g10261	NA
+MvSl-1064-A1-R4_MC11g10262	NA
+MvSl-1064-A1-R4_MC11g10263	NA
+MvSl-1064-A1-R4_MC11g10272	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10273	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10274	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10279	Cyclin-dependent protein kinase
+MvSl-1064-A1-R4_MC11g10283	ABC transporter transmembrane region
+MvSl-1064-A1-R4_MC11g10284	LETM1-like protein
+MvSl-1064-A1-R4_MC11g10296	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC11g10302	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC11g10318	Basic region leucine zipper
+MvSl-1064-A1-R4_MC11g10335	NA
+MvSl-1064-A1-R4_MC11g10339	NA
+MvSl-1064-A1-R4_MC11g10343	NA
+MvSl-1064-A1-R4_MC11g10345	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC11g10346	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC11g10384	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC11g10385	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC11g10394	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC11g10397	Mannosyl oligosaccharide glucosidase
+MvSl-1064-A1-R4_MC11g10401	Pfam:DUF803
+MvSl-1064-A1-R4_MC11g10402	CTD kinase subunit gamma CTK3
+MvSl-1064-A1-R4_MC11g10407	Sm
+MvSl-1064-A1-R4_MC11g10437	NA
+MvSl-1064-A1-R4_MC11g10438	Myb-like DNA-binding domain
+MvSl-1064-A1-R4_MC11g10441	TAP C-terminal domain
+MvSl-1064-A1-R4_MC11g10469	NA
+MvSl-1064-A1-R4_MC11g10500	MCM
+MvSl-1064-A1-R4_MC11g10519	DNA-dependent RNA polymerase catalyzes the transcription of DNA into RNA using the four ribonucleoside triphosphates as substrates (By similarity)
+MvSl-1064-A1-R4_MC11g10527	NA
+MvSl-1064-A1-R4_MC11g10554	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC11g10555	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC11g10558	NA
+MvSl-1064-A1-R4_MC11g10559	NA
+MvSl-1064-A1-R4_MC11g10561	Protease with a carboxypeptidase B-like function involved in the C-terminal processing of the lysine and arginine residues from protein precursors. Promotes cell fusion and is involved in the programmed cell death (By similarity)
+MvSl-1064-A1-R4_MC11g10564	Nodulin-like
+MvSl-1064-A1-R4_MC11g10567	V-ATPase subunit H
+MvSl-1064-A1-R4_MC11g10571	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10572	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10573	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10574	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10575	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10576	Fungal specific transcription factor domain 
+MvSl-1064-A1-R4_MC11g10596	Carbon-nitrogen hydrolase
+MvSl-1064-A1-R4_MC11g10600	NA
+MvSl-1064-A1-R4_MC11g10603	gamma-aminobutyric acid transporter
+MvSl-1064-A1-R4_MC11g10615	RPOLD
+MvSl-1064-A1-R4_MC11g10616	other AgaK1 protein kinase
+MvSl-1064-A1-R4_MC11g10617	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC11g10618	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10619	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10624	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC11g10625	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10627	argonaute-like protein
+MvSl-1064-A1-R4_MC11g10631	NA
+MvSl-1064-A1-R4_MC11g10634	Tic20-like protein
+MvSl-1064-A1-R4_MC11g10642	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10645	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC11g10647	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10648	NA
+MvSl-1064-A1-R4_MC11g10649	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10653	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10656	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC11g10659	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC11g10669	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC11g10672	Involved in transport from the ER to the Golgi apparatus as well as in intra-Golgi transport. It belongs to a super-family of proteins called t-SNAREs or soluble NSF (N-ethylmaleimide- sensitive factor) attachment protein receptor (By similarity)
+MvSl-1064-A1-R4_MC11g10674	NA
+MvSl-1064-A1-R4_MC11g10675	NA
+MvSl-1064-A1-R4_MC11g10682	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10683	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10694	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10702	Inherit from fuNOG: nicotinamide riboside kinase
+MvSl-1064-A1-R4_MC11g10703	NA
+MvSl-1064-A1-R4_MC11g10718	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC11g10721	Inherit from fuNOG: conserved hypothetical protein
+MvSl-1064-A1-R4_MC11g10726	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC11g10727	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10729	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10730	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC11g10732	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10733	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10735	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10736	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10737	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10738	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10739	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10740	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10741	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10742	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10743	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC11g10744	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g10749	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g10756	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC12g10759	NA
+MvSl-1064-A1-R4_MC12g10760	NA
+MvSl-1064-A1-R4_MC12g10761	Inherit from KOG: myosin, heavy chain
+MvSl-1064-A1-R4_MC12g10763	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC12g10772	small GTPase
+MvSl-1064-A1-R4_MC12g10776	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC12g10780	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g10787	Transmembrane amino acid transporter protein
+MvSl-1064-A1-R4_MC12g10799	Rare lipoprotein A (RlpA)-like double-psi beta-barrel
+MvSl-1064-A1-R4_MC12g10803	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC12g10828	Dna polymerase
+MvSl-1064-A1-R4_MC12g10852	Chorismate synthase
+MvSl-1064-A1-R4_MC12g10857	Protein of unknown function (DUF2433)
+MvSl-1064-A1-R4_MC12g10864	NA
+MvSl-1064-A1-R4_MC12g10866	NA
+MvSl-1064-A1-R4_MC12g10876	Eukaryotic rRNA processing protein EBP2
+MvSl-1064-A1-R4_MC12g10883	NA
+MvSl-1064-A1-R4_MC12g10892	TB2/DP1, HVA22 family
+MvSl-1064-A1-R4_MC12g10894	NA
+MvSl-1064-A1-R4_MC12g10896	NA
+MvSl-1064-A1-R4_MC12g10900	NA
+MvSl-1064-A1-R4_MC12g10912	Uncharacterised conserved protein (DUF2315)
+MvSl-1064-A1-R4_MC12g10914	Dual specificity phosphatase, catalytic domain
+MvSl-1064-A1-R4_MC12g10917	Rab5-interacting protein (Rab5ip)
+MvSl-1064-A1-R4_MC12g10922	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC12g10954	Glyoxal oxidase
+MvSl-1064-A1-R4_MC12g10966	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g10967	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g10987	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11017	NA
+MvSl-1064-A1-R4_MC12g11038	Acyltransferase
+MvSl-1064-A1-R4_MC12g11042	NA
+MvSl-1064-A1-R4_MC12g11044	Ion channel regulatory protein UNC-93
+MvSl-1064-A1-R4_MC12g11045	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC12g11047	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11069	WD domain, G-beta repeat
+MvSl-1064-A1-R4_MC12g11126	Inherit from fuNOG: PbH1
+MvSl-1064-A1-R4_MC12g11132	WH1 domain
+MvSl-1064-A1-R4_MC12g11141	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC12g11142	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC12g11146	DEAD/DEAH box helicase
+MvSl-1064-A1-R4_MC12g11148	NA
+MvSl-1064-A1-R4_MC12g11152	Putative RNA methylase family UPF0020
+MvSl-1064-A1-R4_MC12g11158	NA
+MvSl-1064-A1-R4_MC12g11159	NA
+MvSl-1064-A1-R4_MC12g11170	NA
+MvSl-1064-A1-R4_MC12g11180	Monosaccharide transporter
+MvSl-1064-A1-R4_MC12g11181	Monosaccharide transporter
+MvSl-1064-A1-R4_MC12g11205	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC12g11218	Nuclear protein Es2
+MvSl-1064-A1-R4_MC12g11234	NA
+MvSl-1064-A1-R4_MC12g11238	NA
+MvSl-1064-A1-R4_MC12g11253	NA
+MvSl-1064-A1-R4_MC12g11254	NA
+MvSl-1064-A1-R4_MC12g11270	NA
+MvSl-1064-A1-R4_MC12g11275	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11276	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11277	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11278	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11280	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11281	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11282	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11283	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11284	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC12g11286	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11290	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC13g11292	NA
+MvSl-1064-A1-R4_MC13g11294	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC13g11300	NA
+MvSl-1064-A1-R4_MC13g11301	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC13g11303	NA
+MvSl-1064-A1-R4_MC13g11304	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC13g11308	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11309	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC13g11310	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC13g11312	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC13g11313	NA
+MvSl-1064-A1-R4_MC13g11315	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11316	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11317	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11319	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC13g11320	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC13g11321	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC13g11326	NA
+MvSl-1064-A1-R4_MC13g11330	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC13g11334	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC13g11335	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC13g11336	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC13g11343	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC13g11344	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC13g11349	Inherit from fuNOG: mitochondrial inner membrane protease subunit
+MvSl-1064-A1-R4_MC13g11351	Serine carboxypeptidase
+MvSl-1064-A1-R4_MC13g11352	Autophagy-related protein 11
+MvSl-1064-A1-R4_MC13g11358	NA
+MvSl-1064-A1-R4_MC13g11360	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11366	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC13g11367	AMP-binding enzyme
+MvSl-1064-A1-R4_MC13g11370	STYKc
+MvSl-1064-A1-R4_MC13g11376	Pfam:Mis12_component
+MvSl-1064-A1-R4_MC13g11381	NA
+MvSl-1064-A1-R4_MC13g11390	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC13g11393	TEA/ATTS domain family
+MvSl-1064-A1-R4_MC13g11427	snRNA-activating protein of 50kDa MW C terminal
+MvSl-1064-A1-R4_MC13g11430	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC13g11435	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11483	NA
+MvSl-1064-A1-R4_MC13g11484	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC13g11489	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC13g11491	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC13g11505	Dehydratase family
+MvSl-1064-A1-R4_MC13g11519	Protein tyrosine kinase
+MvSl-1064-A1-R4_MC13g11526	NA
+MvSl-1064-A1-R4_MC13g11540	Pfam:Acid_phosphat_A
+MvSl-1064-A1-R4_MC13g11542	Pfam:Acid_phosphat_A
+MvSl-1064-A1-R4_MC13g11551	ZnF_C2HC
+MvSl-1064-A1-R4_MC13g11553	FAR1 DNA-binding domain
+MvSl-1064-A1-R4_MC13g11556	NA
+MvSl-1064-A1-R4_MC13g11557	NA
+MvSl-1064-A1-R4_MC13g11558	NA
+MvSl-1064-A1-R4_MC13g11572	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11603	Dienelactone hydrolase family
+MvSl-1064-A1-R4_MC13g11604	Proteasome maturation factor UMP1
+MvSl-1064-A1-R4_MC13g11614	NA
+MvSl-1064-A1-R4_MC13g11623	Targeting protein for Xklp2 (TPX2)
+MvSl-1064-A1-R4_MC13g11637	NA
+MvSl-1064-A1-R4_MC13g11667	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC13g11668	Major Facilitator Superfamily
+MvSl-1064-A1-R4_MC13g11671	peptidyl-prolyl cis-trans isomerase
+MvSl-1064-A1-R4_MC13g11690	Diaphanous FH3 Domain
+MvSl-1064-A1-R4_MC13g11697	Fungal_trans
+MvSl-1064-A1-R4_MC13g11710	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC13g11715	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC13g11716	Inherit from KOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC13g11717	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC13g11718	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11719	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11720	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11722	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11723	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11724	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11725	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11726	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC13g11727	Inherit from fuNOG: Capsid protein (CA) is the structural component of the virus-like particle (VLP), forming the shell that encapsulates the retrotransposons dimeric RNA genome. The particles are assembled from trimer-clustered units and there are holes in the capsid shells that allow for the diffusion of macromolecules. CA has also nucleocapsid-like chaperone activity, promoting primer tRNA(i)-Met annealing to the multipartite primer-binding site (PBS), dimerization of
+MvSl-1064-A1-R4_MC13g11728	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g11729	NA
+MvSl-1064-A1-R4_MC14g11747	Prefoldin subunit
+MvSl-1064-A1-R4_MC14g11749	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC14g11763	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g11784	Inherit from fuNOG: HisKA
+MvSl-1064-A1-R4_MC14g11791	NA
+MvSl-1064-A1-R4_MC14g11796	Syntaxin
+MvSl-1064-A1-R4_MC14g11804	NA
+MvSl-1064-A1-R4_MC14g11807	Pfam:DDE
+MvSl-1064-A1-R4_MC14g11809	Chromatin assembly complex protein
+MvSl-1064-A1-R4_MC14g11810	NA
+MvSl-1064-A1-R4_MC14g11813	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC14g11829	NA
+MvSl-1064-A1-R4_MC14g11830	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC14g11834	Catalyzes the synthesis of activated sulfate (By similarity)
+MvSl-1064-A1-R4_MC14g11840	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC14g11842	NA
+MvSl-1064-A1-R4_MC14g11843	NA
+MvSl-1064-A1-R4_MC14g11859	Inherit from fuNOG: Domain of unknown function (DUF1917)
+MvSl-1064-A1-R4_MC14g11861	60s ribosomal protein l7
+MvSl-1064-A1-R4_MC14g11880	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC14g11881	HMG (high mobility group) box
+MvSl-1064-A1-R4_MC14g11887	K04648 dynactin 1
+MvSl-1064-A1-R4_MC14g11894	NA
+MvSl-1064-A1-R4_MC14g11899	NA
+MvSl-1064-A1-R4_MC14g11901	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC14g11904	Amidohydrolase
+MvSl-1064-A1-R4_MC14g11921	K01477 allantoicase EC 3.5.3.4
+MvSl-1064-A1-R4_MC14g11932	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g11954	NA
+MvSl-1064-A1-R4_MC14g11961	NA
+MvSl-1064-A1-R4_MC14g11964	NA
+MvSl-1064-A1-R4_MC14g11965	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC14g11966	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC14g11969	NA
+MvSl-1064-A1-R4_MC14g11973	Involved in transport from the ER to the Golgi apparatus as well as in intra-Golgi transport. It belongs to a super-family of proteins called t-SNAREs or soluble NSF (N-ethylmaleimide- sensitive factor) attachment protein receptor (By similarity)
+MvSl-1064-A1-R4_MC14g11974	Putative undecaprenyl diphosphate synthase
+MvSl-1064-A1-R4_MC14g11978	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC14g11979	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC14g11982	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC14g11983	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC14g11984	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC14g11985	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC14g11986	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC14g11987	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g11990	NA
+MvSl-1064-A1-R4_MC14g11992	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g11993	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g11994	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g11995	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g11996	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g11997	BolA-like protein
+MvSl-1064-A1-R4_MC14g11998	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g12000	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g12001	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g12002	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g12003	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g12004	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g12005	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g12006	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g12007	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC14g12008	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12012	NA
+MvSl-1064-A1-R4_MC15g12017	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC15g12022	Sugar (and other) transporter
+MvSl-1064-A1-R4_MC15g12032	Inherit from KOG: myosin, heavy chain
+MvSl-1064-A1-R4_MC15g12036	Inherit from KOG: transposon protein
+MvSl-1064-A1-R4_MC15g12040	NA
+MvSl-1064-A1-R4_MC15g12042	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12050	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC15g12053	RNase P subunit p30
+MvSl-1064-A1-R4_MC15g12060	Sec63
+MvSl-1064-A1-R4_MC15g12065	NA
+MvSl-1064-A1-R4_MC15g12073	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12074	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12108	short chain dehydrogenase
+MvSl-1064-A1-R4_MC15g12109	short chain dehydrogenase
+MvSl-1064-A1-R4_MC15g12110	alpha/beta hydrolase fold
+MvSl-1064-A1-R4_MC15g12115	NA
+MvSl-1064-A1-R4_MC15g12121	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC15g12125	FAR1 DNA-binding domain
+MvSl-1064-A1-R4_MC15g12132	NA
+MvSl-1064-A1-R4_MC15g12133	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12134	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12137	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC15g12138	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC15g12143	Inherit from opiNOG: Hydra magnipapillata
+MvSl-1064-A1-R4_MC15g12145	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12147	Inherit from fuNOG: to reverse transcriptase
+MvSl-1064-A1-R4_MC15g12148	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12149	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12151	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12152	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12154	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12155	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12156	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12158	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12159	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12161	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12163	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12164	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12166	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12167	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC15g12168	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC16g12178	Ulp1 protease family, C-terminal catalytic domain
+MvSl-1064-A1-R4_MC16g12187	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC16g12194	Inherit from NOG: Retrotransposon protein
+MvSl-1064-A1-R4_MC16g12196	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC16g12198	NA
+MvSl-1064-A1-R4_MC16g12200	ZnF_C2HC
+MvSl-1064-A1-R4_MC16g12201	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC16g12202	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC16g12203	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC16g12204	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC16g12206	Reverse transcriptase (RNA-dependent DNA polymerase)
+MvSl-1064-A1-R4_MC17g12240	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC17g12241	Inherit from KOG: DNA helicase
+MvSl-1064-A1-R4_MC18g12245	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC18g12246	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC18g12256	STYKc
+MvSl-1064-A1-R4_MC18g12257	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC18g12258	other FunK1 protein kinase
+MvSl-1064-A1-R4_MC18g12259	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC18g12262	Inherit from fuNOG: reverse transcriptase
+MvSl-1064-A1-R4_MC18g12264	Reverse transcriptase (RNA-dependent DNA polymerase)
