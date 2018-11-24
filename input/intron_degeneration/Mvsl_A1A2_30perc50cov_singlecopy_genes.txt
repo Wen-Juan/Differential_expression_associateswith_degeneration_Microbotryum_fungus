@@ -1,0 +1,1 @@
+../A1A2_homolog/Mvsl_A1A2_30perc50cov_singlecopy_genes.txt
