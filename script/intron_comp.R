@@ -268,10 +268,9 @@ dev.off()
 y_exp <- lm(Expression ~ (intronnr + intronmean + introntotal)*chr -1, data = intron_de_expression) 
 summary (y_exp)
 
-####
+#########
 lm(formula = Expression ~ (intronnr + intronmean + introntotal) * 
      chr - 1, data = intron_de_expression)
-
 Residuals:
   Min      1Q  Median      3Q     Max 
 -9.2190 -1.1548  0.2929  1.3552 10.4056 
@@ -309,6 +308,81 @@ introntotal:chrdRed     2.878e-03  4.437e-03   0.649 0.516602
 introntotal:chreOrange  8.324e-02  3.155e-02   2.638 0.008351 ** 
   introntotal:chrfaBlack  1.805e-03  1.597e-03   1.130 0.258421    
 introntotal:chrfBlue    4.550e-03  1.409e-02   0.323 0.746768    
-introntotal:chrgPurple -5.898e-03  8.554e-03  -0.689 0.490540    
----
-  ####
+introntotal:chrgPurple -5.898e-03  8.554e-03  -0.689 0.490540
+#########
+####
+
+###hemizggous genes and intron######
+#####################################
+intron_hemi <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/Mvsl_A1_hemi_genomiccompartment.txt', header = T)
+str(intron_hemi)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1hemi_intronnr_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_hemi, aes(x=chr, y=intronnr)) + scale_fill_manual(values = c("dark grey")) + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,10) +              
+  theme(legend.position="none") +
+  #scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
+  labs(x='Genomic compartment', y='Intron number') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1hemi_intronmean_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_hemi, aes(x=chr, y=intronmean)) + scale_fill_manual(values = c("dark grey")) + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,220) +              
+  theme(legend.position="none") +
+  #scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
+  labs(x='Genomic compartment', y='Intron mean length per gene') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1hemi_introntotal_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_hemi, aes(x=chr, y=introntotal)) + scale_fill_manual(values = c("dark grey")) + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,800) +              
+  theme(legend.position="none") +
+  #scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
+  labs(x='Genomic compartment', y='Intron total length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+###homolog + hemi
+intron_hemi_homo <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/Mvsl_A1A2_singleortholog_hemi_genomiccompartment.txt', header = T)
+str(intron_hemi_homo)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_homologhemi_intronnr_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_hemi_homo, aes(x=Genomicloc, y=intronnr, fill = ploidy)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("Two copies","Hemizygous"), name="Copy number") + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,10) +              
+  #theme(legend.position="none") +
+  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple","Color")) + 
+  labs(x='Genomic compartment', y='Intron total length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_homologhemi_intronmean_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_hemi_homo, aes(x=Genomicloc, y=intronmean, fill = ploidy)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("Two copies","Hemizygous"), name="Copy number") + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,210) +              
+  #theme(legend.position="none") +
+  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple","Color")) + 
+  labs(x='Genomic compartment', y='Intron total length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_homologhemi_introntotal_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_hemi_homo, aes(x=Genomicloc, y=introntotal, fill = ploidy)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("Two copies","Hemizygous"), name="Copy number") + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,1200) +              
+  #theme(legend.position="none") +
+  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple","Color")) + 
+  labs(x='Genomic compartment', y='Intron total length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
