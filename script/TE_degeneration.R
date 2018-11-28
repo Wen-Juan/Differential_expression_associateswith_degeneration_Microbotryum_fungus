@@ -32,3 +32,33 @@ ggplot(te_interval, aes(x=interval, y=prop, fill=haploid)) +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+
+#differential expression and TE insertion site
+exp_DE <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/DEexp_TE.txt', header = T)
+str(exp_DE)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1_DEnonDEinterval_overlapwithTE_prop_genes.pdf", width=8, height=8)
+ggplot(exp_DE, aes(x=interval, y=prop, fill=bias)) + 
+  scale_fill_manual(values = c("firebrick2","dodgerblue2","grey"), labels=c("A1 bias","A2 bias", "not bias"), name="DE expression") + 
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85) +
+  ylim(0,0.5) +                    
+  scale_x_discrete(labels=c("up:0-2k", "2-10k","10-20k","down:0-2k", "2-10k","10-20k")) + 
+  labs(y='Proportion of genes with TE insertion site') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+##A2 genome
+exp_DE_a2 <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/DEexp_TE_a2.txt', header = T)
+str(exp_DE_a2)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A2_DEnonDEinterval_overlapwithTE_prop_genes.pdf", width=8, height=8)
+ggplot(exp_DE_a2, aes(x=interval, y=prop, fill=bias)) + 
+  scale_fill_manual(values = c("firebrick2","dodgerblue2","grey"), labels=c("A1 bias","A2 bias", "not bias"), name="DE expression") + 
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85) +
+  ylim(0,0.3) +                    
+  scale_x_discrete(labels=c("up:0-2k", "2-10k","10-20k","down:0-2k", "2-10k","10-20k")) + 
+  labs(y='Proportion of genes with TE insertion site') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
