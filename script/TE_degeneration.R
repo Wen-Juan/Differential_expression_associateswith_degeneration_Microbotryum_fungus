@@ -147,3 +147,95 @@ ggplot(DE_richmedium, aes(x=interval, y=diffpropcor, fill=bias)) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
+### 1:1 homolog
+DE_homolog <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/Mvsl_DEnonDE_TEinsert_2kupdownstream.txt', header = T)
+str(DE_homolog)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_8genomicparts_2kupstream.pdf", width=8, height=8)
+y<-ggplot(DE_homolog, aes(y=logFC.A1.A2, x=k2updiff, color=DE_status)) + 
+  scale_fill_manual(values = c("firebrick2","dodgerblue2"), labels=c("DE","Non DE"), name="DE expression") + 
+  geom_boxplot(outlier.shape=NA) +
+  facet_grid(~chr) +
+  ylim(-4,4) +  
+  xlim(-2,2) +
+  labs(y='LogFC(A1/A2)') + 
+  labs(x='Difference of TE number between homologs (A1-A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+y + coord_flip()
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_2kdownstream.pdf", width=8, height=8)
+y<-ggplot(DE_homolog, aes(y=logFC.A1.A2, x=k2downdiff, color=DE_status)) + 
+  scale_fill_manual(values = c("firebrick2","dodgerblue2"), labels=c("DE","Non DE"), name="DE expression") + 
+  geom_boxplot(outlier.shape=NA) +
+  facet_grid(~genomiccomp) +
+  ylim(-4,4) +  
+  xlim(-2,2) +
+  labs(y='LogFC(A1/A2)') + 
+  labs(x='Difference of TE number between homologs (A1-A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+y + coord_flip()
+dev.off()
+
+##1:1 homolog 2k10k upstream and downstream TE insertion sites.
+DE_homolog_2k10k <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/Mvsl_DEnonDE_TEinsert_2k10kupdownstream.txt', header = T)
+str(DE_homolog_2k10k)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_2k10kupstream.pdf", width=8, height=8)
+y<-ggplot(DE_homolog_2k10k, aes(y=logFC.A1.A2, x=k10kupstreamdiff, color=DE_status)) + 
+  scale_fill_manual(values = c("firebrick2","dodgerblue2"), labels=c("DE","Non DE"), name="DE expression") + 
+  geom_boxplot(outlier.shape=NA) +
+  facet_grid(~genomiccomp) +
+  ylim(-2,2) +  
+  xlim(-4,4) +
+  labs(y='LogFC(A1/A2)') + 
+  labs(x='Difference of TE number between homologs (A1-A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+y + coord_flip()
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_2k10kdownstream.pdf", width=8, height=8)
+y<-ggplot(DE_homolog_2k10k, aes(y=logFC.A1.A2, x=k10kdownstreamdiff, color=DE_status)) + 
+  scale_fill_manual(values = c("firebrick2","dodgerblue2"), labels=c("DE","Non DE"), name="DE expression") + 
+  geom_boxplot(outlier.shape=NA) +
+  facet_grid(~genomiccomp) +
+  ylim(-2,2) +  
+  xlim(-4,4) +
+  labs(y='LogFC(A1/A2)') + 
+  labs(x='Difference of TE number between homologs (A1-A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+y + coord_flip()
+dev.off()
+
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_8kupstream.pdf", width=8, height=8)
+y<-ggplot(DE_homolog_2k10k, aes(y=logFC.A1.A2, x=k8kintervalupdiff, color=DE_status)) + 
+  scale_fill_manual(values = c("firebrick2","dodgerblue2"), labels=c("DE","Non DE"), name="DE expression") + 
+  geom_boxplot(outlier.shape=NA) +
+  facet_grid(~genomiccomp) +
+  ylim(-2,2) +  
+  xlim(-4,4) +
+  labs(y='LogFC(A1/A2)') + 
+  labs(x='Difference of TE number between homologs (A1-A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+y + coord_flip()
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_8kdownstream.pdf", width=8, height=8)
+y<-ggplot(DE_homolog_2k10k, aes(y=logFC.A1.A2, x=k8kintervaldowndiff, color=DE_status)) + 
+  scale_fill_manual(values = c("firebrick2","dodgerblue2"), labels=c("DE","Non DE"), name="DE expression") + 
+  geom_boxplot(outlier.shape=NA) +
+  facet_grid(~genomiccomp) +
+  ylim(-2,2) +  
+  xlim(-4,4) +
+  labs(y='LogFC(A1/A2)') + 
+  labs(x='Difference of TE number between homologs (A1-A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+y + coord_flip()
+dev.off()
