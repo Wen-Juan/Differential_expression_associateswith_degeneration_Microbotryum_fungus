@@ -114,6 +114,7 @@ ggplot(exp_DE_MAT_cor, aes(x=interval, y=diffprop, fill=bias)) +
   labs(y='Proportion of genes with TE insertion site') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+
 dev.off()
 
 #DE autosome
@@ -130,3 +131,19 @@ ggplot(exp_DE_auto_cor, aes(x=interval, y=diffprop, fill=bias)) +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+
+### richmedium
+DE_richmedium <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/DEexp_TE_richmedium.txt', header = T)
+str(DE_richmedium)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDEinterval_overlapwithTE_propgenes_richmeidum_cor.pdf", width=8, height=8)
+ggplot(DE_richmedium, aes(x=interval, y=diffpropcor, fill=bias)) + 
+  scale_fill_manual(values = c("firebrick2","dodgerblue2","grey"), labels=c("A1 bias","A2 bias", "not bias"), name="DE expression") + 
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85) +
+  ylim(-0.02,0.02) +                    
+  scale_x_discrete(labels=c("up:20-10k", "2-10k","0-2k","down:0-2k", "2-10k","10-20k")) + 
+  labs(y='Proportion of genes with TE insertion site') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
