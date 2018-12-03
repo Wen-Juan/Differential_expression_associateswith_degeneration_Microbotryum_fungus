@@ -152,94 +152,127 @@ ggplot(intron_de_logfc, aes(x=chr, y=logFC.A1.A2, fill=DE_status)) + scale_fill_
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_DEnonDE_intronnrdiff_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_de_logfc, aes(x=chr, y=intronnrdiff, fill=DE_status)) + scale_fill_manual(values = c("firebrick2","grey"), labels=c("DE","Non-DE"), name="Expression") + 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_DEnonDE_3genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_de_logfc, aes(x=chr1, y=logFC.A1.A2, fill=DE_status)) + scale_fill_manual(values = c("firebrick2","grey"), labels=c("DE","Non-DE"), name="Expression") + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(-2,2) +              
+  ylim(-6,6) +              
   #theme(legend.position="none") +
   scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
-  labs(x='Genomic compartment', y='Difference of intron number between a1 and a2') +
+  labs(x='Genomic compartment', y='Log2(A1/A2)') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_DEnonDE_intronmeanlength_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_de_logfc, aes(x=chr, y=intronmeandiff, fill=DE_status)) + scale_fill_manual(values = c("firebrick2","grey"), labels=c("DE","Non-DE"), name="Expression") + 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_DEnonDE_intronnrdiffnormalize_3genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_de_logfc, aes(x=chr1, y=intronnrnormalize, fill=DE_status)) + scale_fill_manual(values = c("firebrick2","grey"), labels=c("DE","Non-DE"), name="Expression") + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(-50,25) +              
+  ylim(0,0.007) +              
   #theme(legend.position="none") +
-  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Difference of normalized intron number between a1 and a2') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_DEnonDE_intronmeanlength_3genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_de_logfc, aes(x=chr1, y=intronmeandiff, fill=DE_status)) + scale_fill_manual(values = c("firebrick2","grey"), labels=c("DE","Non-DE"), name="Expression") + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-0.3,0.6) +              
+  #theme(legend.position="none") +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   labs(x='Genomic compartment', y='Difference of intron mean length between a1 and a2') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_DEnonDE_totallength_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_de_logfc, aes(x=chr, y=introntotaldiff, fill=DE_status)) + scale_fill_manual(values = c("firebrick2","grey"), labels=c("DE","Non-DE"), name="Expression") + 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_DEnonDE_totallengthnormalize_3genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_de_logfc, aes(x=chr1, y=introntotallengthnormalize, fill=DE_status)) + scale_fill_manual(values = c("firebrick2","grey"), labels=c("DE","Non-DE"), name="Expression") + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(-150,200) +              
+  ylim(0,0.75) +              
   #theme(legend.position="none") +
-  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   labs(x='Genomic compartment', y='Difference of intron mean length between a1 and a2') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+####
+NRR <- subset(intron_de_logfc, intron_de_logfc$chr1 == "NRR")
+wilcox.test(NRR$introntotallengthnormalize[NRR$DE_status=='DE'],NRR$introntotallengthnormalize[NRR$DE_status=='NON'],exact = FALSE)
+#W = 4944, p-value = 0.3087
+wilcox.test(NRR$intronnrnormalize[NRR$DE_status=='DE'],NRR$intronnrnormalize[NRR$DE_status=='NON'],exact = FALSE)
+#W = 4688.5, p-value = 0.6991
 
 ###lm stats
-y_nr <- lm(logFC.A1.A2 ~ (intronnrdiff + introntotaldiff + intronmeandiff)*chr -1, data = intron_de_logfc) 
+y_nr <- lm(logFC.A1.A2 ~ (intronnrnormalize + introntotallengthnormalize + intronmeandiff)*chr -1, data = intron_de_logfc) 
 summary (y_nr)
 
 #####
-Call:
-  lm(formula = logFC.A1.A2 ~ (intronnrdiff + introntotaldiff + 
-                                intronmeandiff) * chr - 1, data = intron_de_logfc)
+lm(formula = logFC.A1.A2 ~ (intronnrnormalize + introntotallengthnormalize + 
+                              intronmeandiff) * chr - 1, data = intron_de_logfc)
 
 Residuals:
   Min       1Q   Median       3Q      Max 
--12.5803  -0.1401   0.0349   0.1896   7.3518 
+-12.3875  -0.1449   0.0339   0.1911   7.3548 
 
-Coefficients: (2 not defined because of singularities)
-Estimate Std. Error t value Pr(>|t|)    
-intronnrdiff               -1.442e-01  1.106e-01  -1.303   0.1925    
-introntotaldiff            -2.948e-04  9.784e-04  -0.301   0.7632    
-intronmeandiff              3.597e-05  1.440e-03   0.025   0.9801    
-chraAutosome               -3.433e-02  5.924e-03  -5.795 7.07e-09 ***
-  chrbPAR                     5.724e-02  5.008e-02   1.143   0.2530    
-chrcGreen                   1.388e-02  3.164e-01   0.044   0.9650    
-chrdRed                     2.261e-01  1.176e-01   1.922   0.0546 .  
-chreOrange                  6.791e-01  3.211e-01   2.115   0.0344 *  
-  chrfaBlack                  5.987e-02  4.409e-02   1.358   0.1745    
-chrfBlue                   -6.985e-01  1.541e-01  -4.532 5.91e-06 ***
-  chrgPurple                  2.649e-01  1.926e-01   1.375   0.1691    
-intronnrdiff:chrbPAR       -2.254e+00  6.782e+00  -0.332   0.7396    
-intronnrdiff:chrcGreen             NA         NA      NA       NA    
-intronnrdiff:chrdRed        1.486e+00  3.347e+00   0.444   0.6571    
-intronnrdiff:chreOrange    -4.653e-01  1.975e+00  -0.236   0.8138    
-intronnrdiff:chrfaBlack     3.519e-01  1.713e-01   2.054   0.0400 *  
-  intronnrdiff:chrfBlue      -5.220e+00  2.502e+00  -2.086   0.0370 *  
-  intronnrdiff:chrgPurple     6.747e-01  5.322e-01   1.268   0.2049    
-introntotaldiff:chrbPAR     2.128e-02  7.112e-02   0.299   0.7648    
-introntotaldiff:chrcGreen   2.781e-02  1.378e-02   2.018   0.0436 *  
-  introntotaldiff:chrdRed    -1.300e-02  3.686e-02  -0.353   0.7243    
-introntotaldiff:chreOrange  3.733e-02  1.293e-02   2.887   0.0039 ** 
-  introntotaldiff:chrfaBlack -5.468e-05  1.454e-03  -0.038   0.9700    
-introntotaldiff:chrfBlue    6.466e-02  3.067e-02   2.108   0.0350 *  
-  introntotaldiff:chrgPurple -2.535e-03  5.540e-03  -0.458   0.6473    
-intronmeandiff:chrbPAR     -8.958e-02  2.843e-01  -0.315   0.7527    
-intronmeandiff:chrcGreen           NA         NA      NA       NA    
-intronmeandiff:chrdRed      1.168e-01  1.833e-01   0.637   0.5239    
-intronmeandiff:chreOrange  -1.033e-01  4.931e-02  -2.094   0.0362 *  
-  intronmeandiff:chrfaBlack   6.006e-03  3.452e-03   1.740   0.0819 .  
-intronmeandiff:chrfBlue    -8.706e-02  6.334e-02  -1.374   0.1693    
-intronmeandiff:chrgPurple   4.083e-03  1.932e-02   0.211   0.8326    
----
-  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.5481 on 8874 degrees of freedom
-Multiple R-squared:  0.02504,	Adjusted R-squared:  0.02174 
-F-statistic: 7.596 on 30 and 8874 DF,  p-value: < 2.2e-16
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+intronnrnormalize                     -8.038e+00  5.602e+00  -1.435 0.151329    
+introntotallengthnormalize             2.279e-01  5.149e-02   4.426 9.70e-06 ***
+  intronmeandiff                         2.674e-04  1.184e-03   0.226 0.821254    
+chraAutosome                          -6.238e-02  1.237e-02  -5.044 4.65e-07 ***
+  chrbPAR                               -4.079e-03  1.090e-01  -0.037 0.970154    
+chrcGreen                              7.729e-02  9.071e-01   0.085 0.932095    
+chrdRed                                5.472e-02  2.607e-01   0.210 0.833748    
+chreOrange                            -5.097e+00  1.072e+00  -4.753 2.03e-06 ***
+  chrfaBlack                            -7.135e-03  8.557e-02  -0.083 0.933551    
+chrfBlue                               1.323e+00  4.039e-01   3.276 0.001059 ** 
+  chrgPurple                             1.912e-01  5.137e-01   0.372 0.709715    
+intronnrnormalize:chrbPAR             -1.467e+01  4.082e+01  -0.359 0.719237    
+intronnrnormalize:chrcGreen            3.500e+02  5.785e+02   0.605 0.545181    
+intronnrnormalize:chrdRed              1.210e+02  1.001e+02   1.209 0.226680    
+intronnrnormalize:chreOrange          -1.038e+04  2.713e+03  -3.827 0.000130 ***
+  intronnrnormalize:chrfaBlack          -6.633e+01  4.198e+01  -1.580 0.114095    
+intronnrnormalize:chrfBlue            -1.325e+03  2.166e+02  -6.117 9.91e-10 ***
+  intronnrnormalize:chrgPurple          -5.175e+02  4.316e+02  -1.199 0.230549    
+introntotallengthnormalize:chrbPAR     3.753e-01  3.498e-01   1.073 0.283315    
+introntotallengthnormalize:chrcGreen  -4.283e+00  9.981e+00  -0.429 0.667832    
+introntotallengthnormalize:chrdRed    -7.996e-01  7.345e-01  -1.089 0.276385    
+introntotallengthnormalize:chreOrange  1.083e+02  2.090e+01   5.179 2.28e-07 ***
+  introntotallengthnormalize:chrfaBlack  1.010e+00  4.046e-01   2.497 0.012537 *  
+  introntotallengthnormalize:chrfBlue    4.797e+00  2.146e+00   2.235 0.025430 *  
+  introntotallengthnormalize:chrgPurple  4.623e+00  3.719e+00   1.243 0.213919    
+intronmeandiff:chrbPAR                -5.741e-03  3.989e-03  -1.439 0.150192    
+intronmeandiff:chrcGreen               2.135e-02  1.277e-01   0.167 0.867237    
+intronmeandiff:chrdRed                 4.099e-02  1.032e-01   0.397 0.691255    
+intronmeandiff:chreOrange              2.645e-01  3.566e-02   7.418 1.30e-13 ***
+  intronmeandiff:chrfaBlack              5.467e-03  2.294e-03   2.384 0.017165 *  
+  intronmeandiff:chrfBlue                3.014e-02  8.811e-03   3.421 0.000627 ***
+  intronmeandiff:chrgPurple             -1.534e-02  8.754e-03  -1.752 0.079820 .  
 #####
+y_nr <- lm(logFC.A1.A2 ~ (intronnrnormalize + introntotallengthnormalize + intronmeandiff)*chr1 -1, data = intron_de_logfc) 
+summary (y_nr)
+lm(formula = logFC.A1.A2 ~ (intronnrnormalize + introntotallengthnormalize + 
+                              intronmeandiff) * chr1 - 1, data = intron_de_logfc)
 
+Residuals:
+  Min       1Q   Median       3Q      Max 
+-12.4618  -0.1451   0.0339   0.1905   7.3548 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+intronnrnormalize                   -8.038e+00  5.660e+00  -1.420   0.1556    
+introntotallengthnormalize       2.279e-01  5.203e-02   4.381 1.20e-05 ***
+  intronmeandiff                       2.674e-04  1.196e-03   0.224   0.8231    
+chr1aAutosome                       -6.238e-02  1.250e-02  -4.992 6.08e-07 ***
+  chr1bPAR                            -4.079e-03  1.101e-01  -0.037   0.9705    
+chr1NRR                              9.323e-02  7.735e-02   1.205   0.2281    
+intronnrnormalize:chr1bPAR          -1.467e+01  4.124e+01  -0.356   0.7220    
+intronnrnormalize:chr1NRR           -8.174e+01  3.719e+01  -2.198   0.0280 *  
+  introntotallengthnormalize:chr1bPAR  3.753e-01  3.534e-01   1.062   0.2883    
+introntotallengthnormalize:chr1NRR   7.222e-01  3.402e-01   2.123   0.0338 *  
+  intronmeandiff:chr1bPAR             -5.741e-03  4.031e-03  -1.424   0.1544    
+intronmeandiff:chr1NRR               6.616e-03  2.213e-03   2.989   0.0028 ** 
+  
 #expression and intron difference between a1 and a2.
 intron_de_expression <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/haploidwater_DEnonDE_intron_genomiccompart_a1a2sep_fi.txt', header = T)
 str(intron_de_expression)
@@ -300,8 +333,36 @@ introntotal:chreOrange  8.324e-02  3.155e-02   2.638 0.008351 **
 introntotal:chrfBlue    4.550e-03  1.409e-02   0.323 0.746768    
 introntotal:chrgPurple -5.898e-03  8.554e-03  -0.689 0.490540
 #########
-####
 
+y1_nr <- lm(logFC.A1.A2 ~ intronmeandiff*chr -1, data = intron_de_logfc) 
+summary (y1_nr)
+
+####
+lm(formula = logFC.A1.A2 ~ intronmeandiff * chr - 1, data = intron_de_logfc)
+
+Residuals:
+  Min       1Q   Median       3Q      Max 
+-12.5808  -0.1404   0.0347   0.1896   7.3518 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+intronmeandiff             0.000300   0.001192   0.252   0.8013    
+chraAutosome              -0.034298   0.005944  -5.770 8.20e-09 ***
+  chrbPAR                    0.062265   0.049785   1.251   0.2111    
+chrcGreen                  0.013879   0.317609   0.044   0.9651    
+chrdRed                    0.209264   0.107897   1.939   0.0525 .  
+chreOrange                 1.769476   0.281762   6.280 3.54e-10 ***
+  chrfaBlack                 0.060356   0.043970   1.373   0.1699    
+chrfBlue                  -0.622661   0.150475  -4.138 3.54e-05 ***
+  chrgPurple                 0.211819   0.174990   1.210   0.2261    
+intronmeandiff:chrbPAR    -0.005661   0.004000  -1.415   0.1571    
+intronmeandiff:chrcGreen   0.054776   0.027644   1.981   0.0476 *  
+  intronmeandiff:chrdRed     0.046258   0.103099   0.449   0.6537    
+intronmeandiff:chreOrange  0.036909   0.019853   1.859   0.0630 .  
+intronmeandiff:chrfaBlack  0.005871   0.002294   2.559   0.0105 *  
+  intronmeandiff:chrfBlue    0.044433   0.008620   5.155 2.60e-07 ***
+  intronmeandiff:chrgPurple -0.011486   0.008215  -1.398   0.1621 
+#######
 ###hemizggous genes and intron######
 #####################################
 intron_hemi <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/Mvsl_A1_hemi_genomiccompartment.txt', header = T)
