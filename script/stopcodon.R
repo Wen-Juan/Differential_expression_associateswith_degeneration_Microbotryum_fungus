@@ -30,3 +30,35 @@ ggplot(stopcodon, aes(x=chr1, y=cdsratio, fill=DE_status)) +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_cdsratio_3compartments.pdf", width=8, height=8)
+ggplot(stopcodon, aes(x=logFC.A1.A2, y=cdsratio, fill=DE_status)) + 
+  geom_boxplot(alpha=0.85,position = position_dodge2(preserve = "single") ) +
+  facet_grid(~chr1) +
+  #ylim(0.9,1.1) +
+  labs(y='Ration of protein length (A1/A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+#scatter correlation
+stopcodon_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/homolog_a1a2sep_cds_prot_length_removeTE_DEnonDEgeneexpree_fi.txt', header = T)
+str(stopcodon_sep)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1_DEnonDEinterval_overlapwithTE_prop_genes_cor.pdf", width=8, height=8)
+
+ggplot(stopcodon_sep, aes(x=chr, y=protleng, fill=haploid)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("A1","A2"), name="Haploid type") + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  #ylim(0,1200) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
+  labs(x='Genomic compartment', y='Intron total length per gene') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+
+ggplot(stopcodon_sep, aes(x=DE_status, y=protleng, fill=haploid)) + 
+  geom_boxplot(alpha=0.85,position = position_dodge2(preserve = "single") ) +
+  facet_grid(~chr1) +
+  labs(y='Protein length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
