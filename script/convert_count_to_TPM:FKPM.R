@@ -1,6 +1,7 @@
 ##R code, I’ve included some R code below for computing effective counts, TPM, and FPKM. I’m sure a few of those logs aren’t necessary, but I don’t think they’ll hurt :).
 ##Get this R code convertion from websitelink: https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/
 
+##I found the effective gene length is not well explained and not sure these formulars below are well accepted.
 countToTpm <- function(counts, effLen)
 {
   rate <- log(counts) - log(effLen)
