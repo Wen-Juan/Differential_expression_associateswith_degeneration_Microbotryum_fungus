@@ -197,3 +197,46 @@ wilcox.test(DE_dNdS_sub$dS[DE_dNdS_sub$DE_status=='Down'],DE_dNdS_sub$dS[DE_dNdS
 #W = 1279, p-value = 0.005356
 wilcox.test(DE_dNdS_sub$dS[DE_dNdS_sub$DE_status=='Down'],DE_dNdS_sub$dS[DE_dNdS_sub$DE_status=='Up'],exact = FALSE) 
 #W = 166, p-value = 0.5982
+
+
+#### between species dNdS.
+dNdS_2species <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/Mvsl_a1a2_DEnonDE_betweenspecies_dNdS.txt', header = T)
+str(dNdS_2species)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dndifferce_2species.pdf", width=8, height=8)
+ggplot(dNdS_2species, aes(x=chrom, y=dndiff,fill=DE)) + 
+  scale_fill_manual(values = c("firebrick2","grey","dodgerblue2"), labels=c("A2 bias", "not bias","A1 bias"), name="DE expression") + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-2,4) +
+  labs(y='dN between Mvls and Mvld difference (A1-A2)') +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dsdifferce_2species.pdf", width=8, height=8)
+ggplot(dNdS_2species, aes(x=chrom, y=dsdiff,fill=DE)) + 
+  scale_fill_manual(values = c("firebrick2","grey","dodgerblue2"), labels=c("A2 bias", "not bias","A1 bias"), name="DE expression") + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+ ylim(-2,4) +
+  labs(y='dS between Mvls and Mvld difference (A1-A2)') +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dndsdifferce_2species.pdf", width=8, height=8)
+ggplot(dNdS_2species, aes(x=chrom, y=dndsdiff,fill=DE)) + 
+  scale_fill_manual(values = c("firebrick2","grey","dodgerblue2"), labels=c("A2 bias", "not bias","A1 bias"), name="DE expression") + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-2.5,2.5) +
+  labs(y='dN/dS between Mvls and Mvld difference (A1-A2)') +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+
