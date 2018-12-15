@@ -28,7 +28,7 @@ ggplot(GC0, aes(x=chr1, y=Godiff, fill=DE_status2)) +
               show_guide=FALSE) +
   ylim(-2,2) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
-  labs(x='Genomic compartment', y='Difference in %GC between homologs (A1-A2)') +
+  labs(x='Genomic compartment', y='Difference in total %GC between homologs (A1-A2)') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
@@ -84,4 +84,40 @@ ggplot(GC0, aes(x=chr1, y=GC0A1, fill=DE_status2)) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
+###GC0 and GC3
+GC0_3 <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/Mvsl_a1a2_DEnonDE_intron_GC0_3_codinggenes.txt', header = T)
+str(GC0_3)
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_GC0_3_3compartments_withdots.pdf", width=8, height=8)
+GC0_3$chr1_n[GC0_3$chr1 == "aAutosome"] <- 1
+GC0_3$chr1_n[GC0_3$chr1 == "bPAR"] <- 2
+GC0_3$chr1_n[GC0_3$chr1 == "NRR"] <- 3
+
+GC0_3$scat_adj[GC0_3$DE_status2 == "Down"] <- -0.25
+GC0_3$scat_adj[GC0_3$DE_status2 == "NON"] <- 0
+GC0_3$scat_adj[GC0_3$DE_status2 == "Up"] <- 0.25
+ggplot(GC0_3, aes(x=chr1, y= GC3diff, fill=DE_status2)) + 
+  scale_fill_manual(values = c("firebrick2","grey","dodgerblue2"), labels=c("Down","NON","Up"), name="Expression") + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  geom_jitter(aes(chr1_n + scat_adj, Godiff),
+              position=position_jitter(width=0.05,height=0),
+              alpha=0.4,
+              size=1,
+              show_guide=FALSE) +
+  ylim(-2,2) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Difference in %GC3 between homologs (A1-A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+##stats
+
+wilcox.test(GC0_3$GC3diff[GC0_3$DE_status2=="Down"], GC0_3$GC3diff[GC0_3$DE_status2=="NON"], exact = FALSE)
+#W = 2879, p-value = 0.3637
+wilcox.test(GC0_3$GC3diff[GC0_3$DE_status2=="Up"], GC0_3$GC3diff[GC0_3$DE_status2=="NON"],
+            exact = FALSE)
+#W = 3377, p-value = 0.4419
+wilcox.test(GC0_3$GC3diff[GC0_3$DE_status2=="Up"], GC0_3$GC3diff[GC0_3$DE_status2=="Down"], 
+            exact = FALSE)
+#W = 335.5, p-value = 0.2554
