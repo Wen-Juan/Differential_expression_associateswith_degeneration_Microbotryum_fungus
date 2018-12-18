@@ -293,3 +293,18 @@ ggplot(dNdS_2species_sep, aes(x=chrom, y=dNdS,fill=interaction(haploid,DE))) +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+
+###filtering out large dNdS and dS data
+dNdS_filter_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/Mvsl_a1a2_DEnonDE_betweenspecies_dNdS_sep copy.txt', header = T)
+str(dNdS_filter_sep)
+
+ggplot(dNdS_filter_sep, aes(x=chrom, y=dS,fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","grey","dark grey","dodgerblue2","dodgerblue4")) + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-2,3) +
+  labs(y='dS between MvSl-1064 and MvSl-1318') +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+
