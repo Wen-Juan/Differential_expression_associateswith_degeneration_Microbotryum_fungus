@@ -18,7 +18,7 @@ grep -f Mvsl_richmedium_a1bias_genesa2_list.txt MvSl_A2_20perc_overlap_TE_10kups
 grep -f Mvsl_richmedium_a1bias_genesa2_list.txt MvSl_A2_20perc_overlap_TE_20kupstream_TEs.txt | cut -f9 | uniq | wc -l > Mvsl_a1bias_20kupstream_richmedium_a2nr.txt
 grep -f Mvsl_richmedium_a1bias_genesa2_list.txt MvSl_A2_20perc_overlap_TE_2kdownstream_TEs.txt | cut -f9 | uniq | wc -l > Mvsl_a1bias_2kdownstream_richmedium_a2nr.txt &
 grep -f Mvsl_richmedium_a1bias_genesa2_list.txt MvSl_A2_20perc_overlap_TE_10kdownstream_TEs.txt | cut -f9 | uniq | wc -l > Mvsl_a1bias_10kdownstream_richmedium_a2nr.txt
-grep -f Mvsl_richmedium_a1bias_genesa2_list.txt MvSl_A2_20perc_overlap_TE_20kdownstream_TEs.txt | cut -f9 | uniq | wc -l > Mvsl_a1bias_20kdownstream_richmedium_a2nr.txt
+grep -f Mvsl_richmedium_a1bias_genesa2_list.txt MvSl_A2_20perc_overlap_TE_20kdownstream_TEs.txt | cut -f9 | uniq | wc -l > Mvsl_a1bias_20Mvsl_a2bias_20kdownstream_MAT_a2nr_richmedium_a2nr.txt
 
 grep -f Mvsl_richemedium_a2bias_genesa2_list.txt MvSl_A2_20perc_overlap_TE_2kupstream_TEs.txt | cut -f9 | uniq | wc -l > Mvsl_a2bias_2kupstream_richmedium_a2nr.txt &
 grep -f Mvsl_richemedium_a2bias_genesa2_list.txt MvSl_A2_20perc_overlap_TE_10kupstream_TEs.txt | cut -f9 | uniq | wc -l > Mvsl_a2bias_10kupstream_richmedium_a2nr.txt
