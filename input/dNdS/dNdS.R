@@ -171,7 +171,7 @@ ggplot(dNdS_2species, aes(x=chrom, y=dnds,fill=interaction(haploid,DE))) +
   scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.003) +
-  labs(y='dN between MvSl-1064 and MvSl-1318') +
+  labs(y='dN/dS between MvSl-1064 and MvSl-1318') +
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   labs(x='Genomic compartment') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
