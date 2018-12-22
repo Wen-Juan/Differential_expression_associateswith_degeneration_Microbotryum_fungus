@@ -180,3 +180,20 @@ ggplot(dNdS_2species, aes(x=chr, y=dnds,fill=interaction(haploid,DE))) +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+
+### between Mvsl and Mvsd
+dNdS_Mvsl_Mvsd <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/Mvsl_Mvsd/Mvsl_Mvsd_dnds_match_sort_fi.txt', header = T)
+str(dNdS_Mvsl_Mvsd)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_a1a2sep_2species_8compartm.pdf", width=8, height=8)
+ggplot(dNdS_Mvsl_Mvsd, aes(x=chrom, y=dN,fill=DE)) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.03) +
+  labs(y='dN/dS between MvSl-1064 and MvSl-1318') +
+  #scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) +
+  labs(x='Genomic compartment') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
