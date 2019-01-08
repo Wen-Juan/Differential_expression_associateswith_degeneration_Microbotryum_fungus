@@ -33,7 +33,7 @@ ggplot(intron_total, aes(x=Genomicloc, y=intronnr, fill=Haploid)) + scale_fill_m
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,15) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
-  labs(x='Genomic compartment', y='Average intron length per gene') +
+  labs(x='Genomic compartment', y='Average intron number per gene') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
@@ -418,12 +418,12 @@ intron_hemi_homo <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amhers
 str(intron_hemi_homo)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_homologhemi_intronnr_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_hemi_homo, aes(x=Genomicloc, y=intronnr, fill = ploidy)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("Two copies","Hemizygous"), name="Copy number") + 
+ggplot(intron_hemi_homo, aes(x=Genomicloc, y=intronnr, fill = Haploid)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("Two copies","Hemizygous"), name="Copy number") + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,10) +              
   #theme(legend.position="none") +
   scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple","Color")) + 
-  labs(x='Genomic compartment', y='Intron total length') +
+  labs(x='Genomic compartment', y='Average intron number per gene') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
