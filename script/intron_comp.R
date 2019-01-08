@@ -7,111 +7,116 @@ install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
 #load the corresponding data files.
-intron_total <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/Mvsl_A1A2_singleortholog_genomiccompartment.txt', header = T)
-str(intron_total)
+intron_total_fi <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/haploidwater_DEnonDE_intronfi08012019.txt', header = T)
+str(intron_total_fi) #loading Jan.08.2019
 
-intron_diff <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/Mvsl_singleortholog_introndifference.txt', header = T)
+intron_diff <- subset.data.frame(intron_total_fi, intron_total_fi$haploid == "A1")
 str(intron_diff)
 
-#plot intron number
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_singlecopy_introntotallengthovergenelength_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_total, aes(x=Genomicloc, y=intronovergenelength, fill=Haploid)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("A1","A2"), name="Haploid type") + 
+#plot intron number Jan.08.2019
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronnr_8genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_total_fi, aes(x=chr, y=intronnr, fill=interaction(haploid,DE_status))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0,0.75) +                    
+  ylim(0,15) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
-  labs(x='Genomic compartment', y='Intron number normalized by coding gene length') +
+  labs(x='Genomic compartment', y='Avereage intron number') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronnr_3genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_total_fi, aes(x=chrom, y=intronnr, fill=interaction(haploid,DE_status))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,15) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Avereage intron number') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronnrdiff_3genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_diff, aes(x=chrom, y=intronnrdiff, fill=interaction(haploid,DE_status))) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-0.01,0.01) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Avereage intron number difference') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
 
 ###scatter plot on positive correlation between intron length and coding sequencing length.
 ggplot(intron_total, aes(x=introntotal, y=genelength)) + geom_point()
 
 #plot intron mean length
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_singlecopy_intronnr_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_total, aes(x=Genomicloc, y=intronnr, fill=Haploid)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("A1","A2"), name="Haploid type") + 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronmeanlength_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_total_fi, aes(x=chrom, y=meanlength, fill=interaction(haploid,DE_status))) + scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0,15) +                    
-  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
-  labs(x='Genomic compartment', y='Average intron number per gene') +
-  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
-dev.off()
-
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_singlecopy_intronmeanlength_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_total, aes(x=Genomicloc, y=intronmean, fill=Haploid)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("A1","A2"), name="Haploid type") + 
-  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0,210) +                    
-  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
+  ylim(0,250) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   labs(x='Genomic compartment', y='Average intron length per gene') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
-#plot intron total length
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_singlecopy_introntotallength_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_total, aes(x=Genomicloc, y=introntotal, fill=Haploid)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("A1","A2"), name="Haploid type") + 
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronmeanlengthdiff_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_diff, aes(x=chrom, y=intronmeandiff, fill=interaction(haploid,DE_status))) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0,1200) +                    
-  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
-  labs(x='Genomic compartment', y='Intron total length per gene') +
+  ylim(-10,10) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Avereage intron length difference') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+#plot intron total length
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_introntotallength_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_total_fi, aes(x=chrom, y=totallength, fill=interaction(haploid,DE_status))) + scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,1500) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Total intron length per gene') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_introntotallengthdiff_genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_diff, aes(x=chrom, y=introntotaldiff, fill=interaction(haploid,DE_status))) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-10,10) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Total intron length difference') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
 ###
-y1 <- lm(introntotal~Genomicloc, data=intron_total)
-y2 <- lm(introntotal~Genomicloc-1, data=intron_total)
-anova(y1,y2)
-summary(y2)
-
-#Coefficients:
-Estimate Std. Error t value Pr(>|t|)    
-GenomiclocaAutosome  339.852      2.082 163.202  < 2e-16 ***
-  GenomiclocbPAR       304.128     16.904  17.991  < 2e-16 ***
-  GenomicloccGreen     220.600     93.202   2.367   0.0179 *  
-  GenomiclocdRed       345.383     38.050   9.077  < 2e-16 ***
-  GenomicloceOrange    514.300     93.202   5.518 3.47e-08 ***
-  GenomiclocfaBlack    360.654     14.115  25.551  < 2e-16 ***
-  GenomiclocfBlue      382.567     53.810   7.110 1.20e-12 ***
-  GenomiclocgPurple    681.962     57.802  11.798  < 2e-16 ***
-  ---
-  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-#
-
-y3 <- lm(intronnr~Genomicloc, data=intron_total)
-y4 <- lm(intronnr~Genomicloc-1, data=intron_total)
-anova(y3,y4)
-summary(y4)
-
+y1 <- lm(logFCA1A2~ intronmeandiff * intronnrdiff * introntotaldiff, data=intron_diff)
+summary(y1)
 ##
+lm(formula = logFCA1A2 ~ intronmeandiff * intronnrdiff * introntotaldiff, 
+   data = intron_diff)
+
+Residuals:
+  Min       1Q   Median       3Q      Max 
+-12.4884  -0.1419   0.0342   0.1888   7.3495 
+
 Coefficients:
   Estimate Std. Error t value Pr(>|t|)    
-GenomiclocaAutosome  3.64582    0.02031  179.49  < 2e-16 ***
-  GenomiclocbPAR       3.21382    0.16488   19.49  < 2e-16 ***
-  GenomicloccGreen     1.80000    0.90910    1.98   0.0477 *  
-  GenomiclocdRed       3.71667    0.37114   10.01  < 2e-16 ***
-  GenomicloceOrange    4.10000    0.90910    4.51 6.52e-06 ***
-  GenomiclocfaBlack    3.91284    0.13768   28.42  < 2e-16 ***
-  GenomiclocfBlue      3.90000    0.52487    7.43 1.12e-13 ***
-  GenomiclocgPurple    6.65385    0.56380   11.80  < 2e-16 ***
-
-#
-y5 <- lm(intronmean~Genomicloc, data=intron_total)
-y6 <- lm(intronmean~Genomicloc-1, data=intron_total)
-anova(y5,y6)
-summary(y6)
-##
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-GenomiclocaAutosome   88.360      0.400 220.895  < 2e-16 ***
-  GenomiclocbPAR        82.839      3.247  25.512  < 2e-16 ***
-  GenomicloccGreen     117.600     17.903   6.569 5.20e-11 ***
-  GenomiclocdRed        97.505      7.309  13.340  < 2e-16 ***
-  GenomicloceOrange    100.417     17.903   5.609 2.06e-08 ***
-  GenomiclocfaBlack     84.171      2.711  31.043  < 2e-16 ***
-  GenomiclocfBlue      103.445     10.336  10.008  < 2e-16 ***
-  GenomiclocgPurple    107.406     11.103   9.673  < 2e-16 ***
-##
+(Intercept)                                 -3.201e-02  5.874e-03  -5.449  5.2e-08 ***
+  intronmeandiff                               5.308e-03  1.994e-03   2.662  0.00777 ** 
+  intronnrdiff                                 8.277e-02  8.607e-02   0.962  0.33624    
+introntotaldiff                              3.344e-04  8.305e-04   0.403  0.68721    
+intronmeandiff:intronnrdiff                 -6.215e-03  1.908e-03  -3.257  0.00113 ** 
+  intronmeandiff:introntotaldiff               1.524e-05  6.045e-06   2.521  0.01171 *  
+  intronnrdiff:introntotaldiff                 1.119e-03  3.878e-04   2.886  0.00391 ** 
+  intronmeandiff:intronnrdiff:introntotaldiff -2.494e-06  4.733e-06  -0.527  0.59827   
+####
 
 #### intron differences
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_singlecopy_intronnrdiffnormalized_genomiccompartment.pdf", width=8, height=8)
@@ -121,7 +126,7 @@ ggplot(intron_total, aes(x=Genomicloc, y=intronnrovergenelength)) +
   theme(legend.position="none") +
   scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
   labs(x='Genomic compartment', y='Intron number difference between A1 and A2') +
-  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.title.x = element_text(size=10,colour = "black"), axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
@@ -140,12 +145,12 @@ dev.off()
 intron_de <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/haploidwater_DEnonDE_intron_genomiccompart_a1a2sep_fi.txt', header = T)
 str(intron_de)
 
-ggplot(intron_de, aes(x=chr, y=introntotal, fill=haploid)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("A1","A2"), name="Haploid type") + 
+ggplot(intron_de, aes(x=chr, y=Expression, fill=haploid)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("A1","A2"), name="Haploid type") + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0,1500) +              
+  ylim(0,10) +              
   theme(legend.position="none") +
   scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
-  labs(x='Genomic compartment', y='Difference of average intron length between A1 and A2') +
+  labs(x='Genomic compartment', y='Intron total length') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 
