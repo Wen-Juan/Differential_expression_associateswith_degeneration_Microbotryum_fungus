@@ -189,7 +189,7 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(dNdS_Mvsl_Mvsd, aes(x=chrom, y=dNa1,fill=interaction(haploid,DE))) + 
   scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(-0,0.02) +
+  ylim(0,0.02) +
   labs(y='dN between MvSl and MvSd') +
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   #scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) +
@@ -215,7 +215,7 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(dNdS_Mvsl_Mvsd, aes(x=chrom, y=dNdSa1,fill=interaction(haploid,DE))) + 
   scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0,0.002) +
+  ylim(0,1.2) +
   labs(y='dN/dS between MvSl and MvSd') +
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   #scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) +
