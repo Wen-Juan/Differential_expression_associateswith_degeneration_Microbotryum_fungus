@@ -1,19 +1,19 @@
-biasstatus	bias	A1	interval	numberofgenes	prop	total	a2number	prop2	diffprop	diffnr
-DE	aup	A1	cupstream2K	3	0.078947368	38	7	0.184210526	-0.105	-4
-DE	aup	A1	bupstream2K10K	10	0.263157895	38	11	0.289473684	-0.026	-1
-DE	aup	A1	aupstream10K20K	10	0.263157895	38	7	0.184210526	0.079	3
-DE	aup	A1	ddownstream2K	4	0.105263158	38	3	0.078947368	0.026	1
-DE	aup	A1	edownstream2K10K	13	0.342105263	38	14	0.368421053	-0.026	-1
-DE	aup	A1	fdownstream10K20K	13	0.342105263	38	10	0.263157895	0.079	3
-DE	bdown	A1	cupstream2K	3	0.107142857	28	3	0.107142857	0.000	0
-DE	bdown	A1	bupstream2K10K	12	0.428571429	28	7	0.25	0.179	5
-DE	bdown	A1	aupstream10K20K	4	0.142857143	28	5	0.178571429	-0.036	-1
-DE	bdown	A1	ddownstream2K	2	0.071428571	28	3	0.107142857	-0.036	-1
-DE	bdown	A1	edownstream2K10K	16	0.571428571	28	7	0.25	0.321	9
-DE	bdown	A1	fdownstream10K20K	1	0.035714286	28	7	0.25	-0.214	-6
-NON	cnull	A1	cupstream2K	11	0.039855072	276	17	0.061594203	-0.022	-6
-NON	cnull	A1	bupstream2K10K	85	0.307971014	276	77	0.278985507	0.029	8
-NON	cnull	A1	aupstream10K20K	51	0.184782609	276	61	0.221014493	-0.036	-10
-NON	cnull	A1	ddownstream2K	17	0.061594203	276	17	0.061594203	0.000	0
-NON	cnull	A1	edownstream2K10K	69	0.25	276	81	0.293478261	-0.043	-12
-NON	cnull	A1	fdownstream10K20K	52	0.188405797	276	47	0.170289855	0.018	5
+biasstatus	bias	interval	numberofgenes	prop	total	a2number	prop2	diffprop	diffnr
+DE	dup	cupstream2K	3	0.079	38	7	0.184	-0.105	-4
+DE	dup	bupstream2K10K	10	0.263	38	11	0.289	-0.026	-1
+DE	dup	dupstream10K20K	10	0.263	38	7	0.184	0.079	3
+DE	dup	ddownstream2K	4	0.105	38	3	0.079	0.026	1
+DE	dup	edownstream2K10K	13	0.342	38	14	0.368	-0.026	-1
+DE	dup	fdownstream10K20K	13	0.342	38	10	0.263	0.079	3
+DE	bdown	cupstream2K	3	0.107	28	3	0.107	0	0
+DE	bdown	bupstream2K10K	12	0.429	28	7	0.250	0.179	5
+DE	bdown	dupstream10K20K	4	0.143	28	5	0.179	-0.036	-1
+DE	bdown	ddownstream2K	2	0.071	28	3	0.107	-0.036	-1
+DE	bdown	edownstream2K10K	16	0.571	28	7	0.250	0.321	9
+DE	bdown	fdownstream10K20K	1	0.036	28	7	0.250	-0.214	-6
+NON	cnull	cupstream2K	11	0.040	276	17	0.062	-0.022	-6
+NON	cnull	bupstream2K10K	85	0.308	276	77	0.279	0.029	8
+NON	cnull	dupstream10K20K	51	0.185	276	61	0.221	-0.036	-10
+NON	cnull	ddownstream2K	17	0.062	276	17	0.062	0	0
+NON	cnull	edownstream2K10K	69	0.250	276	81	0.293	-0.043	-12
+NON	cnull	fdownstream10K20K	52	0.188	276	47	0.170	0.018	5
