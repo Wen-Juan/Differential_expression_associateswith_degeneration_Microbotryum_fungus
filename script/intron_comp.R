@@ -62,12 +62,19 @@ ggplot(intron_total_fi, aes(x=chrom, y=meanlength, fill=interaction(haploid,DE_s
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronmeanlengthdiff_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_diff, aes(x=chrom, y=intronmeandiff, fill=interaction(haploid,DE_status))) + 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronmeanlengthdiff_8genomiccompartment.pdf", width=8, height=8)
+
+give.n <- function(x){
+  return(c(y = mean(x), label = length(x)))
+}
+
+ggplot(intron_diff, aes(x=chr, y=intronmeandiff, fill=interaction(haploid,DE_status))) + 
   scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  #stat_summary(fun.data = give.n, geom = "text",colour = "red", width = 1, size =5) +
   ylim(-10,10) +                    
-  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  #scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
   labs(x='Genomic compartment', y='Avereage intron length difference') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
@@ -141,6 +148,10 @@ ggplot(intron_total, aes(x=Genomicloc, y=intronovergenelength)) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
+
+##########################################################################################################################
+######################  codes below are not really needed for final version, keep it just in case ########################
+######################                                                                            ########################
 ###DE genes and intron size, number
 intron_de <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/haploidwater_DEnonDE_intron_genomiccompart_a1a2sep_fi.txt', header = T)
 str(intron_de)
