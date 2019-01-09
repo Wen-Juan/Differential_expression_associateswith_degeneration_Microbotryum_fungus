@@ -201,7 +201,7 @@ ggplot(dNdS_diff, aes(x=chrom, y=dsdiff,fill=DE)) +
   scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-0.004,0.004) +
-  labs(y='dN difference between MvSl-1064 and MvSl-1318') +
+  labs(y='dS difference between MvSl-1064 and MvSl-1318') +
   #scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) +
   labs(x='Genomic compartment') +
@@ -214,7 +214,7 @@ ggplot(dNdS_diff, aes(x=chrom, y=dndsdiff,fill=DE)) +
   scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-0.004,0.004) +
-  labs(y='dN difference between MvSl-1064 and MvSl-1318') +
+  labs(y='dN/dS difference between MvSl-1064 and MvSl-1318') +
   #scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) +
   labs(x='Genomic compartment') +
