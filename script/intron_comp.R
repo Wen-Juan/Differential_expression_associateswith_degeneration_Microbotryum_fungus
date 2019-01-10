@@ -27,7 +27,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronnr_3genomiccompartment.pdf", width=8, height=8)
 ggplot(intron_total_fi, aes(x=chrom, y=intronnr, fill=interaction(haploid,DE_status))) + 
-  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) +
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,15) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
@@ -38,7 +38,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronnrdiff_3genomiccompartment.pdf", width=8, height=8)
 ggplot(intron_diff, aes(x=chrom, y=intronnrdiff, fill=interaction(haploid,DE_status))) + 
-  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) +
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-0.01,0.01) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
@@ -52,9 +52,10 @@ dev.off()
 ggplot(intron_total, aes(x=introntotal, y=genelength)) + geom_point()
 
 #plot intron mean length
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronmeanlength_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_total_fi, aes(x=chrom, y=meanlength, fill=interaction(haploid,DE_status))) + scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
-  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronmeanlength_3genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_total_fi, aes(x=chrom, y=meanlength, fill=interaction(haploid,DE_status))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
+   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,250) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   labs(x='Genomic compartment', y='Average intron length per gene') +
@@ -63,13 +64,12 @@ ggplot(intron_total_fi, aes(x=chrom, y=meanlength, fill=interaction(haploid,DE_s
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronmeanlengthdiff_8genomiccompartment.pdf", width=8, height=8)
-
 give.n <- function(x){
   return(c(y = mean(x), label = length(x)))
 }
 
 ggplot(intron_diff, aes(x=chr, y=intronmeandiff, fill=interaction(haploid,DE_status))) + 
-  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) +
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   #stat_summary(fun.data = give.n, geom = "text",colour = "red", width = 1, size =5) +
   ylim(-10,10) +                    
@@ -81,8 +81,9 @@ ggplot(intron_diff, aes(x=chr, y=intronmeandiff, fill=interaction(haploid,DE_sta
 dev.off()
 
 #plot intron total length
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_introntotallength_genomiccompartment.pdf", width=8, height=8)
-ggplot(intron_total_fi, aes(x=chrom, y=totallength, fill=interaction(haploid,DE_status))) + scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_introntotallength_3genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_total_fi, aes(x=chrom, y=totallength, fill=interaction(haploid,DE_status))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,1500) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
@@ -91,13 +92,24 @@ ggplot(intron_total_fi, aes(x=chrom, y=totallength, fill=interaction(haploid,DE_
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_introntotallengthdiff_genomiccompartment.pdf", width=8, height=8)
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_introntotallengthdiff_3genomiccompartment.pdf", width=8, height=8)
 ggplot(intron_diff, aes(x=chrom, y=introntotaldiff, fill=interaction(haploid,DE_status))) + 
-  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) +
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-10,10) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   labs(x='Genomic compartment', y='Total intron length difference') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_meanintronlengthdiff_3genomiccompartment.pdf", width=8, height=8)
+ggplot(intron_diff, aes(x=chrom, y=intronmeandiff, fill=interaction(haploid,DE_status))) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-10,10) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Average intron length difference') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
@@ -128,6 +140,7 @@ intronmeandiff:intronnrdiff                 -6.215e-03  1.908e-03  -3.257  0.001
 #### intron differences
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_singlecopy_intronnrdiffnormalized_genomiccompartment.pdf", width=8, height=8)
 ggplot(intron_total, aes(x=Genomicloc, y=intronnrovergenelength)) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.007) +              
   theme(legend.position="none") +

@@ -12,7 +12,7 @@ str(dNdS)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_dNdS_3genomiccompartments_v2.pdf", width=8, height=8)
 ggplot(dNdS, aes(x=genomiccomp, y=dN, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) +
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.04) +  
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
@@ -23,7 +23,7 @@ dev.off()
 ###
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_ds_3genomiccompartments.pdf", width=8, height=8)
   ggplot(dNdS, aes(x=genomiccomp, y=dS, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2", "light grey","dodgerblue2")) +
+  scale_fill_manual(values = c("firebrick2", "light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.08) +
     scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
@@ -142,7 +142,7 @@ str(dNdS_2species)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_2subspecies_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_2species, aes(x=chrom, y=dN, fill=interaction(haploid,DE))) + 
-  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) +
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.015) +
   labs(y='dN between MvSl-1064 and MvSl-1318') +
@@ -155,7 +155,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dS_2subspecies_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_2species, aes(x=chrom, y=dS, fill=interaction(haploid,DE))) + 
-  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) +
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.03) +
   labs(y='dS between MvSl-1064 and MvSl-1318') +
@@ -168,7 +168,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_2species_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_2species, aes(x=chrom, y=dnds,fill=interaction(haploid,DE))) + 
-  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.003) +
   labs(y='dN/dS between MvSl-1064 and MvSl-1318') +
@@ -185,7 +185,7 @@ str(dNdS_diff)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_2subspecies_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_diff, aes(x=chrom, y=dndiff,fill=DE)) + 
-  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-0.004,0.004) +
   labs(y='dN difference between MvSl-1064 and MvSl-1318') +
@@ -198,7 +198,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_2subspecies_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_diff, aes(x=chrom, y=dsdiff,fill=DE)) + 
-  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-0.004,0.004) +
   labs(y='dS difference between MvSl-1064 and MvSl-1318') +
@@ -211,7 +211,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_2subspecies_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_diff, aes(x=chrom, y=dndsdiff,fill=DE)) + 
-  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-0.004,0.004) +
   labs(y='dN/dS difference between MvSl-1064 and MvSl-1318') +
@@ -228,7 +228,7 @@ str(dNdS_Mvsl_Mvsd)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsd_dn_a1a2sep_2species_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_Mvsl_Mvsd, aes(x=chrom, y=dNa1,fill=interaction(haploid,DE))) + 
-  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.02) +
   labs(y='dN between MvSl and MvSd') +
@@ -241,7 +241,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsd_dS_a1a2sep_2species_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_Mvsl_Mvsd, aes(x=chrom, y=dSa1,fill=interaction(haploid,DE))) + 
-  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.04) +
   labs(y='dS between MvSl and MvSd') +
@@ -254,7 +254,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsd_dNdS_a1a2sep_2species_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_Mvsl_Mvsd, aes(x=chrom, y=dNdSa1,fill=interaction(haploid,DE))) + 
-  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4")) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,1.2) +
   labs(y='dN/dS between MvSl and MvSd') +
@@ -271,7 +271,7 @@ str(dNdSdiff_Mvsl_Mvsd)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsd_dNdiff_2species_3compartm.pdf", width=8, height=8)
 ggplot(dNdSdiff_Mvsl_Mvsd, aes(x=chrom, y=dndiff,fill=DE)) + 
-  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2")) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-0.001,0.001) +
   labs(y='dN difference between MvSl and MvSd') +

@@ -75,9 +75,9 @@ y<-ggplot(DE_homolog, aes(y=logFC.A1.A2, x=k2updiff, color=DE_status)) +
 y + coord_flip()
 ddev.off()
 ############################################################################################################
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff2kdownstream_logfc_3genomicparts", width=8, height=8)
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff2kdownstream_logfc_3genomicparts.pdf", width=8, height=8)
 ggplot(DE_homolog, aes(y=k2downdiff,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-0.5,0.5) +  
   labs(x='Genomic compartment') + 
@@ -86,9 +86,20 @@ ggplot(DE_homolog, aes(y=k2downdiff,x=genomiccomp, fill=DE_status)) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff2kupstream_logfc_3genomicparts,.pdf", width=8, height=8)
+ggplot(DE_homolog, aes(y=k2updiff,x=genomiccomp, fill=DE_status)) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
+  geom_boxplot(outlier.shape=NA) +
+  ylim(-0.5,0.5) +  
+  labs(x='Genomic compartment') + 
+  labs(y='Difference of TE number [0-2k upstream] (A1-A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff8kupstream_logfc_3genomicparts", width=8, height=8)
   ggplot(DE_homolog, aes(y=k8kintervalupdiff,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-4,4) +  
     labs(x='Genomic compartment') + 
@@ -99,7 +110,18 @@ dev.off()
   
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_10kupstream.pdf", width=8, height=8)
 ggplot(DE_homolog, aes(y=k10updiff,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
+  geom_boxplot(outlier.shape=NA) +
+  ylim(-4,4) +  
+  labs(x='Genomic compartment') + 
+  labs(y='Difference of TE number [0-10k upstream] (A1-A2)') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_8kupstream.pdf", width=8, height=8)
+ggplot(DE_homolog, aes(y=k8kintervalupdiff,x=genomiccomp, fill=DE_status)) + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-4,4) +  
   labs(x='Genomic compartment') + 
@@ -110,7 +132,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_10kdwonstream.pdf", width=8, height=8)
 ggplot(DE_homolog, aes(y=k10downdiff,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-4,4) +  
   labs(x='Genomic compartment') + 
@@ -119,20 +141,9 @@ ggplot(DE_homolog, aes(y=k10downdiff,x=genomiccomp, fill=DE_status)) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_8kupstream.pdf", width=8, height=8)
-ggplot(DE_homolog, aes(y=k8kintervalupdiff,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
-  geom_boxplot(outlier.shape=NA) +
-  ylim(-4,4) +  
-  labs(x='Genomic compartment') + 
-  labs(y='Difference of TE number [2-10k upstream] (A1-A2)') +
-  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
-dev.off()
-
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_8kdownstream.pdf", width=8, height=8)
 ggplot(DE_homolog, aes(y=k8kintervaldowndiff,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-4,4) +  
   labs(x='Genomic compartment') + 
@@ -154,7 +165,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_2kupstream.pdf", width=8, height=8)
 ggplot(DE_homolog, aes(y=k2updiff,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-4,4) +  
   labs(x='Genomic compartment') + 
@@ -169,7 +180,7 @@ str(DE_homolog2)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_20kupstream.pdf", width=8, height=8)
 ggplot(DE_homolog2, aes(y=k20updiff,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-6,6) +  
   labs(x='Genomic compartment') + 
@@ -180,7 +191,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_20kdownstream.pdf", width=8, height=8)
 ggplot(DE_homolog2, aes(y=k20downdiff,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-6,6) +  
   labs(x='Genomic compartment') + 
@@ -191,7 +202,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_10to20kupstream.pdf", width=8, height=8)
 ggplot(DE_homolog2, aes(y=kin20updiffa1,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-6,6) +  
   labs(x='Genomic compartment') + 
@@ -202,7 +213,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_TEdiff_logfc_3genomicparts_10to20kdownstream.pdf", width=8, height=8)
 ggplot(DE_homolog2, aes(y=kin20downdiffa2,x=genomiccomp, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","grey", "dodgerblue2"), labels=c("Down", "NON", "Up"), name="DE expression") + 
+  scale_fill_manual(values = c("firebrick2","light grey","dodgerblue2"),labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(outlier.shape=NA) +
   ylim(-6,6) +  
   labs(x='Genomic compartment') + 

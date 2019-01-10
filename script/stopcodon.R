@@ -59,7 +59,8 @@ dev.off()
 stopcodon <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/homolog_a1a2_cds_prot_length_removeTE_DEnonDEgeneexpree_intron_fi.txt', header = T)
 str(stopcodon)
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1A2_cdsratio_a1a2_3PARTS.pdf", width=8, height=8)
+#########violin plot does not display message well####################
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cds_A1A2ratio_3PARTS.pdf", width=8, height=8)
 ggplot(stopcodon, aes(chr1,cdsratio)) + 
   #geom_boxplot() +
   geom_violin(fill = "blue") +
@@ -69,40 +70,35 @@ ggplot(stopcodon, aes(chr1,cdsratio)) +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+#######################################################################
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1_DEnonDEinterval_overlapwithTE_prop_genes_cor.pdf", width=8, height=8)
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_cdsa1a2ratio_3compartments.pdf", width=8, height=8)
 ggplot(stopcodon, aes(x=chr1, y=cdsratio, fill=DE_status)) + 
-  scale_fill_manual(values = c("firebrick2","dodgerblue2","grey"), labels=c("Down","Up", "not bias"), name="DE expression") + 
-  geom_bar(stat="identity",position=position_dodge(),alpha=0.85) +
-  #scale_x_discrete(labels=c("up:10-22k", "2-10k","0-2k","down:0-2k", "2-10k","10-20k")) + 
-  labs(y='Proportion of genes with TE insertion site') +
+  geom_boxplot(alpha=0.85) +
+  scale_fill_manual(values = c("firebrick3","grey","dodgerblue3"), labels=c("A2 biased","Not-biased","A1 biased"), name="Expression") + 
+  ylim(0.5,1.5) +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Ratio of coding sequence length (A1/A2') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_cdsratio_3compartments.pdf", width=8, height=8)
-ggplot(stopcodon, aes(x=logFC.A1.A2, y=cdsratio, fill=DE_status)) + 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_protiena1a2ratio_3compartments.pdf", width=8, height=8)
+ggplot(stopcodon, aes(x=chr1, y=protratio, fill=DE_status)) + 
   geom_boxplot(alpha=0.85,position = position_dodge2(preserve = "single") ) +
-  facet_grid(~chr1) +
-  #ylim(0.9,1.1) +
-  labs(y='Ration of protein length (A1/A2)') +
+  scale_fill_manual(values = c("firebrick3","grey","dodgerblue3"), labels=c("A2 biased","Not-biased","A1 biased"), name="Expression") + 
+  ylim(0.5,1.5) +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Ratio of protein length (A1/A2') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
-
-ggplot(stopcodon, aes(x=logFC.A1.A2, y=protratio, fill=DE_status)) + 
- # scale_fill_manual(values = c("firebrick2","dodgerblue2","grey"), labels=c("Down","Up", "not bias"), name="DE expression") + 
-  geom_boxplot(alpha=0.85,position = position_dodge2(preserve = "single") ) +
-  facet_grid(~chr1) +
-  ylim(0,0.5)
-labs(y='Protein length') +
-  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 
 #scatter correlation
 stopcodon_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/homolog_a1a2sep_cds_prot_length_removeTE_DEnonDEgeneexpree_tpm_fi.txt', header = T)
 str(stopcodon_sep)
 
+########not useful###############
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_8compartments_tpm.pdf", width=8, height=8)
 ggplot(stopcodon_sep, aes(x=chr, y=log(meantpm), fill=haploid)) + scale_fill_manual(values = c("dodgerblue2","grey"), labels=c("A1","A2"), name="Haploid type") + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
@@ -112,27 +108,15 @@ ggplot(stopcodon_sep, aes(x=chr, y=log(meantpm), fill=haploid)) + scale_fill_man
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+########not useful###############
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_DEnonDE_protlength_3compartments_cor.pdf", width=15, height=8)
-ggplot(stopcodon_sep, aes(x=log(meantpm+0.00001), y=protleng,fill=interaction(haploid,DE_status))) + 
-  geom_boxplot(alpha=0.85, position = position_dodge2(),outlier.shape=NA,width=0.2) +
-  facet_grid(~chr1) +
+ggplot(stopcodon_sep, aes(x=chr1, y=protleng,fill=interaction(haploid,DE_status))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"),labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1", "Not biased at A2","A1 biased at A1", "A1 biased at A2"), name="Expression") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,1600) +
- # xlim(0,100) +
-  labs(y='Protein length') +
-  labs(x='Log(meanTPM)') +
-  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
-dev.off()
-
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2sep_DEnonDE_protlength_3compartment_scatter1.pdf", width=8, height=8)
-ggplot(stopcodon_sep, aes(x=log(meantpm), y=protleng,color=interaction(haploid,DE_status))) + 
-  geom_point (alpha=0.5)+
-  facet_grid(~chr1) +
-  #geom_smooth(method=lm,se=FALSE) +
-  ylim(0,4000) +
-  labs(y='Protein length') +
-  labs(x='Log(meanTPM)') +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Protein length') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
