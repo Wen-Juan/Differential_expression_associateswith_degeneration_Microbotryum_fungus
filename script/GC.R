@@ -3,7 +3,7 @@ library(ggplot2)
 library(plyr)
 install.packages("devtools")
 library(devtools)
-install_github("easyGgplot2", "kassambara")
+install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
 #load the corresponding data files.
