@@ -1,0 +1,17 @@
+compartment	bias	ratio
+Autosome	DE	0.016949153
+Autosome	Non_DE	0.011970653
+bPAR	DE	0
+bPAR	Non_DE	0.018348624
+cGreen	DE	1
+cGreen	Non_DE	0.333333333
+dRed	DE	0
+dRed	Non_DE	0.32
+eOrange	DE	1
+eOrange	Non_DE	1
+fBlack	DE	0.641025641
+fBlack	Non_DE	0.5625
+gBlue	DE	0.8
+gBlue	Non_DE	0.5
+hPurple	DE	1
+hPurple	Non_DE	0.428571429

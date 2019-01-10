@@ -6,6 +6,55 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load propotion data, modified codes on Jan.10.2019.
+##protein length in 8 genomic compartments
+stopcodon_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/stopcodon_de_ratio.txt', header = T)
+str(stopcodon_ratio)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protenlength_ratio_8PARTS.pdf", width=8, height=8)
+ggplot(stopcodon_ratio, aes(factor(compartment), ratio, fill = bias)) + 
+  scale_fill_manual(values = c("dodgerblue3","grey"), labels=c("DE","Non-DE"), name="Expression") + 
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
+  labs(x='Genomic compartment', y='Proportion')
+dev.off()
+
+##protein length in 3 genomic compartments.
+protlength_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/ratio_proteinlength.txt', header = T)
+str(protlength_ratio)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protenlength_ratio_3PARTS.pdf", width=8, height=8)
+ggplot(protlength_ratio, aes(factor(compartment), ratio, fill = bias)) + 
+  scale_fill_manual(values = c("dodgerblue3","grey"), labels=c("DE","Non-DE"), name="Expression") + 
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Proportion')
+dev.off()
+
+#cds length in 8 and 3 genomic compartments.
+cds_eightparts <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/cds_8parts.txt', header = T)
+str(cds_eightparts)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cdslength_ratio_8PARTS.pdf", width=8, height=8)
+ggplot(cds_eightparts, aes(factor(compartment), ratio, fill = bias)) + 
+  scale_fill_manual(values = c("dodgerblue3","grey"), labels=c("DE","Non-DE"), name="Expression") + 
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Green", "Red","Orange","Black","Blue","Purple")) + 
+  labs(x='Genomic compartment', y='Proportion')
+dev.off()
+
+cds_threeparts <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/cds_threeparts.txt', header = T)
+str(cds_threeparts)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cdslength_ratio_3PARTS.pdf", width=8, height=8)
+ggplot(cds_threeparts, aes(factor(compartment), ratio, fill = bias)) + 
+  scale_fill_manual(values = c("dodgerblue3","grey"), labels=c("DE","Non-DE"), name="Expression") + 
+  ylim(0,1) +
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
+  labs(x='Genomic compartment', y='Proportion')
+dev.off()
+
 #load the corresponding data files.
 stopcodon <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/homolog_a1a2_cds_prot_length_removeTE_DEnonDEgeneexpree_intron_fi.txt', header = T)
 str(stopcodon)

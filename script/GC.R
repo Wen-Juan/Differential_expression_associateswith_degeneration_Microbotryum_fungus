@@ -19,13 +19,13 @@ GC0$scat_adj[GC0$DE_status2 == "Down"] <- -0.25
 GC0$scat_adj[GC0$DE_status2 == "NON"] <- 0
 GC0$scat_adj[GC0$DE_status2 == "Up"] <- 0.25
 ggplot(GC0, aes(x=chr1, y=Godiff, fill=DE_status2)) + 
-  scale_fill_manual(values = c("firebrick2","grey","dodgerblue2"), labels=c("Down","NON","Up"), name="Expression") + 
+  scale_fill_manual(values = c("firebrick2","grey","dodgerblue2"), labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  geom_jitter(aes(chr1_n + scat_adj, Godiff),
-              position=position_jitter(width=0.05,height=0),
-              alpha=0.4,
-              size=1,
-              show_guide=FALSE) +
+  #geom_jitter(aes(chr1_n + scat_adj, Godiff),
+             # position=position_jitter(width=0.05,height=0),
+             # alpha=0.4,
+              #size=1,
+             # show_guide=FALSE) +
   ylim(-2,2) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
   labs(x='Genomic compartment', y='Difference in total %GC between homologs (A1-A2)') +
@@ -49,7 +49,7 @@ wilcox.test(GC_NRR$Godiff[GC_NRR$DE_status2=="Up"], GC_NRR$Godiff[GC_NRR$DE_stat
 ######
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_GC0_3compartments.pdf", width=8, height=8)
 ggplot(GC0, aes(x=chr1, y=Godiff, fill=DE_status2)) + 
-  scale_fill_manual(values = c("firebrick2","grey","dodgerblue2"), labels=c("Down","NON","Up"), name="Expression") + 
+  scale_fill_manual(values = c("firebrick2","grey","dodgerblue2"), labels=c("A2-biased","Not-biased","A1-biased"), name="Expression") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-1,1) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","NRR")) + 
