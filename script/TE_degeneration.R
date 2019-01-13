@@ -32,7 +32,7 @@ ggplot(Prop_gene, aes(x=range, y=proportion, fill=haploid)) +
   geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
   ylim(0,0.15) +                    
   scale_x_discrete(labels=c("up:20-10k", "2-10k","0-2k","down:0-2k", "2-10k","10-20k")) + 
-  labs(y='Proportion of genes with TE insertion sites', x="Interval window") +
+  labs(y='Proportion of TE insertion sites', x="Interval window") +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
