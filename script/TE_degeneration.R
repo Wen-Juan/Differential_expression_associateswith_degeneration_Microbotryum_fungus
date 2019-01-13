@@ -17,11 +17,25 @@ ggplot(TE_number, aes(x=range, y=TE, fill=haploid)) +
   geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
   ylim(0,4000) +                    
   scale_x_discrete(labels=c("up:20-10k", "2-10k","0-2k","down:0-2k", "2-10k","10-20k")) + 
-  labs(y='Number of total TEs') +
+  labs(y='Number of detected TE insertion sites') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
+#prop. gene with TE insertions
+TE_number <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/TE_number.txt', header = T)
+str(TE_number)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TE_number_intervals.pdf", width=8, height=8)
+ggplot(TE_number, aes(x=range, y=TE, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3"), labels=c("A1","A2"), name="Haploid") +  
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
+  ylim(0,4000) +                    
+  scale_x_discrete(labels=c("up:20-10k", "2-10k","0-2k","down:0-2k", "2-10k","10-20k")) + 
+  labs(y='Number of detected TE insertion sites') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
 
 #de genes on MAT 
 exp_DE_MAT_cor <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/DEexp_TE_mat_cor.txt', header = T)
