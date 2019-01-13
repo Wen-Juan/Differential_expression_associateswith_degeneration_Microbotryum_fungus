@@ -20,6 +20,7 @@ ggplot(dNdS, aes(x=genomiccomp, y=dN, fill=DE_status)) +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+
 ###
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_DEnonDE_ds_3genomiccompartments.pdf", width=8, height=8)
   ggplot(dNdS, aes(x=genomiccomp, y=dS, fill=DE_status)) + 
@@ -110,30 +111,31 @@ dndsdiff:chromNRR   8.540e-11  1.269e-10   0.673 0.500979
 ####
 ####
 ###dn stats in NRR
-wilcox.test(dNdS$dndiff[dNdS$DE=='Up'],dNdS$dndiff[dNdS$DE=='NON'],exact = FALSE) 
-#W = 270080, p-value = 9.267e-09
-wilcox.test(dNdS$dndiff[dNdS$DE=='Down'],dNdS$dndiff[dNdS$DE=='NON'],exact = FALSE)  
-#W = 276300, p-value = 0.2152
-wilcox.test(dNdS$dndiff[dNdS$DE=='Up'],dNdS$dndiff[dNdS$DE=='Down'],exact = FALSE) 
-#W = 4046.5, p-value = 0.08721
+wilcox.test(dNdS$dN[dNdS$DE_status=='Up'],dNdS$dN[dNdS$DE_status=='NON'],exact = FALSE) 
+#W = 293270, p-value < 2.2e-16
+wilcox.test(dNdS$dN[dNdS$DE_status=='Down'],dNdS$dN[dNdS$DE_status=='NON'],exact = FALSE) 
+#W = 209680, p-value < 2.2e-16
+wilcox.test(dNdS$dN[dNdS$DE_status=='Down'],dNdS$dN[dNdS$DE_status=='Up'],exact = FALSE)
+#W = 1914.5, p-value = 0.1353
 
 
 ###dS stats in NRR
-wilcox.test(dNdS$dsdiff[dNdS$DE=='Up'],dNdS$dsdiff[dNdS$DE=='NON'],exact = FALSE) 
-#W = 272720, p-value = 6.103e-05
-wilcox.test(dNdS$dsdiff[dNdS$DE=='Down'],dNdS$dsdiff[dNdS$DE=='NON'],exact = FALSE)  
-#W = 279030, p-value = 0.2809
-wilcox.test(dNdS$dsdiff[dNdS$DE=='Up'],dNdS$dsdiff[dNdS$DE=='Down'],exact = FALSE) 
-#W = 4053.5, p-value = 0.1041
+wilcox.test(dNdS$dS[dNdS$DE_status=='Up'],dNdS$dS[dNdS$DE_status=='NON'],exact = FALSE) 
+#W = 290370, p-value < 2.2e-16
+wilcox.test(dNdS$dS[dNdS$DE_status=='Down'],dNdS$dS[dNdS$DE_status=='NON'],exact = FALSE) 
+#W = 210070, p-value < 2.2e-16
+wilcox.test(dNdS$dS[dNdS$DE_status=='Down'],dNdS$dS[dNdS$DE_status=='Up'],exact = FALSE)
+#W = 2012, p-value = 0.346
 
 
-###dn/dS stats in NRR
-wilcox.test(dNdS$dndsdiff[dNdS$DE=='Up'],dNdS$dndsdiff[dNdS$DE=='NON'],exact = FALSE) 
-#W = 291950, p-value = 0.0002242
-wilcox.test(dNdS$dndsdiff[dNdS$DE=='Down'],dNdS$dndsdiff[dNdS$DE=='NON'],exact = FALSE)  
-#W = 326470, p-value = 0.0003383
-wilcox.test(dNdS$dndsdiff[dNdS$DE=='Up'],dNdS$dndsdiff[dNdS$DE=='Down'],exact = FALSE) 
-#W = 3834.5, p-value = 0.5456
+
+###dn stats in NRR
+wilcox.test(dNdS$dN[dNdS$DE_status=='Up'],dNdS$dN[dNdS$DE_status=='NON'],exact = FALSE) 
+#W = 293270, p-value < 2.2e-16
+wilcox.test(dNdS$dN[dNdS$DE_status=='Down'],dNdS$dN[dNdS$DE_status=='NON'],exact = FALSE) 
+#W = 209680, p-value < 2.2e-16
+wilcox.test(dNdS$dN[dNdS$DE_status=='Down'],dNdS$dN[dNdS$DE_status=='Up'],exact = FALSE)
+#W = 1914.5, p-value = 0.1353
 
 
 #### between 2 sub-species dNdS.
