@@ -1,0 +1,3 @@
+model_coefficients	A1/A2
+Water_A1	1
+Water_A2	-1
