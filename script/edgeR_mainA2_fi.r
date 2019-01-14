@@ -1,10 +1,21 @@
 # Load packages, setup colours
+install.packages("gplots", dependencies=TRUE)
+install.packages("ggplot2", dependencies=TRUE)
+install.packages("dynamicTreeCut", dependencies=TRUE)
+source("https://bioconductor.org/biocLite.R")
+biocLite('impute')
+biocLite('topGO')
+biocLite('limma')
+biocLite('edgeR')
+
+install.packages("pvclust")
 library(edgeR)
 library(gplots)
 library(ggplot2)
 library(dynamicTreeCut)
 library(statmod)
-library(FactoMineR)
+library(pvclust)
+
 
 cbred <- 2 # '#D55E00'
 cbblue <- '#0072B2'
@@ -27,14 +38,14 @@ sub_analyse = paste(args[1])
 FDR2use = as.numeric(paste(args[2]))
 
 # example
-# sub_analyse <- 'A2hapdi'
+# sub_analyse <- 'hwthirtyperc'
 # FDR2use  <- 0.05
 
 datapath <- "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/"
 outpath <- paste("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/", sub_analyse, sep="")
 dir.create(file.path(outpath))
 
-annotation <- read.delim(file.path(datapath, "A2hapdi_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) # BRM_annotation.txt annotation_out.txt
+annotation <- read.delim(file.path(datapath, "hwthirtyperc_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) # BRM_annotation.txt annotation_out.txt
 
 count <- read.table(file.path(datapath, paste(sub_analyse,'_count.txt', sep="")), header=T, row.names=1)
 count <- round(count, digits=0)
@@ -71,7 +82,7 @@ paste("all transcripts:", nrow(dgl))
 #dgl1 <- rpkm(dgl)
 #dgl2 <- dgl[aveLogCPM(dgl1) > 0,]
 #dgl <- dgl[rowSums(cpm(dgl)>1) >=2,]
-#write.table(dgl_rpkm, "~/Rana_Transcriptome/output/Amliver/dgl_rpkm_amm_liver_filter.txt", sep="\t", col.names=T)
+#write.table(dgl_rpkm, "~/Rana_Transcriptome/output/Amliver/dgl_rpkm_amm_liver_.txt", sep="\t", col.names=T)
 
 ###coverting to RPKM of G43
 #dgl <- DGEList(counts=count,group=design$group, genes=data.frame(annotation$length))
@@ -79,11 +90,34 @@ paste("all transcripts:", nrow(dgl))
 #dgl_rpkm <- rpkm(dgl)
 #write.table(dgl_rpkm, "~/Rana_Transcriptome/output/Amg43/dgl_rpkm_amm_g43.txt", sep="\t", col.names=T)
 
-##filtering out lowly expression transcripts and transcripts only expressed in a few libraries.
+##ing out lowly expression transcripts and transcripts only expressed in a few libraries.
+
+##filter effects
+filter_file <- file.path(paste(outpath, '/',sub_analyse, 'filtering_info.txt', sep=""))
+ave0 <- dgl[aveLogCPM(dgl) >= 0,]
+ave1 <- dgl[aveLogCPM(dgl) >= 1,]
+sum2 <- dgl[rowSums(cpm(dgl)) >= 2,]
+sum10 <- dgl[rowSums(cpm(dgl)) >= 10,]
+
+write(paste("Comp\tRemaining\tMin\t1Q\tMedian\tMean\t3Q\tMax"), filter_file)
+write(paste("All_"), filter_file, append=T)
+write(paste(nrow(dgl), "_", sep=""), filter_file, append=T)
+write(summary(rowSums(cpm(dgl)/ncol(dgl))), filter_file, append=T, sep='\t', ncol=6)
+write(paste("Ave0_"), filter_file, append=T)
+write(paste(nrow(ave0), "_", sep=""), filter_file, append=T)
+write(summary(rowSums(cpm(ave0)/ncol(ave0))), filter_file, append=T, sep='\t', ncol=6)
+write(paste("Ave1_"), filter_file, append=T)
+write(paste(nrow(ave1), "_", sep=""), filter_file, append=T)
+write(summary(rowSums(cpm(ave1)/ncol(ave1))), filter_file, append=T, sep='\t', ncol=6)
+write(paste("Sum2_"), filter_file, append=T)
+write(paste(nrow(sum2), "_", sep=""), filter_file, append=T)
+write(summary(rowSums(cpm(sum2)/ncol(sum2))), filter_file, append=T, sep='\t', ncol=6)
+write(paste("Sum10_"), filter_file, append=T)
+write(paste(nrow(sum10), "_", sep=""), filter_file, append=T)
+write(summary(rowSums(cpm(sum10)/ncol(sum10))), filter_file, append=T, sep='\t', ncol=6)
 
 dgl <- dgl[aveLogCPM(dgl) > 0,] # first filter by average reads
 dgl <- dgl[rowSums(cpm(dgl)>=1) >= 1,] #secondly, selecting transcript which is expressed >1 cpm in at least half of the sample size in each sex per tissue
-
 
 write(paste("dgl"), filter_file, append=T)
 write(paste(nrow(dgl), "_", sep=""), filter_file, append=T)
@@ -121,9 +155,11 @@ y <- dgl
 colnames(y) <- paste(colnames(y), (design$group), sep="\n")
 
 #color different groups for MDS plot, combine both sexes. this code is particular for TV
-pchs = c(18,5,18,5,18,5)
-cols = c("orange","orange","red","red","pink","pink")
-plotMDS(y, pch=pchs[design$group],col=cols[design$group], cex=2, main="Haploid vs Diploid",cex.main=1, cex.lab=1,lty=3, lwd=5)
+#pchs = c(18,5,18,5,18,5)
+pchs = c(18,5,18,5)
+#cols = c("orange","orange","red","red","pink","pink")
+cols = c("orange","orange","red","red")
+plotMDS(y, pch=pchs[design$group],col=cols[design$group], cex=2, main="A1 vs A2",cex.main=1, cex.lab=1,lty=3, lwd=5)
 legend('bottom', inset=0.02, legend=levels(design$group), pch = pchs, col=cols,cex = 0.8 )
 dev.off()
 
@@ -275,7 +311,7 @@ annotation2 <- subset(annotation, annotation$chr!='NA' & annotation$start!='NA')
 mapLength <- sum(max(mapData2$start[mapData2$chr=='aMAT']),max(mapData2$start[mapData2$chr=='Chr01']), max(mapData2$start[mapData2$chr=='Chr02']), max(mapData2$start[mapData2$chr=='Chr03']), max(mapData2$start[mapData2$chr=='Chr04']), max(mapData2$start[mapData2$chr=='Chr05']), max(mapData2$start[mapData2$chr=='Chr09']), max(mapData2$start[mapData2$chr=='Chr10']),max(mapData2$start[mapData2$chr=='Chr11']),max(mapData2$start[mapData2$chr=='Chr12']),max(mapData2$start[mapData2$chr=='Chr13']),max(mapData2$start[mapData2$chr=='Chr14']),max(mapData2$start[mapData2$chr=='Chr15']),max(mapData2$start[mapData2$chr=='Chr16']),max(mapData2$start[mapData2$chr=='Chr17']),max(mapData2$start[mapData2$chr=='Random']))
 
 chr_MAT_end <- max(mapData2$start[mapData2$chr=='aMAT'])
-chr_1_end <- chr_1_end + max(mapData2$start[mapData2$chr=='Chr01'])
+chr_1_end <- chr_MAT_end + max(mapData2$start[mapData2$chr=='Chr01'])
 chr_2_end <- chr_1_end + max(mapData2$start[mapData2$chr=='Chr02'])
 chr_3_end <- chr_2_end + max(mapData2$start[mapData2$chr=='Chr03'])
 chr_4_end <- chr_3_end + max(mapData2$start[mapData2$chr=='Chr04'])
@@ -285,14 +321,14 @@ chr_7_end <- chr_6_end + max(mapData2$start[mapData2$chr=='Chr07'])
 chr_8_end <- chr_7_end + max(mapData2$start[mapData2$chr=='Chr08'])
 chr_9_end <- chr_8_end + max(mapData2$start[mapData2$chr=='Chr09'])
 chr_10_end <- chr_9_end + max(mapData2$start[mapData2$chr=='Chr10'])
-chr_11_end <- chr_9_end + max(mapData2$start[mapData2$chr=='Chr11'])
-chr_12_end <- chr_9_end + max(mapData2$start[mapData2$chr=='Chr12'])
-chr_13_end <- chr_9_end + max(mapData2$start[mapData2$chr=='Chr13'])
-chr_14_end <- chr_9_end + max(mapData2$start[mapData2$chr=='Chr14'])
-chr_15_end <- chr_9_end + max(mapData2$start[mapData2$chr=='Chr15'])
-chr_16_end <- chr_9_end + max(mapData2$start[mapData2$chr=='Chr16'])
-chr_17_end <- chr_9_end + max(mapData2$start[mapData2$chr=='Chr17'])
-chr_random_end <- chr_9_end + max(mapData2$start[mapData2$chr=='Random'])
+chr_11_end <- chr_10_end + max(mapData2$start[mapData2$chr=='Chr11'])
+chr_12_end <- chr_11_end + max(mapData2$start[mapData2$chr=='Chr12'])
+chr_13_end <- chr_12_end + max(mapData2$start[mapData2$chr=='Chr13'])
+chr_14_end <- chr_13_end + max(mapData2$start[mapData2$chr=='Chr14'])
+chr_15_end <- chr_14_end + max(mapData2$start[mapData2$chr=='Chr15'])
+chr_16_end <- chr_15_end + max(mapData2$start[mapData2$chr=='Chr16'])
+chr_17_end <- chr_16_end + max(mapData2$start[mapData2$chr=='Chr17'])
+chr_random_end <- chr_17_end + max(mapData2$start[mapData2$chr=='Random'])
 
 list_de <- list()
 list_nonde <- list()
@@ -415,7 +451,7 @@ points(chr_15_end + list_nonde[[k]]$start[list_nonde[[k]]$chr=='Chr16'], 1-log(l
 points(chr_16_end + list_nonde[[k]]$start[list_nonde[[k]]$chr=='Chr17'], 1-log(list_nonde[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='Chr17']), pch=20, lwd=2, type="p",col="8", main="")
 points(chr_17_end + list_nonde[[k]]$start[list_nonde[[k]]$chr=='Random'], 1-log(list_nonde[[k]][[paste('FDR.',colnames(cmat)[k], sep="")]][list_nonde[[k]]$chr=='Random']), pch=20, lwd=2, type="p",col="1", main="")
 
-chrPosition <- c(chr_aMAT_end/2,chr_aMAT_end/2 + chr_1_end/2, chr_1_end/2 + chr_2_end/2, chr_2_end/2 + chr_3_end/2, chr_3_end/2 + chr_4_end/2, chr_4_end/2 + chr_5_end/2, chr_5_end/2 + chr_6_end/2, chr_6_end/2 + chr_7_end/2, chr_7_end/2 + chr_8_end/2, chr_8_end/2 + chr_9_end/2, chr_9_end/2 + chr_10_end/2, chr_10_end/2 + chr_11_end/2, chr_11_end/2 + chr_12_end/2, chr_12_end/2 + chr_13_end/2, chr_13_end/2 + chr_14_end/2, chr_14_end/2 + chr_15_end/2, chr_15_end/2 + chr_16_end/2, chr_16_end/2 + chr_17_end/2, chr_17_end/2 + chr_random_end/2)
+chrPosition <- c(chr_MAT_end/2,chr_MAT_end/2 + chr_1_end/2, chr_1_end/2 + chr_2_end/2, chr_2_end/2 + chr_3_end/2, chr_3_end/2 + chr_4_end/2, chr_4_end/2 + chr_5_end/2, chr_5_end/2 + chr_6_end/2, chr_6_end/2 + chr_7_end/2, chr_7_end/2 + chr_8_end/2, chr_8_end/2 + chr_9_end/2, chr_9_end/2 + chr_10_end/2, chr_10_end/2 + chr_11_end/2, chr_11_end/2 + chr_12_end/2, chr_12_end/2 + chr_13_end/2, chr_13_end/2 + chr_14_end/2, chr_14_end/2 + chr_15_end/2, chr_15_end/2 + chr_16_end/2, chr_16_end/2 + chr_17_end/2, chr_17_end/2 + chr_random_end/2)
 
 chromosomes<-c("aMAT", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "Random")
 axis (side=1, lty=0, at = chrPosition, cex.axis=.5, las=1, labels=chromosomes)
@@ -553,7 +589,7 @@ pc_up <- cbind(M_F_A_aMATup/M_F_A_aMATAll, M_F_A_Chr1up/M_F_A_Chr1All, M_F_A_Chr
 
 up <- cbind(M_F_A_aMATup,M_F_A_Chr1up, M_F_A_Chr2up, M_F_A_Chr3up, M_F_A_Chr4up, M_F_A_Chr5up, M_F_A_Chr6up, M_F_A_Chr7up, M_F_A_Chr8up, M_F_A_Chr9up, M_F_A_Chr10up, M_F_A_Chr11up, M_F_A_Chr12up, M_F_A_Chr13up, M_F_A_Chr14up, M_F_A_Chr15up, M_F_A_Chr16up, M_F_A_Chr17up, M_F_A_randomup)
 
-pc_down <-  cbind(M_F_A_aMATdown/M_F_A_aMATAll, M_F_A_Chr1down/M_F_A_Chr1All, M_F_A_Chr2down/M_F_A_Chr2All, M_F_A_Chr3down/M_F_A_Chr3All, M_F_A_Chr4down/M_F_A_Chr4All, M_F_A_Chr5down/M_F_A_Chr5All, M_F_A_Chr6down/M_F_A_Chr6All, M_F_A_Chr7down/M_F_A_Chr7All, M_F_A_Chr8down/M_F_A_Chr8All, M_F_A_Chr9down/M_F_A_Chr9All, M_F_A_Chr10down/M_F_A_Chr10All, M_F_A_Chr11down/M_F_A_Chr11All, M_F_A_Chr12down/M_F_A_Chr12All, M_F_A_Chr13down/M_F_A_Chr13All, M_F_A_Chr14down/M_F_A_Chr14All, M_F_A_Chr15down/M_F_A_Chr15All, M_F_A_Chr16down/M_F_A_Chr16All, M_F_A_Chr17down/M_F_A_Chr17All, M_F_A_randomdown/M_F_A_randomAll)
+pc_down <-cbind(M_F_A_aMATdown/M_F_A_aMATAll, M_F_A_Chr1down/M_F_A_Chr1All, M_F_A_Chr2down/M_F_A_Chr2All, M_F_A_Chr3down/M_F_A_Chr3All, M_F_A_Chr4down/M_F_A_Chr4All, M_F_A_Chr5down/M_F_A_Chr5All, M_F_A_Chr6down/M_F_A_Chr6All, M_F_A_Chr7down/M_F_A_Chr7All, M_F_A_Chr8down/M_F_A_Chr8All, M_F_A_Chr9down/M_F_A_Chr9All, M_F_A_Chr10down/M_F_A_Chr10All, M_F_A_Chr11down/M_F_A_Chr11All, M_F_A_Chr12down/M_F_A_Chr12All, M_F_A_Chr13down/M_F_A_Chr13All, M_F_A_Chr14down/M_F_A_Chr14All, M_F_A_Chr15down/M_F_A_Chr15All, M_F_A_Chr16down/M_F_A_Chr16All, M_F_A_Chr17down/M_F_A_Chr17All, M_F_A_randomdown/M_F_A_randomAll)
 
 down <- cbind(M_F_A_aMATdown,M_F_A_Chr1down, M_F_A_Chr2down, M_F_A_Chr3down, M_F_A_Chr4down, M_F_A_Chr5down, M_F_A_Chr6down, M_F_A_Chr7down, M_F_A_Chr8down, M_F_A_Chr9down, M_F_A_Chr10down, M_F_A_Chr11down, M_F_A_Chr12down, M_F_A_Chr13down, M_F_A_Chr14down, M_F_A_Chr15down, M_F_A_Chr16down, M_F_A_Chr17down, M_F_A_randomdown)
 

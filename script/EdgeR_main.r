@@ -1,4 +1,13 @@
 # Load packages, setup colours
+install.packages("gplots", dependencies=TRUE)
+install.packages("ggplot2", dependencies=TRUE)
+install.packages("dynamicTreeCut", dependencies=TRUE)
+source("https://bioconductor.org/biocLite.R")
+biocLite('impute')
+biocLite('topGO')
+biocLite('limma')
+biocLite('edgeR')
+
 install.packages("pvclust")
 library(edgeR)
 library(gplots)
