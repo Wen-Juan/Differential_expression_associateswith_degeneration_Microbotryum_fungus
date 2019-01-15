@@ -155,6 +155,10 @@ ggplot(dNdS_2species, aes(x=chrom, y=dN, fill=interaction(haploid,DE))) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
+ggplot(dNdS_2species, aes(x=dN, y=expmean),color=haploid) +
+         #, shape=haploid, color=DE)) +
+         geom_point() + geom_smooth(method = lm)
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dS_2subspecies_3compartm.pdf", width=8, height=8)
 ggplot(dNdS_2species, aes(x=chrom, y=dS, fill=interaction(haploid,DE))) + 
   scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Expression") +
