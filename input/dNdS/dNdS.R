@@ -6,6 +6,118 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load the corresponding data files, between a1 and a2 homologs within Mvsl species, modified at jan.15.2019
+dNdS_70perc <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/15jan19/LogCPM_0.05_hwseventyperc_touse_dnds_rmTE.txt', header = T)
+str(dNdS_70perc)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dN_DEnonDe_youngandold.pdf", width=8, height=8)
+ggplot(dNdS_70perc, aes(x=youngold, y=dn, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.08) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='dN') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dS_DEnonDe_youngandold.pdf", width=8, height=8)
+ggplot(dNdS_70perc, aes(x=youngold, y=ds, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.08) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dNdS_DEnonDe_youngandold.pdf", width=8, height=8)
+ggplot(dNdS_70perc, aes(x=youngold, y=dnds, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,6) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='dN/dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dN_exp_correlation.pdf", width=8, height=8)
+dNdS_70perc$abs <- abs(dNdS_70perc$logFC.A1.A2)
+ggplot(dNdS_70perc, aes(x=dn, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  labs(x='dN', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dS_exp_correlation.pdf", width=8, height=8)
+ggplot(dNdS_70perc, aes(x=ds, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  labs(x='dS', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dndS_exp_correlation.pdf", width=8, height=8)
+ggplot(dNdS_70perc, aes(x=dnds, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  labs(x='dS', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y <- lm(abs ~ (dn + ds)*DE, data = dNdS_70perc)
+summary(y)
+#########
+Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   1.24448    0.03803  32.722  < 2e-16 ***
+  dn          -15.85609    3.18112  -4.984 6.39e-07 ***
+  ds           70.93732    6.65037  10.667  < 2e-16 ***
+  DENON        -1.06266    0.03820 -27.821  < 2e-16 ***
+  DEUp          0.11449    0.04931   2.322 0.020281 *  
+  dn:DENON     16.56885    3.32187   4.988 6.28e-07 ***
+  dn:DEUp       5.14516    3.91732   1.313 0.189085    
+ds:DENON    -69.20246    6.82753 -10.136  < 2e-16 ***
+  ds:DEUp     -28.17574    7.99132  -3.526 0.000425 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2719 on 6115 degrees of freedom
+Multiple R-squared:  0.4204,	Adjusted R-squared:  0.4197 
+F-statistic: 554.5 on 8 and 6115 DF,  p-value: < 2.2e-16
+###########
+
+
+###some stats, 15Jan.2019
+dnds_oldstrata <-subset(dNdS_70perc,dNdS_70perc$youngold == "OldStrata")
+str(dnds_oldstrata)
+wilcox.test(dnds_oldstrata$ds[dnds_oldstrata$DE=='Up'],dnds_oldstrata$ds[dnds_oldstrata$DE=='NON'],exact = FALSE) 
+#W = 2101.5, p-value = 2.757e-05
+wilcox.test(dnds_oldstrata$ds[dnds_oldstrata$DE=='Down'],dnds_oldstrata$ds[dnds_oldstrata$DE=='NON'],exact = FALSE) 
+#W = 1153.5, p-value = 0.008051
+wilcox.test(dnds_oldstrata$ds[dnds_oldstrata$DE=='Up'],dnds_oldstrata$ds[dnds_oldstrata$DE=='Down'],exact = FALSE) 
+#W = 248, p-value = 0.4287
+
+wilcox.test(dnds_oldstrata$dn[dnds_oldstrata$DE=='Up'],dnds_oldstrata$dn[dnds_oldstrata$DE=='NON'],exact = FALSE) 
+#W = 2016, p-value = 0.0002169
+wilcox.test(dnds_oldstrata$dn[dnds_oldstrata$DE=='Down'],dnds_oldstrata$dn[dnds_oldstrata$DE=='NON'],exact = FALSE) 
+#W = 1208.5, p-value = 0.002046
+wilcox.test(dnds_oldstrata$dn[dnds_oldstrata$DE=='Up'],dnds_oldstrata$dn[dnds_oldstrata$DE=='Down'],exact = FALSE) 
+#W = 206, p-value = 0.8113
+
+dnds_youngstrata <-subset(dNdS_70perc,dNdS_70perc$youngold == "ColorStrata")
+str(dnds_youngstrata)
+wilcox.test(dnds_youngstrata$dn[dnds_youngstrata$DE=='Up'],dnds_youngstrata$dn[dnds_youngstrata$DE=='NON'],exact = FALSE) 
+#W = 83, p-value = 0.1268
+wilcox.test(dnds_youngstrata$ds[dnds_youngstrata$DE=='Up'],dnds_youngstrata$ds[dnds_youngstrata$DE=='NON'],exact = FALSE) 
+#W = 94, p-value = 0.03071
+
+
 #load the corresponding data files, between a1 and a2 homologs within Mvsl species, modified at jan.08.2019
 dNdS <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/Mvsl_DEnonDE_TEinsert_2k10kupdownstream_dNdS.txt', header = T)
 str(dNdS)
@@ -33,45 +145,6 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
-###some stats
-
-y <- lm(log2exp~dsdiff*chrom-1, data= dNdS)
-summary(y)
-
-####
-lm(formula = log2exp ~ dsdiff * chrom - 1, data = dNdS)
-
-Residuals:
-  Min      1Q  Median      3Q     Max 
--6.0882 -0.0219  0.0163  0.0496  6.4904 
-
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-dsdiff            0.016162   0.054505   0.297 0.766841    
-chromaAutosome   -0.013779   0.004094  -3.366 0.000768 ***
-  chrombPAR         0.014794   0.036146   0.409 0.682349    
-chromNRR          0.076732   0.025226   3.042 0.002362 ** 
-  dsdiff:chrombPAR -1.173887   0.291709  -4.024 5.79e-05 ***
-  dsdiff:chromNRR   0.139897   0.169498   0.825 0.409201    
-####
-
-y1 <- lm(log2exp~dndiff*chrom-1, data= dNdS)
-summary(y1)
-####
-lm(formula = log2exp ~ dndiff * chrom - 1, data = dNdS)
-
-Residuals:
-  Min      1Q  Median      3Q     Max 
--6.0882 -0.0218  0.0163  0.0496  6.4904 
-
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-dndiff            0.054073   0.127718   0.423 0.672037    
-chromaAutosome   -0.013782   0.004094  -3.366 0.000766 ***
-  chrombPAR         0.014921   0.036149   0.413 0.679787    
-chromNRR          0.075833   0.025220   3.007 0.002650 ** 
-  dndiff:chrombPAR -2.323792   0.576218  -4.033 5.58e-05 ***
-  dndiff:chromNRR   0.363448   0.421854   0.862 0.388970  
 
 ####
 
@@ -87,28 +160,6 @@ ggplot(dNdS, aes(x=log2exp, y=dndsdiff, color=DE)) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
-####
-y2 <- lm(log2exp~dndsdiff*chrom-1, data= dNdS)
-summary(y2)
-
-###
-  Call:
-  lm(formula = log2exp ~ dndsdiff * chrom - 1, data = dNdS)
-
-Residuals:
-  Min      1Q  Median      3Q     Max 
--6.0881 -0.0214  0.0166  0.0497  6.4905 
-
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-dndsdiff            6.125e-11  9.602e-11   0.638 0.523607    
-chromaAutosome     -1.388e-02  4.102e-03  -3.383 0.000721 ***
-  chrombPAR          -1.544e-02  3.716e-02  -0.416 0.677773    
-chromNRR            6.100e-02  2.666e-02   2.288 0.022144 *  
-  dndsdiff:chrombPAR  9.258e-03  6.641e-03   1.394 0.163386    
-dndsdiff:chromNRR   8.540e-11  1.269e-10   0.673 0.500979 
-
-####
 ####
 ###dn stats in NRR
 wilcox.test(dNdS$dN[dNdS$DE_status=='Up'],dNdS$dN[dNdS$DE_status=='NON'],exact = FALSE) 
