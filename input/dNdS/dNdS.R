@@ -66,7 +66,7 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(dNdS_70perc, aes(x=dnds, y=abs,color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_point() + geom_smooth(method = lm) +
-  labs(x='dS', y='Absolute value of expression in Log2(A1/A2)') +
+  labs(x='dN/dS', y='Absolute value of expression in Log2(A1/A2)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
