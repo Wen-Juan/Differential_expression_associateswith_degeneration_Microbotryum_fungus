@@ -117,6 +117,143 @@ wilcox.test(dnds_youngstrata$dn[dnds_youngstrata$DE=='Up'],dnds_youngstrata$dn[d
 wilcox.test(dnds_youngstrata$ds[dnds_youngstrata$DE=='Up'],dnds_youngstrata$ds[dnds_youngstrata$DE=='NON'],exact = FALSE) 
 #W = 94, p-value = 0.03071
 
+#loading MvSl 2sub species dNdS data on Jan.16.2019
+dNdS_2sub <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/15jan19/Mvsl_2sub_a1a2_dnds_expdata_genomcomp.txt', header = T)
+str(dNdS_2sub)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2sub_dN_exp_youngoldstrata.pdf", width=8, height=8)
+ggplot(dNdS_2sub, aes(x=youngold, y=dn, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.015) +  
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
+  labs(x='Genomic compartment', y='dN') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2sub_dS_exp_youngoldstrata.pdf", width=8, height=8)
+ggplot(dNdS_2sub, aes(x=youngold, y=ds, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.03) +  
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
+  labs(x='Genomic compartment', y='dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2sub_dNdS_exp_youngoldstrata.pdf", width=8, height=8)
+ggplot(dNdS_2sub, aes(x=youngold, y=dnds, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,2.5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
+  labs(x='Genomic compartment', y='dN/dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+###loading dN, dS data between MvSl and MvSd Jan.16.2018
+dNdS_2species <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/15jan19/Mvsl_Mvsd_a1a2_dnds_expdata.txt', header = T)
+str(dNdS_2species)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2species_dN_exp_youngoldstrata.pdf", width=8, height=8)
+ggplot(dNdS_2species, aes(x=youngold, y=dn, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.02) +  
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
+  labs(x='Genomic compartment', y='dN') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2species_dS_exp_youngoldstrata.pdf", width=8, height=8)
+ggplot(dNdS_2species, aes(x=youngold, y=ds, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.04) +  
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
+  labs(x='Genomic compartment', y='dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2species_dNdS_exp_youngoldstrata.pdf", width=8, height=8)
+ggplot(dNdS_2species, aes(x=youngold, y=dnds, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1","Not biased at A2","A1 biased at A1","A1 biased at A2"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,2) +  
+  #scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
+  labs(x='Genomic compartment', y='dN/dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+###scatter plots
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2speceis_a1_dN_exp_correlation.pdf", width=8, height=8)
+dNdS_2species$abs <- abs(dNdS_2species$logFC.A1.A2)
+dNdS_2species_a1 <- subset(dNdS_2species, dNdS_2species$haploid == "A1")
+ggplot(dNdS_2species_a1, aes(x=dn, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  xlim(0,0.08) +
+  geom_point() + geom_smooth(method = lm) +
+  labs(x='dN', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+dNdS_2species_a2 <- subset(dNdS_2species, dNdS_2species$haploid == "A2")
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2speceis_a2_dN_exp_correlation.pdf", width=8, height=8)
+ggplot(dNdS_2species_a2, aes(x=dn, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  xlim(0,0.08) +
+  geom_point() + geom_smooth(method = lm) +
+  labs(x='dN', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2speceis_a1_dS_exp_correlation.pdf", width=8, height=8)
+ggplot(dNdS_2species_a1, aes(x=ds, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  xlim(0,0.1) +
+  geom_point() + geom_smooth(method = lm) +
+  labs(x='dS', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2speceis_a2_dS_exp_correlation.pdf", width=8, height=8)
+ggplot(dNdS_2species_a2, aes(x=ds, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  xlim(0,0.1) +
+  geom_point() + geom_smooth(method = lm) +
+  labs(x='dS', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2speceis_a1_dNdS_exp_correlation.pdf", width=8, height=8)
+ggplot(dNdS_2species_a1, aes(x=dnds, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  xlim(0,2.5) +
+  geom_point() + geom_smooth(method = lm) +
+  labs(x='dN/dS', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_2speceis_a2_dNdS_exp_correlation.pdf", width=8, height=8)
+ggplot(dNdS_2species_a2, aes(x=dnds, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  xlim(0,2.5) +
+  geom_point() + geom_smooth(method = lm) +
+  labs(x='dN/dS', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
 
 #load the corresponding data files, between a1 and a2 homologs within Mvsl species, modified at jan.08.2019
 dNdS <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/Mvsl_DEnonDE_TEinsert_2k10kupdownstream_dNdS.txt', header = T)
