@@ -6,6 +6,33 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load the corresponding data files. modify this on Jan.17.2019.
+#summary of TE numbers
+TE_number <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/16jan2019/TE_nr_17012019.txt', header = T)
+str(TE_number)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TE_number_intervals_5k.pdf", width=8, height=8)
+ggplot(TE_number, aes(x=location,y=TE_interval, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3"), labels=c("A1","A2"), name="Haploid") +  
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
+  ylim(0,11000) +                    
+  scale_x_discrete(labels=c("up:20-15k", "15-10k","10-5k","5-0k","down:0-5k", "5-10k","10-15k","15-20k")) + 
+  labs(y='Number of detected TE insertion sites', x="Interval window") +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Prop_geneswith_TEinsertion_intervals_5k.pdf", width=8, height=8)
+ggplot(TE_number, aes(x=location,y=prop_withte, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3"), labels=c("A1","A2"), name="Haploid") +  
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
+  ylim(0,0.32) +                    
+  scale_x_discrete(labels=c("up:20-15k", "15-10k","10-5k","5-0k","down:0-5k", "5-10k","10-15k","15-20k")) + 
+  labs(y='Proportion of total genes with TE insertions', x="Interval window") +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
 #load the corresponding data files. modify this on Jan.09.2019.
 #summary of TE numbers
 TE_number <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/TE_number.txt', header = T)
