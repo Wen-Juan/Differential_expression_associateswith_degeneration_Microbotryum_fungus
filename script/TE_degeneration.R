@@ -50,7 +50,7 @@ ggplot(TE_DEexp1, aes(x=youngold, y=upk5diff, fill=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-y <- lm (logFC.A1.A2~upk5diff*DE-1, data=TE_DEexp1)
+y <- lm (logFC.A1.A2~upk20diff*DE-1, data=TE_DEexp1)
 summary(y)
 
 ###
@@ -251,7 +251,7 @@ ggplot(UpTE_DEexp_sep1, aes(x=youngold, y=up5k, fill=interaction(haploid,DE))) +
   ylim(0,6) +
   facet_grid(~Up) +
   scale_x_discrete(labels=c("Auto", "PAR", "Young","Old")) + 
-  labs(x='Genomic compartment', y='TE insertion at 5k-upstream (A1-A2)') +
+  labs(x='Genomic compartment', y='Average TE insertion sites') +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
