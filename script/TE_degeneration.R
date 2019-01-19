@@ -50,6 +50,26 @@ ggplot(TE_DEexp1, aes(x=youngold, y=upk5diff, fill=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+y <- lm (logFC.A1.A2~upk5diff*DE-1, data=TE_DEexp1)
+summary(y)
+
+###
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+upk5diff       -0.159073   0.041431  -3.840 0.000124 ***
+  DEDown         -1.851788   0.031855 -58.132  < 2e-16 ***
+  DENON          -0.004183   0.004791  -0.873 0.382622    
+DEUp            1.819751   0.036815  49.430  < 2e-16 ***
+  upk5diff:DENON  0.192189   0.042263   4.547 5.51e-06 ***
+  upk5diff:DEUp   0.237904   0.051473   4.622 3.86e-06 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4227 on 8348 degrees of freedom
+Multiple R-squared:  0.4217,	Adjusted R-squared:  0.4213 
+F-statistic:  1015 on 6 and 8348 DF,  p-value: < 2.2e-16
+###
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TEinterval_5kdown_exp.pdf", width=8, height=8)
 ggplot(TE_DEexp1, aes(x=youngold, y=downk5diff, fill=DE)) + 
   scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
@@ -133,8 +153,9 @@ TE_DEexp_mat <- subset(TE_DEexp, TE_DEexp$youngold != "Auto")
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TEinterval_MATonly_0-5kup_exp_scatter.pdf", width=8, height=8)
 ggplot(TE_DEexp_mat, aes(x=logFC.A1.A2, y=upk5diff,color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
-  geom_point() + geom_smooth(method=lm) +
-  ylim(-13,6) +
+  geom_point() +geom_smooth(method=lm) +
+  ylim(-12,6) +
+  xlim(-13,13) +
   labs(x='Expression Log2(A1/A2)', y='Upstream 5k (A1-A2))') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
@@ -144,7 +165,8 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(TE_DEexp_mat, aes(x=logFC.A1.A2, y=downk5diff,color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_point() + geom_smooth(method=lm) +
-  ylim(-13,6) +
+  ylim(-6,6) +
+  xlim(-13,13) +
   labs(x='Expression Log2(A1/A2)', y='Downstream 5k (A1-A2))') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
@@ -155,6 +177,7 @@ ggplot(TE_DEexp_mat, aes(x=logFC.A1.A2, y=upk10diff,color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_point() + geom_smooth(method=lm) +
   ylim(-13,6) +
+  xlim(-13,13) +
   labs(x='Expression Log2(A1/A2)', y='Upstream 5-10k (A1-A2))') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
@@ -165,6 +188,7 @@ ggplot(TE_DEexp_mat, aes(x=logFC.A1.A2, y=downk10diff,color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_point() + geom_smooth(method=lm) +
   ylim(-13,6) +
+  xlim(-13,13) +
   labs(x='Expression Log2(A1/A2)', y='Downstream 5-10k (A1-A2))') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
@@ -175,6 +199,7 @@ ggplot(TE_DEexp_mat, aes(x=logFC.A1.A2, y=upk15diff,color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_point() + geom_smooth(method=lm) +
   ylim(-13,6) +
+  xlim(-13,13) +
   labs(x='Expression Log2(A1/A2)', y='Upstream 10-15k (A1-A2))') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
@@ -185,6 +210,7 @@ ggplot(TE_DEexp_mat, aes(x=logFC.A1.A2, y=downk15diff,color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_point() + geom_smooth(method=lm) +
   ylim(-13,6) +
+  xlim(-13,13) +
   labs(x='Expression Log2(A1/A2)', y='Downstream 10-15k (A1-A2))') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
@@ -195,6 +221,7 @@ ggplot(TE_DEexp_mat, aes(x=logFC.A1.A2, y=upk20diff,color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_point() + geom_smooth(method=lm) +
   ylim(-13,6) +
+  xlim(-13,13) +
   labs(x='Expression Log2(A1/A2)', y='Upstream 15-20k (A1-A2))') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
@@ -205,6 +232,7 @@ ggplot(TE_DEexp_mat, aes(x=logFC.A1.A2, y=downk20diff,color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_point() + geom_smooth(method=lm) +
   ylim(-13,6) +
+  xlim(-13,13) +
   labs(x='Expression Log2(A1/A2)', y='Downstream 15-20k (A1-A2))') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
