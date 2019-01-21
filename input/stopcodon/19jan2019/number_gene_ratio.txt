@@ -1,0 +1,17 @@
+Comp	type	value	totalgene	ratio
+Auto	csdequal	7841	8013	0.978534881
+Auto	cdsnot	172	8013	0.021465119
+Auto	proteinequal	7907	8013	0.986771496
+Auto	proteinnot	106	8013	0.013228504
+bPAR	csdequal	109	115	0.947826087
+bPAR	cdsnot	6	115	0.052173913
+bPAR	proteinequal	113	115	0.982608696
+bPAR	proteinnot	2	115	0.017391304
+ColorStrata	csdequal	16	36	0.444444444
+ColorStrata	cdsnot	20	36	0.555555556
+ColorStrata	proteinequal	21	36	0.583333333
+ColorStrata	proteinnot	15	36	0.416666667
+OldStrata	csdequal	54	190	0.284210526
+OldStrata	cdsnot	136	190	0.715789474
+OldStrata	proteinequal	66	190	0.347368421
+OldStrata	proteinnot	124	190	0.652631579
