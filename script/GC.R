@@ -6,6 +6,104 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load the corresponding data files, on 21Jan.2019
+GC_ratio_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/21jan2019/MvSl_a1a2_0GC_3GC_genomcomp_exp_sep.txt', header = T)
+str(GC_ratio_sep)
+
+GC_ratio_sep_rmcentro <- subset(GC_ratio_sep,GC_ratio_sep$youngold !="Centro")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_GC0_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_sep_rmcentro, aes(x=youngold, y=a1GC0, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"),labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1", "Not biased at A2","A1 biased at A1", "A1 biased at A2"), name="Expression") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(45,70) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Percentage of GC0 on coding sequence') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_GC3_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_sep_rmcentro, aes(x=youngold, y=a1GC3, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"),labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1", "Not biased at A2","A1 biased at A1", "A1 biased at A2"), name="Expression") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(40,85) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Percentage of GC3 on coding sequence') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+###load data on 21Jan2019
+GC_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/21jan2019/MvSl_a1a2_0GC_3GC_genomcomp_exp.txt', header = T)
+str(GC_ratio)
+
+GC_ratio_rmcentro <- subset(GC_ratio,GC_ratio$youngold !="Centro")
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rmcentro, aes(x=youngold, y=diffGC0, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-2.5,2.5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='GC0% difference (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC3_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rmcentro, aes(x=youngold, y=diffGC3, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-4,4) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='GC3% difference (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y <- lm(logFC.A1.A2~diffGC3*DE-1, data=GC_ratio_rmcentro)
+summary(y)
+############
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+diffGC3       -0.100181   0.032919  -3.043 0.002348 ** 
+  DEDown        -1.835780   0.031489 -58.299  < 2e-16 ***
+  DENON         -0.007271   0.004725  -1.539 0.123914    
+DEUp           1.787692   0.034810  51.356  < 2e-16 ***
+  diffGC3:DENON  0.138499   0.036991   3.744 0.000182 ***
+  diffGC3:DEUp   0.084836   0.043565   1.947 0.051526 .  
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4232 on 8348 degrees of freedom
+Multiple R-squared:  0.4202,	Adjusted R-squared:  0.4198 
+F-statistic:  1008 on 6 and 8348 DF,  p-value: < 2.2e-16
+###############
+
+y1 <- lm(logFC.A1.A2~diffGC0*DE-1, data=GC_ratio_rmcentro)
+summary(y1)
+###
+lm(formula = logFC.A1.A2 ~ diffGC0 * DE - 1, data = GC_ratio_rmcentro)
+
+Residuals:
+  Min       1Q   Median       3Q      Max 
+-10.7066  -0.1445   0.0203   0.1724   5.5261 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+diffGC0        0.023937   0.067182   0.356  0.72162    
+DEDown        -1.831093   0.031487 -58.154  < 2e-16 ***
+  DENON         -0.007314   0.004725  -1.548  0.12167    
+DEUp           1.791334   0.034801  51.473  < 2e-16 ***
+  diffGC0:DENON  0.050901   0.075929   0.670  0.50264    
+diffGC0:DEUp  -0.302251   0.109208  -2.768  0.00566 ** 
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4232 on 8348 degrees of freedom
+Multiple R-squared:  0.4202,	Adjusted R-squared:  0.4198 
+F-statistic:  1008 on 6 and 8348 DF,  p-value: < 2.2e-16
+####
 #load the corresponding data files.
 GC0 <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/Mvsl_a1a2_DEnonDE_intron_GCcodinggenes.txt', header = T)
 str(GC0)
