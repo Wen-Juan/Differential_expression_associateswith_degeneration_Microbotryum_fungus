@@ -106,6 +106,24 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(gene_ratio_cds, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
   scale_fill_manual(values = c("dodgerblue2","dodgerblue4","light grey","dark grey"), labels=c("DE & ratio!=1","DE & ratio=1","Non-DE & ratio!=1","Non-DE & ratio=1"), name="Expression") + 
   geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  geom_text(
+    aes(label = value), 
+    position = position_dodge(0.9),
+    vjust = -0.4, size = 3.5
+  ) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Proportion')
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ratiogeneprot_youngold.pdf", width=8, height=8)
+ggplot(gene_ratio_prot, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
+  scale_fill_manual(values = c("dodgerblue2","dodgerblue4","light grey","dark grey"), labels=c("DE & ratio!=1","DE & ratio=1","Non-DE & ratio!=1","Non-DE & ratio=1"), name="Expression") + 
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  geom_text(
+    aes(label = value), 
+    position = position_dodge(0.9),
+    vjust = -0.4, size = 3.5
+  ) +
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Proportion')
 dev.off()
@@ -115,6 +133,11 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(gene_ratio_cds_notequal, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
   scale_fill_manual(values = c("dodgerblue2","light grey"), labels=c("DE & ratio!=1","Non-DE & ratio!=1"), name="Expression") + 
   geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  geom_text(
+    aes(label = value), 
+    position = position_dodge(0.9),
+    vjust = -0.4, size = 3.5
+  ) +
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Proportion')
 dev.off()
@@ -124,6 +147,11 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(gene_ratio_prot_notequal, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
   scale_fill_manual(values = c("dodgerblue2","light grey"), labels=c("DE & ratio!=1","Non-DE & ratio!=1"), name="Expression") + 
   geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  geom_text(
+    aes(label = value), 
+    position = position_dodge(0.9),
+    vjust = -0.4, size = 3.5
+  ) +
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Proportion')
 dev.off()
