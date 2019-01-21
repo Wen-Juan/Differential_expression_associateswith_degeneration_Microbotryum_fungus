@@ -1,4 +1,4 @@
-awk '$11 == 1 && $14 == "Auto && $25 == "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > nonauto_cdsequal.txt
+awk '$11 == 1 && $14 == "Auto" && $25 == "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > nonauto_cdsequal.txt
 awk '$11 !=1 && $14 == "Auto" && $25 == "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > nonauto_cdsnotequal.txt
 awk '$12 == 1 && $14 == "Auto" && $25 == "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > nonauto_proteinequal.txt
 awk '$12 != 1 && $14 == "Auto" && $25 == "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > nonauto_proteinnotequal.txt
@@ -20,7 +20,7 @@ awk '$12 != 1 && $14 == "OldStrata" && $25 == "NON"' Mvsl_a1a2_exp_cds_protein_c
 
 
 
-awk '$11 == 1 && $14 == "Auto && $25 != "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > DEauto_cdsequal.txt
+awk '$11 == 1 && $14 == "Auto" && $25 != "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > DEauto_cdsequal.txt
 awk '$11 !=1 && $14 == "Auto" && $25 != "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > DEauto_cdsnotequal.txt
 awk '$12 == 1 && $14 == "Auto" && $25 != "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > DEauto_proteinequal.txt
 awk '$12 != 1 && $14 == "Auto" && $25 != "NON"' Mvsl_a1a2_exp_cds_protein_compart.txt | wc -l > DEauto_proteinnotequal.txt

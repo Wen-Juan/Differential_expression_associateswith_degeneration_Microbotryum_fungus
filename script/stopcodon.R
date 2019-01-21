@@ -64,7 +64,7 @@ str(stopcodon_ratio_sep)
 stopcodon_ratio_sep1 <- subset(stopcodon_ratio_sep, stopcodon_ratio_sep$youngold != "Centro")
 str(stopcodon_ratio_sep1)
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_codingsequencea2_devidprotein3times_8PARTS.pdf", width=8, height=8)
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_codingsequencea1a2_devidprotein3times_8PARTS.pdf", width=8, height=8)
 ggplot(stopcodon_ratio_sep1, aes(x=youngold, y=cdsa2expest, fill=interaction(haploid,DE))) +
          scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2-biased at A1","A2-biased at A2","Not-biased at A1","Not-biased at A2","A1-biased at A1","A1-biased at A2"), name="Bias direction") +
          geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
@@ -95,7 +95,38 @@ Multiple R-squared:  0.0002358,	Adjusted R-squared:  -0.0001832
 F-statistic: 0.5627 on 7 and 16700 DF,  p-value: 0.7867
 ##########
 
+###proportion of genes with length difference, loading on Jan.20.2019.
+gene_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/19jan2019/number_gene_ratio.txt', header = T)
+str(gene_ratio)
 
+gene_ratio_cds <- subset(gene_ratio, gene_ratio$category =="cds")
+gene_ratio_prot <- subset(gene_ratio, gene_ratio$category =="prot")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ratiogene_youngold.pdf", width=8, height=8)
+ggplot(gene_ratio_cds, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
+  scale_fill_manual(values = c("dodgerblue2","dodgerblue4","light grey","dark grey"), labels=c("DE & ratio!=1","DE & ratio=1","Non-DE & ratio!=1","Non-DE & ratio=1"), name="Expression") + 
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Proportion')
+dev.off()
+
+gene_ratio_cds_notequal <- subset(gene_ratio_cds, gene_ratio_cds$type =="cdsnot")
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ratiocsd_youngold.pdf", width=8, height=8)
+ggplot(gene_ratio_cds_notequal, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
+  scale_fill_manual(values = c("dodgerblue2","light grey"), labels=c("DE & ratio!=1","Non-DE & ratio!=1"), name="Expression") + 
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Proportion')
+dev.off()
+
+gene_ratio_prot_notequal <- subset(gene_ratio_prot, gene_ratio_prot$type =="proteinnot")
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ratioprot_youngold.pdf", width=8, height=8)
+ggplot(gene_ratio_prot_notequal, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
+  scale_fill_manual(values = c("dodgerblue2","light grey"), labels=c("DE & ratio!=1","Non-DE & ratio!=1"), name="Expression") + 
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Proportion')
+dev.off()
 
 #load propotion data, modified codes on Jan.10.2019.
 ##protein length in 8 genomic compartments
