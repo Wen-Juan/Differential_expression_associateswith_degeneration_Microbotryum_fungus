@@ -172,7 +172,65 @@ Multiple R-squared:  0.5519,	Adjusted R-squared:  0.5439
 F-statistic: 68.76 on 6 and 335 DF,  p-value: < 2.2e-16
 #####
 
+###loading data on GC and dnds on 21Jan.2019
+GC_dnds <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/21jan2019/Mvsl_exp_GC_dnds.txt', header = T)
+str(GC_dnds)
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Cor_a1GC3_dn_scatter.pdf", width=8, height=8)
+ggplot(GC_dnds, aes(x=a1GC3, y=dn, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,0.25) +
+ # xlim(-13,13) +
+  labs(x='%GC3of A1', y= 'dN')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Cor_a1GC0_dn_scatter.pdf", width=8, height=8)
+ggplot(GC_dnds, aes(x=a1GC0, y=dn, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,0.25) +
+  # xlim(-13,13) +
+  labs(x='%GC0 of A1', y= 'dN')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Cor_a2GC3_dn_scatter.pdf", width=8, height=8)
+ggplot(GC_dnds, aes(x=a2GC3, y=dn, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,0.25) +
+  # xlim(-13,13) +
+  labs(x='%GC3 of A2', y= 'dN')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Cor_a2GC0_dn_scatter.pdf", width=8, height=8)
+ggplot(GC_dnds, aes(x=a2GC0, y=dn, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,0.25) +
+  # xlim(-13,13) +
+  labs(x='%GC0 of A2', y= 'dN')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Cor_a2GC0_dn_scatter.pdf", width=8, height=8)
+ggplot(GC_dnds, aes(x=ds, y=diffGC0, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  #ylim(0,0.25) +
+  # xlim(-13,13) +
+  #labs(x='%GC0 of A1', y= 'dS')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
 
 #load the corresponding data files.
 GC0 <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/Mvsl_a1a2_DEnonDE_intron_GCcodinggenes.txt', header = T)

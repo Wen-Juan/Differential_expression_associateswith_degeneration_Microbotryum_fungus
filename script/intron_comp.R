@@ -6,6 +6,47 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load the corresponding data files, on 21Jan2019
+intron_total <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/21jan2019/Mvsl_a1a2_intron_exp_gencomp.txt', header = T)
+str(intron_total)
+
+intron_total_rmcentro <- subset(intron_total, intron_total$youngold!="Centro")
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronmeanlength_diff_youngold.pdf", width=8, height=8)
+ggplot(intron_total_rmcentro, aes(x=youngold, y=diffintronmean, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick4","dark grey","dodgerblue4")) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-30,25) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Avereage intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_introntotallength_diff_youngold.pdf", width=8, height=8)
+ggplot(intron_total_rmcentro, aes(x=youngold, y=diffintrontotal, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick4","dark grey","dodgerblue4")) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-200,250) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Total intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronnr_diff_youngold.pdf", width=8, height=8)
+ggplot(intron_total_rmcentro, aes(x=youngold, y=diffintronnr, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick4","dark grey","dodgerblue4")) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-1,5)+                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Total intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+
+
+
 #load the corresponding data files.
 intron_total_fi <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/haploidwater_DEnonDE_intronfi08012019.txt', header = T)
 str(intron_total_fi) #loading Jan.08.2019
