@@ -45,7 +45,7 @@ ggplot(GC_ratio_rmcentro, aes(x=youngold, y=diffGC0, fill=DE)) +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-2.5,2.5) +  
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
-  labs(x='Genomic compartment', y='GC0% difference (A1-A2)') +
+  labs(x='Genomic compartment', y='GC% difference (A1-A2)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
@@ -61,6 +61,16 @@ ggplot(GC_ratio_rmcentro, aes(x=youngold, y=diffGC3, fill=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_GC3_scatter_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rmcentro, aes(x=logFC.A1.A2, y=diffGC3,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-13,13) +
+  labs(x='Log2(A1/A2)', y= 'Difference of %GC3 (A1-A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
 y <- lm(logFC.A1.A2~diffGC3*DE-1, data=GC_ratio_rmcentro)
 summary(y)
 ############
@@ -79,6 +89,16 @@ Residual standard error: 0.4232 on 8348 degrees of freedom
 Multiple R-squared:  0.4202,	Adjusted R-squared:  0.4198 
 F-statistic:  1008 on 6 and 8348 DF,  p-value: < 2.2e-16
 ###############
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_scatter_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rmcentro, aes(x=logFC.A1.A2, y=diffGC0,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-13,13) +
+  labs(x='Log2(A1/A2)', y= 'Difference of %GC3 (A1-A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
 
 y1 <- lm(logFC.A1.A2~diffGC0*DE-1, data=GC_ratio_rmcentro)
 summary(y1)
@@ -104,6 +124,56 @@ Residual standard error: 0.4232 on 8348 degrees of freedom
 Multiple R-squared:  0.4202,	Adjusted R-squared:  0.4198 
 F-statistic:  1008 on 6 and 8348 DF,  p-value: < 2.2e-16
 ####
+
+GC_ratio_mat <- subset(GC_ratio_rmcentro, GC_ratio_rmcentro$youngold !="Auto")
+str(GC_ratio_mat)
+
+y2 <- lm(logFC.A1.A2~diffGC0*DE-1, data=GC_ratio_mat)
+summary(y2)
+#####
+lm(formula = logFC.A1.A2 ~ diffGC0 * DE - 1, data = GC_ratio_mat)
+
+Residuals:
+  Min      1Q  Median      3Q     Max 
+-9.8354 -0.2796 -0.0163  0.2677  4.2945 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+diffGC0       -0.05431    0.16359  -0.332    0.740    
+DEDown        -2.64591    0.17944 -14.745   <2e-16 ***
+  DENON          0.05639    0.06323   0.892    0.373    
+DEUp           2.14658    0.15398  13.941   <2e-16 ***
+  diffGC0:DENON  0.17881    0.19714   0.907    0.365    
+diffGC0:DEUp  -0.34936    0.29104  -1.200    0.231    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.025 on 335 degrees of freedom
+Multiple R-squared:  0.5535,	Adjusted R-squared:  0.5455 
+F-statistic: 69.21 on 6 and 335 DF,  p-value: < 2.2e-16
+#####
+
+y3 <- lm(logFC.A1.A2~diffGC3*DE-1, data=GC_ratio_mat)
+summary(y3)
+#####
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+diffGC3       -0.10959    0.08533  -1.284   0.1999    
+DEDown        -2.64985    0.17897 -14.806   <2e-16 ***
+  DENON          0.06076    0.06353   0.956   0.3396    
+DEUp           2.11720    0.15321  13.819   <2e-16 ***
+  diffGC3:DENON  0.17366    0.10332   1.681   0.0937 .  
+diffGC3:DEUp   0.13603    0.11311   1.203   0.2300    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.027 on 335 degrees of freedom
+Multiple R-squared:  0.5519,	Adjusted R-squared:  0.5439 
+F-statistic: 68.76 on 6 and 335 DF,  p-value: < 2.2e-16
+#####
+
+
+
 #load the corresponding data files.
 GC0 <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/Mvsl_a1a2_DEnonDE_intron_GCcodinggenes.txt', header = T)
 str(GC0)
