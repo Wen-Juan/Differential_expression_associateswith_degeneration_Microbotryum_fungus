@@ -22,6 +22,7 @@ ggplot(intron_total_rmcentro, aes(x=youngold, y=diffintronmean, fill=DE)) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_introntotallength_diff_youngold.pdf", width=8, height=8)
 ggplot(intron_total_rmcentro, aes(x=youngold, y=diffintrontotal, fill=DE)) + 
   scale_fill_manual(values = c("firebrick4","dark grey","dodgerblue4")) +
@@ -44,8 +45,173 @@ ggplot(intron_total_rmcentro, aes(x=youngold, y=diffintronnr, fill=DE)) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
 
+#scatter plot 21jan.2019
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronmeanlength_diff_scatter_youngold.pdf", width=8, height=8)
+ggplot(intron_total_rmcentro, aes(x=logFC.A1.A2, y=diffintronmean,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-13,13) +
+  ylim(-200,200) +
+  labs(x='Log2(A1/A2)', y= 'Difference of average intron length (A1-A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronr_diff_scatter_youngold.pdf", width=8, height=8)
+ggplot(intron_total_rmcentro, aes(x=logFC.A1.A2, y=diffintronnr,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-13,13) +
+  labs(x='Log2(A1/A2)', y= 'Difference of mean intron number (A1-A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_introntotallength_diff_scatter_youngold.pdf", width=8, height=8)
+ggplot(intron_total_rmcentro, aes(x=logFC.A1.A2, y=diffintrontotal,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-13,13) +
+  labs(x='Log2(A1/A2)', y= 'Difference of total intron length (A1-A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y <- lm (logFC.A1.A2 ~ diffintronnr*DE-1, data=intron_total_rmcentro)
+summary(y)
+###
+Estimate Std. Error t value Pr(>|t|)    
+diffintronnr        0.562344   0.070340   7.995 1.47e-15 ***
+  DEDown             -1.825360   0.031370 -58.188  < 2e-16 ***
+  DENON              -0.007431   0.004710  -1.578    0.115    
+DEUp                1.782527   0.034885  51.098  < 2e-16 ***
+  diffintronnr:DENON -0.523949   0.080681  -6.494 8.83e-11 ***
+  diffintronnr:DEUp  -0.476527   0.089739  -5.310 1.12e-07 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4219 on 8348 degrees of freedom
+Multiple R-squared:  0.4238,	Adjusted R-squared:  0.4234 
+F-statistic:  1023 on 6 and 8348 DF,  p-value: < 2.2e-16
+###
+
+y1 <- lm (logFC.A1.A2 ~ diffintronmean*DE-1, data=intron_total_rmcentro)
+summary(y1)
+###
+Estimate Std. Error t value Pr(>|t|)    
+diffintronmean       -0.006162   0.002709  -2.274  0.02298 *  
+  DEDown               -1.837019   0.031554 -58.219  < 2e-16 ***
+  DENON                -0.007488   0.004725  -1.585  0.11307    
+DEUp                  1.774039   0.035232  50.353  < 2e-16 ***
+  diffintronmean:DENON  0.006761   0.002803   2.412  0.01587 *  
+  diffintronmean:DEUp   0.010276   0.003144   3.269  0.00108 ** 
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4233 on 8348 degrees of freedom
+Multiple R-squared:   0.42,	Adjusted R-squared:  0.4196 
+F-statistic:  1008 on 6 and 8348 DF,  p-value: < 2.2e-16
+###
+
+y2 <- lm (logFC.A1.A2 ~ diffintrontotal*DE-1, data=intron_total_rmcentro)
+summary(y2)
+###
+Estimate Std. Error t value Pr(>|t|)    
+diffintrontotal        0.0035823  0.0005771   6.207 5.65e-10 ***
+  DEDown                -1.8143157  0.0315352 -57.533  < 2e-16 ***
+  DENON                 -0.0074741  0.0047179  -1.584    0.113    
+DEUp                   1.7832965  0.0351987  50.664  < 2e-16 ***
+  diffintrontotal:DENON -0.0035044  0.0006426  -5.453 5.09e-08 ***
+  diffintrontotal:DEUp  -0.0033309  0.0006430  -5.180 2.27e-07 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4226 on 8348 degrees of freedom
+Multiple R-squared:  0.4219,	Adjusted R-squared:  0.4215 
+F-statistic:  1015 on 6 and 8348 DF,  p-value: < 2.2e-16
+###
 
 
+###loading data for separate a1 and a2. 21jan.2019
+intron_total_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/21jan2019/Mvsl_a1a2_intron_exp_gencomp_sep.txt', header = T)
+str(intron_total_sep)
+
+intron_total_sep_rmcentro <- subset(intron_total_sep,intron_total_sep$youngold !="Centro")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronnr_sep_youngold.pdf", width=8, height=8)
+ggplot(intron_total_sep_rmcentro, aes(x=youngold, y=a1intronnr, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2-biased at A1","A2-biased at A2","Not-biased at A1","Not-biased at A2","A1-biased at A1","A1-biased at A2"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,15) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Avereage intron number') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronnr_sep_nobias_youngold.pdf", width=8, height=8)
+ggplot(intron_total_sep_rmcentro, aes(x=youngold, y=a1intronnr, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue4","firebrick4"), labels=c("A1","A2"), name="Haploid") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,15) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Avereage intron number') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronmeanlength_sep_youngold.pdf", width=8, height=8)
+ggplot(intron_total_sep_rmcentro, aes(x=youngold, y=a1intronmean, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2-biased at A1","A2-biased at A2","Not-biased at A1","Not-biased at A2","A1-biased at A1","A1-biased at A2"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,250) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Avereage intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_intronmeanlength_sep_nobias_youngold.pdf", width=8, height=8)
+ggplot(intron_total_sep_rmcentro, aes(x=youngold, y=a1intronmean, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue4","firebrick4"), labels=c("A1","A2"), name="Haploid") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,220) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Avereage intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_introntotallength_sep_youngold.pdf", width=8, height=8)
+ggplot(intron_total_sep_rmcentro, aes(x=youngold, y=a1introntotal, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2-biased at A1","A2-biased at A2","Not-biased at A1","Not-biased at A2","A1-biased at A1","A1-biased at A2"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,1500) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Total intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_A1A2_introntotallength_sep_nobias_youngold.pdf", width=8, height=8)
+ggplot(intron_total_sep_rmcentro, aes(x=youngold, y=a1introntotal, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue4","firebrick4"), labels=c("A1","A2"), name="Haploid") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,1300) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Total intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+y4 <- lm(a1intronmean ~ haploid*youngold, data=intron_total_sep_rmcentro)
+summary(y4) #intron mean length, only color strata makes siginificant difference. 
+
+y5 <- lm(a1introntotal ~ haploid*youngold, data=intron_total_sep_rmcentro)
+summary(y5) #no difference.
+
+y6 <- lm(a1intronnr ~ haploid*youngold, data=intron_total_sep_rmcentro)
+summary(y6) # no difference
 
 #load the corresponding data files.
 intron_total_fi <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/haploidwater_DEnonDE_intronfi08012019.txt', header = T)
