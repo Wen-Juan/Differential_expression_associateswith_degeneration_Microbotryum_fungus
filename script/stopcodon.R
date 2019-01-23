@@ -57,6 +57,15 @@ ggplot(stopcodon_ratio_rmcentro, aes(x=youngold, y=cdsa2expest, fill=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_codingsequenceratio_youngold.pdf", width=8, height=8)
+ggplot(stopcodon_ratio_rmcentro, aes(x=youngold, y=cdsratioa1a2)) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0.9,1.1) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Ratio of coding sequence length (A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
 
 stopcodon_ratio_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/19jan2019/Mvsl_a1a2_exp_cds_protein_compart_sep.txt', header = T)
 str(stopcodon_ratio_sep)
