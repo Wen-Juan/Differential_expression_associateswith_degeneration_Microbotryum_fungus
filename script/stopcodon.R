@@ -39,7 +39,7 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(stopcodon_ratio_rmcentro, aes(x=youngold, y=cdsa1expest, fill=DE)) +
   scale_fill_manual(values = c("firebrick3","grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0.5,2.2) +  
+  ylim(0.8,1.2) +  
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Ratio of coding sequence length/(3*protein length)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
@@ -50,7 +50,7 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(stopcodon_ratio_rmcentro, aes(x=youngold, y=cdsa2expest, fill=DE)) +
   scale_fill_manual(values = c("firebrick3","grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0.5,2.2) +  
+  ylim(0.8,1.2) +  
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Ratio of coding sequence length/(3*protein length)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
@@ -68,7 +68,7 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(stopcodon_ratio_sep1, aes(x=youngold, y=cdsa2expest, fill=interaction(haploid,DE))) +
          scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2-biased at A1","A2-biased at A2","Not-biased at A1","Not-biased at A2","A1-biased at A1","A1-biased at A2"), name="Bias direction") +
          geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-         ylim(0.5,2.5) +  
+         ylim(0.9,1.1) +  
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Ratio of coding sequence length/(3*protein length)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
@@ -78,21 +78,22 @@ dev.off()
 y <- lm(cdsa2expest ~ haploid*youngold, data = stopcodon_ratio_sep1)
 summary(y)
 #########
-Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                    1.334e+00  3.718e-03 358.799   <2e-16 ***
-  haploidA2                      6.837e-05  5.259e-03   0.013    0.990    
-youngoldbPAR                  -1.948e-02  3.126e-02  -0.623    0.533    
-youngoldColorStrata            5.341e-02  5.560e-02   0.961    0.337    
-youngoldOldStrata              1.076e-02  2.443e-02   0.440    0.660    
-haploidA2:youngoldbPAR        -1.351e-03  4.421e-02  -0.031    0.976    
-haploidA2:youngoldColorStrata  1.979e-02  7.863e-02   0.252    0.801    
-haploidA2:youngoldOldStrata    9.917e-04  3.455e-02   0.029    0.977    
+Coefficients:
+  Estimate Std. Error   t value Pr(>|t|)    
+(Intercept)                    1.004e+00  4.465e-05 22484.262   <2e-16 ***
+  haploidA2                      3.370e-07  6.314e-05     0.005    0.996    
+youngoldbPAR                   5.578e-04  3.754e-04     1.486    0.137    
+youngoldColorStrata           -5.152e-05  6.676e-04    -0.077    0.938    
+youngoldOldStrata             -2.794e-04  2.934e-04    -0.952    0.341    
+haploidA2:youngoldbPAR        -2.311e-07  5.308e-04     0.000    1.000    
+haploidA2:youngoldColorStrata -3.447e-05  9.442e-04    -0.037    0.971    
+haploidA2:youngoldOldStrata    4.505e-05  4.149e-04     0.109    0.914    
 ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.3329 on 16700 degrees of freedom
-Multiple R-squared:  0.0002358,	Adjusted R-squared:  -0.0001832 
-F-statistic: 0.5627 on 7 and 16700 DF,  p-value: 0.7867
+Residual standard error: 0.003997 on 16700 degrees of freedom
+Multiple R-squared:  0.000364,	Adjusted R-squared:  -5.502e-05 
+F-statistic: 0.8687 on 7 and 16700 DF,  p-value: 0.5304
 ##########
 
 ###proportion of genes with length difference, loading on Jan.20.2019.
@@ -155,6 +156,7 @@ ggplot(gene_ratio_prot_notequal, aes(factor(Comp), ratio, fill = interaction(typ
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Proportion')
 dev.off()
+
 
 #load propotion data, modified codes on Jan.10.2019.
 ##protein length in 8 genomic compartments
