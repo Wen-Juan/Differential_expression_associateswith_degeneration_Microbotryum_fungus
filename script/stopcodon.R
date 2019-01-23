@@ -143,8 +143,8 @@ ggplot(gene_ratio_cds_notequal, aes(factor(Comp), ratio, fill = interaction(type
   labs(x='Genomic compartment', y='Proportion')
 dev.off()
 
-gene_ratio_prot_notequal <- subset(gene_ratio_prot, gene_ratio_prot$type =="proteinnot")
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ratioprot_youngold.pdf", width=8, height=8)
+gene_ratio_prot_notequal <- subset(gene_ratio_prot, gene_ratio_prot$type =="proteinanot")
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ratioprot_youngold1.pdf", width=8, height=8)
 ggplot(gene_ratio_prot_notequal, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
   scale_fill_manual(values = c("dodgerblue2","light grey"), labels=c("DE & ratio!=1","Non-DE & ratio!=1"), name="Expression") + 
   geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
