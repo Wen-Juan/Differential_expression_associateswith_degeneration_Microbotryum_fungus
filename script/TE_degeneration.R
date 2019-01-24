@@ -6,6 +6,21 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#loading data on 24Jan.2019, check distribution of coding sequence length
+a1cds_length <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/A1A2_homolog/A1_cds_length.txt', header = F)
+str(a1cds_length)
+a2cds_length <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/A1A2_homolog/A2_cds_length.txt', header = F)
+str(a2cds_length)
+
+ggplot(data=a1cds_length, aes(a1cds_length$V2)) + 
+  xlim(0,7500) +
+  ylim(0,2000) +
+  geom_histogram(binwidth=200)
+
+ggplot(data=a2cds_length, aes(a2cds_length$V2)) + 
+  xlim(0,7500) +
+  geom_histogram(binwidth=200)
+
 #load the corresponding data files. modify this on Jan.17.2019.
 #summary of TE numbers
 TE_number <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/16jan2019/TE_nr_17012019.txt', header = T)
