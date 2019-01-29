@@ -1,0 +1,4 @@
+DE_numbers	
+NUM_DE	595
+NUM_UP_DE	392
+NUM_DOWN_DE	203
