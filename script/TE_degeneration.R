@@ -6,6 +6,61 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#loading data on 01Feb.2019.
+##below are genes with single copy homologs.
+TE_number_touse_singlecopy_homolog <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/01feb19/TE_number_touse_01feb19.txt', header = T)
+str(TE_number_touse_singlecopy_homolog)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TE_prop_all_intervals_01feb19.pdf", width=8, height=8)
+ggplot(TE_number_touse_singlecopy_homolog, aes(x=location,y=Te_prop, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3"), labels=c("A1","A2"), name="Haploid") +  
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
+  ylim(0,0.15) +                    
+  scale_x_discrete(labels=c("up:20-15k", "15-10k","10-5k","5-0k","gene","down:0-5k", "5-10k","10-15k","15-20k")) + 
+  labs(y='Proportion of TE insertion sites', x="Interval window") +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/geneswithte_prop_all_intervals_01feb19.pdf", width=8, height=8)
+ggplot(TE_number_touse_singlecopy_homolog, aes(x=location,y=prop_withte, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3"), labels=c("A1","A2"), name="Haploid") +  
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
+  ylim(0,0.15) +                    
+  scale_x_discrete(labels=c("up:20-15k", "15-10k","10-5k","5-0k","gene","down:0-5k", "5-10k","10-15k","15-20k")) + 
+  labs(y='Proportion of genes with TE insertions', x="Interval window") +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+
+
+##below are all genes
+TE_number_touse <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/16jan2019/to_makegrah/TE_number_touse.txt', header = T)
+str(TE_number_touse)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TE_prop_all_intervals.pdf", width=8, height=8)
+ggplot(TE_number_touse, aes(x=location,y=Te_prop, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3"), labels=c("A1","A2"), name="Haploid") +  
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
+  ylim(0,0.2) +                    
+  scale_x_discrete(labels=c("up:20-15k", "15-10k","10-5k","5-0k","gene","down:0-5k", "5-10k","10-15k","15-20k")) + 
+  labs(y='Proportion of TE insertion sites', x="Interval window") +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/genes_withTEinsertions_intervals.pdf", width=8, height=8)
+ggplot(TE_number_touse, aes(x=location,y=prop_withte, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3"), labels=c("A1","A2"), name="Haploid") +  
+  geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
+  ylim(0,0.2) +                    
+  scale_x_discrete(labels=c("up:20-15k", "15-10k","10-5k","5-0k","gene","down:0-5k", "5-10k","10-15k","15-20k")) + 
+  labs(y='Proportion of TE insertion sites', x="Interval window") +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
 #loading data on 24Jan.2019, check distribution of coding sequence length
 a1cds_length <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/A1A2_homolog/A1_cds_length.txt', header = F)
 str(a1cds_length)
