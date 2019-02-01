@@ -312,7 +312,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsv_dNds_mutations_youngoldstrata.pdf", width=8, height=8)
 ggplot(dNdS_MvslMvsv_sep, aes(x=youngold, y=dndsa2, fill=DE2)) + 
-  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("Low mutations","Equal mutations","High mutations"), name="Expectations") +
+ scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("Low mutations","Equal mutations","High mutations"), name="Expectations") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,1) +  
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
@@ -321,6 +321,51 @@ ggplot(dNdS_MvslMvsv_sep, aes(x=youngold, y=dndsa2, fill=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+###stats 31.jan.2019
+dNdS_MvslMvsv_sep1 <- subset(dNdS_MvslMvsv_sep,dNdS_MvslMvsv_sep$youngold == "OldStrata")
+
+wilcox.test(dNdS_MvslMvsv_sep1$dsa2[dNdS_MvslMvsv_sep1$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep1$dsa2[dNdS_MvslMvsv_sep1$DE2=='Lowmutations'],exact = FALSE) 
+#W = 1165, p-value = 0.927
+wilcox.test(dNdS_MvslMvsv_sep1$dna2[dNdS_MvslMvsv_sep1$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep1$dna2[dNdS_MvslMvsv_sep1$DE2=='Lowmutations'],exact = FALSE) 
+#W = 1167.5, p-value = 0.9125
+wilcox.test(dNdS_MvslMvsv_sep1$dndsa2[dNdS_MvslMvsv_sep1$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep1$dndsa2[dNdS_MvslMvsv_sep1$DE2=='Lowmutations'],exact = FALSE) 
+#W = 1155.5, p-value = 0.9825
+
+wilcox.test(dNdS_MvslMvsv_sep1$dsa2[dNdS_MvslMvsv_sep1$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep1$dsa2[dNdS_MvslMvsv_sep1$DE2=='Neutral'],exact = FALSE) 
+#W = 4328, p-value = 0.1272
+wilcox.test(dNdS_MvslMvsv_sep1$dna2[dNdS_MvslMvsv_sep1$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep1$dna2[dNdS_MvslMvsv_sep1$DE2=='Neutral'],exact = FALSE) 
+#W = 5302.5, p-value = 0.5743
+wilcox.test(dNdS_MvslMvsv_sep1$dndsa2[dNdS_MvslMvsv_sep1$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep1$dndsa2[dNdS_MvslMvsv_sep1$DE2=='Neutral'],exact = FALSE) 
+#W = 5748, p-value = 0.1293
+
+wilcox.test(dNdS_MvslMvsv_sep1$dsa2[dNdS_MvslMvsv_sep1$DE2=='Lowmutations'],dNdS_MvslMvsv_sep1$dsa2[dNdS_MvslMvsv_sep1$DE2=='Neutral'],exact = FALSE) 
+#W = 4227, p-value = 0.08152
+wilcox.test(dNdS_MvslMvsv_sep1$dna2[dNdS_MvslMvsv_sep1$DE2=='Lowmutations'],dNdS_MvslMvsv_sep1$dna2[dNdS_MvslMvsv_sep1$DE2=='Neutral'],exact = FALSE) 
+#W = 5240.5, p-value = 0.6681
+wilcox.test(dNdS_MvslMvsv_sep1$dndsa2[dNdS_MvslMvsv_sep1$DE2=='Lowmutations'],dNdS_MvslMvsv_sep1$dndsa2[dNdS_MvslMvsv_sep1$DE2=='Neutral'],exact = FALSE) 
+#W = 5712, p-value = 0.15
+
+dNdS_MvslMvsv_sep2 <- subset(dNdS_MvslMvsv_sep,dNdS_MvslMvsv_sep$youngold == "ColorStrata")
+wilcox.test(dNdS_MvslMvsv_sep2$dsa2[dNdS_MvslMvsv_sep2$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep2$dsa2[dNdS_MvslMvsv_sep2$DE2=='Lowmutations'],exact = FALSE) 
+#W = 5, p-value = 1
+wilcox.test(dNdS_MvslMvsv_sep2$dna2[dNdS_MvslMvsv_sep2$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep2$dna2[dNdS_MvslMvsv_sep2$DE2=='Lowmutations'],exact = FALSE) 
+#W = 4, p-value = 1
+wilcox.test(dNdS_MvslMvsv_sep2$dndsa2[dNdS_MvslMvsv_sep2$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep2$dndsa2[dNdS_MvslMvsv_sep2$DE2=='Lowmutations'],exact = FALSE) 
+#W = 5, p-value = 1
+
+wilcox.test(dNdS_MvslMvsv_sep2$dsa2[dNdS_MvslMvsv_sep2$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep2$dsa2[dNdS_MvslMvsv_sep2$DE2=='Neutral'],exact = FALSE) 
+#W = 70, p-value = 0.5821
+wilcox.test(dNdS_MvslMvsv_sep2$dna2[dNdS_MvslMvsv_sep2$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep2$dna2[dNdS_MvslMvsv_sep2$DE2=='Neutral'],exact = FALSE) 
+#W = 121, p-value = 0.2638
+wilcox.test(dNdS_MvslMvsv_sep2$dndsa2[dNdS_MvslMvsv_sep2$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep2$dndsa2[dNdS_MvslMvsv_sep2$DE2=='Neutral'],exact = FALSE) 
+#W = 132, p-value = 0.1377
+
+wilcox.test(dNdS_MvslMvsv_sep2$dsa2[dNdS_MvslMvsv_sep2$DE2=='Lowmutations'],dNdS_MvslMvsv_sep2$dsa2[dNdS_MvslMvsv_sep2$DE2=='Neutral'],exact = FALSE) 
+#W = 69, p-value = 0.5594
+wilcox.test(dNdS_MvslMvsv_sep2$dna2[dNdS_MvslMvsv_sep2$DE2=='Lowmutations'],dNdS_MvslMvsv_sep2$dna2[dNdS_MvslMvsv_sep2$DE2=='Neutral'],exact = FALSE) 
+#W = 123, p-value = 0.2364
+wilcox.test(dNdS_MvslMvsv_sep2$dndsa2[dNdS_MvslMvsv_sep2$DE2=='Lowmutations'],dNdS_MvslMvsv_sep2$dndsa2[dNdS_MvslMvsv_sep2$DE2=='Neutral'],exact = FALSE) 
+#W = 133, p-value = 0.1291
 
 
 
