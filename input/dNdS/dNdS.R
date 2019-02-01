@@ -248,6 +248,82 @@ Res.Df    RSS Df Sum of Sq      F Pr(>F)
 2   6111 373.12 -1 -0.047997 0.7861 0.3753
 ###
 
+##load data of dN/dS between Mvsl and Mvsv, on 31.Jan.2019.
+dNdS_MvslMvsv <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/28jan2019/Mvsl_Mvsv/Mvsl_Mvsv_dnds_exp_all_fi.txt', header = T)
+str(dNdS_MvslMvsv)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsv_dNdsdiffe_youngandold.pdf", width=8, height=8)
+ggplot(dNdS_MvslMvsv, aes(x=youngold, y=dndsdiff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-0.3,0.3) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Difference in dN/dS (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsv_dNdiffe_youngandold.pdf", width=8, height=8)
+ggplot(dNdS_MvslMvsv, aes(x=youngold, y=dndiff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-0.03,0.03) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Difference in dN (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsv_dSdiffe_youngandold.pdf", width=8, height=8)
+ggplot(dNdS_MvslMvsv, aes(x=youngold, y=dsdiff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-0.04,0.04) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Difference in dS (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+dNdS_MvslMvsv_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/28jan2019/Mvsl_Mvsv/Mvsl_Mvsv_dnds_exp_all_fi_sep.txt', header = T)
+str(dNdS_MvslMvsv_sep)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsv_dN_mutations_youngoldstrata.pdf", width=8, height=8)
+ggplot(dNdS_MvslMvsv_sep, aes(x=youngold, y=dna2, fill=DE2)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("Low mutations","Equal mutations","High mutations"), name="Expectations") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.15) +  
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
+  labs(x='Genomic compartment', y='dN') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsv_ds_mutations_youngoldstrata.pdf", width=8, height=8)
+ggplot(dNdS_MvslMvsv_sep, aes(x=youngold, y=dsa2, fill=DE2)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("Low mutations","Equal mutations","High mutations"), name="Expectations") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
+  labs(x='Genomic compartment', y='dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsv_dNds_mutations_youngoldstrata.pdf", width=8, height=8)
+ggplot(dNdS_MvslMvsv_sep, aes(x=youngold, y=dndsa2, fill=DE2)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("Low mutations","Equal mutations","High mutations"), name="Expectations") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,1) +  
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
+  labs(x='Genomic compartment', y='dN/dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+
+
+
 ##laod data of dN/dS between Mvsl and Mvsd, on 30.Jan.2019.
 dNdS_MvslMvsd <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/28jan2019/Mvsl_Mvsd/Mvsl_Mvsd_dnds_exp_genomcompt.txt', header = T)
 str(dNdS_MvslMvsd)
@@ -339,7 +415,6 @@ ggplot(dNdS_MvslMvsd_oldstrata, aes(x=dsdiff, y=logFC.A1.A2,color=DE)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
-
 
 #load the corresponding data files, between a1 and a2 homologs within Mvsl species, modified at jan.15.2019
 dNdS_70perc <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/15jan19/LogCPM_0.05_hwseventyperc_touse_dnds_rmTE.txt', header = T)
