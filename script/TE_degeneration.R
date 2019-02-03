@@ -72,6 +72,130 @@ ggplot(TE_singlegene_rmcentro, aes(x=youngold, y=down5kdiff, fill=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TEinterval_genedown10kdiff_exp.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=youngold, y=down10kdiff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-10,10) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='5-10k downstream difference (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TEinterval_genedown15kdiff_exp.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=youngold, y=down15kdiff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-10,10) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='10-15k downstream difference (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TEinterval_genedown20kdiff_exp.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=youngold, y=down20kdiff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-10,10) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='15-20k downstream difference (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TEinterval_up10kdiff_exp.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=youngold, y=upk10diff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-5,5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Upstream 5-10k in TE insertions (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TEinterval_up15kdiff_exp.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=youngold, y=upk15diff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-5,5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Upstream 10-15k in TE insertions (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TEinterval_up20kdiff_exp.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=youngold, y=upk20diff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-5,5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Upstream 15-20k in TE insertions (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up5k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=upk5diff, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-10,10) + xlim(-12,12) +
+  labs(x='TE difference for upstream 0-5k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down5k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=down5kdiff, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-10,10) + xlim(-12,12) +
+  labs(x='TE difference for downstream 0-5k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+###stats.
+y <- lm(logFC.A1.A2 ~ upk5diff*DE, data = TE_singlegene_rmcentro)
+summary(y)
+y1 <- lm(logFC.A1.A2 ~ upk5diff+DE, data = TE_singlegene_rmcentro)
+anova(y,y1)
+###
+Model 1: logFC.A1.A2 ~ upk5diff * DE
+Model 2: logFC.A1.A2 ~ upk5diff + DE
+Res.Df    RSS Df Sum of Sq      F   Pr(>F)   
+1   8542 2022.3                                
+2   8544 2025.0 -2   -2.7503 5.8085 0.003014 **
+###
+ 
+y2 <- lm(logFC.A1.A2 ~ upk10diff*DE, data = TE_singlegene_rmcentro)
+summary(y2)
+y3 <- lm(logFC.A1.A2 ~ upk10diff+DE, data = TE_singlegene_rmcentro)
+anova(y2,y3) 
+###
+
+y6 <- lm(logFC.A1.A2 ~ down5kdiff*DE, data = TE_singlegene_rmcentro)
+summary(y6)
+y7 <- lm(logFC.A1.A2 ~ down5kdiff+DE, data = TE_singlegene_rmcentro)
+anova(y6,y7) 
+
+TE_singlegene_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/01feb19/Mvsl_a1a2_te_exp_compart_sep.txt', header = T)
+str(TE_singlegene_sep)
+
+TE_singlegene_sep_rmcentro <- subset(TE_singlegene_sep, TE_singlegene_sep$youngold != "Centro")
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/TEinterval_geneup5kdiff_exp.pdf", width=8, height=8)
+ggplot(TE_singlegene_sep_rmcentro, aes(x=youngold, y=genea10k, fill=DE2)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,6) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='0-5k upstream difference (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
 
 
 ##below are all genes
