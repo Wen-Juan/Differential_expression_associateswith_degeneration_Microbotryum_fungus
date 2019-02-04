@@ -6,6 +6,77 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load propotion data, modified codes on 04.Feb.2019.
+stopcodon_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/Mvsl_a1a2_exp_gencompt_protlength_fi.txt', header = T)
+str(stopcodon_ratio)
+
+stopcodon_ratio_rmcentro <- subset(stopcodon_ratio,stopcodon_ratio$youngold != "Centro")
+str(stopcodon_ratio_rmcentro)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protenlength_ratio_youngold.pdf", width=8, height=8)
+ggplot(stopcodon_ratio_rmcentro, aes(x=youngold, y=ratioprot, fill=DE)) +
+  scale_fill_manual(values = c("firebrick3","grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0.5,1.5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Ratio of protein length (A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cdslength_ratio_youngold.pdf", width=8, height=8)
+ggplot(stopcodon_ratio_rmcentro, aes(x=youngold, y=ratiocds, fill=DE)) +
+  scale_fill_manual(values = c("firebrick3","grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0.5,1.5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Ratio of coding sequence length (A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protlength_corre_youngold.pdf", width=8, height=8)
+ggplot(stopcodon_ratio_rmcentro, aes(x=ratioprot, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-8,12) + xlim(0.5,2) +
+  labs(x='Ratio of protein length (A1/A2)', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cdslength_corre_youngold.pdf", width=8, height=8)
+ggplot(stopcodon_ratio_rmcentro, aes(x=ratiocds, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-8,12) + xlim(0.5,2) +
+  labs(x='Ratio of coding sequence length (A1/A2)', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y <-lm(logFC.A1.A2~ratioprot*DE, data=stopcodon_ratio_rmcentro)
+summary(y)
+y1 <-lm(logFC.A1.A2~ratioprot+DE, data=stopcodon_ratio_rmcentro)
+summary(y1)
+anova(y,y1)
+
+y2 <-lm(logFC.A1.A2~ratiocds*DE, data=stopcodon_ratio_rmcentro)
+summary(y2)
+y3 <-lm(logFC.A1.A2~ratiocds+DE, data=stopcodon_ratio_rmcentro)
+summary(y3)
+anova(y2,y3)
+
+
+#stats on 4Feb.2019
+stopcodon_oldstrata <- subset(stopcodon_ratio_rmcentro, stopcodon_ratio_rmcentro$youngold=="OldStrata")
+wilcox.test(stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='Up'],stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='NON'], exact = FALSE) 
+#W = 1811, p-value = 0.1016
+wilcox.test(stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='Down'],stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='NON'], exact = FALSE) 
+#W = 1856, p-value = 0.1494
+wilcox.test(stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='Down'],stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='Up'], exact = FALSE) 
+#W = 661, p-value = 0.8872
+
 #load propotion data, modified codes on Jan.19.2019.
 stopcodon_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/19jan2019/Mvsl_a1a2_exp_cds_protein_compart.txt', header = T)
 str(stopcodon_ratio)

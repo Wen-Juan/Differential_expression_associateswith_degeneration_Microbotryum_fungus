@@ -228,7 +228,6 @@ ggplot(TE_singlegene_rmcentro, aes(x=upk20diff, y=logFC.A1.A2, color=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-
 ###stats.
 y <- lm(logFC.A1.A2 ~ upk5diff*DE, data = TE_singlegene_rmcentro)
 summary(y)
