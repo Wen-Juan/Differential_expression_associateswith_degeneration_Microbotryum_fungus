@@ -138,12 +138,12 @@ ggplot(TE_singlegene_rmcentro, aes(x=youngold, y=upk20diff, fill=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up5k.pdf", width=8, height=8)
-ggplot(TE_singlegene_rmcentro, aes(x=upk5diff, y=logFC.A1.A2, color=DE)) +
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_gene0k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=genediff, y=logFC.A1.A2, color=DE)) +
   scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
   geom_point() + geom_smooth(method = lm) +
   ylim(-10,10) + xlim(-12,12) +
-  labs(x='TE difference for upstream 0-5k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  labs(x='TE difference for homologs introns (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
@@ -157,6 +157,77 @@ ggplot(TE_singlegene_rmcentro, aes(x=down5kdiff, y=logFC.A1.A2, color=DE)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down5k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=down5kdiff, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-10,10) + xlim(-12,12) +
+  labs(x='TE difference for downstream 0-5k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up10k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=upk10diff, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-10,10) + xlim(-12,12) +
+  labs(x='TE difference for upstream 5-10k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down10k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=down10kdiff, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-10,10) + xlim(-12,12) +
+  labs(x='TE difference for downstream 5-10k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down15k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=down15kdiff, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-10,10) + xlim(-12,12) +
+  labs(x='TE difference for downstream 10-105k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down20k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=down20kdiff, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-10,10) + xlim(-12,12) +
+  labs(x='TE difference for downstream 15-20k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up15k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=upk15diff, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-10,10) + xlim(-12,12) +
+  labs(x='TE difference for upstream 10-15k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up20k.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=upk20diff, y=logFC.A1.A2, color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(-10,10) + xlim(-12,12) +
+  labs(x='TE difference for upstream 15-20k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
 
 ###stats.
 y <- lm(logFC.A1.A2 ~ upk5diff*DE, data = TE_singlegene_rmcentro)
@@ -197,6 +268,11 @@ ggplot(TE_singlegene_sep_rmcentro, aes(x=youngold, y=genea10k, fill=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+y <- lm(logFC.A1.A2 ~ genediff*DE, data = TE_singlegene_rmcentro)
+summary(y)
+y1 <- lm(logFC.A1.A2 ~ genediff+DE, data = TE_singlegene_rmcentro)
+anova(y,y1)
+###
 
 ##below are all genes
 TE_number_touse <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/16jan2019/to_makegrah/TE_number_touse.txt', header = T)
