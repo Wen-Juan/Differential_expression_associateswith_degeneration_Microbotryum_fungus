@@ -77,6 +77,41 @@ wilcox.test(stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='Down'],stopco
 wilcox.test(stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='Down'],stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='Up'], exact = FALSE) 
 #W = 661, p-value = 0.8872
 
+gene_ratio_prot_notequal <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/number_gene_ratio.txt', header = T)
+str(gene_ratio_prot_notequal)
+
+gene_ratio_prot_notequal_prot <- subset(gene_ratio_prot_notequal, gene_ratio_prot_notequal$type == "proteinanot")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ratioprot_not1_youngold.pdf", width=8, height=8)
+ggplot(gene_ratio_prot_notequal_prot, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
+  scale_fill_manual(values = c("dodgerblue2","light grey"), labels=c("DE","Non-DE"), name="Bias") + 
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  ylim(0,0.1) +
+  geom_text(
+    aes(label = value), 
+    position = position_dodge(0.9),
+    vjust = -0.4, size = 3.5
+  ) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Proportion of genes in each category')
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ratiocds_not1_youngold.pdf", width=8, height=8)
+ggplot(gene_ratio_prot_notequal_prot, aes(factor(Comp), ratio, fill = interaction(type, bias))) + 
+  scale_fill_manual(values = c("dodgerblue2","light grey"), labels=c("DE","Non-DE"), name="Bias") + 
+  geom_bar(stat="identity", position = "dodge",lpha=0.9,lwd=0.5) +
+  ylim(0,0.1) +
+  geom_text(
+    aes(label = value), 
+    position = position_dodge(0.9),
+    vjust = -0.4, size = 3.5
+  ) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Proportion of genes in each category')
+dev.off()
+
+
+
 #load propotion data, modified codes on Jan.19.2019.
 stopcodon_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/19jan2019/Mvsl_a1a2_exp_cds_protein_compart.txt', header = T)
 str(stopcodon_ratio)
