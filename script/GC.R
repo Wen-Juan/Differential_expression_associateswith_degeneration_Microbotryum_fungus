@@ -6,6 +6,119 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load the corresponding data files, on 05Feb.2019
+GC_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_OGC_3GC_exp_genomic.txt', header = T)
+str(GC_ratio)
+
+GC_ratio_rmcentro <- subset(GC_ratio, GC_ratio$youngold != "Centro")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rmcentro, aes(x=youngold, y=GC0diff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-2.5,2.5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='GC0% difference (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC3_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rmcentro, aes(x=youngold, y=GC3diff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-2.5,2.5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='GC3% difference (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_corr_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rmcentro, aes(x=GC0diff, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-5,5) +
+  ylim(0,13) +
+  labs(x='Difference of %GC0 (A1-A2)', y= 'Absolute value of ratio Log2(A1/A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC3_corr_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rmcentro, aes(x=GC3diff, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-6,6) +
+  ylim(0,13) +
+  labs(x='Difference of %GC3 (A1-A2)', y= 'Absolute value of ratio Log2(A1/A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y <- lm(abs~GC3diff*DE-1, data=GC_ratio_rmcentro)
+y1 <- lm(abs~GC3diff+DE, data=GC_ratio_rmcentro)
+anova(y,y1)
+summary(y)
+summary(y1)
+
+y2 <- lm(abs~GC0diff*DE-1, data=GC_ratio_rmcentro)
+y3 <- lm(abs~GC0diff+DE-1, data=GC_ratio_rmcentro)
+anova(y2,y3)
+summary(y2)
+summary(y3)
+
+GC_ratio_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_OGC_3GC_exp_genomic_sep.txt', header = T)
+str(GC_ratio_sep)
+
+GC_ratio_sep_rmcentro <- subset(GC_ratio_sep, GC_ratio_sep$youngold != "Centro")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_GC0GC3_youngold_compat.pdf", width=8, height=8)
+ggplot(GC_ratio_sep_rmcentro, aes(x=youngold, y=a1GC0, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"),labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1", "Not biased at A2","A1 biased at A1", "A1 biased at A2"), name="Expression") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(45,70) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Percentage of GC0 on coding sequence') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_GC3_youngold_compat.pdf", width=8, height=8)
+ggplot(GC_ratio_sep_rmcentro, aes(x=youngold, y=a1GC3, fill=interaction(haploid,DE))) + 
+  scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"),labels=c("A2 biased at A1","A2 biased at A2","Not biased at A1", "Not biased at A2","A1 biased at A1", "A1 biased at A2"), name="Expression") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(40,90) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Percentage of GC3 on coding sequence') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_GC0_expexted_youngold_compat.pdf", width=8, height=8)
+ggplot(GC_ratio_sep_rmcentro, aes(x=youngold, y=a1GC0, fill=DE2)) + 
+  scale_fill_manual(values = c("dodgerblue3" ,"grey", "firebrick3"),labels=c("High GC","Equal", "Low GC"), name="Expected GC direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(45,70) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Percentage of GC0 on coding sequence') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_GC3_expected_youngold_compat.pdf", width=8, height=8)
+ggplot(GC_ratio_sep_rmcentro, aes(x=youngold, y=a1GC3, fill=DE2)) + 
+  scale_fill_manual(values = c("dodgerblue3" ,"grey", "firebrick3"),labels=c("High GC","Equal", "Low GC"), name="Expected GC direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(40,90) +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Percentage of GC3 on coding sequence') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+
+
 #load the corresponding data files, on 21Jan.2019
 GC_ratio_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/21jan2019/MvSl_a1a2_0GC_3GC_genomcomp_exp_sep.txt', header = T)
 str(GC_ratio_sep)

@@ -6,6 +6,156 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load the corresponding data files, on 05feb2019
+intron_total <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_homolog_intron.txt', header = T)
+str(intron_total)
+intron_total_rmcentro <- subset(intron_total, intron_total$youngold!="Centro")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronnr_diff_youngold.pdf", width=8, height=8)
+ggplot(intron_total_rmcentro, aes(x=youngold, y=intron_nr_a1, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3")) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,15) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Avereage intron number') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronmean_diff_youngold.pdf", width=8, height=8)
+ggplot(intron_total_rmcentro, aes(x=youngold, y=intron_mean_a1, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3")) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,220) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Avereage intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_introntotallength_diff_youngold.pdf", width=8, height=8)
+ggplot(intron_total_rmcentro, aes(x=youngold, y=intron_total_a1, fill=haploid)) + 
+  scale_fill_manual(values = c("dodgerblue3","firebrick3")) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,1300) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Total intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+y <- lm(intron_total_a1~youngold*haploid, data=intron_total_rmcentro)
+anova(y)
+summary(y)
+
+y1 <- lm(intron_mean_a1~youngold*haploid, data=intron_total_rmcentro)
+anova(y1)
+summary(y1)
+
+y3 <- lm(intron_nr_a1~youngold*haploid, data=intron_total_rmcentro)
+anova(y3)
+summary(y3)
+
+intron_exp <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_a1a2_intron_exp_compart.txt', header = T)
+str(intron_exp)
+
+intron_exp_rmcentro <- subset(intron_exp, intron_exp$youngold!="Centro")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronmeanlength_diff1_youngold.pdf", width=8, height=8)
+ggplot(intron_exp_rmcentro, aes(x=youngold, y=intron_mean_diff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","dark grey","dodgerblue3"), labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-20,20) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Avereage intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronnr_diff1_youngold.pdf", width=8, height=8)
+ggplot(intron_exp_rmcentro, aes(x=youngold, y=intron_nr_diff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","dark grey","dodgerblue3"), labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-5,5) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Avereage intron number (A1-A2') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_introntotal_diff1_youngold.pdf", width=8, height=8)
+ggplot(intron_exp_rmcentro, aes(x=youngold, y=intron_total_diff, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","dark grey","dodgerblue3"), labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-250,250) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Total intron length (A1-A2') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_introntotal_diff1_corr_youngold.pdf", width=8, height=8)
+ggplot(intron_exp_rmcentro, aes(x=intron_total_diff, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-300,300) +
+  ylim(0,15) +
+  labs(x='Difference of intron total length (A1-A2)', y= 'Absolute value of ratio Log2(A1/A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronmean_diff1_corr_youngold.pdf", width=8, height=8)
+ggplot(intron_exp_rmcentro, aes(x=intron_mean_diff, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-220,220) +
+  ylim(0,15) +
+  labs(x='Difference of mean intron length (A1-A2)', y= 'Absolute value of ratio Log2(A1/A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronnumber_diff1_corr_youngold.pdf", width=8, height=8)
+ggplot(intron_exp_rmcentro, aes(x=intron_nr_diff, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-8,8) +
+  ylim(0,15) +
+  labs(x='Difference of intron number (A1-A2)', y= 'Absolute value of ratio Log2(A1/A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+intron_exp_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_a1a2_intron_exp_compart_sep.txt', header = T)
+str(intron_exp_sep)
+
+intron_exp_sep_rmcentro <- subset(intron_exp_sep, intron_exp_sep$youngold!="Centro")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronmean_hypo_youngold.pdf", width=8, height=8)
+ggplot(intron_exp_sep_rmcentro, aes(x=youngold, y=intron_mean_a1, fill=DE2)) + 
+  scale_fill_manual(values = c("firebrick3","dark grey","dodgerblue3"), labels=c("Long intron","Equal","Short intron"), name="Hypothecised direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,200) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Mean intron length') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronnr_hypo_youngold.pdf", width=8, height=8)
+ggplot(intron_exp_sep_rmcentro, aes(x=youngold, y=intron_nr_a1, fill=DE2)) + 
+  scale_fill_manual(values = c("firebrick3","dark grey","dodgerblue3"), labels=c("Long intron","Equal","Short intron"), name="Hypothecised direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,15) +                    
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Intron number') +
+  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+dev.off()
+
+
+
 #load the corresponding data files, on 21Jan2019
 intron_total <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/21jan2019/Mvsl_a1a2_intron_exp_gencomp.txt', header = T)
 str(intron_total)
@@ -13,7 +163,7 @@ str(intron_total)
 intron_total_rmcentro <- subset(intron_total, intron_total$youngold!="Centro")
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronmeanlength_diff_youngold.pdf", width=8, height=8)
 ggplot(intron_total_rmcentro, aes(x=youngold, y=diffintronmean, fill=DE)) + 
-  scale_fill_manual(values = c("firebrick4","dark grey","dodgerblue4")) +
+  scale_fill_manual(values = c("firebrick3","dark grey","dodgerblue4")) +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-30,25) +                    
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 

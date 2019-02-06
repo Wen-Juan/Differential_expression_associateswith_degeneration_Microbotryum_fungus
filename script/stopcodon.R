@@ -111,7 +111,6 @@ ggplot(gene_ratio_prot_notequal_prot, aes(factor(Comp), ratio, fill = interactio
 dev.off()
 
 
-
 #load propotion data, modified codes on Jan.19.2019.
 stopcodon_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/19jan2019/Mvsl_a1a2_exp_cds_protein_compart.txt', header = T)
 str(stopcodon_ratio)
