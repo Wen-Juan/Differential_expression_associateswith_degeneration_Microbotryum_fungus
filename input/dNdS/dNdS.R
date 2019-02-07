@@ -287,6 +287,22 @@ dev.off()
 
 dNdS_MvslMvsv_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/28jan2019/Mvsl_Mvsv/Mvsl_Mvsv_dnds_exp_all_fi_sep.txt', header = T)
 str(dNdS_MvslMvsv_sep)
+dNdS_MvslMvsv_sep_oldstrata <- subset(dNdS_MvslMvsv_sep,dNdS_MvslMvsv_sep$youngold=="OldStrata")
+x <- subset(dNdS_MvslMvsv_sep_oldstrata,dNdS_MvslMvsv_sep_oldstrata$DE2 == "Lowmutations")
+y <- subset(dNdS_MvslMvsv_sep_oldstrata,dNdS_MvslMvsv_sep_oldstrata$DE2 == "Vhighmutations")
+z <- subset(dNdS_MvslMvsv_sep_oldstrata,dNdS_MvslMvsv_sep_oldstrata$DE2 == "Neutral")
+
+mean(x$dna2) #0.03965833
+mean(x$dsa2) #0.1263271
+mean(x$dndsa2) # 0.3424813
+
+mean(z$dna2) #0.03380762
+mean(z$dsa2) #0.1370848
+mean(z$dndsa2) #0.2839695
+
+mean(y$dna2) #0.0394625
+mean(y$dsa2) # 0.1274812
+mean(y$dndsa2) # 0.336725
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvsv_dN_mutations_youngoldstrata.pdf", width=8, height=8)
 ggplot(dNdS_MvslMvsv_sep, aes(x=youngold, y=dna2, fill=DE2)) + 
