@@ -50,7 +50,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dN_DEnonDe_twoparts28012019.pdf", width=8, height=8)
 ggplot(dNdS_new, aes(x=youngold, y=dn, fill=DE2)) + 
-  scale_fill_manual(values = c("firebrick3","light grey"),labels=c("Biased","Not-biased"), name = "Bias direction") +
+  scale_fill_manual(values = c("firebrick3","light grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.08) +  
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
@@ -72,7 +72,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_DEnonDe_twoparts28012019.pdf", width=8, height=8)
 ggplot(dNdS_new, aes(x=youngold, y=ds, fill=DE2)) + 
-  scale_fill_manual(values = c("firebrick3","light grey"),labels=c("Biased","Not-biased"), name = "Bias direction") +
+  scale_fill_manual(values = c("firebrick3","light grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.08) +  
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
