@@ -168,12 +168,12 @@ ggplot(TE_singlegene_rmcentro, aes(x=genediff, y=abs)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down5k.pdf", width=8, height=8)
-ggplot(TE_singlegene_rmcentro, aes(x=down5kdiff, y=logFC.A1.A2, color=DE)) +
-  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up5k_depool.pdf", width=8, height=8)
+ggplot(TE_singlegene_rmcentro, aes(x=upk5diff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_point() + geom_smooth(method = lm) +
-  ylim(-10,10) + xlim(-12,12) +
-  labs(x='TE difference for downstream 0-5k (A1-A2)', y='Gene expression ratio Log2(A1/A2)') +
+  ylim(0,13) + xlim(-15,15) +
+  labs(x='TE difference for upstream 0-5k (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
@@ -323,7 +323,27 @@ ggplot(TE_singlegene_rmcentro, aes(x=upk20diff, y=abs, color=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-###stats.
+###stats.12feb2019
+y <- lm(abs ~ genediff+DE2, data = TE_singlegene_rmcentro)
+y1 <- lm(abs ~ genediff*DE2-1, data = TE_singlegene_rmcentro)
+summary(y)
+summary(y1)
+anova(y,y1)
+
+y <- lm(abs ~ upk5diff+DE2, data = TE_singlegene_rmcentro)
+y1 <- lm(abs ~ upk5diff*DE2-1, data = TE_singlegene_rmcentro)
+summary(y)
+summary(y1)
+anova(y,y1)
+
+y <- lm(abs ~ upk5diff+DE2, data = TE_singlegene_rmcentro)
+y1 <- lm(abs ~ upk5diff*DE2-1, data = TE_singlegene_rmcentro)
+summary(y)
+summary(y1)
+anova(y,y1)
+
+
+###stats.01feb2019
 y <- lm(logFC.A1.A2 ~ upk5diff*DE, data = TE_singlegene_rmcentro)
 summary(y)
 y1 <- lm(logFC.A1.A2 ~ upk5diff+DE, data = TE_singlegene_rmcentro)
