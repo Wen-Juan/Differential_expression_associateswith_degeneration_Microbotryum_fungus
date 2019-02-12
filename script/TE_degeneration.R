@@ -339,6 +339,26 @@ Multiple R-squared:  0.5987,	Adjusted R-squared:  0.5985
 F-statistic:  3186 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##
 
+y1a <- lm(abs ~ DE/genediff-1, data = TE_singlegene_rmcentro)
+summary(y1a)
+
+###################################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DEDown           1.768205   0.030942  57.146  < 2e-16 ***
+  DENON            0.213934   0.004943  43.280  < 2e-16 ***
+  DEUp             1.951272   0.022291  87.538  < 2e-16 ***
+  DEDown:genediff  0.213587   0.089989   2.373  0.01764 *  
+  DENON:genediff   0.018541   0.020713   0.895  0.37072    
+DEUp:genediff   -0.101458   0.036109  -2.810  0.00497 ** 
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4407 on 8542 degrees of freedom
+Multiple R-squared:  0.6002,	Adjusted R-squared:  0.5999 
+F-statistic:  2137 on 6 and 8542 DF,  p-value: < 2.2e-16
+###################################
+
 y2 <- lm(abs ~ DE2/upk5diff-1, data = TE_singlegene_rmcentro)
 summary(y2)
 ##
@@ -355,6 +375,25 @@ Residual standard error: 0.4416 on 8544 degrees of freedom
 Multiple R-squared:  0.5985,	Adjusted R-squared:  0.5983 
 F-statistic:  3184 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##
+y2a <- lm(abs ~ DE/upk5diff-1, data = TE_singlegene_rmcentro)
+summary(y2a)
+
+##############################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DEDown           1.775244   0.031003  57.260  < 2e-16 ***
+  DENON            0.214060   0.004940  43.330  < 2e-16 ***
+  DEUp             1.946515   0.022303  87.275  < 2e-16 ***
+  DEDown:upk5diff  0.083467   0.037603   2.220 0.026463 *  
+  DENON:upk5diff   0.002611   0.012437   0.210 0.833752    
+DEUp:upk5diff   -0.150306   0.042635  -3.525 0.000425 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4406 on 8542 degrees of freedom
+Multiple R-squared:  0.6003,	Adjusted R-squared:  0.6001 
+F-statistic:  2138 on 6 and 8542 DF,  p-value: < 2.2e-16
+######################
 
 y2 <- lm(abs ~ DE2/upk10diff-1, data = TE_singlegene_rmcentro)
 summary(y2)
@@ -373,6 +412,25 @@ Multiple R-squared:  0.5986,	Adjusted R-squared:  0.5984
 F-statistic:  3185 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##
 
+y2b <- lm(abs ~ DE/upk10diff-1, data = TE_singlegene_rmcentro)
+summary(y2b)
+##################################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DEDown            1.775283   0.031005  57.258  < 2e-16 ***
+  DENON             0.214010   0.004938  43.335  < 2e-16 ***
+  DEUp              1.954177   0.022292  87.661  < 2e-16 ***
+  DEDown:upk10diff  0.077660   0.037741   2.058   0.0397 *  
+  DENON:upk10diff   0.011818   0.014185   0.833   0.4048    
+DEUp:upk10diff   -0.182547   0.041105  -4.441 9.07e-06 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4404 on 8542 degrees of freedom
+Multiple R-squared:  0.6007,	Adjusted R-squared:  0.6004 
+F-statistic:  2142 on 6 and 8542 DF,  p-value: < 2.2e-16
+####################################
+
 y3 <- lm(abs ~ DE2/upk15diff-1, data = TE_singlegene_rmcentro)
 summary(y3)
 ##
@@ -390,6 +448,25 @@ Multiple R-squared:  0.599,	Adjusted R-squared:  0.5988
 F-statistic:  3190 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##
 
+y3a <- lm(abs ~ DE/upk15diff-1, data = TE_singlegene_rmcentro)
+summary(y3a)
+################################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DEDown            1.7688178  0.0309307  57.186  < 2e-16 ***
+  DENON             0.2140582  0.0049412  43.321  < 2e-16 ***
+  DEUp              1.9507456  0.0222960  87.493  < 2e-16 ***
+  DEDown:upk15diff -0.1514183  0.0409175  -3.701 0.000216 ***
+  DENON:upk15diff  -0.0004103  0.0171794  -0.024 0.980945    
+DEUp:upk15diff   -0.0430603  0.0391213  -1.101 0.271064    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4407 on 8542 degrees of freedom
+Multiple R-squared:  0.6002,	Adjusted R-squared:  0.5999 
+F-statistic:  2137 on 6 and 8542 DF,  p-value: < 2.2e-16
+################################
+
 y4 <- lm(abs ~ DE2/upk20diff-1, data = TE_singlegene_rmcentro)
 summary(y4)
 ##
@@ -406,6 +483,24 @@ Residual standard error: 0.4416 on 8544 degrees of freedom
 Multiple R-squared:  0.5985,	Adjusted R-squared:  0.5983 
 F-statistic:  3184 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##
+y4a <- lm(abs ~ DE/upk20diff-1, data = TE_singlegene_rmcentro)
+summary(y4a)
+#################################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DEDown            1.766350   0.031047  56.893   <2e-16 ***
+  DENON             0.214060   0.004944  43.294   <2e-16 ***
+  DEUp              1.950642   0.022319  87.397   <2e-16 ***
+  DEDown:upk20diff  0.053589   0.033249   1.612    0.107    
+DENON:upk20diff   0.002060   0.012442   0.166    0.869    
+DEUp:upk20diff   -0.013740   0.018940  -0.725    0.468    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.441 on 8542 degrees of freedom
+Multiple R-squared:  0.5997,	Adjusted R-squared:  0.5994 
+F-statistic:  2133 on 6 and 8542 DF,  p-value: < 2.2e-16
+###############################
 
 y5 <- lm(abs ~ DE2/down5kdiff-1, data = TE_singlegene_rmcentro)
 summary(y5)
@@ -423,6 +518,24 @@ Residual standard error: 0.4399 on 8544 degrees of freedom
 Multiple R-squared:  0.6015,	Adjusted R-squared:  0.6013 
 F-statistic:  3224 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##
+y5a <- lm(abs ~ DE/down5kdiff-1, data = TE_singlegene_rmcentro)
+summary(y5a)
+####################################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DEDown             1.777670   0.030812  57.694   <2e-16 ***
+  DENON              0.214063   0.004921  43.503   <2e-16 ***
+  DEUp               1.951875   0.022206  87.898   <2e-16 ***
+  DEDown:down5kdiff -0.298816   0.033571  -8.901   <2e-16 ***
+  DENON:down5kdiff   0.005544   0.016904   0.328   0.7429    
+DEUp:down5kdiff   -0.082573   0.032638  -2.530   0.0114 *  
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4388 on 8542 degrees of freedom
+Multiple R-squared:  0.6035,	Adjusted R-squared:  0.6032 
+F-statistic:  2167 on 6 and 8542 DF,  p-value: < 2.2e-16
+###################################
 
 y6 <- lm(abs ~ DE2/down10kdiff-1, data = TE_singlegene_rmcentro)
 summary(y6)
@@ -441,6 +554,29 @@ Multiple R-squared:  0.6004,	Adjusted R-squared:  0.6002
 F-statistic:  3209 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##
 
+y6a <- lm(abs ~ DE/down10kdiff-1, data = TE_singlegene_rmcentro)
+summary(y6a)
+################################
+Residuals:
+  Min      1Q  Median      3Q     Max 
+-2.1096 -0.1538 -0.0674  0.0821  9.7737 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DEDown             1.7756899  0.0309953  57.289  < 2e-16 ***
+  DENON              0.2140572  0.0049307  43.413  < 2e-16 ***
+  DEUp               1.9380755  0.0223066  86.883  < 2e-16 ***
+  DEDown:down10kdiff 0.0520091  0.0275472   1.888   0.0591 .  
+DENON:down10kdiff  0.0001266  0.0154511   0.008   0.9935    
+DEUp:down10kdiff   0.2022874  0.0295372   6.849 7.98e-12 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4397 on 8542 degrees of freedom
+Multiple R-squared:  0.6019,	Adjusted R-squared:  0.6016 
+F-statistic:  2152 on 6 and 8542 DF,  p-value: < 2.2e-16
+#################################
+
 y7 <- lm(abs ~ DE2/down15kdiff-1, data = TE_singlegene_rmcentro)
 summary(y7)
 ##
@@ -457,6 +593,30 @@ Residual standard error: 0.4416 on 8544 degrees of freedom
 Multiple R-squared:  0.5985,	Adjusted R-squared:  0.5983 
 F-statistic:  3184 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##
+
+y7a <- lm(abs ~ DE/down15kdiff-1, data = TE_singlegene_rmcentro)
+summary(y7a)
+################################
+Residuals:
+  Min      1Q  Median      3Q     Max 
+-1.3889 -0.1538 -0.0676  0.0821  9.7619 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DEDown             1.770661   0.031002  57.115   <2e-16 ***
+  DENON              0.214058   0.004945  43.286   <2e-16 ***
+  DEUp               1.949903   0.022316  87.376   <2e-16 ***
+  DEDown:down15kdiff 0.008920   0.043313   0.206    0.837    
+DENON:down15kdiff  0.003114   0.015336   0.203    0.839    
+DEUp:down15kdiff   0.003128   0.031600   0.099    0.921    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.441 on 8542 degrees of freedom
+Multiple R-squared:  0.5995,	Adjusted R-squared:  0.5992 
+F-statistic:  2131 on 6 and 8542 DF,  p-value: < 2.2e-16
+################################
+
 y8 <- lm(abs ~ DE2/down20kdiff-1, data = TE_singlegene_rmcentro)
 summary(y8)
 
@@ -478,7 +638,25 @@ Residual standard error: 0.4414 on 8544 degrees of freedom
 Multiple R-squared:  0.5988,	Adjusted R-squared:  0.5986 
 F-statistic:  3187 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##
+y8a <- lm(abs ~ DE/down20kdiff-1, data = TE_singlegene_rmcentro)
+summary(y8a)
 
+#########################################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DEDown              1.769518   0.030948  57.177   <2e-16 ***
+  DENON               0.214069   0.004944  43.302   <2e-16 ***
+  DEUp                1.949975   0.022296  87.457   <2e-16 ***
+  DEDown:down20kdiff -0.053598   0.035884  -1.494   0.1353    
+DENON:down20kdiff  -0.003821   0.015378  -0.248   0.8038    
+DEUp:down20kdiff   -0.072406   0.036488  -1.984   0.0472 *  
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4409 on 8542 degrees of freedom
+Multiple R-squared:  0.5998,	Adjusted R-squared:  0.5995 
+F-statistic:  2134 on 6 and 8542 DF,  p-value: < 2.2e-16
+#########################################
 
 ###stats.01feb2019
 y <- lm(logFC.A1.A2 ~ upk5diff*DE, data = TE_singlegene_rmcentro)
