@@ -324,23 +324,160 @@ ggplot(TE_singlegene_rmcentro, aes(x=upk20diff, y=abs, color=DE2)) +
 dev.off()
 
 ###stats.12feb2019
-y <- lm(abs ~ genediff+DE2, data = TE_singlegene_rmcentro)
-y1 <- lm(abs ~ genediff*DE2-1, data = TE_singlegene_rmcentro)
-summary(y)
+y1 <- lm(abs ~ DE2/genediff-1, data = TE_singlegene_rmcentro)
 summary(y1)
-anova(y,y1)
+##
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE            1.889250   0.018118 104.275   <2e-16 ***
+  DE2NON           0.213934   0.004952  43.202   <2e-16 ***
+  DE2DE:genediff  -0.057360   0.033572  -1.709   0.0876 .  
+DE2NON:genediff  0.018541   0.020750   0.894   0.3716    
+---
+Residual standard error: 0.4415 on 8544 degrees of freedom
+Multiple R-squared:  0.5987,	Adjusted R-squared:  0.5985 
+F-statistic:  3186 on 4 and 8544 DF,  p-value: < 2.2e-16
+##
 
-y <- lm(abs ~ upk5diff+DE2, data = TE_singlegene_rmcentro)
-y1 <- lm(abs ~ upk5diff*DE2-1, data = TE_singlegene_rmcentro)
-summary(y)
-summary(y1)
-anova(y,y1)
+y2 <- lm(abs ~ DE2/upk5diff-1, data = TE_singlegene_rmcentro)
+summary(y2)
+##
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE            1.888035   0.018145 104.054   <2e-16 ***
+  DE2NON           0.214060   0.004951  43.236   <2e-16 ***
+  DE2DE:upk5diff  -0.015253   0.028253  -0.540    0.589    
+DE2NON:upk5diff  0.002611   0.012464   0.209    0.834    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-y <- lm(abs ~ upk5diff+DE2, data = TE_singlegene_rmcentro)
-y1 <- lm(abs ~ upk5diff*DE2-1, data = TE_singlegene_rmcentro)
-summary(y)
-summary(y1)
-anova(y,y1)
+Residual standard error: 0.4416 on 8544 degrees of freedom
+Multiple R-squared:  0.5985,	Adjusted R-squared:  0.5983 
+F-statistic:  3184 on 4 and 8544 DF,  p-value: < 2.2e-16
+##
+
+y2 <- lm(abs ~ DE2/upk10diff-1, data = TE_singlegene_rmcentro)
+summary(y2)
+##
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE             1.888352   0.018116 104.235   <2e-16 ***
+  DE2NON            0.214010   0.004951  43.227   <2e-16 ***
+  DE2DE:upk10diff  -0.032902   0.027814  -1.183    0.237    
+DE2NON:upk10diff  0.011818   0.014221   0.831    0.406    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4415 on 8544 degrees of freedom
+Multiple R-squared:  0.5986,	Adjusted R-squared:  0.5984 
+F-statistic:  3185 on 4 and 8544 DF,  p-value: < 2.2e-16
+##
+
+y3 <- lm(abs ~ DE2/upk15diff-1, data = TE_singlegene_rmcentro)
+summary(y3)
+##
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE             1.8893486  0.0181079 104.338  < 2e-16 ***
+  DE2NON            0.2140582  0.0049482  43.259  < 2e-16 ***
+  DE2DE:upk15diff  -0.0920261  0.0283112  -3.251  0.00116 ** 
+  DE2NON:upk15diff -0.0004103  0.0172040  -0.024  0.98097    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4413 on 8544 degrees of freedom
+Multiple R-squared:  0.599,	Adjusted R-squared:  0.5988 
+F-statistic:  3190 on 4 and 8544 DF,  p-value: < 2.2e-16
+##
+
+y4 <- lm(abs ~ DE2/upk20diff-1, data = TE_singlegene_rmcentro)
+summary(y4)
+##
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE            1.888465   0.018142 104.093   <2e-16 ***
+  DE2NON           0.214060   0.004951  43.235   <2e-16 ***
+  DE2DE:upk20diff  0.001909   0.016478   0.116    0.908    
+DE2NON:upk20diff 0.002060   0.012459   0.165    0.869    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4416 on 8544 degrees of freedom
+Multiple R-squared:  0.5985,	Adjusted R-squared:  0.5983 
+F-statistic:  3184 on 4 and 8544 DF,  p-value: < 2.2e-16
+##
+
+y5 <- lm(abs ~ DE2/down5kdiff-1, data = TE_singlegene_rmcentro)
+summary(y5)
+##
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE              1.892999   0.018058 104.827  < 2e-16 ***
+  DE2NON             0.214063   0.004933  43.397  < 2e-16 ***
+  DE2DE:down5kdiff  -0.187756   0.023458  -8.004 1.37e-15 ***
+  DE2NON:down5kdiff  0.005544   0.016945   0.327    0.744    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4399 on 8544 degrees of freedom
+Multiple R-squared:  0.6015,	Adjusted R-squared:  0.6013 
+F-statistic:  3224 on 4 and 8544 DF,  p-value: < 2.2e-16
+##
+
+y6 <- lm(abs ~ DE2/down10kdiff-1, data = TE_singlegene_rmcentro)
+summary(y6)
+##
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE              1.8881392  0.0180741 104.467  < 2e-16 ***
+  DE2NON             0.2140572  0.0049392  43.339  < 2e-16 ***
+  DE2DE:down10kdiff  0.1291383  0.0201061   6.423 1.41e-10 ***
+  DE2NON:down10kdiff 0.0001266  0.0154777   0.008    0.993    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4405 on 8544 degrees of freedom
+Multiple R-squared:  0.6004,	Adjusted R-squared:  0.6002 
+F-statistic:  3209 on 4 and 8544 DF,  p-value: < 2.2e-16
+##
+
+y7 <- lm(abs ~ DE2/down15kdiff-1, data = TE_singlegene_rmcentro)
+summary(y7)
+##
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE              1.888557   0.018117 104.240   <2e-16 ***
+  DE2NON             0.214058   0.004951  43.235   <2e-16 ***
+  DE2DE:down15kdiff  0.010144   0.025536   0.397    0.691    
+DE2NON:down15kdiff 0.003114   0.015354   0.203    0.839    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4416 on 8544 degrees of freedom
+Multiple R-squared:  0.5985,	Adjusted R-squared:  0.5983 
+F-statistic:  3184 on 4 and 8544 DF,  p-value: < 2.2e-16
+##
+y8 <- lm(abs ~ DE2/down20kdiff-1, data = TE_singlegene_rmcentro)
+summary(y8)
+
+##
+Residuals:
+  Min      1Q  Median      3Q     Max 
+-1.4505 -0.1541 -0.0674  0.0819  9.8235 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE               1.888263   0.018112 104.256   <2e-16 ***
+  DE2NON              0.214069   0.004950  43.250   <2e-16 ***
+  DE2DE:down20kdiff  -0.061644   0.025614  -2.407   0.0161 *  
+  DE2NON:down20kdiff -0.003821   0.015397  -0.248   0.8040    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4414 on 8544 degrees of freedom
+Multiple R-squared:  0.5988,	Adjusted R-squared:  0.5986 
+F-statistic:  3187 on 4 and 8544 DF,  p-value: < 2.2e-16
+##
 
 
 ###stats.01feb2019
