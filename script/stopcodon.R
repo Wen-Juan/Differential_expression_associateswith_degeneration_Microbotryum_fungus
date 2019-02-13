@@ -6,6 +6,75 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load data on 13feb2019 for directional ratio, and randomdize non-DE genes directions for ratio calculation.
+non_DE_protein <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/Mvsl_a1a2_proteinlength_nonDE.txt', header = T)
+str(non_DE_protein)
+
+prot_ratio <- data.frame(non_DE_protein$a1prot, non_DE_protein$a2prot)
+cds_ratio <- data.frame(non_DE_protein$a1cds, non_DE_protein$a2cds)
+
+prot_ratio_rand <- randomizeMatrix(prot_ratio,null.model = "richness",iterations = 1000)
+cds_ratio_rand <- randomizeMatrix(cds_ratio,null.model = "richness",iterations = 1000)
+
+total_data <- cbind(non_DE_protein, prot_ratio_rand,cds_ratio_rand)
+write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/Mvsl_a1a2_nonDE_prot_randomdized.txt",quote=F, row.names=T, sep='\t')
+
+diff_prot_length_rand <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/Mvsl_a1a2_exp_gencompt_protlength_fi_randomdize.txt', header = T)
+str(diff_prot_length_rand)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protenlength_ratio_rand_youngold.pdf", width=8, height=8)
+ggplot(diff_prot_length_rand, aes(x=ratioprot, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(0,2) +
+  labs(x='Ratio of protein length', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m1 <- lm(abs ~ DE2/ratioprot-1, data = diff_prot_length_rand)
+summary(y_m1)
+###################################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE            -1.13821    0.25928  -4.390 1.15e-05 ***
+  DE2NON            0.26189    0.26277   0.997    0.319    
+DE2DE:ratioprot   3.02000    0.25820  11.696  < 2e-16 ***
+  DE2NON:ratioprot -0.04783    0.26268  -0.182    0.856    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4381 on 8545 degrees of freedom
+Multiple R-squared:  0.6047,	Adjusted R-squared:  0.6045
+###################################
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cdslength_ratio_rand_youngold.pdf", width=8, height=8)
+ggplot(diff_prot_length_rand, aes(x=ratiocds, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(0,2) +
+  labs(x='Ratio of coding sequence length', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m2 <- lm(abs ~ DE2/ratiocds-1, data = diff_prot_length_rand)
+summary(y_m2)
+#########################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE           -1.14920    0.26002  -4.420    1e-05 ***
+  DE2NON           0.16041    0.23702   0.677    0.499    
+DE2DE:ratiocds   3.03097    0.25894  11.705   <2e-16 ***
+  DE2NON:ratiocds  0.05361    0.23683   0.226    0.821    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4381 on 8545 degrees of freedom
+Multiple R-squared:  0.6047,	Adjusted R-squared:  0.6045 
+F-statistic:  3268 on 4 and 8545 DF,  p-value: < 2.2e-16
+###########################
+
 #load data on 12feb2019
 diff_prot_length <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/diff_protein_length.txt', header = T)
 str(diff_prot_length)
