@@ -1,0 +1,1 @@
+../../../script/extract_seq_from_fasta.py
