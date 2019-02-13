@@ -6,6 +6,21 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load data on 12feb2019
+diff_prot_length <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/diff_protein_length.txt', header = T)
+str(diff_prot_length)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_diff_protenlength_ratio_youngold.pdf", width=8, height=8)
+ggplot(data=diff_prot_length, aes(x=genomcom,y=prop,fill=factor(DE))) +
+  scale_fill_manual(values = c("firebrick3","grey"), labels=c("DE","Non-DE"), name="Bias") + 
+  ylim(0,0.8) +
+  geom_bar(position="dodge",stat="identity",width=0.6) + 
+  geom_text(aes(label=number),position=position_dodge(width=0.6), hjust=1.1) +
+  coord_flip() +
+  scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
+  labs(x='Proportion of genes', y='Proportion of genes')
+dev.off()
+
 #load propotion data, modified codes on 04.Feb.2019.
 stopcodon_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/Mvsl_a1a2_exp_gencompt_protlength_fi.txt', header = T)
 str(stopcodon_ratio)

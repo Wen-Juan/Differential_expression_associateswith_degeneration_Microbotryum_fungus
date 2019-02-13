@@ -1,0 +1,9 @@
+genomcom	DE	number	total	prop
+Auto	DE	19	507	0.037475345
+Auto	NonDE	96	7700	0.012467532
+bPAR	DE	0	12	0
+bPAR	NonDE	2	102	0.019607843
+ColorStrata	DE	2	3	0.666666667
+ColorStrata	NonDE	12	30	0.4
+OldStrata	DE	54	72	0.75
+OldStrata	NonDE	73	122	0.598360656

@@ -5,6 +5,283 @@ install.packages("devtools")
 library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
+install.packages("picante")
+library(picante)
+
+##analyzing data with randomizing non-DE genes between a1 and a2, on 12feb.2019
+TE_homolog <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/12feb2019/Mvsl_a1a2_te_nonDE_compart.txt', header = T)
+str(TE_homolog)
+
+geneok <- data.frame(TE_homolog$genea10k, TE_homolog$genea20k)
+up5k <- data.frame(TE_homolog$up5k, TE_homolog$a2up5k)
+up10k <- data.frame(TE_homolog$upk10, TE_homolog$a2upk10)
+up15k <- data.frame(TE_homolog$upk15, TE_homolog$a2upk15)
+up20k <- data.frame(TE_homolog$upk20, TE_homolog$a2upk20)
+down5k <- data.frame(TE_homolog$down5k, TE_homolog$a2down5k)
+down10k <- data.frame(TE_homolog$down10k, TE_homolog$a2down10k)
+down15k <- data.frame(TE_homolog$down15k, TE_homolog$a2down15k)
+down20k <- data.frame(TE_homolog$down20k, TE_homolog$a2down20k)
+
+str(up5k)
+
+geneok_rand <- randomizeMatrix(geneok,null.model = "richness",iterations = 1000)
+up5k_rand <- randomizeMatrix(up5k,null.model = "richness",iterations = 1000)
+head(up5k_rand)
+up10k_rand <- randomizeMatrix(up10k,null.model = "richness",iterations = 1000)
+up15k_rand <- randomizeMatrix(up15k,null.model = "richness",iterations = 1000)
+up20k_rand <- randomizeMatrix(up20k,null.model = "richness",iterations = 1000)
+down5k_rand <- randomizeMatrix(down5k,null.model = "richness",iterations = 1000)
+down10k_rand <- randomizeMatrix(down10k,null.model = "richness",iterations = 1000)
+down15k_rand <- randomizeMatrix(down15k,null.model = "richness",iterations = 1000)
+down20k_rand <- randomizeMatrix(down20k,null.model = "richness",iterations = 1000)
+
+total <- cbind(geneok_rand,up5k_rand, up10k_rand, up15k_rand, up20k_rand, down5k_rand, down10k_rand,down15k_rand,down20k_rand)
+head(total)
+
+total_data <- cbind(TE_homolog, total)
+write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/12feb2019/Mvsl_a1a2_te_nonDE_compart_randomdized3.txt",quote=F, row.names=T, sep='\t')
+
+###12feb2019
+TE_homolog_mod <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/12feb2019/Mvsl_a1a2_te_all_compart_mod.txt', header = T)
+str(TE_homolog_mod)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_gene0k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod, aes(x=gene0kdiff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-10,10) +
+  labs(x='TE difference for homologs introns (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m1 <- lm(abs ~ DE2/gene0kdiff-1, data = TE_homolog_mod)
+summary(y_m1)
+#####
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE             1.887440   0.018095 104.308  < 2e-16 ***
+  DE2NON            0.214049   0.004949  43.251  < 2e-16 ***
+  DE2DE:gene0kdiff  0.108022   0.033461   3.228  0.00125 ** 
+  DE2NON:gene0kdiff 0.004697   0.020738   0.226  0.82084    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4414 on 8545 degrees of freedom
+Multiple R-squared:  0.5989,	Adjusted R-squared:  0.5987 
+#####
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up0-5k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod, aes(x=upk5diff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-13,13) +
+  labs(x='TE difference for upstream 0-5kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m2 <- lm(abs ~ DE2/upk5diff-1, data = TE_homolog_mod)
+summary(y_m2)
+#########
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE            1.887906   0.018085 104.390  < 2e-16 ***
+  DE2NON           0.214075   0.004946  43.281  < 2e-16 ***
+  DE2DE:upk5diff   0.123460   0.028126   4.389 1.15e-05 ***
+  DE2NON:upk5diff -0.012632   0.012452  -1.014     0.31    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4411 on 8545 degrees of freedom
+Multiple R-squared:  0.5993,	Adjusted R-squared:  0.5992  
+##########
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up5-10k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod, aes(x=upk10diff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-13,13) +
+  labs(x='TE difference for upstream 5-10kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m3 <- lm(abs ~ DE2/upk10diff-1, data = TE_homolog_mod)
+summary(y_m3)
+###########
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE            1.890732   0.018108 104.416  < 2e-16 ***
+  DE2NON           0.214028   0.004947  43.264  < 2e-16 ***
+  DE2DE:upk10diff  0.114492   0.027340   4.188 2.85e-05 ***
+  DE2NON:upk10diff 0.009655   0.016995   0.568     0.57    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4412 on 8545 degrees of freedom
+Multiple R-squared:  0.5992,	Adjusted R-squared:  0.599 
+F-statistic:  3194 on 4 and 8545 DF,  p-value: < 2.2e-16
+#############
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up10-15k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod, aes(x=upk15diff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-10,10) +
+  labs(x='TE difference for upstream 10-15kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m4 <- lm(abs ~ DE2/upk15diff-1, data = TE_homolog_mod)
+summary(y_m4)
+##############
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE             1.886288   0.018110 104.157   <2e-16 ***
+  DE2NON            0.214054   0.004951  43.233   <2e-16 ***
+  DE2DE:upk15diff  -0.042650   0.028108  -1.517    0.129    
+DE2NON:upk15diff  0.012156   0.017214   0.706    0.480    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4416 on 8545 degrees of freedom
+Multiple R-squared:  0.5985,	Adjusted R-squared:  0.5983 
+F-statistic:  3185 on 4 and 8545 DF,  p-value: < 2.2e-16
+#############
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up15-20k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod, aes(x=upk20diff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-10,10) +
+  labs(x='TE difference for upstream 15-20kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m5 <- lm(abs ~ DE2/upk20diff-1, data = TE_homolog_mod)
+summary(y_m5)
+########################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE            1.8872491  0.0181044 104.243   <2e-16 ***
+  DE2NON           0.2140560  0.0049517  43.229   <2e-16 ***
+  DE2DE:upk20diff  0.0205518  0.0164466   1.250    0.211    
+DE2NON:upk20diff 0.0002931  0.0124611   0.024    0.981    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4416 on 8545 degrees of freedom
+Multiple R-squared:  0.5985,	Adjusted R-squared:  0.5983 
+F-statistic:  3184 on 4 and 8545 DF,  p-value: < 2.2e-16
+#######################
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down0-5k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod, aes(x=down5kdiff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-13,13) +
+  labs(x='TE difference for downstream 0-5kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m6 <- lm(abs ~ DE2/down5kdiff-1, data = TE_homolog_mod)
+summary(y_m6)
+#############
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE              1.886071   0.018088 104.274  < 2e-16 ***
+  DE2NON             0.214057   0.004947  43.273  < 2e-16 ***
+  DE2DE:down5kdiff  -0.099744   0.023384  -4.266 2.02e-05 ***
+  DE2NON:down5kdiff  0.006780   0.016993   0.399     0.69    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4412 on 8545 degrees of freedom
+Multiple R-squared:  0.5992,	Adjusted R-squared:  0.5991 
+F-statistic:  3194 on 4 and 8545 DF,  p-value: < 2.2e-16
+#############
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down5-10k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod, aes(x=down10kdiff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-13,13) +
+  labs(x='TE difference for downstream 5-10kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m7 <- lm(abs ~ DE2/down10kdiff-1, data = TE_homolog_mod)
+summary(y_m7)
+##########
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE               1.88237    0.01816 103.656  < 2e-16 ***
+  DE2NON              0.21403    0.00495  43.239  < 2e-16 ***
+  DE2DE:down10kdiff  -0.06216    0.02020  -3.078  0.00209 ** 
+  DE2NON:down10kdiff -0.00439    0.01551  -0.283  0.77717    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4414 on 8545 degrees of freedom
+Multiple R-squared:  0.5988,	Adjusted R-squared:  0.5986 
+F-statistic:  3189 on 4 and 8545 DF,  p-value: < 2.2e-16
+#############
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down10-15k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod, aes(x=down15kdiff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-13,13) +
+  labs(x='TE difference for downstream 10-150kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m8 <- lm(abs ~ DE2/down15kdiff-1, data = TE_homolog_mod)
+summary(y_m8)
+###################
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE               1.887235   0.018122 104.141   <2e-16 ***
+  DE2NON              0.214058   0.004952  43.227   <2e-16 ***
+  DE2DE:down15kdiff   0.005254   0.025521   0.206    0.837    
+DE2NON:down15kdiff -0.002450   0.015357  -0.160    0.873    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4416 on 8545 degrees of freedom
+Multiple R-squared:  0.5984,	Adjusted R-squared:  0.5982 
+F-statistic:  3183 on 4 and 8545 DF,  p-value: < 2.2e-16 
+###################
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down10-20k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod, aes(x=down20kdiff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-13,13) +
+  labs(x='TE difference for downstream 15-20kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y_m9 <- lm(abs ~ DE2/down20kdiff-1, data = TE_homolog_mod)
+summary(y_m9)
+
+##############
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE               1.887160   0.018106 104.228   <2e-16 ***
+  DE2NON              0.214053   0.004952  43.226   <2e-16 ***
+  DE2DE:down20kdiff   0.012485   0.025584   0.488    0.626    
+DE2NON:down20kdiff -0.003213   0.015404  -0.209    0.835   
+##############
+
+
 
 #loading data on 01Feb.2019.
 ##below are genes with single copy homologs.
