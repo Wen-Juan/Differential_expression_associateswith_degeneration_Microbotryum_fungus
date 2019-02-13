@@ -1,6 +1,6 @@
 infile1 = open("lista2.txt","r")
-infile2 = open("MvSl-1064-A2-R4_prot1.fasta","r")
-outfile = open("lista2_prot.fasta","w")
+infile2 = open("MvSl-1064-A2-R4_cds.fasta","r")
+outfile = open("lista2_cds.fasta","w")
 
 table = {}
 keep = "no"
