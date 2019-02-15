@@ -7,6 +7,58 @@ install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
 #load data on 13feb2019 for directional ratio, and randomdize non-DE genes directions for ratio calculation.
+diff_indel <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/prot_diff_genomic_compartment.txt', header = T)
+str(diff_indel)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_early_stopcodon_protdiff.pdf", width=8, height=8)
+ggplot(diff_indel, aes(x=Comp, y=prop, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
+  geom_bar(position="dodge", stat="identity", alpha=0.85, width=0.6) +
+  ylim(0,0.7) +  
+  scale_x_discrete(labels=c("Autosome+PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Proportion of early stop codons') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+##stats
+old_de <- c(25,18)
+old_nonde <- c(54,73)
+prop.test(old_de, old_nonde) #X-squared = 5.5596, df = 1, p-value = 0.01838
+
+auto_de <- c(4,7)
+auto_nonde <- c(40,21)
+prop.test(auto_de, auto_nonde) #X-squared = 3.6165, df = 1, p-value = 0.05721
+
+young_nonde <- c(4,1)
+auto_nonde <- c(40,14)
+prop.test(young_nonde, auto_nonde) #X-squared = 1.0898e-31, df = 1, p-value = 1
+
+old_de <- c(25,7)
+auto_de <- c(54,21)
+prop.test(old_de,auto_de) #X-squared = 0.57631, df = 1, p-value = 0.4478
+
+old_nonde <- c(18,4)
+auto_nonde <- c(73,40)
+prop.test(old_nonde,auto_nonde) #X-squared = 2.6678, df = 1, p-value = 0.1024
+
+diff_indel2 <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/diff_indel.txt', header = T)
+str(diff_indel2)
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_indels_mean_compartment.pdf", width=8, height=8)
+ggplot(diff_indel2, aes(x=comp, y=indel, fill=DE)) +
+  scale_fill_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,7) +  
+  scale_x_discrete(labels=c("Autosome+PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Mean indel number') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y <- lm(indel~DE/comp-1, data=diff_indel2)
+summary(y)
+
 non_DE_protein <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/Mvsl_a1a2_proteinlength_nonDE.txt', header = T)
 str(non_DE_protein)
 

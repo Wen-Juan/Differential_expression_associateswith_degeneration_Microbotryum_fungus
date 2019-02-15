@@ -1,0 +1,6 @@
+Comp	DE	early_stopcodon	total_prot_diff	prop
+OldStrata	DE	25	54	0.462962963
+OldStrata	NON	18	73	0.246575342
+ByoungStrata	NON	1	14	0.083333333
+Auto_PAR	NON	4	40	0.1
+Auto_PAR	DE	7	21	0.333333333

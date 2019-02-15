@@ -1,69 +1,201 @@
-DE	indel
-old	2
-old	5
-old	6
-old	8
-old	3
-old	2
-old	0
-old	0
-old	6
-old	3
-old	1
-old	1
-old	2
-old	0
-old	3
-old	4
-old	9
-old	3
-old	5
-old	3
-old	4
-old	9
-old	3
-old	3
-old	2
-old	1
-old	4
-old	0
-old	3
-old	2
-old	3
-old	3
-old	2
-old	1
-old	3
-old	1
-old	1
-old	1
-old	2
-old	1
-old	4
-old	1
-old	3
-old	1
-old	1
-old	6
-old	1
-old	1
-old	1
-old	2
-old	1
-old	5
-old	1
-old	3
-young	1
-young	1
-young	2
-young	1
-young	1
-young	0
-young	1
-young	1
-young	2
-young	1
-young	1
-young	1
-young	3
-young	1
+comp	DE	indel
+old	DE	2
+old	DE	5
+old	DE	6
+old	DE	8
+old	DE	3
+old	DE	2
+old	DE	0
+old	DE	0
+old	DE	6
+old	DE	3
+old	DE	1
+old	DE	1
+old	DE	2
+old	DE	0
+old	DE	3
+old	DE	4
+old	DE	9
+old	DE	3
+old	DE	5
+old	DE	3
+old	DE	4
+old	DE	9
+old	DE	3
+old	DE	3
+old	DE	2
+old	DE	1
+old	DE	4
+old	DE	0
+old	DE	3
+old	DE	2
+old	DE	3
+old	DE	3
+old	DE	2
+old	DE	1
+old	DE	3
+old	DE	1
+old	DE	1
+old	DE	1
+old	DE	2
+old	DE	1
+old	DE	4
+old	DE	1
+old	DE	3
+old	DE	1
+old	DE	1
+old	DE	6
+old	DE	1
+old	DE	1
+old	DE	1
+old	DE	2
+old	DE	1
+old	DE	5
+old	DE	1
+old	DE	3
+byoung	NON	1
+byoung	NON	1
+byoung	NON	2
+byoung	NON	1
+byoung	NON	1
+byoung	NON	1
+byoung	NON	1
+byoung	NON	1
+byoung	NON	2
+byoung	NON	1
+byoung	NON	3
+byoung	NON	1
+old	NON	7
+old	NON	1
+old	NON	2
+old	NON	1
+old	NON	3
+old	NON	4
+old	NON	2
+old	NON	2
+old	NON	6
+old	NON	7
+old	NON	5
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	2
+old	NON	1
+old	NON	2
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	2
+old	NON	3
+old	NON	3
+old	NON	3
+old	NON	4
+old	NON	5
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	2
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	1
+old	NON	2
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	1
+Auto	NON	2
+Auto	NON	1
+Auto	NON	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	12
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	2
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	1
+Auto	DE	2
+Auto	DE	3
