@@ -16,10 +16,11 @@ ggplot(diff_indel, aes(x=Comp, y=prop, fill=DE)) +
   geom_bar(position="dodge", stat="identity", alpha=0.85, width=0.6) +
   ylim(0,0.7) +  
   scale_x_discrete(labels=c("Autosome+PAR", "Young strata","Old strata")) + 
-  labs(x='Genomic compartment', y='Proportion of early stop codons') +
+  labs(x='Genomic compartment', y='Proportion of genes with different stop codon positions') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
+
 
 ##stats
 old_de <- c(25,18)
@@ -58,6 +59,11 @@ dev.off()
 
 y <- lm(indel~DE/comp-1, data=diff_indel2)
 summary(y)
+
+diff_indel2_oldstrata <- subset(diff_indel2, diff_indel2$comp =="old")
+diff_indel2_auto <- subset(diff_indel2, diff_indel2$comp =="Auto")
+wilcox.test(diff_indel2_oldstrata$indel[diff_indel2_oldstrata$DE=="DE"], diff_indel2_oldstrata$indel[diff_indel2_oldstrata$DE=="NON"]) #W = 2453.5, p-value = 0.01331
+wilcox.test(diff_indel2_auto$indel[diff_indel2_auto$DE=="DE"], diff_indel2_auto$indel[diff_indel2_auto$DE=="NON"]) #W = 490.5, p-value = 0.02548
 
 non_DE_protein <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/Mvsl_a1a2_proteinlength_nonDE.txt', header = T)
 str(non_DE_protein)
