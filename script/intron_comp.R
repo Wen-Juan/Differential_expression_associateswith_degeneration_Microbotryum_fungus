@@ -6,6 +6,28 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load data to reandomdize the non-DE gene expression direction, on 15thFeb.2019
+nonDE_intron <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/intron_random_diff.txt', header = T)
+str(nonDE_intron)
+
+intron_nr <- data.frame(nonDE_intron$intron_nr_a1, nonDE_intron$intron_nr_a2)
+intron_mean <- data.frame(nonDE_intron$intron_mean_a1, nonDE_intron$intron_mean_a2)
+intron_total <- data.frame(nonDE_intron$intron_total_a1, nonDE_intron$intron_total_a2)
+
+intron_nr_rand <- randomizeMatrix(intron_nr,null.model = "richness",iterations = 1000)
+intron_mean_rand <- randomizeMatrix(intron_mean,null.model = "richness",iterations = 1000)
+intron_mean_total <- randomizeMatrix(intron_total,null.model = "richness",iterations = 1000)
+
+total <- cbind(intron_nr_rand,intron_mean_rand, intron_total_rand)
+head(total)
+
+total_data <- cbind(nonDE_intron, total)
+write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_a1a2_intron_compart_randomdized.txt",quote=F, row.names=T, sep='\t')
+
+
+
+
+
 #load the corresponding data files, on 05feb2019
 intron_total <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_homolog_intron.txt', header = T)
 str(intron_total)

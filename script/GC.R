@@ -22,6 +22,83 @@ head(total)
 total_data <- cbind(nonDE_GC, total)
 write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_GC_nonDE_compart_randomdized.txt",quote=F, row.names=T, sep='\t')
 
+GC_ratio_rand <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_OGC_3GC_exp_genomic_rand.txt', header = T)
+str(GC_ratio_rand)
+
+GC_ratio_rand_rmcentro <- subset(GC_ratio_rand, GC_ratio_rand$youngold != "Centro")
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rand_rmcentro, aes(x=youngold, y=GC0diff, fill=DE2)) + 
+  scale_fill_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-2.5,2.5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='GC0% difference (high - lower-expressed homologs)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC3_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rand_rmcentro, aes(x=youngold, y=GC3diff, fill=DE2)) + 
+  scale_fill_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-2.5,2.5) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='GC3% difference (high - lower-expressed homologs)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC3_corr_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rand_rmcentro, aes(x=GC3diff, y=abs,color=DE2)) +
+  scale_color_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-8,8) +
+  ylim(0,13) +
+  labs(x='GC3% difference (high - lower-expressed homologs)', y= 'Absolute value of ratio Log2(A1/A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_corr_youngold.pdf", width=8, height=8)
+ggplot(GC_ratio_rand_rmcentro, aes(x=GC0diff, y=abs,color=DE2)) +
+  scale_color_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point() + geom_smooth(method = lm) +
+  xlim(-8,8) +
+  ylim(0,13) +
+  labs(x='GC0% difference (high - lower-expressed homologs)', y= 'Absolute value of ratio Log2(A1/A2)')+
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+y1 <- lm(abs ~ DE2/GC3diff-1, data=GC_ratio_rand_rmcentro)
+summary (y1)
+
+######
+Estimate Std. Error t value Pr(>|t|)    
+DE2DE          1.890582   0.018109 104.402  < 2e-16 ***
+  DE2NON         0.214062   0.004947  43.267  < 2e-16 ***
+  DE2DE:GC3diff  0.099984   0.025561   3.912 9.24e-05 ***
+  DE2NON:GC3diff 0.001061   0.020745   0.051    0.959 
+Multiple R-squared:  0.5992,	Adjusted R-squared:  0.599 
+F-statistic:  3193 on 4 and 8544 DF,  p-value: < 2.2e-16
+#######
+
+y2 <- lm(abs ~ DE2/GC0diff-1, data=GC_ratio_rand_rmcentro)
+summary (y2)
+
+#########
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE          1.890261   0.018088 104.504  < 2e-16 ***
+  DE2NON         0.214033   0.004942  43.305  < 2e-16 ***
+  DE2DE:GC0diff  0.338532   0.061858   5.473 4.56e-08 ***
+  DE2NON:GC0diff 0.027840   0.041860   0.665    0.506 
+Multiple R-squared:  0.5999,	Adjusted R-squared:  0.5997 
+F-statistic:  3203 on 4 and 8544 DF,  p-value: < 2.2e-16
+##########
+
+
 
 
 #load the corresponding data files, on 05Feb.2019
