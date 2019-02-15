@@ -6,6 +6,24 @@ library(devtools)
 install_github("kassambara/easyGgplot2", force = TRUE)
 library(easyGgplot2)
 
+#load dataset to randomdize the non-DE gene directions, on 15feb.2019.
+nonDE_GC <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/non-DE_GC.txt', header = T)
+str(nonDE_GC)
+
+GC0 <- data.frame(nonDE_GC$a1GC0, nonDE_GC$a2GC0)
+GC3 <- data.frame(nonDE_GC$a1GC3, nonDE_GC$a2GC3)
+
+GC0_rand <- randomizeMatrix(GC0,null.model = "richness",iterations = 1000)
+GC3_rand <- randomizeMatrix(GC3,null.model = "richness",iterations = 1000)
+
+total <- cbind(GC0_rand, GC3_rand)
+head(total)
+
+total_data <- cbind(nonDE_GC, total)
+write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_GC_nonDE_compart_randomdized.txt",quote=F, row.names=T, sep='\t')
+
+
+
 #load the corresponding data files, on 05Feb.2019
 GC_ratio <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_OGC_3GC_exp_genomic.txt', header = T)
 str(GC_ratio)
