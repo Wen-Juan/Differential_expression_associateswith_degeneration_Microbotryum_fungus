@@ -39,6 +39,16 @@ ggplot(intron_random_rmcentro, aes(x=youngold, y=intron_total_diff, fill=DE2)) +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
 dev.off()
+intron_random_rmcentro_old <- subset(intron_random_rmcentro, intron_random_rmcentro$youngold == "OldStrata")
+wilcox.test(intron_random_rmcentro_old$intron_mean_diff[intron_random_rmcentro_old$DE2=="DE"], y, exact=FALSE)
+#W = 4243, p-value = 0.9264 #W = 2518.5, p-value = 0.5141
+wilcox.test(intron_random_rmcentro_old$intron_total_diff[intron_random_rmcentro_old$DE2=="DE"], intron_random_rmcentro_old$intron_mean_diff[intron_random_rmcentro_old$DE2=="NON"], exact=FALSE)
+#W = 2656.5, p-value = 0.1911 #W = 4490, p-value = 0.4395
+intron_random_rmcentro_young <- subset(intron_random_rmcentro, intron_random_rmcentro$youngold == "ColorStrata")
+wilcox.test(intron_random_rmcentro_young$intron_mean_diff[intron_random_rmcentro_young$DE2=="DE"], intron_random_rmcentro_young$intron_mean_diff[intron_random_rmcentro_young$DE2=="NON"], exact=FALSE)
+#W = 82, p-value = 0.007993
+wilcox.test(intron_random_rmcentro_young$intron_total_diff[intron_random_rmcentro_young$DE2=="DE"], intron_random_rmcentro_young$intron_total_diff[intron_random_rmcentro_young$DE2=="NON"], exact=FALSE)
+#W = 84.5, p-value = 0.004592
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronmean_diff1_youngold.pdf", width=8, height=8)
 ggplot(intron_random_rmcentro, aes(x=youngold, y=intron_mean_diff, fill=DE2)) + 
