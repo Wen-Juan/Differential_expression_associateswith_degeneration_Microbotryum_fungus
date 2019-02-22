@@ -1,0 +1,33 @@
+MvSl-1064-A1-R4_MC01-1g01710	3.1e-37	127.3	3.9e-37	127.0	basNOG	ENOG410959M	11	8	S	Inherit from fuNOG: GNAT family acetyltransferase
+MvSl-1064-A1-R4_MC01-1g01906	4.4e-191	635.2	6.9e-131	436.7	basNOG	ENOG41091Y5	12	11	A	ATP-dependent RNA helicase associated with the nuclear pore complex and essential for mRNA export from the nucleus. May participate in a terminal step of mRNA export through the removal of proteins that accompany mRNA through the nucleopore complex. May also be involved in early transcription (By similarity)
+MvSl-1064-A1-R4_MC01-1g02165	1.6e-164	547.8	3.3e-164	546.7	basNOG	ENOG410919N	10	10	T	STE STE7 MEK1 protein kinase
+MvSl-1064-A1-R4_MC01-1g02246	8.7e-170	566.2	1.1e-163	546.1	basNOG	ENOG41092WC	9	9	S	Pfam:DUF803
+MvSl-1064-A1-R4_MC01-1g02323	0	1069.6	0	1068.2	basNOG	ENOG41091PK	11	11	J	ATP-binding RNA helicase involved in translation initiation. Remodels RNA in response to ADP and ATP concentrations by facilitating disruption, but also formation of RNA duplexes (By similarity)
+MvSl-1064-A1-R4_MC01-2g03154	1.9e-53	181.0	4.8e-40	137.1	basNOG	ENOG410931H	9	9	U	RAB
+MvSl-1064-A1-R4_MC02g03208	8.6e-82	275.1	1.2e-81	274.7	basNOG	ENOG41093SH	10	10	S	NA
+MvSl-1064-A1-R4_MC02g03759	8.1e-25	86.9	8.2e-20	70.5	basNOG	ENOG410942D	9	8	S	Protein of unknown function (DUF2034)
+MvSl-1064-A1-R4_MC03g04645	1.5e-28	99.3	1.3e-27	96.3	basNOG	ENOG41094DH	7	7	S	Inherit from euNOG: Conserved hypothetical protein
+MvSl-1064-A1-R4_MC03g04676	3.4e-34	118.4	8.3e-33	113.8	basNOG	ENOG41094M3	12	11	A	Fip1 motif
+MvSl-1064-A1-R4_MC03g04691	3.7e-301	1000.2	1.4e-285	948.6	basNOG	ENOG4109181	11	11	A	ATP-dependent RNA helicase involved in mRNA splicing. May destabilize the U1 5'-splice site duplex to permit an effective competition for the 5'-splice site by the U6 snRNA, resulting in the switch between U1 and U6 at the 5'-splice site. May also act to unwind the U4 U6 base-pairing interaction in the U4 U6 U5 snRNP, facilitating the first covalent step of splicing (By similarity)
+MvSl-1064-A1-R4_MC03g04838	2.9e-128	429.1	2e-127	426.3	basNOG	ENOG41093SG	9	9	T	Pfam:TBC
+MvSl-1064-A1-R4_MC04-1g05647	0.075	11.5	0.048	12.2	basNOG	ENOG41097DZ	4	4	D	Mad3/BUB1 homology region 1
+MvSl-1064-A1-R4_MC04-1g05996	1.2e-113	380.1	1.5e-113	379.7	basNOG	ENOG41092Y3	9	9	O	Inherit from fuNOG: UBX domain-containing protein
+MvSl-1064-A1-R4_MC05-3g06663	5.3e-38	131.1	5.3e-38	131.1	basNOG	ENOG41094BY	7	7	D	Replication Fork Protection Component Swi3
+MvSl-1064-A1-R4_MC06g07042	3.4e-49	168.0	2.1e-48	165.3	basNOG	ENOG41093PV	10	10	K	MADS
+MvSl-1064-A1-R4_MC07g07862	4e-31	108.5	6e-30	104.7	basNOG	ENOG41095HE	8	8	D	LYAR-type C2HC zinc finger 
+MvSl-1064-A1-R4_MC08g08299	0	1258.7	0	1258.4	basNOG	ENOG410929W	10	10	J	Component of the eukaryotic translation initiation factor 3 (eIF-3) complex, which is involved in protein synthesis and, together with other initiation factors, stimulates binding of mRNA and methionyl-tRNAi to the 40S ribosome (By similarity)
+MvSl-1064-A1-R4_MC08g08440	0.0065	14.8	0.0065	14.8	basNOG	ENOG41096JW	3	2	S	NA
+MvSl-1064-A1-R4_MC08g08560	1.6e-19	69.8	9.2e-11	41.0	basNOG	ENOG41094SR	6	6	S	NA
+MvSl-1064-A1-R4_MC08g08685	1.9e-67	227.5	2.2e-67	227.3	basNOG	ENOG41092SH	16	11	O	Eukaryotic aspartyl protease
+MvSl-1064-A1-R4_MC08g08848	0	2100.3	0	2099.9	basNOG	ENOG41091ZT	11	11	T	Adenylate cyclase
+MvSl-1064-A1-R4_MC09-2g09152	5.9e-12	44.6	6.2e-11	41.2	basNOG	ENOG410943S	8	8	S	NA
+MvSl-1064-A1-R4_MC09-2g09310	1.3e-27	96.0	3.8e-17	62.1	basNOG	ENOG410996U	6	6	L	6-O-methylguanine DNA methyltransferase, DNA binding domain
+MvSl-1064-A1-R4_MC09-2g09397	1.2e-197	658.6	1.1e-185	619.1	basNOG	ENOG41091R6	11	11	O	Zinc finger, C3HC4 type (RING finger)
+MvSl-1064-A1-R4_MC10-1g09665	2e-117	388.4	2.4e-117	388.2	basNOG	ENOG41091UX	11	11	U	adp-ribosylation factor
+MvSl-1064-A1-R4_MC10-2g09966	3.3e-110	368.4	3.6e-109	365.0	basNOG	ENOG41093JF	8	7	S	Protein of unknown function (DUF544)     
+MvSl-1064-A1-R4_MC12g11009	2.5e-90	303.8	3.3e-90	303.4	basNOG	ENOG41093FT	9	8	S	Inherit from fuNOG: INO80 chromatin remodeling complex
+MvSl-1064-A1-R4_MC12g11023	1.1e-160	536.0	3.2e-109	365.9	basNOG	ENOG41092NI	8	8	S	50S ribosome-binding GTPase
+MvSl-1064-A1-R4_MC13g11439	2.2e-222	739.6	5.2e-211	702.0	basNOG	ENOG410927S	12	11	U	Acts as component of the peripheral membrane COG complex that is involved in intra-Golgi protein trafficking. COG is located at the cis-Golgi, and regulates tethering of retrograde intra-Golgi vesicles and possibly a number of other membrane trafficking events (By similarity)
+MvSl-1064-A1-R4_MC14g11886	1.3e-196	655.0	1.6e-196	654.6	basNOG	ENOG41091SW	11	11	U	Adaptin N terminal region
+MvSl-1064-A1-R4_MC16g12173	3.9e-155	517.7	4.6e-153	510.9	basNOG	ENOG41091YN	11	11	L	Nucleotidyltransferase domain
+MvSl-1064-A1-R4_MC16g12176	3.7e-21	75.2	6.9e-20	71.0	basNOG	ENOG41095TT	4	4	K	Homeobox domain
