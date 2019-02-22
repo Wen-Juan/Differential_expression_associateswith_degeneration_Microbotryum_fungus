@@ -1,0 +1,40 @@
+MvSl-1064-A1-R4_A1g00154	5.1e-27	94.4	6.8e-27	94.0	basNOG	ENOG41094G9	6	6	J	Peptidyl-tRNA hydrolase
+MvSl-1064-A1-R4_A1g00165	6.1e-274	910.4	1.5e-185	618.2	basNOG	ENOG41092AG	11	11	P	Sodium hydrogen exchanger
+MvSl-1064-A1-R4_A1g00230	3.6e-74	248.0	5.9e-40	136.4	basNOG	ENOG410932J	11	11	B	Histone chaperone that facilitates histone deposition and histone exchange and removal during nucleosome assembly and disassembly (By similarity)
+MvSl-1064-A1-R4_A1g00242	3.3e-51	172.6	4.5e-51	172.2	basNOG	ENOG41094AU	11	10	U	Signal peptidase subunit
+MvSl-1064-A1-R4_A1g00246	1.1e-122	409.0	1e-120	402.6	basNOG	ENOG41092YR	9	9	H	Pantoate-beta-alanine ligase
+MvSl-1064-A1-R4_A1g00254	0.04	11.5	0.058	11.0	basNOG	ENOG41093FM	10	10	U	Involved in inositol deacylation of GPI-anchored proteins which plays important roles in the quality control and ER-associated degradation of GPI-anchored proteins (By similarity)
+MvSl-1064-A1-R4_A1g00269	5.7e-300	997.2	1.4e-167	559.1	basNOG	ENOG410923J	9	8	O	Lon protease (S16) C-terminal proteolytic domain
+MvSl-1064-A1-R4_A1g00270	8.1e-178	590.2	1e-177	589.8	basNOG	ENOG41091KX	10	10	E	Stereospecific condensation of phosphoenolpyruvate (PEP) and D-erythrose-4-phosphate (E4P) giving rise to 3-deoxy-D- arabino-heptulosonate-7-phosphate (DAHP) (By similarity)
+MvSl-1064-A1-R4_A1g00292	9.2e-214	710.3	1e-213	710.2	basNOG	ENOG41091Y6	11	11	O	ubiquitin carboxyl-terminal hydrolase
+MvSl-1064-A1-R4_A1g00312	2.3e-40	137.6	2.6e-40	137.4	basNOG	ENOG410947Z	8	7	S	Essential protein Yae1, N terminal
+MvSl-1064-A1-R4_A1g00349	1.2e-27	96.4	2e-25	89.1	basNOG	ENOG410930D	16	11	S	GPR1/FUN34/yaaH family
+MvSl-1064-A1-R4_A1g00350	4.1e-24	84.2	1.2e-22	79.4	basNOG	ENOG41095B1	4	4	S	NA
+MvSl-1064-A1-R4_A1g00448	2.3e-105	352.4	5e-104	348.0	basNOG	ENOG4109552	6	4	S	Inherit from fuNOG: transcription factor RfeF
+MvSl-1064-A1-R4_A1g00495	2.6e-42	145.4	2.6e-42	145.4	basNOG	ENOG41094C6	10	10	S	NA
+MvSl-1064-A1-R4_A1g00516	7e-92	307.6	8.1e-92	307.4	basNOG	ENOG410930F	11	11	O	UBX
+MvSl-1064-A1-R4_A1g00522	2.2e-132	441.7	2.4e-132	441.6	basNOG	ENOG41095ZV	2	2	G	Major Facilitator Superfamily
+MvSl-1064-A1-R4_A1g00591	5.8e-14	51.1	5.8e-14	51.1	basNOG	ENOG41098KS	2	2	K	Pfam:Coprinus_mating
+MvSl-1064-A1-R4_A1g00624	7.8e-74	247.8	9e-74	247.6	basNOG	ENOG41093R2	10	10	C	endonuclease activity
+MvSl-1064-A1-R4_A1g00644	9.6e-20	70.9	1.1e-11	44.3	basNOG	ENOG41094DI	9	9	S	ZnF_C3H1
+MvSl-1064-A1-R4_A1g00646	1e-146	489.6	2.4e-144	481.7	basNOG	ENOG41092QD	8	8	I	PGAP1-like protein
+MvSl-1064-A1-R4_A1g00648	1.2e-102	344.0	1.6e-101	340.3	basNOG	ENOG4109381	10	10	A	Pre-mRNA-splicing factor CWC25
+MvSl-1064-A1-R4_A1g00718	6.6e-33	113.2	7.6e-21	73.4	basNOG	ENOG41098KQ	2	2	M	Glycosyltransferase sugar-binding region containing DXD motif   
+MvSl-1064-A1-R4_A1g00752	0.26	9.6	0.25	9.6	basNOG	ENOG41091H4	12	10	T	Phosphatidylinositol-4-phosphate 5-Kinase
+MvSl-1064-A1-R4_A1g00779	0	1531.4	0	1517.1	basNOG	ENOG41091W6	11	11	U	Vacuolar protein sorting-associated protein 35 
+MvSl-1064-A1-R4_A1g00853	0	1031.8	4.1e-283	941.1	basNOG	ENOG41091T4	11	11	T	STE STE20 PAKA protein kinase
+MvSl-1064-A1-R4_A1g00854	0	1315.9	0	1312.5	basNOG	ENOG41092D0	11	11	UY	Importin-beta N-terminal domain
+MvSl-1064-A1-R4_A1g00958	8.1e-156	519.3	3.2e-155	517.3	basNOG	ENOG41092R1	11	11	Z	Actin
+MvSl-1064-A1-R4_A1g00970	2.8e-244	810.8	3.6e-244	810.4	basNOG	ENOG410914U	11	11	O	t-complex protein 1
+MvSl-1064-A1-R4_A1g00972	0.00017	20.3	0.00025	19.7	basNOG	ENOG41095HF	2	2	S	NA
+MvSl-1064-A1-R4_A1g00997	0.013	13.7	0.013	13.7	basNOG	ENOG41092BN	13	11	T	TKL protein kinase
+MvSl-1064-A1-R4_A1g01135	4.2e-55	186.8	8.5e-55	185.8	basNOG	ENOG41093ZQ	8	8	O	Peptidase C65 Otubain
+MvSl-1064-A1-R4_A1g01137	1.4e-78	263.7	1.1e-38	132.4	basNOG	ENOG41097N4	4	4	S	NA
+MvSl-1064-A1-R4_A1g01162	2.9e-15	55.9	4.1e-15	55.5	basNOG	ENOG4109707	2	2	S	NA
+MvSl-1064-A1-R4_A1g01163	8.1e-87	289.3	4.6e-86	286.8	basNOG	ENOG410931M	11	11	U	Signal recognition particle receptor beta subunit
+MvSl-1064-A1-R4_A1g01174	6e-123	410.8	7.1e-123	410.6	basNOG	ENOG41092PY	11	11	I	Choline-phosphate cytidylyltransferase
+MvSl-1064-A1-R4_A1g01212	0	1659.9	0	1659.7	basNOG	ENOG410928I	11	11	L	DNA replication licensing factor cdc19
+MvSl-1064-A1-R4_A1g01347	0	1319.3	0	1319.0	basNOG	ENOG41091U8	11	11	J	Involved in nucleolar processing of pre-18S ribosomal RNA. Involved in ribosome biosynthesis (By similarity)
+MvSl-1064-A1-R4_A1g01384	1.1e-74	251.3	5.4e-45	153.0	basNOG	ENOG41094JU	6	6	Z	Fes/CIP4, and EFC/F-BAR homology domain
+MvSl-1064-A1-R4_A1g01404	0.0054	15.4	0.0099	14.5	basNOG	ENOG41096CV	2	2	S	NA
+MvSl-1064-A1-R4_A1g01432	9.1e-77	255.2	1.1e-76	254.9	basNOG	ENOG41093J1	13	11	F	dUTPase
