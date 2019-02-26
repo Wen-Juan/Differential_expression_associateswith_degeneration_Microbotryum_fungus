@@ -368,7 +368,7 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(dNdS_MvslMvsv_sep, aes(x=youngold, y=dna2, fill=DE2)) + 
   scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("Low mutations","Equal mutations","High mutations"), name="Expectations") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0,0.15) +  
+  ylim(0,0.45) +  
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
   labs(x='Genomic compartment', y='dN') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
@@ -379,7 +379,7 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(dNdS_MvslMvsv_sep, aes(x=youngold, y=dsa2, fill=DE2)) + 
   scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("Low mutations","Equal mutations","High mutations"), name="Expectations") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-  ylim(0,0.5) +  
+  ylim(0,0.45) +  
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata", "Old strata")) + 
   labs(x='Genomic compartment', y='dS') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
