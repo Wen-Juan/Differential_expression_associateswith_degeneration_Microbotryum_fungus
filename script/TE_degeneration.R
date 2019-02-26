@@ -281,7 +281,62 @@ DE2DE               1.887160   0.018106 104.228   <2e-16 ***
 DE2NON:down20kdiff -0.003213   0.015404  -0.209    0.835   
 ##############
 
+### pool a1 and a2 genes, for difference of TE insertion sites, analysis on 26 Feb.
+TE_homolog_mod_rmcentro <- subset(TE_homolog_mod, TE_homolog_mod$youngold != "Centro")
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_innergenes_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=gene0kdiff, fill=DE2)) +
+  scale_fill_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-2,2) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Differences of TE insertion in genes (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_cor_upstream0-5k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=upk5diff, fill=DE2)) +
+  scale_fill_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-10,10) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Difference at upstream 0-5kb (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_cor_upstream5-10k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=upk10diff, fill=DE2)) +
+  scale_fill_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-10,10) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Difference at upstream 5-10kb (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_cor_upstream10-15k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=upk15diff, fill=DE2)) +
+  scale_fill_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-10,10) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Difference at upstream 10-15kb (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_cor_upstream15-20k_pooled_mod.pdf", width=8, height=8)
+ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=upk20diff, fill=DE2)) +
+  scale_fill_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(-10,10) +  
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='Difference at upstream 15-20kb (A1-A2)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
 
 #loading data on 01Feb.2019.
 ##below are genes with single copy homologs.
