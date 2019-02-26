@@ -57,8 +57,8 @@ wilcox.test(dNdS_remove0_oldstrata$dnds[dNdS_remove0_oldstrata$DE=='Up'],dNdS_re
 #W = 262, p-value = 0.0387
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_exp_correlation_DEpool.pdf", width=8, height=8)
-ggplot(dNdS_remove0, aes(x=dnds, y=abs,color=DE2)) +
-  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("Biased","Not-biased"), name="Bias direction") +
+ggplot(dNdS_remove0, aes(x=dnds, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name="Bias direction") +
   geom_point() + geom_smooth(method = lm) +
   labs(x='dN/dS', y='Absolute value of expression in Log2(A1/A2)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
@@ -443,6 +443,11 @@ wilcox.test(dNdS_MvslMvsv_sep2$dna2[dNdS_MvslMvsv_sep2$DE2=='Lowmutations'],dNdS
 wilcox.test(dNdS_MvslMvsv_sep2$dndsa2[dNdS_MvslMvsv_sep2$DE2=='Lowmutations'],dNdS_MvslMvsv_sep2$dndsa2[dNdS_MvslMvsv_sep2$DE2=='Neutral'],exact = FALSE) 
 #W = 133, p-value = 0.1291
 
+dNdS_MvslMvsv_sep3 <- subset(dNdS_MvslMvsv_sep,dNdS_MvslMvsv_sep$youngold == "Auto")
+wilcox.test(dNdS_MvslMvsv_sep3$dsa2[dNdS_MvslMvsv_sep3$DE2=='Lowmutations'],dNdS_MvslMvsv_sep3$dsa2[dNdS_MvslMvsv_sep3$DE2=='Vhighmutations'],exact = FALSE) 
+
+dNdS_MvslMvsv_sep4 <- subset(dNdS_MvslMvsv_sep,dNdS_MvslMvsv_sep$youngold == "bPAR")
+wilcox.test(dNdS_MvslMvsv_sep4$dsa2[dNdS_MvslMvsv_sep4$DE2=='Lowmutations'],dNdS_MvslMvsv_sep4$dsa2[dNdS_MvslMvsv_sep4$DE2=='Vhighmutations'],exact = FALSE) 
 
 
 ##laod data of dN/dS between Mvsl and Mvsd, on 30.Jan.2019.
