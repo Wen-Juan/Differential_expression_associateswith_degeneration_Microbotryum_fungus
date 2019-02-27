@@ -142,10 +142,10 @@ ggplot(data=diff_prot_length, aes(x=genomcom,y=prop,fill=factor(DE))) +
   scale_fill_manual(values = c("firebrick3","grey"), labels=c("DE","Non-DE"), name="Bias") + 
   ylim(0,0.8) +
   geom_bar(position="dodge",stat="identity",width=0.6) + 
-  geom_text(aes(label=number),position=position_dodge(width=0.6), hjust=1.1) +
-  coord_flip() +
+  geom_text(aes(label=number),position=position_dodge(width=0.6), vjust=-0.2) +
+  #coord_flip() +
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
-  labs(x='Proportion of genes', y='Proportion of genes')
+  labs(y='Proportion of genes with different protein length', x='')
 dev.off()
 
 #load propotion data, modified codes on 04.Feb.2019.

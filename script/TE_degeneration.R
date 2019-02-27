@@ -283,6 +283,9 @@ DE2NON:down20kdiff -0.003213   0.015404  -0.209    0.835
 
 ### pool a1 and a2 genes, for difference of TE insertion sites, analysis on 26 Feb.
 TE_homolog_mod_rmcentro <- subset(TE_homolog_mod, TE_homolog_mod$youngold != "Centro")
+TE_homolog_mod_rmcentro_oldstrata <- subset(TE_homolog_mod, TE_homolog_mod$youngold == "OldStrata")
+TE_homolog_mod_rmcentro_youngstrata <- subset(TE_homolog_mod, TE_homolog_mod$youngold == "ColorStrata")
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_innergenes_pooled_mod.pdf", width=8, height=8)
 ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=gene0kdiff, fill=DE2)) +
   scale_fill_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
@@ -293,6 +296,28 @@ ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=gene0kdiff, fill=DE2)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
+
+wilcox.test(TE_homolog_mod_rmcentro_oldstrata$gene0kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$gene0kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
+#W = 4538, p-value = 0.5221
+wilcox.test(TE_homolog_mod_rmcentro_oldstrata$upk5diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$upk5diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
+#W = 4436, p-value = 0.9036
+wilcox.test(TE_homolog_mod_rmcentro_oldstrata$upk10diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$upk10diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
+#W = 4196, p-value = 0.5576
+wilcox.test(TE_homolog_mod_rmcentro_oldstrata$upk15diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$upk15diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
+#W = 4479, p-value = 0.8083
+wilcox.test(TE_homolog_mod_rmcentro_oldstrata$upk20diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$upk20diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
+#W = 4398.5, p-value = 0.9866
+
+wilcox.test(TE_homolog_mod_rmcentro_youngstrata$gene0kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$gene0kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
+#W = 45, p-value = NA
+wilcox.test(TE_homolog_mod_rmcentro_youngstrata$upk5diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$upk5diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
+#W = 45.5, p-value = 1
+wilcox.test(TE_homolog_mod_rmcentro_youngstrata$upk10diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$upk10diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
+#W = 46.5, p-value = 0.9001
+wilcox.test(TE_homolog_mod_rmcentro_youngstrata$upk15diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$upk15diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
+#W = 49.5, p-value = 0.7707
+wilcox.test(TE_homolog_mod_rmcentro_youngstrata$upk20diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$upk20diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
+#W = 38, p-value = 0.6555
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_cor_upstream0-5k_pooled_mod.pdf", width=8, height=8)
 ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=upk5diff, fill=DE2)) +
