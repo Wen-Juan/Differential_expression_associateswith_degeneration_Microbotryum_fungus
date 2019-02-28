@@ -25,6 +25,19 @@ p_dN <- ggplot(dNdS_new, aes(x=youngold, y=dn, fill=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
 
+
+p_dN3 <- ggplot(dNdS_new, aes(x=youngold, y=dn, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.08) +  
+  theme_bw() + theme(legend.position = c(0.2, 0.7)) +
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='dN') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
+dev.off()
+
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_DEnonDe_twoparts28012019.pdf", width=8, height=8)
 p_dS <- ggplot(dNdS_new, aes(x=youngold, y=ds, fill=DE2)) + 
   scale_fill_manual(values = c("white","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
@@ -36,6 +49,19 @@ p_dS <- ggplot(dNdS_new, aes(x=youngold, y=ds, fill=DE2)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
+
+
+p_dS3 <- ggplot(dNdS_new, aes(x=youngold, y=ds, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,0.08) +  
+  theme_bw() + theme(legend.position = c(0.2, 0.7)) +
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
+dev.off()
+
 
 #combine two figures in one
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_ds_combine_new.pdf", width=14, height=8)
@@ -55,6 +81,23 @@ ggplot(dNdS_new, aes(x=youngold, y=dnds, fill=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_DEnonDe3_twoparts28012019.pdf", width=8, height=8)
+p_dnds3 <- ggplot(dNdS_new, aes(x=youngold, y=dnds, fill=DE)) + 
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  ylim(0,7) +  
+  theme_bw() + theme(legend.position = c(0.2, 0.7)) +
+  scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
+  labs(x='Genomic compartment', y='dN/dS') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_ds_combine3_new.pdf", width=14, height=8)
+par(mar=c(8,8,6,6))
+plot_grid(p_dN3, p_dS3, p_dnds3, labels=c('A','B','C'))
+dev.off()
 
 ##stats on 28jan2019
 dNdS_youngstrata <- subset(dNdS_new, dNdS_new$youngold=="ColorStrata")
@@ -110,8 +153,8 @@ wilcox.test(dNdS_oldstrata$dnds[dNdS_oldstrata$DE=='Up'],dNdS_oldstrata$dnds[dNd
 ###scatter point figures, on 29.jan.2019
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_exp_correlation_DEpool_bw.pdf", width=8, height=8)
 p_dncor <- ggplot(dNdS_new, aes(x=dn, y=abs,color=DE2)) +
-  scale_color_manual(values = c("black","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
-  geom_point(alpha=0.7) + geom_smooth(method = lm) +
+  scale_color_manual(values = c("black","grey"), guide=FALSE) + 
+  geom_point(alpha=0.7) + geom_smooth(method = lm) + 
   theme_bw() + 
   theme(legend.position = c(0.4, 0.8)) +
   labs(x='dN', y='Expression ratio in |Log2(A1/A2)|') +
@@ -121,30 +164,32 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_exp_correlation_pool_bw.pdf", width=8, height=8)
 p_dscor <- ggplot(dNdS_new, aes(x=ds, y=abs,color=DE2)) +
-  scale_color_manual(values = c("black","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
-  geom_point(alpha=0.7) + geom_smooth(method = lm) +
-  theme_bw() + 
+  scale_color_manual(values = c("black","grey"), guide=FALSE) +
+  geom_point(alpha=0.7) + geom_smooth(method = lm) + 
+  theme_bw() + xlim(0,0.25) +
   theme(legend.position = c(0.4, 0.8)) +
   labs(x='dS', y='Expression ratio in |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_ds_combine_new_twofigures_bw.pdf", width=14, height=8)
-par(mar=c(5,5,4,3))
-plot_grid(p_dncor, p_dscor, labels=c('A','B'))
-dev.off()
-
-
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_exp_correlation_DEpool.pdf", width=14, height=8)
-ggplot(dNdS_new, aes(x=dnds, y=abs,color=DE2)) +
-  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("Biased","Not-biased"), name = "Bias direction") +
-  geom_point() + geom_smooth(method = lm) +
-  xlim(0,13) +
-  labs(x='dN/dS', y='Absolute value of expression in Log2(A1/A2)') +
+p_dnds <- ggplot(dNdS_new, aes(x=dnds, y=abs,color=DE2)) +
+  scale_color_manual(values = c("black","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
+  geom_point(alpha=0.7) + geom_smooth(method = lm) +
+  theme_bw() + 
+  theme(legend.position = c(0.8, 0.8)) +
+  xlim(0,12.5) +
+  labs(x='dN/dS', y='Expression ratio in |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_ds_combine_new_twofigures_bw.pdf", width=12, height=8)
+par(mar=c(8,8,6,6))
+plot_grid(p_dncor, p_dscor, p_dnds,labels=c('A','B','C'))
+dev.off()
+
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_exp_correlation_DEnotpool.pdf", width=8, height=8)
 ggplot(dNdS_new, aes(x=dnds, y=abs,color=DE)) +
@@ -156,69 +201,50 @@ ggplot(dNdS_new, aes(x=dnds, y=abs,color=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-y <- lm(abs ~ dn*DE2, data = dNdS_new)
+y <- lm(abs ~ DE2/dn-1, data = dNdS_new)
 summary(y)
-y1 <- lm(abs ~ dn+DE2, data = dNdS_new)
-summary(y1)
-anova(y,y1)
 ###
-Model 1: abs ~ dn * DE2
-Model 2: abs ~ dn + DE2
-Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
-1   6110 347.42                                  
-2   6111 358.30 -1   -10.887 191.47 < 2.2e-16 ***
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE     1.219627   0.019665  62.020  < 2e-16 ***
+  DE2NON    0.181282   0.003107  58.350  < 2e-16 ***
+  DE2DE:dn  9.790683   0.463936  21.104  < 2e-16 ***
+  DE2NON:dn 1.093559   0.424047   2.579  0.00994 ** 
   ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-###
 
-y <- lm(abs ~ dn*DE, data = dNdS_new)
-summary(y)
-y1 <- lm(abs ~ dn+DE, data = dNdS_new)
+Residual standard error: 0.2385 on 6110 degrees of freedom
+Multiple R-squared:  0.6025,	Adjusted R-squared:  0.6022
+
+###
+y1 <- lm(abs ~ DE2/ds-1, data = dNdS_new)
 summary(y1)
-anova(y,y1)
 ###
-Analysis of Variance Table
-
-Model 1: abs ~ dn * DE
-Model 2: abs ~ dn + DE
-Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
-1   6108 343.47                                  
-2   6110 355.42 -2   -11.953 106.28 < 2.2e-16 ***
+Estimate Std. Error t value Pr(>|t|)    
+DE2DE      1.21110    0.01961  61.763   <2e-16 ***
+  DE2NON     0.18155    0.00309  58.745   <2e-16 ***
+  DE2DE:ds  20.43307    0.91582  22.311   <2e-16 ***
+  DE2NON:ds  1.43608    0.69597   2.063   0.0391 *  
   ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-###
+
+Residual standard error: 0.2375 on 6110 degrees of freedom
+Multiple R-squared:  0.6055,	Adjusted R-squared:  0.6052
 ###
 
-y2 <- lm(abs ~ ds*DE2, data = dNdS_new)
+y2 <- lm(abs ~ DE2/dnds-1, data = dNdS_new)
 summary(y2)
-y3 <- lm(abs ~ ds+DE2, data = dNdS_new)
-summary(y3)
-anova(y2,y3)
 ###
-Analysis of Variance Table
-
-Model 1: abs ~ ds * DE2
-Model 2: abs ~ ds + DE2
-Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
-1   6110 344.79                                  
-2   6111 360.18 -1   -15.392 272.76 < 2.2e-16 ***
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE        1.358e+00  1.930e-02  70.374   <2e-16 ***
+  DE2NON       1.821e-01  3.204e-03  56.823   <2e-16 ***
+  DE2DE:dnds  -7.323e-06  8.262e-06  -0.886    0.375    
+DE2NON:dnds  2.630e-09  1.230e-07   0.021    0.983    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ###
 
-y4 <- lm(abs ~ dnds*DE2, data = dNdS_new)
-summary(y4)
-y5 <- lm(abs ~ dnds+DE2, data = dNdS_new)
-summary(y5)
-anova(y4,y5)
-
-###
-Analysis of Variance Table
-
-Model 1: abs ~ dnds * DE2
-Model 2: abs ~ dnds + DE2
-Res.Df    RSS Df Sum of Sq      F Pr(>F)
-1   6110 373.07                           
-2   6111 373.12 -1 -0.047997 0.7861 0.3753
-###
 
 ##load data of dN/dS between Mvsl and Mvsv, on 31.Jan.2019.
 dNdS_MvslMvsv <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/28jan2019/Mvsl_Mvsv/Mvsl_Mvsv_dnds_exp_all_fi.txt', header = T)
