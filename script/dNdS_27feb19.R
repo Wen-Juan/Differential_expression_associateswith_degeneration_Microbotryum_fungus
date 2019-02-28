@@ -43,8 +43,6 @@ par(mar=c(5,5,4,3))
 plot_grid(p_dN, p_dS, labels=c('A','B'))
 dev.off()
 
-dNdS_new <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/28jan2019/Mvsl_dnds_exp_gencomp.txt', header = T)
-str(dNdS_new)
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_DEnonDe_twoparts28012019.pdf", width=8, height=8)
 ggplot(dNdS_new, aes(x=youngold, y=dnds, fill=DE2)) + 
   scale_fill_manual(values = c("white","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
@@ -110,48 +108,35 @@ wilcox.test(dNdS_oldstrata$dnds[dNdS_oldstrata$DE=='Up'],dNdS_oldstrata$dnds[dNd
 #W = 287, p-value = 0.02079
 
 ###scatter point figures, on 29.jan.2019
-
-
-str(dNdS_new)
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_exp_correlation_DEpool.pdf", width=8, height=8)
-ggplot(dNdS_new, aes(x=dn, y=abs,color=DE2)) +
-  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name="Bias direction") +
-  geom_point() + geom_smooth(method = lm) +
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_exp_correlation_DEpool_bw.pdf", width=8, height=8)
+p_dncor <- ggplot(dNdS_new, aes(x=dn, y=abs,color=DE2)) +
+  scale_color_manual(values = c("black","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
+  geom_point(alpha=0.7) + geom_smooth(method = lm) +
   theme_bw() + 
-  theme(legend.position = c(0.5, 0.8)) +
-  labs(x='dN', y='Absolute value of expression in Log2(A1/A2)') +
+  theme(legend.position = c(0.4, 0.8)) +
+  labs(x='dN', y='Expression ratio in |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_exp_correlation_notpool.pdf", width=8, height=8)
-ggplot(dNdS_new, aes(x=dn, y=abs,color=DE)) +
-  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
-  geom_point() + geom_smooth(method = lm) +
-  labs(x='dN', y='Absolute value of expression in Log2(A1/A2)') +
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_exp_correlation_pool_bw.pdf", width=8, height=8)
+p_dscor <- ggplot(dNdS_new, aes(x=ds, y=abs,color=DE2)) +
+  scale_color_manual(values = c("black","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
+  geom_point(alpha=0.7) + geom_smooth(method = lm) +
+  theme_bw() + 
+  theme(legend.position = c(0.4, 0.8)) +
+  labs(x='dS', y='Expression ratio in |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_exp_correlation_pool.pdf", width=8, height=8)
-ggplot(dNdS_new, aes(x=ds, y=abs,color=DE2)) +
-  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name="Bias direction") +
-  geom_point() + geom_smooth(method = lm) +
-  labs(x='dS', y='Absolute value of expression in Log2(A1/A2)') +
-  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_ds_combine_new_twofigures_bw.pdf", width=14, height=8)
+par(mar=c(5,5,4,3))
+plot_grid(p_dncor, p_dscor, labels=c('A','B'))
 dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_exp_correlation_DEnotpool.pdf", width=8, height=8)
-ggplot(dNdS_new, aes(x=ds, y=abs,color=DE)) +
-  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name = "Bias direction") +
-  geom_point() + geom_smooth(method = lm) +
-  labs(x='dS', y='Absolute value of expression in Log2(A1/A2)') +
-  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
-dev.off()
 
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_exp_correlation_DEpool.pdf", width=8, height=8)
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_exp_correlation_DEpool.pdf", width=14, height=8)
 ggplot(dNdS_new, aes(x=dnds, y=abs,color=DE2)) +
   scale_color_manual(values = c("firebrick3","dark grey"),labels=c("Biased","Not-biased"), name = "Bias direction") +
   geom_point() + geom_smooth(method = lm) +
