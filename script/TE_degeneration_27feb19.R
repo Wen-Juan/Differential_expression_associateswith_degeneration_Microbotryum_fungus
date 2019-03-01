@@ -416,11 +416,13 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(TE_number_touse_singlecopy_homolog, aes(x=location,y=Te_prop, fill=haploid)) + 
   scale_fill_manual(values = c("dodgerblue3","firebrick3"), labels=c("A1","A2"), name="Haploid") +  
   geom_bar(stat="identity",position=position_dodge(),alpha=0.85,lwd=0.5) +
-  ylim(0,0.15) +                    
-  scale_x_discrete(labels=c("up:20-15k", "15-10k","10-5k","5-0k","gene","down:0-5k", "5-10k","10-15k","15-20k")) + 
-  labs(y='Proportion of TE insertion sites', x="Interval window") +
-  theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=10),axis.text.y = element_text(colour="black",size=10))
+  ylim(0,0.15) +                
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.85)) +
+  scale_x_discrete(labels=c("up:15-20k", "10-15k","5-10k","0-5k","gene","down:0-5k", "5-10k","10-15k","15-20k")) + 
+  labs(y='Proportion of TE insertion sites', x="Interval windows") +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/geneswithte_prop_all_intervals_01feb19.pdf", width=8, height=8)
@@ -620,7 +622,6 @@ ggplot(TE_singlegene_rmcentro, aes(x=upk10diff, y=abs, color=DE2)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
-
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down10k.pdf", width=8, height=8)
 ggplot(TE_singlegene_rmcentro, aes(x=down10kdiff, y=logFC.A1.A2, color=DE)) +
