@@ -46,13 +46,15 @@ TE_homolog_mod <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_
 str(TE_homolog_mod)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_gene0k_pooled_mod.pdf", width=8, height=8)
-ggplot(TE_homolog_mod, aes(x=gene0kdiff, y=abs, color=DE2)) +
-  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+p_a <- ggplot(TE_homolog_mod, aes(x=gene0kdiff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"), guide = FALSE) +
   geom_point() + geom_smooth(method = lm) +
   ylim(0,13) + xlim(-10,10) +
-  labs(x='TE difference for homologs introns (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.75)) +
+  labs(x='TE insertion difference in genes', y='Gene expression ratio (|Log2(A1/A2)|)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
 
 y_m1 <- lm(abs ~ DE2/gene0kdiff-1, data = TE_homolog_mod)
@@ -72,13 +74,15 @@ Multiple R-squared:  0.5989,	Adjusted R-squared:  0.5987
 #####
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up0-5k_pooled_mod.pdf", width=8, height=8)
-ggplot(TE_homolog_mod, aes(x=upk5diff, y=abs, color=DE2)) +
-  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+p_b <- ggplot(TE_homolog_mod, aes(x=upk5diff, y=abs, color=DE2)) +
+  scale_color_manual(values = c("firebrick3","dark grey"), guide = FALSE) +
   geom_point() + geom_smooth(method = lm) +
   ylim(0,13) + xlim(-13,13) +
-  labs(x='TE difference for upstream 0-5kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.75)) +
+  labs(x='TE insertion difference at upstream 0-5kb', y='Gene expression ratio (|Log2(A1/A2)|)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
 
 y_m2 <- lm(abs ~ DE2/upk5diff-1, data = TE_homolog_mod)
@@ -98,14 +102,23 @@ Multiple R-squared:  0.5993,	Adjusted R-squared:  0.5992
 ##########
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up5-10k_pooled_mod.pdf", width=8, height=8)
-ggplot(TE_homolog_mod, aes(x=upk10diff, y=abs, color=DE2)) +
+p_c <- ggplot(TE_homolog_mod, aes(x=upk10diff, y=abs, color=DE2)) +
   scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_point() + geom_smooth(method = lm) +
   ylim(0,13) + xlim(-13,13) +
-  labs(x='TE difference for upstream 5-10kb (A1-A2)', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.75)) +
+  labs(x='TE insertion difference at upstream 5-10kb', y='Gene expression ratio (|Log2(A1/A2)|)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_upstream_new_3figures_bw.pdf", width=12, height=8)
+par(mar=c(10,10,6,6))
+plot_grid(p_a, p_b, p_c,labels=c('A','B','C'))
+dev.off()
+
+
 
 y_m3 <- lm(abs ~ DE2/upk10diff-1, data = TE_homolog_mod)
 summary(y_m3)
