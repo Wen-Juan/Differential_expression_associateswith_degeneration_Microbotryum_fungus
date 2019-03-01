@@ -82,10 +82,12 @@ str(diff_prot_length_rand)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protenlength_ratio_rand_youngold.pdf", width=8, height=8)
 ggplot(diff_prot_length_rand, aes(x=ratioprot, y=abs, color=DE2)) +
-  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_point() + geom_smooth(method = lm) +
   ylim(0,13) + xlim(0,2) +
-  labs(x='Ratio of protein length', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
+  labs(x='Ratio of protein length', y='Gene expression ratio |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
@@ -96,22 +98,26 @@ diff_prot_length_rand_youngstrata <- subset(diff_prot_length_rand,diff_prot_leng
   
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protein_ratio_youngold_poolDE.pdf", width=8, height=8)
 ggplot(diff_prot_length_rand_rmcentro, aes(x=youngold, y=ratioprot, fill=DE2)) +
-  scale_fill_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  scale_fill_manual(values = c("white","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0.75,1.25) +  
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
-  labs(x='Genomic compartment', y='Protein length ratio (highly divided by lowly expressed)') +
+  labs(x='Genomic compartment', y='Protein length ratio') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cds_ratio_youngold_poolDE.pdf", width=8, height=8)
 ggplot(diff_prot_length_rand_rmcentro, aes(x=youngold, y=ratiocds, fill=DE2)) +
-  scale_fill_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  scale_fill_manual(values = c("white","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0.75,1.25) +  
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
-  labs(x='Genomic compartment', y='Coding sequence length ratio (highly divided by lowly expressed)') +
+  labs(x='Genomic compartment', y='Coding sequence length ratio') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
@@ -139,10 +145,12 @@ Multiple R-squared:  0.6047,	Adjusted R-squared:  0.6045
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cdslength_ratio_rand_youngold.pdf", width=8, height=8)
 ggplot(diff_prot_length_rand, aes(x=ratiocds, y=abs, color=DE2)) +
-  scale_color_manual(values = c("firebrick3","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_point() + geom_smooth(method = lm) +
   ylim(0,13) + xlim(0,2) +
-  labs(x='Ratio of coding sequence length', y='Absolute value of gene expression ratio Log2(A1/A2)') +
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
+  labs(x='Ratio of coding sequence length', y='Gene expression ratio |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
@@ -170,13 +178,17 @@ str(diff_prot_length)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_diff_protenlength_ratio_youngold.pdf", width=8, height=8)
 ggplot(data=diff_prot_length, aes(x=genomcom,y=prop,fill=factor(DE))) +
-  scale_fill_manual(values = c("firebrick3","grey"), labels=c("DE","Non-DE"), name="Bias") + 
+  scale_fill_manual(values = c("white","dark grey"), labels=c("DE","Non-DE"), name="Bias") + 
   ylim(0,0.8) +
-  geom_bar(position="dodge",stat="identity",width=0.6) + 
-  geom_text(aes(label=number),position=position_dodge(width=0.6), vjust=-0.2) +
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
+  geom_bar(position="dodge",stat="identity",width=0.5,alpha=0.8,colour="black") + 
+  geom_text(aes(label=total),position=position_dodge(width=0.6), vjust=-0.2) +
   #coord_flip() +
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
-  labs(y='Proportion of genes with different protein length', x='')
+  labs(y='Proportion of genes with different protein length', x='Genomic compartments') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
 
 
@@ -319,6 +331,8 @@ ggplot(stopcodon_ratio_rmcentro, aes(x=youngold, y=cdsa1expest, fill=DE)) +
   scale_fill_manual(values = c("firebrick3","grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0.8,1.2) +  
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Ratio of coding sequence length/(3*protein length)') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
@@ -356,9 +370,11 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(stopcodon_ratio_sep1, aes(x=youngold, y=cdsa2expest, fill=interaction(haploid,DE))) +
          scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2-biased at A1","A2-biased at A2","Not-biased at A1","Not-biased at A2","A1-biased at A1","A1-biased at A2"), name="Bias direction") +
          geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-         ylim(0.9,1.1) +  
+         ylim(0.9,1.3) +  
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Ratio of coding sequence length/(3*protein length)') +
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.75)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
