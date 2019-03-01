@@ -12,9 +12,11 @@ str(diff_indel)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_early_stopcodon_protdiff.pdf", width=8, height=8)
 ggplot(diff_indel, aes(x=Comp, y=prop, fill=DE)) + 
-  scale_fill_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
-  geom_bar(position="dodge", stat="identity", alpha=0.85, width=0.6) +
+  scale_fill_manual(values = c("white","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
+  geom_bar(position="dodge", stat="identity", alpha=0.85, width=0.6, color = "black") +
   ylim(0,0.7) +  
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome+PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Proportion of genes with different stop codon positions') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
@@ -48,9 +50,11 @@ str(diff_indel2)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_indels_mean_compartment.pdf", width=8, height=8)
 ggplot(diff_indel2, aes(x=comp, y=indel, fill=DE)) +
-  scale_fill_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
-  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
+  scale_fill_manual(values = c("white","grey"),guide =FALSE) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85, color = "black") +
   ylim(0,7) +  
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome+PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Mean indel number') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
