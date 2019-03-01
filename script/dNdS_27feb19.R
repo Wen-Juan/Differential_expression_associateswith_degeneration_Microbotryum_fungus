@@ -162,6 +162,39 @@ p_dncor <- ggplot(dNdS_new, aes(x=dn, y=abs,color=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+p_dncor1 <- ggplot(dNdS_new, aes(x=dn, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","grey","dodgerblue3"), guide=FALSE) + 
+  geom_point(alpha=0.7) + geom_smooth(method = lm) + 
+  theme_bw() + 
+  theme(legend.position = c(0.4, 0.8)) +
+  labs(x='dN', y='Expression ratio in |Log2(A1/A2)|') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+p_dscor1 <- ggplot(dNdS_new, aes(x=ds, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","grey","dodgerblue3"), guide=FALSE) + 
+  geom_point(alpha=0.7) + geom_smooth(method = lm) + 
+  theme_bw() + 
+  xlim(0,0.25) +
+  theme(legend.position = c(0.4, 0.8)) +
+  labs(x='dS', y='Expression ratio in |Log2(A1/A2)|') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+p_dndscor1 <- ggplot(dNdS_new, aes(x=dnds, y=abs,color=DE)) +
+  scale_color_manual(values = c("firebrick3","grey","dodgerblue3"), labels=c("a2-bias","Not-bias","a1-bias"), name="Bias direction") + 
+  geom_point(alpha=0.7) + geom_smooth(method = lm) + 
+  xlim(0,13) +
+  theme_bw() + 
+  theme(legend.position = c(0.8, 0.8)) +
+  labs(x='dN/dS', y='Expression ratio in |Log2(A1/A2)|') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_ds_separatea1a2bias_new.pdf", width=14, height=8)
+par(mar=c(8,8,6,6))
+plot_grid(p_dncor1, p_dscor1, p_dndscor1, labels=c('A','B','C'))
+dev.off()
+
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_exp_correlation_pool_bw.pdf", width=8, height=8)
 p_dscor <- ggplot(dNdS_new, aes(x=ds, y=abs,color=DE2)) +
   scale_color_manual(values = c("black","grey"), guide=FALSE) +
