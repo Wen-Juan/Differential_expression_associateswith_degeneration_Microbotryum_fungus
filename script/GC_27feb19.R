@@ -28,47 +28,66 @@ str(GC_ratio_rand)
 GC_ratio_rand_rmcentro <- subset(GC_ratio_rand, GC_ratio_rand$youngold != "Centro")
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_youngold.pdf", width=8, height=8)
-ggplot(GC_ratio_rand_rmcentro, aes(x=youngold, y=GC0diff, fill=DE2)) + 
-  scale_fill_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+paa1 <- ggplot(GC_ratio_rand_rmcentro, aes(x=youngold, y=-GC0diff, fill=DE2)) + 
+  scale_fill_manual(values = c("white","dark grey"), guide = FALSE) +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-2.5,2.5) +  
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
-  labs(x='Genomic compartment', y='GC0% difference (high - lower-expressed homologs)') +
+  labs(x='Genomic compartment', y='GC0% difference') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC3_youngold.pdf", width=8, height=8)
-ggplot(GC_ratio_rand_rmcentro, aes(x=youngold, y=GC3diff, fill=DE2)) + 
-  scale_fill_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+paa2 <- ggplot(GC_ratio_rand_rmcentro, aes(x=youngold, y=-GC3diff, fill=DE2)) + 
+  scale_fill_manual(values = c("white","grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(-2.5,2.5) +  
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
-  labs(x='Genomic compartment', y='GC3% difference (high - lower-expressed homologs)') +
+  labs(x='Genomic compartment', y='GC3% difference') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MvslMvld_GC_combine_new_2figures_bw.pdf", width=12, height=8)
+par(mar=c(8,8,6,6))
+plot_grid(paa1, paa2,labels=c('A','B'))
+dev.off()
+
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC3_corr_youngold.pdf", width=8, height=8)
-ggplot(GC_ratio_rand_rmcentro, aes(x=GC3diff, y=abs,color=DE2)) +
-  scale_color_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+paaa1 <- ggplot(GC_ratio_rand_rmcentro, aes(x=-GC3diff, y=abs,color=DE2)) +
+  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_point() + geom_smooth(method = lm) +
   xlim(-8,8) +
   ylim(0,13) +
-  labs(x='GC3% difference (high - lower-expressed homologs)', y= 'Absolute value of ratio Log2(A1/A2)')+
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
+  labs(x='GC3% difference', y= 'Gene expression ratio |Log2(A1/A2)|')+
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_corr_youngold.pdf", width=8, height=8)
-ggplot(GC_ratio_rand_rmcentro, aes(x=GC0diff, y=abs,color=DE2)) +
-  scale_color_manual(values = c("firebrick3","grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+paaa2 <-ggplot(GC_ratio_rand_rmcentro, aes(x=-GC0diff, y=abs,color=DE2)) +
+  scale_color_manual(values = c("black","dark grey"), guide = FALSE) +
   geom_point() + geom_smooth(method = lm) +
   xlim(-8,8) +
   ylim(0,13) +
-  labs(x='GC0% difference (high - lower-expressed homologs)', y= 'Absolute value of ratio Log2(A1/A2)')+
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.8)) +
+  labs(x='GC0% difference', y= 'Gene expression ratio |Log2(A1/A2)|')+
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+dev.off()
+
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_GC_cor_combine_figs.pdf", width=8, height=6)
+par(mar=c(8,8,6,6))
+plot_grid(paaa1, paaa2, labels=c('A','B'))
 dev.off()
 
 y1 <- lm(abs ~ DE2/GC3diff-1, data=GC_ratio_rand_rmcentro)

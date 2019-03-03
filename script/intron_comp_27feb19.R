@@ -186,7 +186,7 @@ cds_prot_rmcentro <- subset(cds_prot, cds_prot$youngold != "Centro")
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cds_combined_youngold.pdf", width=8, height=8)
 pa1 <- ggplot(cds_prot_rmcentro, aes(x=youngold, y=cds, fill=DE2)) + 
-  scale_fill_manual(values = c("white","dark grey"), labels=c("DE","Non-DE"), name="Bias direction") + 
+  scale_fill_manual(values = c("white","dark grey"), guide = FALSE) + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,4000) +                 
   theme_bw() + 
@@ -211,11 +211,11 @@ wilcox.test(cds_prot_rmcentro_old$prot[cds_prot_rmcentro_old$DE2=="DE"], cds_pro
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_prot_combined_youngold.pdf", width=8, height=8)
 pa2 <- ggplot(cds_prot_rmcentro, aes(x=youngold, y=prot, fill=DE2)) + 
-  scale_fill_manual(values = c("white","dark grey"), guide = FALSE) + 
+  scale_fill_manual(values = c("white","dark grey"), labels=c("DE","Non-DE"), name="Bias direction") + 
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,1800) +             
   theme_bw() + 
-  theme(legend.position = c(0.2, 0.8)) +
+  theme(legend.position = c(0.2, 0.85)) +
   scale_x_discrete(labels=c("Autosome", "PAR","Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Protein length') +
   theme(axis.title.x = element_text(size=10,colour = "black"),axis.title.y = element_text(size=10,colour = "black")) +
