@@ -94,7 +94,7 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(diff_prot_length_rand, aes(x=ratioprot, y=abs, color=DE2, shape=DE2)) +
   scale_shape_manual(values=c(16,1),guide=FALSE) +
   scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
-  geom_point() + geom_smooth(method = lm) +
+  geom_point(size=2.5) + geom_smooth(method = lm) +
   ylim(0,13) + xlim(0,2) +
   theme_bw() + 
   theme(legend.position = c(0.2, 0.8)) +
