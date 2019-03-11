@@ -92,8 +92,8 @@ str(diff_prot_length_rand)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protenlength_ratio_rand_youngold.pdf", width=8, height=8)
 ggplot(diff_prot_length_rand, aes(x=ratioprot, y=abs, color=DE2, shape=DE2)) +
-  scale_shape_manual(values=c(16,1),guide=FALSE) +
-  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  scale_shape_manual(values=c(16,1),labels=c("DE","Non-DE"), name = "Bias direction") +
+  scale_color_manual(values = c("black","dark grey"),guide=FALSE) +
   geom_point(size=2.5) + geom_smooth(method = lm) +
   ylim(0,13) + xlim(0,2) +
   theme_bw() + 
