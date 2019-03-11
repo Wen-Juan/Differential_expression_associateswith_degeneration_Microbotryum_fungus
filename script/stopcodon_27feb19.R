@@ -91,13 +91,14 @@ diff_prot_length_rand <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/A
 str(diff_prot_length_rand)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protenlength_ratio_rand_youngold.pdf", width=8, height=8)
-ggplot(diff_prot_length_rand, aes(x=ratioprot, y=abs, color=DE2)) +
+ggplot(diff_prot_length_rand, aes(x=ratioprot, y=abs, color=DE2, shape=DE2)) +
+  scale_shape_manual(values=c(16,1),guide=FALSE) +
   scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_point() + geom_smooth(method = lm) +
   ylim(0,13) + xlim(0,2) +
   theme_bw() + 
   theme(legend.position = c(0.2, 0.8)) +
-  labs(x='Ratio of protein length', y='Gene expression ratio |Log2(A1/A2)|') +
+  labs(x='Protein length ratio', y='Gene expression ratio |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
