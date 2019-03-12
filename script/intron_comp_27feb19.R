@@ -41,6 +41,7 @@ pa <- ggplot(intron_random_rmcentro, aes(x=youngold, y=intron_total_diff, fill=D
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
+
 intron_random_rmcentro_old <- subset(intron_random_rmcentro, intron_random_rmcentro$youngold == "OldStrata")
 wilcox.test(intron_random_rmcentro_old$intron_mean_diff[intron_random_rmcentro_old$DE2=="DE"], y, exact=FALSE)
 
@@ -87,9 +88,10 @@ dev.off()
 
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_intronnr_corr_youngold.pdf", width=8, height=8)
-pa1 <- ggplot(intron_random_rmcentro, aes(x=intron_nr_diff, y=abs,color=DE2)) +
+pa1 <- ggplot(intron_random_rmcentro, aes(x=intron_nr_diff, y=abs,color=DE2,shape=DE2)) +
+  scale_shape_manual(values=c(16,1),guide=FALSE) +
   scale_color_manual(values = c("black","dark grey"),guide = FALSE) +
-  geom_point(alpha=0.8) + geom_smooth(method = lm) +
+  geom_point(size = 2.5) + geom_smooth(method = lm) +
   xlim(-8,8) +
   ylim(0,13) +
   theme_bw() + 
@@ -100,9 +102,10 @@ pa1 <- ggplot(intron_random_rmcentro, aes(x=intron_nr_diff, y=abs,color=DE2)) +
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_intronmeanlength_corr_youngold.pdf", width=8, height=8)
-pa2 <- ggplot(intron_random_rmcentro, aes(x=intron_mean_diff, y=abs,color=DE2)) +
-  scale_color_manual(values = c("black","dark grey"), guide = FALSE) +
-  geom_point(alpha=0.8) + geom_smooth(method = lm) +
+pa2 <- ggplot(intron_random_rmcentro, aes(x=intron_mean_diff, y=abs,color=DE2,shape=DE2)) +
+  scale_shape_manual(values=c(16,1),guide=FALSE) +
+  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
+  geom_point(size = 2.5) + geom_smooth(method = lm) +
   xlim(-200,200) +
   ylim(0,13) +
   theme_bw() + 
@@ -113,9 +116,10 @@ pa2 <- ggplot(intron_random_rmcentro, aes(x=intron_mean_diff, y=abs,color=DE2)) 
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_introntotallength_corr_youngold.pdf", width=8, height=8)
-pa3 <-ggplot(intron_random_rmcentro, aes(x=intron_total_diff, y=abs,color=DE2)) +
-  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
-  geom_point(alpha=0.8) + geom_smooth(method = lm) +
+pa3 <-ggplot(intron_random_rmcentro, aes(x=intron_total_diff, y=abs,color=DE2, shape=DE2)) +
+  scale_shape_manual(values=c(16,1),guide=FALSE) +
+  scale_color_manual(values = c("black","dark grey"), guide=FALSE) +
+  geom_point(size = 2.5) + geom_smooth(method = lm) +
   xlim(-600,600) +
   ylim(0,13) +
   theme_bw() + 

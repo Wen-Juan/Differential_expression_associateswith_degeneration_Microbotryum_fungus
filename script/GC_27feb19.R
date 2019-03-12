@@ -60,9 +60,10 @@ dev.off()
 
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC3_corr_youngold.pdf", width=8, height=8)
-paaa1 <- ggplot(GC_ratio_rand_rmcentro, aes(x=-GC3diff, y=abs,color=DE2)) +
-  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
-  geom_point() + geom_smooth(method = lm) +
+paaa1 <- ggplot(GC_ratio_rand_rmcentro, aes(x=-GC3diff, y=abs,color=DE2, shape=DE2)) +
+  scale_shape_manual(values=c(16,1),guide=FALSE) +
+  scale_color_manual(values = c("black","dark grey"),guide=FALSE) +
+  geom_point(size = 2.5) + geom_smooth(method = lm) +
   xlim(-8,8) +
   ylim(0,13) +
   theme_bw() + 
@@ -73,9 +74,10 @@ paaa1 <- ggplot(GC_ratio_rand_rmcentro, aes(x=-GC3diff, y=abs,color=DE2)) +
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_corr_youngold.pdf", width=8, height=8)
-paaa2 <-ggplot(GC_ratio_rand_rmcentro, aes(x=-GC0diff, y=abs,color=DE2)) +
-  scale_color_manual(values = c("black","dark grey"), guide = FALSE) +
-  geom_point() + geom_smooth(method = lm) +
+paaa2 <-ggplot(GC_ratio_rand_rmcentro, aes(x=-GC0diff, y=abs,color=DE2,shape=DE2)) +
+  scale_shape_manual(values=c(16,1), labels=c("DE","Non-DE"), name = "Bias direction") +
+  scale_color_manual(values = c("black","dark grey"), guide=FALSE) +
+  geom_point(size = 2.5) + geom_smooth(method = lm) +
   xlim(-8,8) +
   ylim(0,13) +
   theme_bw() + 

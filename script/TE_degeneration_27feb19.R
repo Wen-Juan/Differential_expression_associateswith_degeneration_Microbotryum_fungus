@@ -46,9 +46,10 @@ TE_homolog_mod <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_
 str(TE_homolog_mod)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_gene0k_pooled_mod.pdf", width=8, height=8)
-p_a <- ggplot(TE_homolog_mod, aes(x=gene0kdiff, y=abs, color=DE2)) +
-  scale_color_manual(values = c("black","grey"), guide = FALSE) +
-  geom_point(alpha=0.8) + geom_smooth(method = lm) +
+p_a <- ggplot(TE_homolog_mod, aes(x=gene0kdiff, y=abs, color=DE2, shape=DE2)) +
+  scale_shape_manual(values=c(16,1),guide=FALSE) +
+  scale_color_manual(values = c("black","dark grey"), guide = FALSE) +
+  geom_point(size =2.5) + geom_smooth(method = lm) +
   ylim(0,13) + xlim(-10,10) +
   theme_bw() + 
   theme(legend.position = c(0.2, 0.75)) +
@@ -74,9 +75,10 @@ Multiple R-squared:  0.5989,	Adjusted R-squared:  0.5987
 #####
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up0-5k_pooled_mod.pdf", width=8, height=8)
-p_b <- ggplot(TE_homolog_mod, aes(x=upk5diff, y=abs, color=DE2)) +
+p_b <- ggplot(TE_homolog_mod, aes(x=upk5diff, y=abs, color=DE2,shape=DE2)) +
+  scale_shape_manual(values=c(16,1),guide=FALSE) +
   scale_color_manual(values = c("black","dark grey"), guide = FALSE) +
-  geom_point(alpha=0.8) + geom_smooth(method = lm) +
+  geom_point(size =2.5) + geom_smooth(method = lm) +
   ylim(0,13) + xlim(-13,13) +
   theme_bw() + 
   theme(legend.position = c(0.2, 0.75)) +
@@ -102,9 +104,10 @@ Multiple R-squared:  0.5993,	Adjusted R-squared:  0.5992
 ##########
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_up5-10k_pooled_mod.pdf", width=8, height=8)
-p_c <- ggplot(TE_homolog_mod, aes(x=upk10diff, y=abs, color=DE2)) +
-  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
-  geom_point(alpha=0.8) + geom_smooth(method = lm) +
+p_c <- ggplot(TE_homolog_mod, aes(x=upk10diff, y=abs, color=DE2, shape=DE2)) +
+  scale_shape_manual(values=c(16,1), labels=c("DE","Non-DE"), name = "Bias direction") +
+  scale_color_manual(values = c("black","dark grey"),guide=FALSE) +
+  geom_point(size = 2.5) + geom_smooth(method = lm) +
   ylim(0,13) + xlim(-13,13) +
   theme_bw() + 
   theme(legend.position = c(0.25, 0.75)) +
