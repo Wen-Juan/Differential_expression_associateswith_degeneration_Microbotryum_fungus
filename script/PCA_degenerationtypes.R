@@ -1,28 +1,46 @@
-# plotting PCA 
-#install.packages('ggfortify')
-#library('ggfortify')
+# install packages and load R libraries 
+install.packages('ggfortify')
+library('ggfortify')
 
-#y <- dgl
-#count_norm <- data.frame(y$counts)
-#count_norm1 <- data.frame(t(count_norm[,1:61]))
-#str(count_norm1)
+#load dataset
+PCA_5degen <- read.table ("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/PCA/Mvsl_common_all5degenerationtypes_sort.txt", header = TRUE)
+str(PCA_5degen)
 
-#pcaData <- count_norm1
-#pca <- prcomp(pcaData, scale. = TRUE)
-#summary(pca)
+##using variables of degeneration traits as rownames
+PCA_5degen1 <- data.frame(PCA_5degen[,7:25])
+str(PCA_5degen1)
+PCA_5degen2 <- data.frame(t(PCA_5degen1))
+str(PCA_5degen2)
+pcaData <- PCA_5degen2
+pca <- prcomp(pcaData, scale. = TRUE)
+summary(pca)
 
-#rownames(count_norm1) <- c("23F1", "23F2", "23F3", "23M1","23M3","23M2","27F1","27F2","27F3", "27M1","27M2","27M3","31F1","31F2", "31F3", "31F4", "31M1","31M2","31M3","31M4","31M5","43F1","43F2", "43F3", "43M1","43M2","43M3","46F1","46F2","46M1","46M2","46M3", "FB1", "FB2", "FB3", "FB4","FB5", "MB1", "MB2", "MB3", "MB4", "MB5", "FO1", "FO2", "FO3", "FO4", "FO5", "MT1", "MT2", "MT3", "MT4", "MT5", "FL1", "FL2", "FL3", "FL4", "FL5", "ML1", "ML2", "ML3", "ML4")
-#str(count_norm1)
-#count_norm1$stage <- c("23", "23", "23", "23","23","23","27","27","27", "27","27","27","31","31", "31", "31", "31","31","31","31","31","43","43", "43", "43","43","43","46","46","46","46","46","Brain","Brain","Brain","Brain","Brain","Brain","Brain","Brain","Brain","Brain","Gonad","Gonad","Gonad","Gonad","Gonad","Gonad","Gonad","Gonad","Gonad","Gonad","Liver","Liver","Liver","Liver","Liver","Liver","Liver","Liver","Liver")
-#count_norm1$sex <- c("female","female","female","male","male","male","female","female","female","male","male","male","female","female","female","female","male","male","male","male","male","female","female","female","male","male","male","female","female","male","male","male","female","female","female","female","female","male","male","male","male","male","female","female","female","female","female","male","male","male","male","male","female","female","female","female","female","male","male","male","male")
+rownames(PCA_5degen2) <- c("genediff", "upk5diff", "upk10diff", "upk15diff", "upk20diff", "down5kdiff", "down10kdiff", "down15kdiff", "down20kdiff", "ratioprot", "ratiocds", "intron_nr_diff", "intron_mean_diff", "intron_total_diff", "GC0diff", "GC3diff","dn", "ds", "dnds")
+str(PCA_5degen2)
+PCA_5degen2$types <- c("TE", "TEup", "TEup", "TEup", "TEup", "TEdown", "TEdown", "TEdown", "TEdown", "Prot", "Prot", "intron", "intron", "intron", "GC0", "GC3","dn", "ds", "dnds") 
+PCA_5degen2$type5 <- c("TE", "TE", "TE", "TE", "TE", "TE", "TE", "TE", "TE", "Prot", "Prot", "intron", "intron", "intron", "GC", "GC","dnds", "dnds", "dnds") 
 
-#count_i <- data.frame(pca$x, stage=count_norm1$stage, sex=count_norm1$sex)
-#str(count_i)
+PCA_5degen2_i <- data.frame(pca$x, types = PCA_5degen2$types, type5 = PCA_5degen2$type5)
+str(PCA_5degen2_i)
 
-#pdf(file="/Users/Wen-Juan/my_postdoc/useful_scripts/Rana_Transcriptome/output/figures/alltissues_pc1pc2.pdf")
-#autoplot(pca, data = count_i, x=1, y=2, colour = 'stage', shape='sex', size=4, ylim=c(-0.3,0.5), xlim=c(-0.3,0.3))
+autoplot(pca, data = PCA_5degen2_i, x=1, y=2, color = 'type5', shape = 'type5', label.size = 2,size=2, ylim=c(-1,1), xlim=c(-1,1))
+autoplot(pca, data = PCA_5degen2_i, x=3, y=4,color = 'type5', shape = 'type5', label.size = 2,size=4, ylim=c(-2,2), xlim=c(-2,2))
+autoplot(pca, data = PCA_5degen2_i, x=5, y=6,color = 'type5', shape = 'type5', label.size = 2,size=4, ylim=c(-2,2), xlim=c(-2,2))
+
+##using variables of degeneration traits as column names
+PCA_5degen1 <- data.frame(PCA_5degen[,7:25])
+str(PCA_5degen1)
+pcaData <- PCA_5degen1
+pca <- prcomp(pcaData, scale. = TRUE)
+summary(pca)
+
+rownames(PCA_5degen2) <- c("genediff", "upk5diff", "upk10diff", "upk15diff", "upk20diff", "down5kdiff", "down10kdiff", "down15kdiff", "down20kdiff", "ratioprot", "ratiocds", "intron_nr_diff", "intron_mean_diff", "intron_total_diff", "GC0diff", "GC3diff","dn", "ds", "dnds")
+str(PCA_5degen2)
+PCA_5degen2$types <- c("TE", "TEup", "TEup", "TEup", "TEup", "TEdown", "TEdown", "TEdown", "TEdown", "Prot", "Prot", "intron", "intron", "intron", "GC0", "GC3","dn", "ds", "dnds") 
+PCA_5degen2$type5 <- c("TE", "TE", "TE", "TE", "TE", "TE", "TE", "TE", "TE", "Prot", "Prot", "intron", "intron", "intron", "GC", "GC","dnds", "dnds", "dnds") 
+
+
 #dev.off()
-
 #pdf(file="/Users/Wen-Juan/my_postdoc/useful_scripts/Rana_Transcriptome/output/figures/alltissues_pc3pc4.pdf")
 #autoplot(pca, data = count_i, x=3, y=4, colour = 'stage', shape='sex', size=4, ylim=c(-0.3,0.3), xlim=c(-0.3,0.5))
 #dev.off()
