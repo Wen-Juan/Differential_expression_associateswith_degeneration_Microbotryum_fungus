@@ -92,6 +92,8 @@ par(mar=c(8,8,6,6))
 plot_grid(paaa1, paaa2, labels=c('A','B'))
 dev.off()
 
+
+
 y1 <- lm(abs ~ DE2/GC3diff-1, data=GC_ratio_rand_rmcentro)
 summary (y1)
 
