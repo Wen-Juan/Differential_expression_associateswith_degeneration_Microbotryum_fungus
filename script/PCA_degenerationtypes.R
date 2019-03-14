@@ -23,22 +23,35 @@ PCA_5degen2$type5 <- c("TE", "TE", "TE", "TE", "TE", "TE", "TE", "TE", "TE", "Pr
 PCA_5degen2_i <- data.frame(pca$x, types = PCA_5degen2$types, type5 = PCA_5degen2$type5)
 str(PCA_5degen2_i)
 
-autoplot(pca, data = PCA_5degen2_i, x=1, y=2, color = 'type5', shape = 'type5', label.size = 2,size=2, ylim=c(-1,1), xlim=c(-1,1))
+autoplot(pca, data = PCA_5degen2_i, x=1, y=2, color = 'type5', shape = 'type5', label.size = 2,size=4, ylim=c(-1,1), xlim=c(-1,1))
 autoplot(pca, data = PCA_5degen2_i, x=3, y=4,color = 'type5', shape = 'type5', label.size = 2,size=4, ylim=c(-2,2), xlim=c(-2,2))
 autoplot(pca, data = PCA_5degen2_i, x=5, y=6,color = 'type5', shape = 'type5', label.size = 2,size=4, ylim=c(-2,2), xlim=c(-2,2))
 
 ##using variables of degeneration traits as column names
-PCA_5degen1 <- data.frame(PCA_5degen[,7:25])
+PCA_5degen1 <- as.data.frame(scale(PCA_5degen[,7:25]))
 str(PCA_5degen1)
+
 pcaData <- PCA_5degen1
 pca <- prcomp(pcaData, scale. = TRUE)
 summary(pca)
 
-rownames(PCA_5degen2) <- c("genediff", "upk5diff", "upk10diff", "upk15diff", "upk20diff", "down5kdiff", "down10kdiff", "down15kdiff", "down20kdiff", "ratioprot", "ratiocds", "intron_nr_diff", "intron_mean_diff", "intron_total_diff", "GC0diff", "GC3diff","dn", "ds", "dnds")
-str(PCA_5degen2)
-PCA_5degen2$types <- c("TE", "TEup", "TEup", "TEup", "TEup", "TEdown", "TEdown", "TEdown", "TEdown", "Prot", "Prot", "intron", "intron", "intron", "GC0", "GC3","dn", "ds", "dnds") 
-PCA_5degen2$type5 <- c("TE", "TE", "TE", "TE", "TE", "TE", "TE", "TE", "TE", "Prot", "Prot", "intron", "intron", "intron", "GC", "GC","dnds", "dnds", "dnds") 
+PCA_5degen1$gencomp <- PCA_5degen[,2]
+PCA_5degen1$de2 <- PCA_5degen[,6]
+str(PCA_5degen1)
 
+
+PCA_5degen1_i <- data.frame(pca$x, de2 = PCA_5degen1$de2, gencomp = PCA_5degen1$gencomp)
+str(PCA_5degen1_i)
+
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/pca_pc1_pc2.pdf")
+autoplot(pca, data = PCA_5degen1_i, x=1, y=2, color = 'de2', shape = 'gencomp', label.size = 2,size=2, ylim=c(-1,1), xlim=c(-1,1))
+dev.off()
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/pca_pc3_pc4.pdf")
+autoplot(pca, data = PCA_5degen1_i, x=3, y=4, color = 'de2', shape = 'gencomp', label.size = 2,size=2, ylim=c(-1,1), xlim=c(-1,1))
+dev.off()
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/pca_pc5_pc6.pdf")
+autoplot(pca, data = PCA_5degen1_i, x=5, y=6, color = 'de2', shape = 'gencomp', label.size = 2,size=2, ylim=c(-1,1), xlim=c(-1,1))
+dev.off()
 
 #dev.off()
 #pdf(file="/Users/Wen-Juan/my_postdoc/useful_scripts/Rana_Transcriptome/output/figures/alltissues_pc3pc4.pdf")
