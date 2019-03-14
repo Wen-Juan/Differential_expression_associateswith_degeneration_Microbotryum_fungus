@@ -106,7 +106,10 @@ dev.off()
 diff_prot_length_rand_rmcentro <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold!="Centro") 
 diff_prot_length_rand_oldstrata <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold=="OldStrata")
 diff_prot_length_rand_youngstrata <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold=="ColorStrata")
+diff_prot_length_rand_PAR <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold=="bPAR")
+diff_prot_length_rand_autosome <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold=="Auto")
   
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protein_ratio_youngold_poolDE.pdf", width=8, height=8)
 ggplot(diff_prot_length_rand_rmcentro, aes(x=youngold, y=ratioprot, fill=DE2)) +
   scale_fill_manual(values = c("white","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
@@ -119,6 +122,27 @@ ggplot(diff_prot_length_rand_rmcentro, aes(x=youngold, y=ratioprot, fill=DE2)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
+
+#F-test for difference between variances
+var.test(ratioprot ~ DE2, diff_prot_length_rand_oldstrata, alternative = "two.sided")
+#F = 2.3001, num df = 71, denom df = 121, p-value = 5.425e-05
+var(diff_prot_length_rand_oldstrata$ratioprot[diff_prot_length_rand_oldstrata$DE2=="DE"]) #0.03299776
+var(diff_prot_length_rand_oldstrata$ratioprot[diff_prot_length_rand_oldstrata$DE2=="NON"]) #0.01434599
+
+var.test(ratioprot ~ DE2, diff_prot_length_rand_youngstrata, alternative = "two.sided")
+#F = 0.058956, num df = 2, denom df = 29, p-value = 0.1143 
+var(diff_prot_length_rand_youngstrata$ratioprot[diff_prot_length_rand_youngstrata$DE2=="DE"]) #0.0001803587
+var(diff_prot_length_rand_youngstrata$ratioprot[diff_prot_length_rand_youngstrata$DE2=="NON"]) #0.003059207
+
+var.test(ratioprot ~ DE2, diff_prot_length_rand_PAR, alternative = "two.sided")
+#F = 0, num df = 11, denom df = 101, p-value < 2.2e-16
+var(diff_prot_length_rand_PAR$ratioprot[diff_prot_length_rand_PAR$DE2=="NON"]) #9.181555e-06
+var(diff_prot_length_rand_PAR$ratioprot[diff_prot_length_rand_PAR$DE2=="DE"]) #0
+
+var.test(ratioprot ~ DE2, diff_prot_length_rand_autosome, alternative = "two.sided")
+#F = 4.6687, num df = 506, denom df = 7699, p-value < 2.2e-16
+var(diff_prot_length_rand_autosome$ratioprot[diff_prot_length_rand_autosome$DE2=="NON"]) #0.0001215012
+var(diff_prot_length_rand_autosome$ratioprot[diff_prot_length_rand_autosome$DE2=="DE"]) #0.0005672476
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_cds_ratio_youngold_poolDE.pdf", width=8, height=8)
 ggplot(diff_prot_length_rand_rmcentro, aes(x=youngold, y=ratiocds, fill=DE2)) +
