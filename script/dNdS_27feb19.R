@@ -158,7 +158,7 @@ p_dncor <- ggplot(dNdS_new, aes(x=dn, y=abs,color=DE2, shape=DE2)) +
   geom_point(size=2.5) + geom_smooth(method = lm) + 
   theme_bw() + 
   theme(legend.position = c(0.4, 0.8)) +
-  labs(x='dN', y='Expression ratio in |Log2(A1/A2)|') +
+  labs(x='dN', y='Gene expression ratio in |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
@@ -206,20 +206,20 @@ p_dscor <- ggplot(dNdS_new, aes(x=ds, y=abs,color=DE2, shape=DE2)) +
   geom_point(size = 2.5) + geom_smooth(method = lm) + 
   theme_bw() + xlim(0,0.25) +
   theme(legend.position = c(0.4, 0.8)) +
-  labs(x='dS', y='Expression ratio in |Log2(A1/A2)|') +
+  labs(x='dS', y='Gene expression ratio in |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_exp_correlation_DEpool.pdf", width=14, height=8)
 p_dnds <- ggplot(dNdS_new, aes(x=dnds, y=abs,color=DE2,shape=DE2)) +
-  scale_shape_manual(values=c(16,1),guide=FALSE) +
-  scale_color_manual(values = c("black","dark grey"),labels=c("DE","Non-DE"), name="Bias direction") +
+  scale_shape_manual(values=c(16,1),labels=c("DE","Non-DE"), name = "") +
+  scale_color_manual(values = c("black","dark grey"),guide=FALSE) +
   geom_point(size = 2.5) + geom_smooth(method = lm) +
   theme_bw() + 
   theme(legend.position = c(0.8, 0.8)) +
   xlim(0,12.5) +
-  labs(x='dN/dS', y='Expression ratio in |Log2(A1/A2)|') +
+  labs(x='dN/dS', y='Gene expression ratio in |Log2(A1/A2)|') +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
