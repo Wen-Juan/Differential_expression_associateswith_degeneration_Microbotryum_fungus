@@ -2,12 +2,24 @@
 install.packages('ggfortify')
 library('ggfortify')
 
+install.packages("missMDA")
+library(missMDA)
+
+source("https://bioconductor.org/biocLite.R")
+biocLite("pcaMethods")
+
 #load dataset
 PCA_5degen <- read.table ("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/PCA/Mvsl_common_all5degenerationtypes_sort.txt", header = TRUE)
 str(PCA_5degen)
 
+PCA_5degen_all <- read.table ("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/PCA/Mvsl_all5traits_withmissingvalues.txt", header = TRUE)
+str(PCA_5degen_all)
+
+y <- glm(abs~ratioprot+GC3diff+dn+intron_nr_diff+upk5diff-1, data = PCA_5degen_all, family = quasi) 
+summary(y)
+
 ##using variables of degeneration traits as rownames
-PCA_5degen1 <- data.frame(PCA_5degen[,7:25])
+PCA_5degen1 <- data.frame(PCA_5degen_all[,7:25])
 str(PCA_5degen1)
 PCA_5degen2 <- data.frame(t(PCA_5degen1))
 str(PCA_5degen2)
@@ -28,15 +40,28 @@ autoplot(pca, data = PCA_5degen2_i, x=3, y=4,color = 'type5', shape = 'type5', l
 autoplot(pca, data = PCA_5degen2_i, x=5, y=6,color = 'type5', shape = 'type5', label.size = 2,size=4, ylim=c(-2,2), xlim=c(-2,2))
 
 ##using variables of degeneration traits as column names
-PCA_5degen1 <- as.data.frame(scale(PCA_5degen[,7:25]))
+PCA_5degen1 <- as.data.frame(scale(PCA_5degen_all[,7:25]))
 str(PCA_5degen1)
 
+result <- pca(CA_5degen1, method="ppca", nPcs=5, seed=NA)
+
+
+###using MCA does not seem to work
+nbdim <- estim_ncpPCA(PCA_5degen1) # estimate the number of dimensions to impute
+nb = estim_ncpPCA(PCA_5degen1,ncp.max=5)
+res.comp = imputePCA(PCA_5degen1,ncp=2)
+res.pca = PCA(res.comp$completeObs)
+resMI = MIPCA(PCA_5degen1,ncp=2, scale = TRUE, method = c("Regularized"), nboot = 100)
+plot(resMI, choice = "all", axes = c(1,2), new.plot = TRUE, main = NULL, level.conf = 0.95)
+####
+
 pcaData <- PCA_5degen1
-pca <- prcomp(pcaData, scale. = TRUE)
+pca <- prcomp(na.omit(pcaData), center = TRUE, scale = TRUE)
+
 summary(pca)
 
-PCA_5degen1$gencomp <- PCA_5degen[,2]
-PCA_5degen1$de2 <- PCA_5degen[,6]
+PCA_5degen1$gencomp <- PCA_5degen_all[,2]
+PCA_5degen1$de2 <- PCA_5degen_all[,6]
 str(PCA_5degen1)
 
 
