@@ -13,12 +13,140 @@ library(devtools)
 install_github("vqv/ggbiplot")
 library(ggbiplot)
 
+install.packages("lmerTest")
+library(lme4)
+library(lmerTest)
+
 #load dataset
 PCA_5degen_all <- read.table ("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/PCA/Mvsl_all5traits_withmissingvalues_cor.txt", header = TRUE)
 str(PCA_5degen_all)
+qqnorm(sqrt(PCA_5degen_all$abs), pch = 1, frame = FALSE)
+qqline(sqrt(PCA_5degen_all$abs), col = "steelblue")
 
-y <- glm(abs~ratioprot+GC3diff+dn+intron_nr_diff+upk5diff+upk10diff+genediff-1, data = PCA_5degen_all, family = quasi) 
-summary(y)
+y1 <- glm(sqrt(abs) ~ sqrt(ratioprot):youngold + GC3diff:youngold +dn:youngold+ ds:youngold +intron_nr_diff:youngold +intron_total_diff:youngold +upk5diff+upk10diff:youngold +genediff:youngold, data = PCA_5degen_all, family=quasi) 
+summary(y1)
+#####
+Call:
+  glm(formula = sqrt(abs) ~ sqrt(ratioprot):youngold + GC3diff:youngold + 
+        dn:youngold + ds:youngold + intron_nr_diff:youngold + intron_total_diff:youngold + 
+        upk5diff + upk10diff:youngold + genediff:youngold, family = quasi, 
+      data = PCA_5degen_all)
+
+Deviance Residuals: 
+  Min        1Q    Median        3Q       Max  
+-0.84708  -0.14648  -0.02776   0.11469   2.00551  
+
+Coefficients: (3 not defined because of singularities)
+Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                           -1.117e+00  3.352e-01  -3.331 0.000870 ***
+  upk5diff                              -2.496e-03  7.280e-03  -0.343 0.731737    
+sqrt(ratioprot):youngoldAuto           1.511e+00  3.352e-01   4.507 6.69e-06 ***
+  sqrt(ratioprot):youngoldbPAR           1.535e+00  3.362e-01   4.566 5.07e-06 ***
+  sqrt(ratioprot):youngoldColorStrata    1.500e+00  3.395e-01   4.418 1.02e-05 ***
+  sqrt(ratioprot):youngoldOldStrata      1.676e+00  3.342e-01   5.014 5.49e-07 ***
+  youngoldAuto:GC3diff                  -5.014e-02  3.717e-02  -1.349 0.177375    
+youngoldbPAR:GC3diff                   6.974e+00  8.969e+00   0.778 0.436810    
+youngoldColorStrata:GC3diff            1.148e-01  7.028e-02   1.633 0.102461    
+youngoldOldStrata:GC3diff              6.760e-02  1.402e-02   4.822 1.46e-06 ***
+  youngoldAuto:dn                       -7.129e+00  3.519e+00  -2.026 0.042794 *  
+  youngoldbPAR:dn                       -2.477e+02  2.257e+02  -1.097 0.272532    
+youngoldColorStrata:dn                 3.671e+01  1.026e+01   3.578 0.000349 ***
+  youngoldOldStrata:dn                   2.468e+00  7.351e-01   3.357 0.000793 ***
+  youngoldAuto:ds                        1.140e+01  5.046e+00   2.259 0.023931 *  
+  youngoldbPAR:ds                        1.231e+02  3.603e+01   3.418 0.000634 ***
+  youngoldColorStrata:ds                -4.455e+01  1.728e+01  -2.578 0.009970 ** 
+  youngoldOldStrata:ds                   2.835e+00  1.337e+00   2.121 0.033973 *  
+  youngoldAuto:intron_nr_diff            1.101e-02  5.073e-02   0.217 0.828132    
+youngoldbPAR:intron_nr_diff                   NA         NA      NA       NA    
+youngoldColorStrata:intron_nr_diff     3.740e-02  2.077e-01   0.180 0.857090    
+youngoldOldStrata:intron_nr_diff       7.675e-02  3.317e-02   2.314 0.020711 *  
+  youngoldAuto:intron_total_diff        -4.295e-04  3.833e-04  -1.121 0.262522    
+youngoldbPAR:intron_total_diff         7.568e-02  7.822e-02   0.967 0.333335    
+youngoldColorStrata:intron_total_diff  2.278e-04  8.575e-04   0.266 0.790517    
+youngoldOldStrata:intron_total_diff    7.216e-04  2.288e-04   3.154 0.001619 ** 
+  youngoldAuto:upk10diff                -8.209e-02  2.628e-02  -3.123 0.001796 ** 
+  youngoldbPAR:upk10diff                 2.313e-01  2.198e-01   1.053 0.292525    
+youngoldColorStrata:upk10diff         -3.354e-02  3.091e-02  -1.085 0.277926    
+youngoldOldStrata:upk10diff           -2.915e-02  9.753e-03  -2.989 0.002812 ** 
+  youngoldAuto:genediff                  3.270e-04  1.559e-02   0.021 0.983272    
+youngoldbPAR:genediff                         NA         NA      NA       NA    
+youngoldColorStrata:genediff                  NA         NA      NA       NA    
+youngoldOldStrata:genediff             2.813e-02  4.095e-02   0.687 0.492130    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for quasi family taken to be 0.04764018)
+
+Null deviance: 314.06  on 6113  degrees of freedom
+Residual deviance: 289.80  on 6083  degrees of freedom
+(2432 observations deleted due to missingness)
+AIC: NA
+
+Number of Fisher Scoring iterations: 2
+#####
+
+y2 <- glm(sqrt(abs) ~ sqrt(ratioprot):youngold + GC3diff:youngold +dn:youngold+ ds:youngold +intron_nr_diff:youngold +intron_total_diff:youngold +upk5diff+upk10diff:youngold +genediff:youngold, data = PCA_5degen_all, family=gaussian) 
+summary(y2)
+
+######
+Call:
+  glm(formula = sqrt(abs) ~ sqrt(ratioprot):youngold + GC3diff:youngold + 
+        dn:youngold + ds:youngold + intron_nr_diff:youngold + intron_total_diff:youngold + 
+        upk5diff + upk10diff:youngold + genediff:youngold, family = quasi, 
+      data = PCA_5degen_all)
+
+Deviance Residuals: 
+  Min        1Q    Median        3Q       Max  
+-0.84708  -0.14648  -0.02776   0.11469   2.00551  
+
+Coefficients: (3 not defined because of singularities)
+Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                           -1.117e+00  3.352e-01  -3.331 0.000870 ***
+  upk5diff                              -2.496e-03  7.280e-03  -0.343 0.731737    
+sqrt(ratioprot):youngoldAuto           1.511e+00  3.352e-01   4.507 6.69e-06 ***
+  sqrt(ratioprot):youngoldbPAR           1.535e+00  3.362e-01   4.566 5.07e-06 ***
+  sqrt(ratioprot):youngoldColorStrata    1.500e+00  3.395e-01   4.418 1.02e-05 ***
+  sqrt(ratioprot):youngoldOldStrata      1.676e+00  3.342e-01   5.014 5.49e-07 ***
+  youngoldAuto:GC3diff                  -5.014e-02  3.717e-02  -1.349 0.177375    
+youngoldbPAR:GC3diff                   6.974e+00  8.969e+00   0.778 0.436810    
+youngoldColorStrata:GC3diff            1.148e-01  7.028e-02   1.633 0.102461    
+youngoldOldStrata:GC3diff              6.760e-02  1.402e-02   4.822 1.46e-06 ***
+  youngoldAuto:dn                       -7.129e+00  3.519e+00  -2.026 0.042794 *  
+  youngoldbPAR:dn                       -2.477e+02  2.257e+02  -1.097 0.272532    
+youngoldColorStrata:dn                 3.671e+01  1.026e+01   3.578 0.000349 ***
+  youngoldOldStrata:dn                   2.468e+00  7.351e-01   3.357 0.000793 ***
+  youngoldAuto:ds                        1.140e+01  5.046e+00   2.259 0.023931 *  
+  youngoldbPAR:ds                        1.231e+02  3.603e+01   3.418 0.000634 ***
+  youngoldColorStrata:ds                -4.455e+01  1.728e+01  -2.578 0.009970 ** 
+  youngoldOldStrata:ds                   2.835e+00  1.337e+00   2.121 0.033973 *  
+  youngoldAuto:intron_nr_diff            1.101e-02  5.073e-02   0.217 0.828132    
+youngoldbPAR:intron_nr_diff                   NA         NA      NA       NA    
+youngoldColorStrata:intron_nr_diff     3.740e-02  2.077e-01   0.180 0.857090    
+youngoldOldStrata:intron_nr_diff       7.675e-02  3.317e-02   2.314 0.020711 *  
+  youngoldAuto:intron_total_diff        -4.295e-04  3.833e-04  -1.121 0.262522    
+youngoldbPAR:intron_total_diff         7.568e-02  7.822e-02   0.967 0.333335    
+youngoldColorStrata:intron_total_diff  2.278e-04  8.575e-04   0.266 0.790517    
+youngoldOldStrata:intron_total_diff    7.216e-04  2.288e-04   3.154 0.001619 ** 
+  youngoldAuto:upk10diff                -8.209e-02  2.628e-02  -3.123 0.001796 ** 
+  youngoldbPAR:upk10diff                 2.313e-01  2.198e-01   1.053 0.292525    
+youngoldColorStrata:upk10diff         -3.354e-02  3.091e-02  -1.085 0.277926    
+youngoldOldStrata:upk10diff           -2.915e-02  9.753e-03  -2.989 0.002812 ** 
+  youngoldAuto:genediff                  3.270e-04  1.559e-02   0.021 0.983272    
+youngoldbPAR:genediff                         NA         NA      NA       NA    
+youngoldColorStrata:genediff                  NA         NA      NA       NA    
+youngoldOldStrata:genediff             2.813e-02  4.095e-02   0.687 0.492130    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for quasi family taken to be 0.04764018)
+
+Null deviance: 314.06  on 6113  degrees of freedom
+Residual deviance: 289.80  on 6083  degrees of freedom
+(2432 observations deleted due to missingness)
+AIC: NA
+
+Number of Fisher Scoring iterations: 2
+######
 
 ##using variables of degeneration traits as column names
 PCA_5degen1 <- as.data.frame(scale(PCA_5degen_all[,7:25]))
