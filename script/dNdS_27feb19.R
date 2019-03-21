@@ -110,6 +110,9 @@ wilcox.test(dNdS_youngstrata$ds[dNdS_youngstrata$DE2=='DE'],dNdS_youngstrata$ds[
 wilcox.test(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE'],dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='NON'],exact = FALSE) 
 #W = 47, p-value = 0.7608
 
+mean(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE']) #1.787892
+sd(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE']) #0.7979115
+
 wilcox.test(dNdS_oldstrata$dn[dNdS_oldstrata$DE2=='DE'],dNdS_oldstrata$dn[dNdS_oldstrata$DE2=='NON'],exact = FALSE) 
 #W = 2941, p-value = 0.0003843
 wilcox.test(dNdS_oldstrata$ds[dNdS_oldstrata$DE2=='DE'],dNdS_oldstrata$ds[dNdS_oldstrata$DE2=='NON'],exact = FALSE) 
