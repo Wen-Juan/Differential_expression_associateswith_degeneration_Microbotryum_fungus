@@ -8,6 +8,7 @@ library(easyGgplot2)
 install.packages("gridExtra")
 library(gridExtra)
 require(cowplot)
+library(Hmisc)
 
 #load the corresponding data files, between a1 and a2 homologs within Mvsl species, homolog length was trimmed to equal and removing TE genes. modified at jan.28.2019
 dNdS_new <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/28jan2019/Mvsl_dnds_exp_gencomp.txt', header = T)
@@ -108,17 +109,34 @@ wilcox.test(dNdS_youngstrata$dn[dNdS_youngstrata$DE2=='DE'],dNdS_youngstrata$dn[
 wilcox.test(dNdS_youngstrata$ds[dNdS_youngstrata$DE2=='DE'],dNdS_youngstrata$ds[dNdS_youngstrata$DE2=='NON'],exact = FALSE) 
 #W = 75, p-value = 0.02791
 wilcox.test(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE'],dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='NON'],exact = FALSE) 
-#W = 47, p-value = 0.7608
+#W = 47, p-value = 0.4967
 
 mean(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE']) #1.787892
-sd(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE']) #0.7979115
+x<-dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE']
+se <-function(x) sqrt(var(x)/length(x))
+se(x)  #0.4606744
+y <- na.omit(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='NON'])
+mean(y)  #1.477885
+se <-function(x) sqrt(var(x)/length(x))
+se(y)  
+#0.3295856
+
+y1 <- na.omit(dNdS_oldstrata$dnds[dNdS_oldstrata$DE2=='DE'])
+mean(y1 ) # 2.369368
+se <-function(x) sqrt(var(x)/length(x))
+se(y1)  #0.192115
+y2 <- na.omit(dNdS_oldstrata$dnds[dNdS_oldstrata$DE2=='NON'])
+mean(y2) #2.297156
+se <-function(x) sqrt(var(x)/length(x))
+se(y2)  #0.1828743
+
 
 wilcox.test(dNdS_oldstrata$dn[dNdS_oldstrata$DE2=='DE'],dNdS_oldstrata$dn[dNdS_oldstrata$DE2=='NON'],exact = FALSE) 
 #W = 2941, p-value = 0.0003843
 wilcox.test(dNdS_oldstrata$ds[dNdS_oldstrata$DE2=='DE'],dNdS_oldstrata$ds[dNdS_oldstrata$DE2=='NON'],exact = FALSE) 
 #W = 2960.5, p-value = 0.000277
 wilcox.test(dNdS_oldstrata$dnds[dNdS_oldstrata$DE2=='DE'],dNdS_oldstrata$dnds[dNdS_oldstrata$DE2=='NON'],exact = FALSE) 
-#W = 2276, p-value = 0.5286
+#W = 2176, p-value = 0.4181
 
 #stats, separating A1- and A2-biased genes.
 dNdS_youngstrata <- subset(dNdS_new, dNdS_new$youngold=="ColorStrata")
@@ -243,6 +261,60 @@ ggplot(dNdS_new, aes(x=dnds, y=abs,color=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+#correlation test
+cor.test(dNdS_new$dn[dNdS_new$DE2 == "DE"], dNdS_new$abs[dNdS_new$DE2 == "DE"], method=c("pearson"))
+###Pearson's product-moment correlation
+
+data:  dNdS_new$dn[dNdS_new$DE2 == "DE"] and dNdS_new$abs[dNdS_new$DE2 == "DE"]
+t = 4.8697, df = 163, p-value = 2.625e-06
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  0.2153214 0.4828725
+sample estimates:
+  cor 
+0.3563809 
+####
+
+cor.test(dNdS_new$dn[dNdS_new$DE2 == "NON"], dNdS_new$abs[dNdS_new$DE2 == "NON"], method=c("pearson"))
+###Pearson's product-moment correlation
+data:  dNdS_new$dn[dNdS_new$DE2 == "NON"] and dNdS_new$abs[dNdS_new$DE2 == "NON"]
+t = 3.6017, df = 5947, p-value = 0.0003187
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+0.02126718 0.07198101
+sample estimates:
+cor 
+0.04665415 
+####
+
+cor.test(dNdS_new$ds[dNdS_new$DE2 == "DE"], dNdS_new$abs[dNdS_new$DE2 == "DE"], method=c("pearson"))
+####Pearson's product-moment correlation
+
+data:  dNdS_new$ds[dNdS_new$DE2 == "DE"] and dNdS_new$abs[dNdS_new$DE2 == "DE"]
+t = 5.1701, df = 163, p-value = 6.778e-07
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  0.2361026 0.4994861
+sample estimates:
+  cor 
+0.3753465 
+#####
+
+cor.test(dNdS_new$ds[dNdS_new$DE2 == "NON"], dNdS_new$abs[dNdS_new$DE2 == "NON"], method=c("pearson"))
+###Pearson's product-moment correlation
+data:  dNdS_new$ds[dNdS_new$DE2 == "NON"] and dNdS_new$abs[dNdS_new$DE2 == "NON"]
+t = 2.8698, df = 5947, p-value = 0.004122
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  0.01178676 0.06254091
+sample estimates:
+  cor 
+0.03718782 
+###
+
+
+
+#####
 y <- lm(abs ~ DE2/dn-1, data = dNdS_new)
 summary(y)
 ###
