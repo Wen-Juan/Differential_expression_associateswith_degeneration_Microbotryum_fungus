@@ -58,6 +58,13 @@ p_a <- ggplot(TE_homolog_mod, aes(x=gene0kdiff, y=abs, color=DE2, shape=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
 
+cor.test(TE_homolog_mod$gene0kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+cor.test(TE_homolog_mod$upk5diff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+cor.test(TE_homolog_mod$upk10diff [TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+cor.test(TE_homolog_mod$upk15diff [TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+cor.test(TE_homolog_mod$upk20diff [TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+
+
 y_m1 <- lm(abs ~ DE2/gene0kdiff-1, data = TE_homolog_mod)
 summary(y_m1)
 #####
@@ -331,10 +338,18 @@ wilcox.test(TE_homolog_mod_rmcentro_oldstrata$gene0kdiff[TE_homolog_mod_rmcentro
 #W = 4538, p-value = 0.5221
 wilcox.test(TE_homolog_mod_rmcentro_oldstrata$upk5diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$upk5diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
 #W = 4436, p-value = 0.9036
+wilcox.test(TE_homolog_mod_rmcentro_oldstrata$down5kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$down5kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
+#W = 4507.5, p-value = 0.749
 wilcox.test(TE_homolog_mod_rmcentro_oldstrata$upk10diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$upk10diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
 #W = 4196, p-value = 0.5576
+wilcox.test(TE_homolog_mod_rmcentro_oldstrata$down10kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$down10kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
+#W = 4025.5, p-value = 0.3153
 wilcox.test(TE_homolog_mod_rmcentro_oldstrata$upk15diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$upk15diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
 #W = 4479, p-value = 0.8083
+wilcox.test(TE_homolog_mod_rmcentro_oldstrata$down15kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$down15kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
+#W = 3822.5, p-value = 0.1223
+wilcox.test(TE_homolog_mod_rmcentro_oldstrata$down20kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$down20kdiff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
+#W = 4172.5, p-value = 0.5469
 wilcox.test(TE_homolog_mod_rmcentro_oldstrata$upk20diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='DE'],TE_homolog_mod_rmcentro_oldstrata$upk20diff[TE_homolog_mod_rmcentro_oldstrata$DE2=='NON'],exact = FALSE) 
 #W = 4398.5, p-value = 0.9866
 
@@ -342,12 +357,61 @@ wilcox.test(TE_homolog_mod_rmcentro_youngstrata$gene0kdiff[TE_homolog_mod_rmcent
 #W = 45, p-value = NA
 wilcox.test(TE_homolog_mod_rmcentro_youngstrata$upk5diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$upk5diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
 #W = 45.5, p-value = 1
+wilcox.test(TE_homolog_mod_rmcentro_youngstrata$down5kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$down5kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
+#W = 24, p-value = 0.114
 wilcox.test(TE_homolog_mod_rmcentro_youngstrata$upk10diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$upk10diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
 #W = 46.5, p-value = 0.9001
+wilcox.test(TE_homolog_mod_rmcentro_youngstrata$down10kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$down10kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
+#W = 40, p-value = 0.7569
 wilcox.test(TE_homolog_mod_rmcentro_youngstrata$upk15diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$upk15diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
 #W = 49.5, p-value = 0.7707
+wilcox.test(TE_homolog_mod_rmcentro_youngstrata$down15kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$down15kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
+#W = 39, p-value = 0.7011
 wilcox.test(TE_homolog_mod_rmcentro_youngstrata$upk20diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$upk20diff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
 #W = 38, p-value = 0.6555
+wilcox.test(TE_homolog_mod_rmcentro_youngstrata$down20kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='DE'],TE_homolog_mod_rmcentro_youngstrata$down20kdiff[TE_homolog_mod_rmcentro_youngstrata$DE2=='NON'],exact = FALSE) 
+#W = 35, p-value = 0.5204
+
+TE_homolog_mod_rmcentro_auto <- subset(TE_homolog_mod, TE_homolog_mod$youngold == "Auto")
+TE_homolog_mod_rmcentro_PAR <- subset(TE_homolog_mod, TE_homolog_mod$youngold == "bPAR")
+wilcox.test(TE_homolog_mod_rmcentro_auto$gene0kdiff[TE_homolog_mod_rmcentro_auto$DE2=='DE'],TE_homolog_mod_rmcentro_auto$gene0kdiff[TE_homolog_mod_rmcentro_auto$DE2=='NON'],exact = FALSE) 
+#W = 1952500, p-value = 0.9472
+wilcox.test(TE_homolog_mod_rmcentro_auto$upk5diff[TE_homolog_mod_rmcentro_auto$DE2=='DE'],TE_homolog_mod_rmcentro_auto$upk5diff[TE_homolog_mod_rmcentro_auto$DE2=='NON'],exact = FALSE) 
+#W = 1948600, p-value = 0.6994
+wilcox.test(TE_homolog_mod_rmcentro_auto$down5kdiff[TE_homolog_mod_rmcentro_auto$DE2=='DE'],TE_homolog_mod_rmcentro_auto$down5kdiff[TE_homolog_mod_rmcentro_auto$DE2=='NON'],exact = FALSE) 
+#W = 1929500, p-value = 0.01264
+wilcox.test(TE_homolog_mod_rmcentro_auto$upk10diff[TE_homolog_mod_rmcentro_auto$DE2=='DE'],TE_homolog_mod_rmcentro_auto$upk10diff[TE_homolog_mod_rmcentro_auto$DE2=='NON'],exact = FALSE) 
+#W = 1923800, p-value = 7.345e-05
+wilcox.test(TE_homolog_mod_rmcentro_auto$down10kdiff[TE_homolog_mod_rmcentro_auto$DE2=='DE'],TE_homolog_mod_rmcentro_auto$down10kdiff[TE_homolog_mod_rmcentro_auto$DE2=='NON'],exact = FALSE) 
+#W = 1942700, p-value = 0.3103
+wilcox.test(TE_homolog_mod_rmcentro_auto$upk15diff[TE_homolog_mod_rmcentro_auto$DE2=='DE'],TE_homolog_mod_rmcentro_auto$upk15diff[TE_homolog_mod_rmcentro_auto$DE2=='NON'],exact = FALSE) 
+#W = 1953000, p-value = 0.9041
+wilcox.test(TE_homolog_mod_rmcentro_auto$down15kdiff[TE_homolog_mod_rmcentro_auto$DE2=='DE'],TE_homolog_mod_rmcentro_auto$down15kdiff[TE_homolog_mod_rmcentro_auto$DE2=='NON'],exact = FALSE) 
+#W = 1952500, p-value = 0.9536
+wilcox.test(TE_homolog_mod_rmcentro_auto$down20kdiff[TE_homolog_mod_rmcentro_auto$DE2=='DE'],TE_homolog_mod_rmcentro_auto$down20kdiff[TE_homolog_mod_rmcentro_auto$DE2=='NON'],exact = FALSE) 
+#W = 1947100, p-value = 0.6502
+wilcox.test(TE_homolog_mod_rmcentro_auto$upk20diff[TE_homolog_mod_rmcentro_auto$DE2=='DE'],TE_homolog_mod_rmcentro_auto$upk20diff[TE_homolog_mod_rmcentro_auto$DE2=='NON'],exact = FALSE) 
+#W = 1969900, p-value = 0.04659
+
+wilcox.test(TE_homolog_mod_rmcentro_PAR$gene0kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$gene0kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
+#W = 612, p-value = NA
+wilcox.test(TE_homolog_mod_rmcentro_PAR$upk5diff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$upk5diff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
+#W = 624, p-value = 0.6406
+wilcox.test(TE_homolog_mod_rmcentro_PAR$down5kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$down5kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
+#W = 612, p-value = NA
+wilcox.test(TE_homolog_mod_rmcentro_PAR$upk10diff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$upk10diff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
+#W = 618, p-value = 0.7532
+wilcox.test(TE_homolog_mod_rmcentro_PAR$down10kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$down10kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
+#W = 663, p-value = 0.003891
+wilcox.test(TE_homolog_mod_rmcentro_PAR$upk15diff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$upk15diff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
+#W = 600, p-value = 0.6405
+wilcox.test(TE_homolog_mod_rmcentro_PAR$down15kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$down15kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
+#W = 612, p-value = NA
+wilcox.test(TE_homolog_mod_rmcentro_PAR$down20kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$down20kdiff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
+#W = 714, p-value = 3.772e-05
+wilcox.test(TE_homolog_mod_rmcentro_PAR$upk20diff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$upk20diff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
+#W = 600, p-value = 0.6405
+
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_cor_upstream0-5k_pooled_mod.pdf", width=8, height=8)
 p_b <- ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=upk5diff, fill=DE2)) +
