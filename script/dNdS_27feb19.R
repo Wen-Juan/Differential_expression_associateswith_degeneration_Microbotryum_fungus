@@ -312,7 +312,31 @@ sample estimates:
 0.03718782 
 ###
 
+cor.test(dNdS_new$dnds[dNdS_new$DE2 == "DE"], dNdS_new$abs[dNdS_new$DE2 == "DE"], method=c("pearson"))
+####Pearson's product-moment correlation
 
+data:  dNdS_new$dnds[dNdS_new$DE2 == "DE"] and dNdS_new$abs[dNdS_new$DE2 == "DE"]
+t = 4.1453, df = 162, p-value = 5.459e-05
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  0.1642168 0.4419495
+sample estimates:
+  cor 
+0.3096734 
+####
+
+cor.test(dNdS_new$dnds[dNdS_new$DE2 == "NON"], dNdS_new$abs[dNdS_new$DE2 == "NON"], method=c("pearson"))
+###Pearson's product-moment correlation
+
+data:  dNdS_new$dnds[dNdS_new$DE2 == "NON"] and dNdS_new$abs[dNdS_new$DE2 == "NON"]
+t = 3.7127, df = 5936, p-value = 0.0002069
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  0.02272453 0.07347819
+sample estimates:
+  cor 
+0.04813243 
+####
 
 #####
 y <- lm(abs ~ DE2/dn-1, data = dNdS_new)
@@ -521,10 +545,19 @@ wilcox.test(dNdS_MvslMvsv_sep2$dndsa2[dNdS_MvslMvsv_sep2$DE2=='Lowmutations'],dN
 
 dNdS_MvslMvsv_sep3 <- subset(dNdS_MvslMvsv_sep,dNdS_MvslMvsv_sep$youngold == "Auto")
 wilcox.test(dNdS_MvslMvsv_sep3$dsa2[dNdS_MvslMvsv_sep3$DE2=='Lowmutations'],dNdS_MvslMvsv_sep3$dsa2[dNdS_MvslMvsv_sep3$DE2=='Vhighmutations'],exact = FALSE) 
+#W = 8060.5, p-value = 0.9952
+wilcox.test(dNdS_MvslMvsv_sep3$dna2[dNdS_MvslMvsv_sep3$DE2=='Lowmutations'],dNdS_MvslMvsv_sep3$dna2[dNdS_MvslMvsv_sep3$DE2=='Vhighmutations'],exact = FALSE) 
+#W = 8066, p-value = 0.9986
+wilcox.test(dNdS_MvslMvsv_sep3$dndsa2[dNdS_MvslMvsv_sep3$DE2=='Lowmutations'],dNdS_MvslMvsv_sep3$dndsa2[dNdS_MvslMvsv_sep3$DE2=='Vhighmutations'],exact = FALSE) 
+#W = 8057, p-value = 0.9905
 
 dNdS_MvslMvsv_sep4 <- subset(dNdS_MvslMvsv_sep,dNdS_MvslMvsv_sep$youngold == "bPAR")
 wilcox.test(dNdS_MvslMvsv_sep4$dsa2[dNdS_MvslMvsv_sep4$DE2=='Lowmutations'],dNdS_MvslMvsv_sep4$dsa2[dNdS_MvslMvsv_sep4$DE2=='Vhighmutations'],exact = FALSE) 
-
+#W = 19, p-value = 0.936
+wilcox.test(dNdS_MvslMvsv_sep4$dna2[dNdS_MvslMvsv_sep4$DE2=='Lowmutations'],dNdS_MvslMvsv_sep4$dna2[dNdS_MvslMvsv_sep4$DE2=='Vhighmutations'],exact = FALSE) 
+#W = 18.5, p-value = 1
+wilcox.test(dNdS_MvslMvsv_sep4$dndsa2[dNdS_MvslMvsv_sep4$DE2=='Lowmutations'],dNdS_MvslMvsv_sep4$dndsa2[dNdS_MvslMvsv_sep4$DE2=='Vhighmutations'],exact = FALSE) 
+#W = 17, p-value = 0.936
 
 ##laod data of dN/dS between Mvsl and Mvsd, on 30.Jan.2019.
 dNdS_MvslMvsd <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/28jan2019/Mvsl_Mvsd/Mvsl_Mvsd_dnds_exp_genomcompt.txt', header = T)
