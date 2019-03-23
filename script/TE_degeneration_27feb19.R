@@ -45,8 +45,12 @@ write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst
 TE_homolog_mod <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/12feb2019/Mvsl_a1a2_te_all_compart_mod.txt', header = T)
 str(TE_homolog_mod)
 
+
+TE_homolog_mod <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/12feb2019/Mvsl_a1a2_te_exp_compart_low-high.txt', header = T)
+str(TE_homolog_mod)
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_gene0k_pooled_mod.pdf", width=8, height=8)
-p_a <- ggplot(TE_homolog_mod, aes(x=gene0kdiff, y=abs, color=DE2, shape=DE2)) +
+p_a <- ggplot(TE_homolog_mod, aes(x=genediff, y=abs, color=DE2, shape=DE2)) +
   scale_shape_manual(values=c(16,1),guide=FALSE) +
   scale_color_manual(values = c("black","dark grey"), guide = FALSE) +
   geom_point(size =2.5) + geom_smooth(method = lm) +
