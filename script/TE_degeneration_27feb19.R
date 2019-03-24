@@ -42,11 +42,26 @@ total_data <- cbind(TE_homolog, total)
 write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/12feb2019/Mvsl_a1a2_te_nonDE_compart_randomdized3.txt",quote=F, row.names=T, sep='\t')
 
 ###12feb2019
-#TE_homolog_mod <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/12feb2019/Mvsl_a1a2_te_all_compart_mod.txt', header = T)
-#str(TE_homolog_mod)
+TE_homolog_mod <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/12feb2019/Mvsl_a1a2_te_all_compart_mod.txt', header = T)
+str(TE_homolog_mod)
 
 TE_homolog_mod <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/TE_degeneration/12feb2019/Mvsl_a1a2_te_exp_compart_low-high.txt', header = T)
 str(TE_homolog_mod)
+
+##combine internal gene and upstream up to 10kb and TE insertions, March 23. 2019
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_geneandupstream10k_pooled_mod.pdf", width=8, height=8)
+p_a <- ggplot(TE_homolog_mod, aes(x=genetoup10kdiff, y=abs, color=DE2, shape=DE2)) +
+  scale_shape_manual(values=c(16,1),guide=FALSE) +
+  scale_color_manual(values = c("black","dark grey"), guide = FALSE) +
+  geom_point(size =2.5) + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-10,10) +
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.75)) +
+  labs(x='TE insertion difference in genes', y='Gene expression ratio (|Log2(A1/A2)|)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
+dev.off()
+
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_gene0k_pooled_mod.pdf", width=8, height=8)
 p_a <- ggplot(TE_homolog_mod, aes(x=genediff, y=abs, color=DE2, shape=DE2)) +
@@ -146,9 +161,9 @@ p4 <- ggplot(TE_homolog_mod, aes(x=down10kdiff, y=abs, color=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-
+TE_homolog_mod_DE <- subset(TE_homolog_mod, TE_homolog_mod$DE2 == "DE")
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_down10-15k_pooled_mod.pdf", width=8, height=8)
-p5 <-ggplot(TE_homolog_mod, aes(x=down15kdiff, y=abs, color=DE2)) +
+p5 <-ggplot(TE_homolog_mod_DE, aes(x=upk5diff, y=abs, color=DE2)) +
   scale_color_manual(values = c("black","dark grey"), guide = FALSE) +
   geom_point(alpha=0.8) + geom_smooth(method = lm) +
   theme_bw() + 
@@ -271,6 +286,67 @@ wilcox.test(TE_homolog_mod_rmcentro_PAR$down20kdiff[TE_homolog_mod_rmcentro_PAR$
 wilcox.test(TE_homolog_mod_rmcentro_PAR$upk20diff[TE_homolog_mod_rmcentro_PAR$DE2=='DE'],TE_homolog_mod_rmcentro_PAR$upk20diff[TE_homolog_mod_rmcentro_PAR$DE2=='NON'],exact = FALSE) 
 #W = 600, p-value = 0.6405
 
+cor.test(TE_homolog_mod$genetoup5kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+###Pearson's product-moment correlationt = 1.5857, df = 593, p-value = 0.1133
+
+cor.test(TE_homolog_mod$genetoup10kdiff[TE_homolog_mod$DE2 == "NON"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "NON"], method=c("pearson"))
+
+cor.test(TE_homolog_mod$genetoup10kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+###Pearson's product-moment correlation
+
+data:  TE_homolog_mod$genetoup10kdiff[TE_homolog_mod$DE2 == "DE"] and TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"]
+t = 2.0076, df = 593, p-value = 0.04514
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  0.001795266 0.161477434
+sample estimates:
+  cor 
+0.08216365 
+###
+
+y_gene <- lm(abs ~ DE2*genetoup10kdiff, data = TE_homolog_mod)
+summary(y_gene)
+###
+lm(formula = abs ~ DE2 * genetoup10kdiff, data = TE_homolog_mod)
+
+Residuals:
+  Min      1Q  Median      3Q     Max 
+-1.5553 -0.1538 -0.0675  0.0820  9.8199 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)             1.89186    0.01807 104.700  < 2e-16 ***
+  DE2NON                 -1.67788    0.01873 -89.572  < 2e-16 ***
+  genetoup10kdiff         0.11381    0.01672   6.807 1.06e-11 ***
+  DE2NON:genetoup10kdiff -0.10586    0.01861  -5.688 1.33e-08 ***
+  ###
+  
+y_gene2 <- lm(abs ~ DE2*genetodown10kdiff, data = TE_homolog_mod)
+summary(y_gene)
+
+y_gene <- lm(abs ~ DE2*gene0kdiff, data = TE_homolog_mod)
+summary(y_gene)
+
+y_up5k <- lm(abs ~ DE2*upk5diff, data = TE_homolog_mod)
+summary(y_up5k)
+
+y_up10k <- lm(abs ~ DE2*upk10diff, data = TE_homolog_mod)
+summary(y_up10k)
+
+y_up15k <- lm(abs ~ DE2*upk15diff, data = TE_homolog_mod)
+summary(y_up15k)
+
+y_up20k <- lm(abs ~ DE2*upk20diff, data = TE_homolog_mod)
+summary(y_up20k)
+
+y_down5k <- lm(abs ~ DE2*down5kdiff, data = TE_homolog_mod)
+summary(y_down5k)
+
+y_down15k <- lm(abs ~ DE2*down15kdiff, data = TE_homolog_mod)
+summary(y_down15k)
+
+y_down20k <- lm(abs ~ DE2*down20kdiff, data = TE_homolog_mod)
+summary(y_down20k)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_cor_upstream0-5k_pooled_mod.pdf", width=8, height=8)
 p_b <- ggplot(TE_homolog_mod_rmcentro, aes(x=youngold, y=upk5diff, fill=DE2)) +
