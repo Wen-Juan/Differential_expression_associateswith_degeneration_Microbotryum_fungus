@@ -43,16 +43,37 @@ pa <- ggplot(intron_random_rmcentro, aes(x=youngold, y=intron_total_diff, fill=D
 dev.off()
 
 intron_random_rmcentro_old <- subset(intron_random_rmcentro, intron_random_rmcentro$youngold == "OldStrata")
-wilcox.test(intron_random_rmcentro_old$intron_mean_diff[intron_random_rmcentro_old$DE2=="DE"], y, exact=FALSE)
+wilcox.test(intron_random_rmcentro_old$intron_mean_diff[intron_random_rmcentro_old$DE2=="DE"], intron_random_rmcentro_old$intron_mean_diff[intron_random_rmcentro_old$DE2=="NON"],exact=FALSE)
+#W = 4243, p-value = 0.9264 
+wilcox.test(intron_random_rmcentro_old$intron_total_diff[intron_random_rmcentro_old$DE2=="DE"], intron_random_rmcentro_old$intron_total_diff[intron_random_rmcentro_old$DE2=="NON"], exact=FALSE)
+#W = 4694.5, p-value = 0.1813
+wilcox.test(intron_random_rmcentro_old$intron_nr_diff[intron_random_rmcentro_old$DE2=="DE"], intron_random_rmcentro_old$intron_nr_diff[intron_random_rmcentro_old$DE2=="NON"], exact=FALSE)
+#W = 4325, p-value = 0.6985
 
-#W = 4243, p-value = 0.9264 #W = 2518.5, p-value = 0.5141
-wilcox.test(intron_random_rmcentro_old$intron_total_diff[intron_random_rmcentro_old$DE2=="DE"], intron_random_rmcentro_old$intron_mean_diff[intron_random_rmcentro_old$DE2=="NON"], exact=FALSE)
-#W = 2656.5, p-value = 0.1911 #W = 4490, p-value = 0.4395
 intron_random_rmcentro_young <- subset(intron_random_rmcentro, intron_random_rmcentro$youngold == "ColorStrata")
 wilcox.test(intron_random_rmcentro_young$intron_mean_diff[intron_random_rmcentro_young$DE2=="DE"], intron_random_rmcentro_young$intron_mean_diff[intron_random_rmcentro_young$DE2=="NON"], exact=FALSE)
 #W = 82, p-value = 0.007993
 wilcox.test(intron_random_rmcentro_young$intron_total_diff[intron_random_rmcentro_young$DE2=="DE"], intron_random_rmcentro_young$intron_total_diff[intron_random_rmcentro_young$DE2=="NON"], exact=FALSE)
 #W = 84.5, p-value = 0.004592
+wilcox.test(intron_random_rmcentro_young$intron_nr_diff[intron_random_rmcentro_young$DE2=="DE"], intron_random_rmcentro_young$intron_nr_diff[intron_random_rmcentro_young$DE2=="NON"], exact=FALSE)
+#W = 60.5, p-value = 0.09752
+
+intron_random_rmcentro_auto <- subset(intron_random_rmcentro, intron_random_rmcentro$youngold == "Auto")
+intron_random_rmcentro_par <- subset(intron_random_rmcentro, intron_random_rmcentro$youngold == "bPAR")
+wilcox.test(intron_random_rmcentro_auto$intron_mean_diff[intron_random_rmcentro_auto$DE2=="DE"], intron_random_rmcentro_auto$intron_mean_diff[intron_random_rmcentro_auto$DE2=="NON"], exact=FALSE)
+#W = 1946300, p-value = 0.7075
+wilcox.test(intron_random_rmcentro_auto$intron_total_diff[intron_random_rmcentro_auto$DE2=="DE"], intron_random_rmcentro_auto$intron_total_diff[intron_random_rmcentro_auto$DE2=="NON"], exact=FALSE)
+#W = 1983900, p-value = 0.03227
+wilcox.test(intron_random_rmcentro_auto$intron_nr_diff[intron_random_rmcentro_auto$DE2=="DE"], intron_random_rmcentro_auto$intron_nr_diff[intron_random_rmcentro_auto$DE2=="NON"], exact=FALSE)
+#W = 1982000, p-value = 1.979e-05
+
+wilcox.test(intron_random_rmcentro_par$intron_mean_diff[intron_random_rmcentro_par$DE2=="DE"], intron_random_rmcentro_par$intron_mean_diff[intron_random_rmcentro_par$DE2=="NON"], exact=FALSE)
+#W = 677, p-value = 0.2248
+wilcox.test(intron_random_rmcentro_par$intron_total_diff[intron_random_rmcentro_par$DE2=="DE"], intron_random_rmcentro_par$intron_total_diff[intron_random_rmcentro_par$DE2=="NON"], exact=FALSE)
+#W = 677.5, p-value = 0.2212
+wilcox.test(intron_random_rmcentro_par$intron_nr_diff[intron_random_rmcentro_par$DE2=="DE"], intron_random_rmcentro_par$intron_nr_diff[intron_random_rmcentro_par$DE2=="NON"], exact=FALSE)
+#W = 612, p-value = NA
+
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_intronmean_diff1_youngold.pdf", width=8, height=8)
 pb <- ggplot(intron_random_rmcentro, aes(x=youngold, y=intron_mean_diff, fill=DE2)) + 
@@ -134,6 +155,23 @@ par(mar=c(8,8,6,6))
 plot_grid(pa1, pa3, pa2,labels=c('A','B','C'))
 dev.off()
 
+y1a <- lm(abs ~ DE2*intron_nr_diff-1, data=intron_random_rmcentro)
+summary(y1a)
+###
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE                  1.889194   0.018142 104.132  < 2e-16 ***
+  DE2NON                 0.214078   0.004944  43.303  < 2e-16 ***
+  intron_nr_diff        -0.191351   0.043042  -4.446 8.87e-06 ***
+  DE2NON:intron_nr_diff  0.203073   0.053831   3.772 0.000163 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4409 on 8541 degrees of freedom
+Multiple R-squared:  0.5983,	Adjusted R-squared:  0.5981 
+F-statistic:  3180 on 4 and 8541 DF,  p-value: < 2.2e-16
+###
+
 y1 <- lm(abs ~ DE2/intron_nr_diff-1, data=intron_random_rmcentro)
 summary(y1)
 ###
@@ -148,6 +186,23 @@ DE2DE                  1.889194   0.018142 104.132  < 2e-16 ***
 
 Residual standard error: 0.4409 on 8541 degrees of freedom
 Multiple R-squared:  0.5983,	Adjusted R-squared:  0.5981 
+###
+
+y2a <- lm(abs ~ DE2*intron_mean_diff-1, data=intron_random_rmcentro)
+summary(y2a)
+###
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+DE2DE                    1.8870913  0.0181578 103.927   <2e-16 ***
+  DE2NON                   0.2140502  0.0049490  43.251   <2e-16 ***
+  intron_mean_diff        -0.0009741  0.0016165  -0.603    0.547    
+DE2NON:intron_mean_diff  0.0012432  0.0018356   0.677    0.498    
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4414 on 8541 degrees of freedom
+Multiple R-squared:  0.5974,	Adjusted R-squared:  0.5972 
+F-statistic:  3168 on 4 and 8541 DF,  p-value: < 2.2e-16
 ###
 
 y2 <- lm(abs ~ DE2/intron_mean_diff-1, data=intron_random_rmcentro)
@@ -166,7 +221,7 @@ Residual standard error: 0.4414 on 8541 degrees of freedom
 Multiple R-squared:  0.5974,	Adjusted R-squared:  0.5972 
 ####
 
-y3 <- lm(abs ~ DE2/intron_total_diff-1, data=intron_random_rmcentro)
+y3 <- lm(abs ~ DE2*intron_total_diff-1, data=intron_random_rmcentro)
 summary(y3)
 ####
 Coefficients:
