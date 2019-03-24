@@ -24,7 +24,10 @@ head(total1)
 total_data <- cbind(nonDE_intron, total1)
 write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_a1a2_intron_compart_randomdized.txt",quote=F, row.names=T, sep='\t')
 
-intron_random <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_a1a2_intron_exp_compart_randomdize.txt', header = T)
+#intron_random <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_a1a2_intron_exp_compart_randomdize.txt', header = T)
+#str(intron_random)
+
+intron_random <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_a1a2_intron_exp_compart_low-high.txt', header = T)
 str(intron_random)
 
 intron_random_rmcentro <- subset(intron_random, intron_random$youngold != "Centro")
@@ -155,15 +158,55 @@ par(mar=c(8,8,6,6))
 plot_grid(pa1, pa3, pa2,labels=c('A','B','C'))
 dev.off()
 
+cor.test(intron_random_rmcentro$intron_nr_diff[intron_random_rmcentro$DE2 == "NON"], intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "NON"], method=c("pearson"))
+cor.test(intron_random_rmcentro$intron_nr_diff[intron_random_rmcentro$DE2 == "DE"], intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "DE"], method=c("pearson"))
+#Pearson's product-moment correlation
+
+data:  intron_random_rmcentro$intron_nr_diff[intron_random_rmcentro$DE2 ==  and intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "DE"]    "DE"] and intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "DE"]
+t = -1.3069, df = 589, p-value = 0.1918
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  -0.13384218  0.02699846
+sample estimates:
+  cor 
+-0.05377062 
+###
+
+cor.test(intron_random_rmcentro$intron_mean_diff[intron_random_rmcentro$DE2 == "DE"], intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "DE"], method=c("pearson"))
+##Pearson's product-moment correlation
+
+data:  intron_random_rmcentro$intron_mean_diff[intron_random_rmcentro$DE2 ==  and intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "DE"]    "DE"] and intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "DE"]
+t = -0.17708, df = 589, p-value = 0.8595
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  -0.08789672  0.07339873
+sample estimates:
+  cor 
+-0.007296456 
+###
+
+cor.test(intron_random_rmcentro$intron_total_diff[intron_random_rmcentro$DE2 == "DE"], intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "DE"], method=c("pearson"))
+###Pearson's product-moment correlation
+data:  intron_random_rmcentro$intron_total_diff[intron_random_rmcentro$DE2 ==  and intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "DE"]    "DE"] and intron_random_rmcentro$abs[intron_random_rmcentro$DE2 == "DE"]
+t = -0.78764, df = 589, p-value = 0.4312
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  -0.1127938  0.0483416
+sample estimates:
+  cor 
+-0.03243686
+###
+
+
 y1a <- lm(abs ~ DE2*intron_nr_diff-1, data=intron_random_rmcentro)
 summary(y1a)
 ###
 Coefficients:
   Estimate Std. Error t value Pr(>|t|)    
 DE2DE                  1.889194   0.018142 104.132  < 2e-16 ***
-  DE2NON                 0.214078   0.004944  43.303  < 2e-16 ***
+  DE2NON                 0.214065   0.004943  43.303  < 2e-16 ***
   intron_nr_diff        -0.191351   0.043042  -4.446 8.87e-06 ***
-  DE2NON:intron_nr_diff  0.203073   0.053831   3.772 0.000163 ***
+  DE2NON:intron_nr_diff  0.201402   0.053830   3.741 0.000184 ***
   ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -175,17 +218,22 @@ F-statistic:  3180 on 4 and 8541 DF,  p-value: < 2.2e-16
 y1 <- lm(abs ~ DE2/intron_nr_diff-1, data=intron_random_rmcentro)
 summary(y1)
 ###
+Residuals:
+  Min      1Q  Median      3Q     Max 
+-1.3549 -0.1541 -0.0676  0.0819  9.8226 
+
 Coefficients:
   Estimate Std. Error t value Pr(>|t|)    
 DE2DE                  1.889194   0.018142 104.132  < 2e-16 ***
-  DE2NON                 0.214078   0.004944  43.303  < 2e-16 ***
+  DE2NON                 0.214065   0.004943  43.303  < 2e-16 ***
   DE2DE:intron_nr_diff  -0.191351   0.043042  -4.446 8.87e-06 ***
-  DE2NON:intron_nr_diff  0.011722   0.032329   0.363    0.717    
+  DE2NON:intron_nr_diff  0.010050   0.032327   0.311    0.756    
 ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.4409 on 8541 degrees of freedom
 Multiple R-squared:  0.5983,	Adjusted R-squared:  0.5981 
+F-statistic:  3180 on 4 and 8541 DF,  p-value: < 2.2e-16 
 ###
 
 y2a <- lm(abs ~ DE2*intron_mean_diff-1, data=intron_random_rmcentro)
@@ -210,15 +258,16 @@ summary(y2)
 ###
 Coefficients:
   Estimate Std. Error t value Pr(>|t|)    
-DE2DE                    1.8870913  0.0181578 103.927   <2e-16 ***
-  DE2NON                   0.2140502  0.0049490  43.251   <2e-16 ***
+DE2DE                    1.8870913  0.0181579 103.927   <2e-16 ***
+  DE2NON                   0.2140603  0.0049490  43.253   <2e-16 ***
   DE2DE:intron_mean_diff  -0.0009741  0.0016165  -0.603    0.547    
-DE2NON:intron_mean_diff  0.0002691  0.0008698   0.309    0.757    
+DE2NON:intron_mean_diff -0.0001214  0.0008698  -0.140    0.889    
 ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.4414 on 8541 degrees of freedom
 Multiple R-squared:  0.5974,	Adjusted R-squared:  0.5972 
+F-statistic:  3168 on 4 and 8541 DF,  p-value: < 2.2e-16
 ####
 
 y3 <- lm(abs ~ DE2*intron_total_diff-1, data=intron_random_rmcentro)
@@ -226,16 +275,19 @@ summary(y3)
 ####
 Coefficients:
   Estimate Std. Error t value Pr(>|t|)    
-DE2DE                     1.889e+00  1.817e-02 103.977  < 2e-16 ***
-  DE2NON                    2.141e-01  4.947e-03  43.272  < 2e-16 ***
-  DE2DE:intron_total_diff  -1.015e-03  3.789e-04  -2.680  0.00738 ** 
-  DE2NON:intron_total_diff  7.511e-05  1.861e-04   0.403  0.68660    
----
+DE2DE                     1.8893463  0.0181710 103.976  < 2e-16 ***
+  DE2NON                    0.2140534  0.0049470  43.269  < 2e-16 ***
+  intron_total_diff        -0.0010153  0.0003789  -2.680  0.00738 ** 
+  DE2NON:intron_total_diff  0.0009714  0.0004221   2.301  0.02140 *  
+  ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.4412 on 8541 degrees of freedom
-Multiple R-squared:  0.5977,	Adjusted R-squared:  0.5975
+Multiple R-squared:  0.5977,	Adjusted R-squared:  0.5975 
+F-statistic:  3172 on 4 and 8541 DF,  p-value: < 2.2e-16
 ####
+
+
 
 ####15feb.2019, check coding sequence length and protein lengh variation across genomic compartment
 cds_prot <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/intron_degeneration/05feb2019/Mvsl_a1a2_cds_prot_compart.txt', header = T)
