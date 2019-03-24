@@ -67,7 +67,7 @@ plot_grid(pa,pb,labels=c('A','B'))
 dev.off()
 
 
-y <- lm(indel~DE/comp-1, data=diff_indel2)
+y <- lm(indel~DE*comp-1, data=diff_indel2)
 summary(y)
 
 diff_indel2_oldstrata <- subset(diff_indel2, diff_indel2$comp =="old")
@@ -90,10 +90,14 @@ write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst
 diff_prot_length_rand <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/Mvsl_a1a2_exp_gencompt_protlength_fi_randomdize.txt', header = T)
 str(diff_prot_length_rand)
 
+## reload data with oritented direction of (higher - lower expressed) non-DE genes.
+diff_prot_length_rand1 <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/Mvsl_a1a2_exp_gencompt_protlength_fi_higher-low.txt', header = T)
+str(diff_prot_length_rand1)
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_protenlength_ratio_rand_youngold.pdf", width=8, height=8)
-ggplot(diff_prot_length_rand, aes(x=ratioprot, y=abs, color=DE2, shape=DE2)) +
-  scale_shape_manual(values=c(16,1),labels=c("DE","Non-DE"), name = "") +
-  scale_color_manual(values = c("black","dark grey"),guide=FALSE) +
+ggplot(diff_prot_length_rand1, aes(x=ratioprot, y=abs, color=DE2, shape=DE2)) +
+  scale_shape_manual(values=c(1,16),labels=c("Non-DE","DE"), name = "") +
+  scale_color_manual(values = c("dark grey","black"),guide=FALSE) +
   geom_point(size=2.5) + geom_smooth(method = lm) +
   ylim(0,13) + xlim(0,2) +
   theme_bw() + 
@@ -103,6 +107,19 @@ ggplot(diff_prot_length_rand, aes(x=ratioprot, y=abs, color=DE2, shape=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+cor.test(diff_prot_length_rand1$ratioprot[diff_prot_length_rand1$DE2 == "DE"], diff_prot_length_rand1$abs[diff_prot_length_rand1$DE2 == "DE"], method=c("pearson"))
+##Pearson's product-moment correlation
+data:  diff_prot_length_rand$ratioprot[diff_prot_length_rand$DE2 ==  and diff_prot_length_rand$abs[diff_prot_length_rand$DE2 == "DE"]    "DE"] and diff_prot_length_rand$abs[diff_prot_length_rand$DE2 == "DE"]
+t = 3.4544, df = 593, p-value = 0.000591
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  0.06075304 0.21836252
+sample estimates:
+  cor 
+0.1404474 
+###
+cor.test(diff_prot_length_rand1$ratioprot[diff_prot_length_rand1$DE2 == "aNON"], diff_prot_length_rand1$abs[diff_prot_length_rand1$DE2 == "aNON"], method=c("pearson"))
+#t = -1.1143, df = 7952, p-value = 0.2652
 diff_prot_length_rand_rmcentro <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold!="Centro") 
 diff_prot_length_rand_oldstrata <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold=="OldStrata")
 diff_prot_length_rand_youngstrata <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold=="ColorStrata")
