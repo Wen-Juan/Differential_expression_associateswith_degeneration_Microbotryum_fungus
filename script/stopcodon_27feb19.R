@@ -403,7 +403,7 @@ str(stopcodon_ratio_sep1)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_codingsequencea1a2_devidprotein3times_8PARTS.pdf", width=8, height=8)
 ggplot(stopcodon_ratio_sep1, aes(x=youngold, y=cdsa2expest, fill=interaction(haploid,DE))) +
-         scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2-biased at A1","A2-biased at A2","Not-biased at A1","Not-biased at A2","A1-biased at A1","A1-biased at A2"), name="Bias direction") +
+         scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2-biased at A1","A2-biased at A2","Not-biased at A1","Not-biased at A2","A1-biased at A1","A1-biased at A2")) +
          geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
          ylim(0.9,1.3) +  
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 

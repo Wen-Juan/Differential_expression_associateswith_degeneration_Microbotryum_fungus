@@ -62,7 +62,25 @@ p_a <- ggplot(TE_homolog_mod, aes(x=genetoup10kdiff, y=abs, color=DE2, shape=DE2
   theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_geneanddownstream10k_pooled_mod.pdf", width=8, height=8)
+p_b <- ggplot(TE_homolog_mod, aes(x=genetodown10kdiff, y=abs, color=DE2, shape=DE2)) +
+  scale_shape_manual(values=c(16,1),guide=FALSE) +
+  scale_color_manual(values = c("black","dark grey"), guide = FALSE) +
+  geom_point(size =2.5) + geom_smooth(method = lm) +
+  ylim(0,13) + xlim(-13,10) +
+  theme_bw() + 
+  theme(legend.position = c(0.2, 0.75)) +
+  labs(x='TE insertion difference in genes', y='Gene expression ratio (|Log2(A1/A2)|)') +
+  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
+dev.off()
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_upanddownstream_new_2figures_bw.pdf", width=12, height=8)
+par(mar=c(6,6,6,6))
+plot_grid(p_a, p_b,labels=c('A','B'))
+dev.off()
+
+####individual distance interval.
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_TE_exp_correlation_gene0k_pooled_mod.pdf", width=8, height=8)
 p_a <- ggplot(TE_homolog_mod, aes(x=genediff, y=abs, color=DE2, shape=DE2)) +
   scale_shape_manual(values=c(16,1),guide=FALSE) +
@@ -290,7 +308,34 @@ cor.test(TE_homolog_mod$genetoup5kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_m
 ###Pearson's product-moment correlationt = 1.5857, df = 593, p-value = 0.1133
 
 cor.test(TE_homolog_mod$genetoup10kdiff[TE_homolog_mod$DE2 == "NON"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "NON"], method=c("pearson"))
-
+##t = 2.0854, df = 7952, p-value = 0.03706
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+  0.001403652 0.045333523
+sample estimates:
+  cor 
+0.02337987 
+##
+cor.test(TE_homolog_mod$genetodown10kdiff[TE_homolog_mod$DE2 == "NON"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "NON"], method=c("pearson"))
+#t = 0.69373, df = 7952, p-value = 0.4879
+cor.test(TE_homolog_mod$genetodown10kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+#t = -1.0295, df = 593, p-value = 0.3037
+cor.test(TE_homolog_mod$genetodown5kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+#t = -0.48087, df = 593, p-value = 0.6308
+cor.test(TE_homolog_mod$genediff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+#t = -0.45644, df = 593, p-value = 0.6482
+cor.test(TE_homolog_mod$down5kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+#t = -2.4109, df = 593, p-value = 0.01622
+cor.test(TE_homolog_mod$down10kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+#t = 1.8647, df = 593, p-value = 0.06271
+cor.test(TE_homolog_mod$down15kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+#t = 0.082646, df = 593, p-value = 0.9342
+cor.test(TE_homolog_mod$upk15diff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+#t = -1.0258, df = 593, p-value = 0.3054
+cor.test(TE_homolog_mod$down20kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+#t = -0.74269, df = 593, p-value = 0.458
+cor.test(TE_homolog_mod$upk20diff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
+#t = 0.013236, df = 593, p-value = 0.9894
 cor.test(TE_homolog_mod$genetoup10kdiff[TE_homolog_mod$DE2 == "DE"], TE_homolog_mod$abs[TE_homolog_mod$DE2 == "DE"], method=c("pearson"))
 ###Pearson's product-moment correlation
 
