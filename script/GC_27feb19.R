@@ -22,7 +22,10 @@ head(total)
 total_data <- cbind(nonDE_GC, total)
 write.table(total_data,file = "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_GC_nonDE_compart_randomdized.txt",quote=F, row.names=T, sep='\t')
 
-GC_ratio_rand <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_OGC_3GC_exp_genomic_rand.txt', header = T)
+#GC_ratio_rand <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_OGC_3GC_exp_genomic_rand.txt', header = T)
+#str(GC_ratio_rand)
+
+GC_ratio_rand <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/05feb2019/Mvsl_a1a2_OGC_3GC_exp_genomic_low-high.txt', header = T)
 str(GC_ratio_rand)
 
 GC_ratio_rand_rmcentro <- subset(GC_ratio_rand, GC_ratio_rand$youngold != "Centro")
@@ -39,6 +42,64 @@ paa1 <- ggplot(GC_ratio_rand_rmcentro, aes(x=youngold, y=-GC0diff, fill=DE2)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
+
+GC0_3_oldstrata <- subset(GC_ratio_rand_rmcentro, GC_ratio_rand_rmcentro$youngold == "OldStrata")
+GC0_3_youngstrata <- subset(GC_ratio_rand_rmcentro, GC_ratio_rand_rmcentro$youngold == "ColorStrata")
+GC0_3_auto <- subset(GC_ratio_rand_rmcentro, GC_ratio_rand_rmcentro$youngold == "Auto")
+GC0_3_PAR <- subset(GC_ratio_rand_rmcentro, GC_ratio_rand_rmcentro$youngold == "bPAR")
+
+wilcox.test(GC0_3_oldstrata$GC3diff[GC0_3_oldstrata$DE2=="DE"],GC0_3_oldstrata$GC3diff[GC0_3_oldstrata$DE2=="NON"], exact = FALSE)
+#W = 4481, p-value = 0.8147
+wilcox.test(GC0_3_oldstrata$GC0diff[GC0_3_oldstrata$DE2=="DE"],GC0_3_oldstrata$GC0diff[GC0_3_oldstrata$DE2=="NON"], exact = FALSE)
+#W = 4136, p-value = 0.4988
+
+wilcox.test(GC0_3_youngstrata$GC3diff[GC0_3_youngstrata$DE2=="DE"],GC0_3_youngstrata$GC3diff[GC0_3_youngstrata$DE2=="NON"], exact = FALSE)
+#W = 67, p-value = 0.1737
+wilcox.test(GC0_3_youngstrata$GC0diff[GC0_3_youngstrata$DE2=="DE"],GC0_3_youngstrata$GC0diff[GC0_3_youngstrata$DE2=="NON"], exact = FALSE)
+#W = 47, p-value = 0.9244
+
+wilcox.test(GC0_3_auto$GC3diff[GC0_3_auto$DE2=="DE"],GC0_3_auto$GC3diff[GC0_3_auto$DE2=="NON"], exact = FALSE)
+#W = 1973300, p-value = 0.04557
+wilcox.test(GC0_3_auto$GC0diff[GC0_3_auto$DE2=="DE"],GC0_3_auto$GC0diff[GC0_3_auto$DE2=="NON"], exact = FALSE)
+#W = 1981300, p-value = 0.005744
+
+wilcox.test(GC0_3_PAR$GC3diff[GC0_3_PAR$DE2=="DE"],GC0_3_PAR$GC3diff[GC0_3_PAR$DE2=="NON"], exact = FALSE)
+#W = 594, p-value = 0.5601
+wilcox.test(GC0_3_PAR$GC0diff[GC0_3_PAR$DE2=="DE"],GC0_3_PAR$GC0diff[GC0_3_PAR$DE2=="NON"], exact = FALSE)
+#W = 566.5, p-value = 0.1924
+
+var(GC0_3_youngstrata$GC3diff[GC0_3_youngstrata$DE2=="DE"]) #0.2344333
+var(GC0_3_youngstrata$GC3diff[GC0_3_youngstrata$DE2=="NON"]) #0.4821689
+
+var(GC0_3_youngstrata$GC0diff[GC0_3_youngstrata$DE2=="DE"]) # 0.09373333
+var(GC0_3_youngstrata$GC0diff[GC0_3_youngstrata$DE2=="NON"]) #0.03551264
+
+var(GC0_3_oldstrata$GC3diff[GC0_3_oldstrata$DE2=="DE"]) #0.6859708
+var(GC0_3_oldstrata$GC3diff[GC0_3_oldstrata$DE2=="NON"]) #0.5345803
+
+var(GC0_3_oldstrata$GC0diff[GC0_3_oldstrata$DE2=="DE"]) #3.82371
+var(GC0_3_oldstrata$GC0diff[GC0_3_oldstrata$DE2=="NON"]) #2.907414
+
+var(GC0_3_auto$GC3diff[GC0_3_auto$DE2=="DE"]) #0.04903308
+var(GC0_3_auto$GC3diff[GC0_3_auto$DE2=="NON"]) #0.01105154
+
+var(GC0_3_auto$GC0diff[GC0_3_auto$DE2=="DE"]) #0.00279823
+var(GC0_3_auto$GC0diff[GC0_3_auto$DE2=="NON"]) #0.005838009
+
+var(GC0_3_PAR$GC3diff[GC0_3_PAR$DE2=="DE"]) #0
+var(GC0_3_PAR$GC3diff[GC0_3_PAR$DE2=="NON"]) #0.002222452
+
+var(GC0_3_PAR$GC0diff[GC0_3_PAR$DE2=="DE"]) #0.01540833
+var(GC0_3_PAR$GC0diff[GC0_3_PAR$DE2=="NON"]) #0.0003202873
+
+var.test(GC0_3_youngstrata$GC3diff ~ GC0_3_youngstrata$DE2, GC0_3_youngstrata, alternative = "two.sided")
+#F = 0.48621, num df = 2, denom df = 29, p-value = 0.7602
+var.test(GC0_3_oldstrata$GC3diff ~ GC0_3_oldstrata$DE2, GC0_3_oldstrata, alternative = "two.sided")
+#F = 1.3152, num df = 71, denom df = 121, p-value = 0.1854
+var.test(GC0_3_auto$GC3diff ~ GC0_3_auto$DE2, GC0_3_auto, alternative = "two.sided")
+#F = 4.4368, num df = 506, denom df = 7699, p-value < 2.2e-16
+var.test(GC0_3_PAR$GC3diff ~ GC0_3_PAR$DE2, GC0_3_PAR, alternative = "two.sided")
+#F = 0, num df = 11, denom df = 101, p-value < 2.2e-16
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC3_youngold.pdf", width=8, height=8)
 paa2 <- ggplot(GC_ratio_rand_rmcentro, aes(x=youngold, y=-GC3diff, fill=DE2)) + 
@@ -92,7 +153,13 @@ par(mar=c(8,8,6,6))
 plot_grid(paaa1, paaa2, labels=c('A','B'))
 dev.off()
 
+cor.test(GC_ratio_rand_rmcentro$GC3diff[GC_ratio_rand_rmcentro$DE2 == "DE"], GC_ratio_rand_rmcentro$abs[GC_ratio_rand_rmcentro$DE2 == "DE"], method=c("pearson"))
+#t = 1.1523, df = 592, p-value = 0.2496
+cor.test(GC_ratio_rand_rmcentro$GC0diff[GC_ratio_rand_rmcentro$DE2 == "DE"], GC_ratio_rand_rmcentro$abs[GC_ratio_rand_rmcentro$DE2 == "DE"], method=c("pearson"))
+#t = 1.6125, df = 592, p-value = 0.1074
 
+y1a <- lm(abs ~ DE2*GC3diff-1, data=GC_ratio_rand_rmcentro)
+summary (y1a)
 
 y1 <- lm(abs ~ DE2/GC3diff-1, data=GC_ratio_rand_rmcentro)
 summary (y1)
@@ -106,6 +173,8 @@ DE2DE          1.890582   0.018109 104.402  < 2e-16 ***
 Multiple R-squared:  0.5992,	Adjusted R-squared:  0.599 
 F-statistic:  3193 on 4 and 8544 DF,  p-value: < 2.2e-16
 #######
+y2a <- lm(abs ~ DE2*GC0diff-1, data=GC_ratio_rand_rmcentro)
+summary (y2a)
 
 y2 <- lm(abs ~ DE2/GC0diff-1, data=GC_ratio_rand_rmcentro)
 summary (y2)
@@ -120,8 +189,6 @@ DE2DE          1.890261   0.018088 104.504  < 2e-16 ***
 Multiple R-squared:  0.5999,	Adjusted R-squared:  0.5997 
 F-statistic:  3203 on 4 and 8544 DF,  p-value: < 2.2e-16
 ##########
-
-
 
 
 #load the corresponding data files, on 05Feb.2019
@@ -302,106 +369,6 @@ ggplot(GC_ratio_rmcentro, aes(x=logFC.A1.A2, y=diffGC3,color=DE)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
-y <- lm(logFC.A1.A2~diffGC3*DE-1, data=GC_ratio_rmcentro)
-summary(y)
-############
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-diffGC3       -0.100181   0.032919  -3.043 0.002348 ** 
-  DEDown        -1.835780   0.031489 -58.299  < 2e-16 ***
-  DENON         -0.007271   0.004725  -1.539 0.123914    
-DEUp           1.787692   0.034810  51.356  < 2e-16 ***
-  diffGC3:DENON  0.138499   0.036991   3.744 0.000182 ***
-  diffGC3:DEUp   0.084836   0.043565   1.947 0.051526 .  
----
-  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.4232 on 8348 degrees of freedom
-Multiple R-squared:  0.4202,	Adjusted R-squared:  0.4198 
-F-statistic:  1008 on 6 and 8348 DF,  p-value: < 2.2e-16
-###############
-
-pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_a1a2_diffGC0_scatter_youngold.pdf", width=8, height=8)
-ggplot(GC_ratio_rmcentro, aes(x=logFC.A1.A2, y=diffGC0,color=DE)) +
-  scale_color_manual(values = c("firebrick3","dark grey","dodgerblue3"),labels=c("A2-biased","Not-biased","A1-biased"), name="Bias direction") +
-  geom_point() + geom_smooth(method = lm) +
-  xlim(-13,13) +
-  labs(x='Log2(A1/A2)', y= 'Difference of %GC3 (A1-A2)')+
-  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
-dev.off()
-
-y1 <- lm(logFC.A1.A2~diffGC0*DE-1, data=GC_ratio_rmcentro)
-summary(y1)
-###
-lm(formula = logFC.A1.A2 ~ diffGC0 * DE - 1, data = GC_ratio_rmcentro)
-
-Residuals:
-  Min       1Q   Median       3Q      Max 
--10.7066  -0.1445   0.0203   0.1724   5.5261 
-
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-diffGC0        0.023937   0.067182   0.356  0.72162    
-DEDown        -1.831093   0.031487 -58.154  < 2e-16 ***
-  DENON         -0.007314   0.004725  -1.548  0.12167    
-DEUp           1.791334   0.034801  51.473  < 2e-16 ***
-  diffGC0:DENON  0.050901   0.075929   0.670  0.50264    
-diffGC0:DEUp  -0.302251   0.109208  -2.768  0.00566 ** 
-  ---
-  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.4232 on 8348 degrees of freedom
-Multiple R-squared:  0.4202,	Adjusted R-squared:  0.4198 
-F-statistic:  1008 on 6 and 8348 DF,  p-value: < 2.2e-16
-####
-
-GC_ratio_mat <- subset(GC_ratio_rmcentro, GC_ratio_rmcentro$youngold !="Auto")
-str(GC_ratio_mat)
-
-y2 <- lm(logFC.A1.A2~diffGC0*DE-1, data=GC_ratio_mat)
-summary(y2)
-#####
-lm(formula = logFC.A1.A2 ~ diffGC0 * DE - 1, data = GC_ratio_mat)
-
-Residuals:
-  Min      1Q  Median      3Q     Max 
--9.8354 -0.2796 -0.0163  0.2677  4.2945 
-
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-diffGC0       -0.05431    0.16359  -0.332    0.740    
-DEDown        -2.64591    0.17944 -14.745   <2e-16 ***
-  DENON          0.05639    0.06323   0.892    0.373    
-DEUp           2.14658    0.15398  13.941   <2e-16 ***
-  diffGC0:DENON  0.17881    0.19714   0.907    0.365    
-diffGC0:DEUp  -0.34936    0.29104  -1.200    0.231    
----
-  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 1.025 on 335 degrees of freedom
-Multiple R-squared:  0.5535,	Adjusted R-squared:  0.5455 
-F-statistic: 69.21 on 6 and 335 DF,  p-value: < 2.2e-16
-#####
-
-y3 <- lm(logFC.A1.A2~diffGC3*DE-1, data=GC_ratio_mat)
-summary(y3)
-#####
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-diffGC3       -0.10959    0.08533  -1.284   0.1999    
-DEDown        -2.64985    0.17897 -14.806   <2e-16 ***
-  DENON          0.06076    0.06353   0.956   0.3396    
-DEUp           2.11720    0.15321  13.819   <2e-16 ***
-  diffGC3:DENON  0.17366    0.10332   1.681   0.0937 .  
-diffGC3:DEUp   0.13603    0.11311   1.203   0.2300    
----
-  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 1.027 on 335 degrees of freedom
-Multiple R-squared:  0.5519,	Adjusted R-squared:  0.5439 
-F-statistic: 68.76 on 6 and 335 DF,  p-value: < 2.2e-16
-#####
 
 ###loading data on GC and dnds on 21Jan.2019
 GC_dnds <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/GCcontent/21jan2019/Mvsl_exp_GC_dnds.txt', header = T)
