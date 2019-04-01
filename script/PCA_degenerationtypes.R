@@ -18,70 +18,92 @@ library(lme4)
 library(lmerTest)
 
 #load dataset
-PCA_5degen_all <- read.table ("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/PCA/Mvsl_all5traits_withmissingvalues_oriented_all_fi.txt", header = TRUE)
+PCA_5degen_all <- read.table ("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/PCA/Mvsl_a1a2_exp_compartment_all5traits_nonoriented.txt", header = TRUE)
 str(PCA_5degen_all)
-qqnorm(sqrt(PCA_5degen_all$abs), pch = 1, frame = FALSE)
-qqline(sqrt(PCA_5degen_all$abs), col = "steelblue")
 
-y1 <- glm(sqrt(abs) ~ sqrt(ratioprot)*youngold + GC3diff*youngold +dn*youngold+ ds*youngold +intron_nr_diff*youngold +intron_total_diff*youngold +genetoup10kdiff*youngold-1, data = PCA_5degen_all, family=quasi) 
+PCA_5degen_all1 <- subset(PCA_5degen_all,PCA_5degen_all$youngold!="Centro")
+str(PCA_5degen_all1)
+#PCA_5degen_all <- data.frame(is.na(PCA_5degen_all))
+qqnorm(sqrt(PCA_5degen_all1$abs), pch = 1, frame = FALSE)
+qqline(sqrt(PCA_5degen_all1$abs), col = "steelblue")
+
+cor.test(PCA_5degen_all1$abs, PCA_5degen_all1$totalTE, met0hod = "spearm", alternative = "g")
+
+y3 <- glm(sqrt(abs) ~ totalTE + diffGC3 +dn +ratioprot +intronnrdiff+ intronmeandiff + youngold, data =PCA_5degen_all, family =gaussian(link = "identity"))
+y4 <- glm(sqrt(abs) ~ totalTE + diffGC3 +dn +ratioprot +intronnrdiff+ intronmeandiff + youngold-1, data =PCA_5degen_all, family =gaussian(link = "identity"))
+
+y3 <- lm(abs ~ diffGC3 +dn +totalTE + ratioprot +intronnrdiff+ intronmeandiff + youngold, data =PCA_5degen_all)
+summary (y3)
+anova(y3, y4)
+
+y1 <- glm(sqrt(abs) ~ ratioprot*youngold + totalTE*youngold + diffGC3*youngold +dn*youngold +intronnrdiff*youngold+ intronmeandiff*youngold, data = PCA_5degen_all, family=quasi) 
 summary(y1)
+anova(y1,test="F")
 #####
 Call:
-  glm(formula = sqrt(abs) ~ sqrt(ratioprot) * youngold + GC3diff * 
-        youngold + dn * youngold + ds * youngold + intron_nr_diff * 
-        youngold + intron_total_diff * youngold + genetoup10kdiff * 
-        youngold - 1, family = quasi, data = PCA_5degen_all)
-
-Deviance Residuals: 
-  Min        1Q    Median        3Q       Max  
--0.79624  -0.14657  -0.02725   0.11452   2.00541  
-
-Coefficients: (1 not defined because of singularities)
-Estimate Std. Error t value Pr(>|t|)    
-sqrt(ratioprot)                       -4.022e-01  6.459e-01  -0.623  0.53348    
-youngoldAuto                           7.964e-01  6.459e-01   1.233  0.21764    
-youngoldbPAR                          -2.676e+10  4.173e+10  -0.641  0.52132    
-youngoldColorStrata                   -4.713e+00  4.087e+00  -1.153  0.24889    
-youngoldOldStrata                     -2.288e+00  3.550e-01  -6.444 1.25e-10 ***
-  GC3diff                               -6.841e-02  3.021e-02  -2.264  0.02359 *  
-  dn                                    -7.450e+00  3.309e+00  -2.251  0.02440 *  
-  ds                                     1.169e+01  4.967e+00   2.354  0.01858 *  
-  intron_nr_diff                         4.905e-02  3.913e-02   1.253  0.21015    
-intron_total_diff                     -4.620e-05  2.488e-04  -0.186  0.85270    
-genetoup10kdiff                       -1.782e-02  1.200e-02  -1.485  0.13761    
-sqrt(ratioprot):youngoldbPAR           2.676e+10  4.173e+10   0.641  0.52132    
-sqrt(ratioprot):youngoldColorStrata    5.547e+00  4.121e+00   1.346  0.17832    
-sqrt(ratioprot):youngoldOldStrata      3.252e+00  7.355e-01   4.422 9.94e-06 ***
-  youngoldbPAR:GC3diff                   1.911e+09  2.980e+09   0.641  0.52132    
-youngoldColorStrata:GC3diff            3.151e-01  1.125e-01   2.801  0.00511 ** 
-  youngoldOldStrata:GC3diff              1.003e-01  3.334e-02   3.008  0.00264 ** 
-  youngoldbPAR:dn                       -4.778e+10  7.450e+10  -0.641  0.52132    
-youngoldColorStrata:dn                 2.042e+01  9.721e+00   2.101  0.03572 *  
-  youngoldOldStrata:dn                   9.601e+00  3.387e+00   2.835  0.00460 ** 
-  youngoldbPAR:ds                        1.114e+02  3.622e+01   3.076  0.00211 ** 
-  youngoldColorStrata:ds                -4.702e+00  1.632e+01  -0.288  0.77330    
-youngoldOldStrata:ds                  -7.640e+00  5.133e+00  -1.489  0.13664    
-youngoldbPAR:intron_nr_diff                   NA         NA      NA       NA    
-youngoldColorStrata:intron_nr_diff     5.902e-01  1.260e-01   4.686 2.85e-06 ***
-  youngoldOldStrata:intron_nr_diff       1.576e-03  4.704e-02   0.033  0.97328    
-youngoldbPAR:intron_total_diff         1.200e-01  8.068e-02   1.487  0.13694    
-youngoldColorStrata:intron_total_diff  3.053e-03  6.319e-04   4.831 1.39e-06 ***
-  youngoldOldStrata:intron_total_diff    8.356e-04  3.049e-04   2.740  0.00616 ** 
-  youngoldbPAR:genetoup10kdiff           2.359e-01  1.563e-01   1.509  0.13125    
-youngoldColorStrata:genetoup10kdiff    3.159e-02  2.744e-02   1.151  0.24972    
-youngoldOldStrata:genetoup10kdiff      4.587e-03  1.304e-02   0.352  0.72492    
+  Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+TEaverage                            3.067e-03  9.768e-03   0.314 0.753520    
+youngoldAuto                         5.375e-01  4.935e-02  10.892  < 2e-16 ***
+  youngoldbPAR                         5.977e-02  3.334e-01   0.179 0.857727    
+youngoldColorStrata                  1.178e+00  9.985e-01   1.179 0.238287    
+youngoldOldStrata                    9.248e-01  3.386e-01   2.731 0.006334 ** 
+  averageGC3                          -2.196e-03  8.006e-04  -2.743 0.006102 ** 
+  dn                                  -8.178e+00  3.289e+00  -2.486 0.012937 *  
+  ds                                   1.221e+01  4.907e+00   2.488 0.012885 *  
+  meanprot                            -2.247e-05  7.480e-06  -3.004 0.002676 ** 
+  intronmeannr                        -9.023e-03  2.357e-03  -3.828 0.000131 ***
+  intronmeantotal                      1.071e-04  2.352e-05   4.553 5.39e-06 ***
+  TEaverage:youngoldbPAR              -2.440e-01  1.607e-01  -1.519 0.128911    
+TEaverage:youngoldColorStrata        3.321e-01  1.603e-01   2.072 0.038351 *  
+  TEaverage:youngoldOldStrata          7.172e-02  4.751e-02   1.510 0.131204    
+youngoldbPAR:averageGC3              6.941e-03  5.748e-03   1.207 0.227290    
+youngoldColorStrata:averageGC3      -1.678e-02  1.496e-02  -1.122 0.262100    
+youngoldOldStrata:averageGC3        -1.497e-03  5.711e-03  -0.262 0.793248    
+youngoldbPAR:dn                     -6.191e+01  2.915e+01  -2.123 0.033764 *  
+  youngoldColorStrata:dn               1.873e+01  9.881e+00   1.896 0.058016 .  
+youngoldOldStrata:dn                 1.037e+01  3.375e+00   3.074 0.002121 ** 
+  youngoldbPAR:ds                      1.085e+02  3.539e+01   3.065 0.002185 ** 
+  youngoldColorStrata:ds              -3.142e+01  1.614e+01  -1.947 0.051640 .  
+youngoldOldStrata:ds                -1.143e+01  5.070e+00  -2.254 0.024222 *  
+  youngoldbPAR:meanprot                1.181e-04  7.887e-05   1.497 0.134505    
+youngoldColorStrata:meanprot         1.294e-05  9.842e-05   0.131 0.895427    
+youngoldOldStrata:meanprot          -3.840e-05  4.928e-05  -0.779 0.435870    
+youngoldbPAR:intronmeannr            4.080e-02  2.236e-02   1.825 0.068099 .  
+youngoldColorStrata:intronmeannr     1.202e-02  3.692e-02   0.326 0.744719    
+youngoldOldStrata:intronmeannr      -2.693e-03  1.481e-02  -0.182 0.855678    
+youngoldbPAR:intronmeantotal        -2.919e-04  2.189e-04  -1.333 0.182422    
+youngoldColorStrata:intronmeantotal  9.088e-04  2.996e-04   3.033 0.002429 ** 
+  youngoldOldStrata:intronmeantotal   -2.450e-04  1.401e-04  -1.749 0.080412 .  
 ---
+#####
+y2 <- glm(sqrt(abs) ~ TEaverage + averageGC3 +dn+ ds +meanprot +intronmeannr +intronmeantotal+youngold-1, data = PCA_5degen_all, family=quasi) 
+summary(y2)
+####
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+TEaverage            9.916e-03  9.548e-03   1.039 0.299054    
+averageGC3          -2.359e-03  7.879e-04  -2.994 0.002760 ** 
+  dn                   1.922e+00  6.913e-01   2.780 0.005454 ** 
+  ds                   1.167e+00  1.157e+00   1.009 0.313214    
+meanprot            -2.017e-05  7.381e-06  -2.733 0.006289 ** 
+  intronmeannr        -8.865e-03  2.321e-03  -3.820 0.000135 ***
+  intronmeantotal      1.015e-04  2.310e-05   4.394 1.13e-05 ***
+  youngoldAuto         5.463e-01  4.858e-02  11.244  < 2e-16 ***
+  youngoldbPAR         5.693e-01  5.238e-02  10.869  < 2e-16 ***
+  youngoldColorStrata  6.564e-01  6.355e-02  10.330  < 2e-16 ***
+  youngoldOldStrata    7.535e-01  5.304e-02  14.207  < 2e-16 ***
+  ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-(Dispersion parameter for quasi family taken to be 0.04723679)
+(Dispersion parameter for quasi family taken to be 0.04836812)
 
 Null deviance: 1306.99  on 6114  degrees of freedom
-Residual deviance:  287.34  on 6083  degrees of freedom
-(2432 observations deleted due to missingness)
+Residual deviance:  295.19  on 6103  degrees of freedom
+(2435 observations deleted due to missingness)
 AIC: NA
-
-Number of Fisher Scoring iterations: 2
 #####
+
 
 y2 <- glm(sqrt(abs) ~ sqrt(ratioprot):youngold + GC3diff:youngold +dn:youngold+ ds:youngold +intron_nr_diff:youngold +intron_total_diff:youngold +upk5diff+upk10diff:youngold +genediff:youngold, data = PCA_5degen_all, family=gaussian) 
 summary(y2)
