@@ -20,9 +20,18 @@ library(lmerTest)
 install.packages("statmod")
 library('statmod')
 
+install.packages("lattice")
+library(lattice)
+install.packages("Amelia")
+library('Amelia')
+install.packages("mice")
+library(mice)
+
+
 #load dataset
 PCA_5degen_all <- read.table ("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/PCA/Mvsl_a1a2_exp_compartment_all5traits_nonoriented.txt", header = TRUE)
 str(PCA_5degen_all)
+PCA_5degen_all <- mice(PCA_5degen_all, m=1, method='cart', printFlag=FALSE)
 
 ##stats with log2 transformation
 qqnorm(log10(PCA_5degen_all$abs), pch = 1, frame = FALSE)
@@ -38,10 +47,10 @@ plot(log2(PCA_5degen_all$abs) ~ PCA_5degen_all$totalTE)
 hist(sqrt(sqrt(PCA_5degen_all$abs)))
 qqnorm(sqrt(sqrt(PCA_5degen_all$abs)), pch = 1, frame = FALSE)
 
-y1 <- glm(sqrt(sqrt(abs)) ~ totalTE*youngold + diffGC3*youngold +dn*youngold +ratioprot*youngold +intronnrdiff*youngold+ intronmeandiff*youngold, data =PCA_5degen_all, family = gaussian)
+y1 <- glm(sqrt(sqrt(sqrt(abs))) ~ totalTE*youngold + diffGC3*youngold +dn*youngold +ratioprot*youngold +intronnrdiff*youngold+ intronmeandiff*youngold, data =PCA_5degen_all, family = gaussian)
 summary(y1)
 
-y2 <- glm(abs ~ totalTE*youngold + diffGC3*youngold +dn*youngold +ratioprot*youngold +intronnrdiff*youngold+ intronmeandiff*youngold, data =PCA_5degen_all, family=tweedie(var.power=3,link.power=0))
+y2 <- glm(abs ~ totalTE*youngold + diffGC3*youngold +dn*youngold +ratioprot*youngold +intronnrdiff*youngold+ intronmeandiff*youngold, data =PCA_5degen_all, family=tweedie(var.power=1.8,link.power=0))
 summary(y2)
 
 ######
