@@ -31,7 +31,7 @@ library(mice)
 #load dataset
 PCA_5degen_all <- read.table ("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/PCA/Mvsl_a1a2_exp_compartment_all5traits_nonoriented.txt", header = TRUE)
 str(PCA_5degen_all)
-PCA_5degen_all <- mice(PCA_5degen_all, m=1, method='cart', printFlag=FALSE)
+PCA_5degen_all <- mice(PCA_5degen_all, m=5, method='norm.boot')
 
 ##stats with log2 transformation
 qqnorm(log10(PCA_5degen_all$abs), pch = 1, frame = FALSE)
