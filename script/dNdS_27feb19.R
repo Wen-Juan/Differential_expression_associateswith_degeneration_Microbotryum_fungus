@@ -441,6 +441,9 @@ x <- subset(dNdS_MvslMvsv_sep_oldstrata,dNdS_MvslMvsv_sep_oldstrata$DE2 == "Lowm
 y <- subset(dNdS_MvslMvsv_sep_oldstrata,dNdS_MvslMvsv_sep_oldstrata$DE2 == "Vhighmutations")
 z <- subset(dNdS_MvslMvsv_sep_oldstrata,dNdS_MvslMvsv_sep_oldstrata$DE2 == "Neutral")
 
+wilcox.test(dNdS_MvslMvsv_sep$dna2[dNdS_MvslMvsv_sep$DE2=='Vhighmutations'],dNdS_MvslMvsv_sep$dna2[dNdS_MvslMvsv_sep$DE2=='Lowmutations'],exact = FALSE) 
+#W = 16941, p-value = 0.9902
+
 mean(x$dna2) #0.03965833
 mean(x$dsa2) #0.1263271
 mean(x$dndsa2) # 0.3424813
