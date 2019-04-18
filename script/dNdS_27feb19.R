@@ -28,7 +28,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dN_updownnon_twoparts28012019.pdf", width=8, height=8)
 p_dN3 <- ggplot(dNdS_new, aes(x=youngold, y=dn, fill=DE)) + 
-  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), guide = FALSE)  +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.08) +  
   theme_bw() + theme(legend.position = c(0.2, 0.7)) +
@@ -54,7 +54,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_updownnon_twoparts28012019.pdf", width=8, height=8)
 p_dS3 <- ggplot(dNdS_new, aes(x=youngold, y=ds, fill=DE)) + 
-  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
+  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), guide = FALSE) +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.08) +  
   theme_bw() + theme(legend.position = c(0.2, 0.7)) +
@@ -66,21 +66,26 @@ dev.off()
 
 
 #combine two figures in one
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_ds_updownnon_combine_new.pdf", width=14, height=8)
+par(mar=c(5,5,4,3))
+plot_grid(p_dN3, p_dS3, p_dnds3, labels=c('A','B','C'))
+dev.off()
+
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_ds_combine_new.pdf", width=14, height=8)
 par(mar=c(5,5,4,3))
 plot_grid(p_dN, p_dS, labels=c('A','B'))
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_DEnonDe_twoparts28012019.pdf", width=8, height=8)
-ggplot(dNdS_new, aes(x=youngold, y=dnds, fill=DE2)) + 
+ ggplot(dNdS_new, aes(x=youngold, y=dnds, fill=DE2)) + 
   scale_fill_manual(values = c("white","dark grey"),labels=c("DE","Non-DE"), name = "Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,7) +  
   theme_bw() + theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='dN/dS') +
-  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+  theme(axis.title.x = element_text(size=14,colour = "black"),axis.title.y = element_text(size=14,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=14),axis.text.y = element_text(colour="black",size=14))
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dnds_DEnonDe3_twoparts28012019.pdf", width=8, height=8)
@@ -105,13 +110,6 @@ dev.off()
 dNdS_youngstrata <- subset(dNdS_new, dNdS_new$youngold=="ColorStrata")
 dNdS_oldstrata <- subset(dNdS_new, dNdS_new$youngold=="OldStrata")
   
-wilcox.test(dNdS_youngstrata$dn[dNdS_youngstrata$DE2=='DE'],dNdS_youngstrata$dn[dNdS_youngstrata$DE2=='NON'],exact = FALSE) 
-#W = 74, p-value = 0.0331
-wilcox.test(dNdS_youngstrata$ds[dNdS_youngstrata$DE2=='DE'],dNdS_youngstrata$ds[dNdS_youngstrata$DE2=='NON'],exact = FALSE) 
-#W = 75, p-value = 0.02791
-wilcox.test(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE'],dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='NON'],exact = FALSE) 
-#W = 47, p-value = 0.4967
-
 mean(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE']) #1.787892
 x<-dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE']
 se <-function(x) sqrt(var(x)/length(x))
@@ -133,11 +131,11 @@ se(y2)  #0.1828743
 
 
 wilcox.test(dNdS_oldstrata$dn[dNdS_oldstrata$DE2=='DE'],dNdS_oldstrata$dn[dNdS_oldstrata$DE2=='NON'],exact = FALSE) 
-#W = 2941, p-value = 0.0003843
+#W = 3125, p-value = 0.0003954
 wilcox.test(dNdS_oldstrata$ds[dNdS_oldstrata$DE2=='DE'],dNdS_oldstrata$ds[dNdS_oldstrata$DE2=='NON'],exact = FALSE) 
-#W = 2960.5, p-value = 0.000277
+#W = 3136.5, p-value = 0.0003296
 wilcox.test(dNdS_oldstrata$dnds[dNdS_oldstrata$DE2=='DE'],dNdS_oldstrata$dnds[dNdS_oldstrata$DE2=='NON'],exact = FALSE) 
-#W = 2176, p-value = 0.4181
+#W = 2338, p-value = 0.3901
 
 #stats, separating A1- and A2-biased genes.
 dNdS_youngstrata <- subset(dNdS_new, dNdS_new$youngold=="ColorStrata")
