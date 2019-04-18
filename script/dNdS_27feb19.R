@@ -141,34 +141,27 @@ wilcox.test(dNdS_oldstrata$dnds[dNdS_oldstrata$DE2=='DE'],dNdS_oldstrata$dnds[dN
 dNdS_youngstrata <- subset(dNdS_new, dNdS_new$youngold=="ColorStrata")
 dNdS_oldstrata <- subset(dNdS_new, dNdS_new$youngold=="OldStrata")
 
-wilcox.test(dNdS_youngstrata$ds[dNdS_youngstrata$DE=='Down'],dNdS_youngstrata$ds[dNdS_youngstrata$DE=='NON'],exact = FALSE) 
-#W = 75, p-value = 0.02791
-wilcox.test(dNdS_youngstrata$dn[dNdS_youngstrata$DE=='Down'],dNdS_youngstrata$dn[dNdS_youngstrata$DE=='NON'],exact = FALSE) 
-#W = 74, p-value = 0.0331
-wilcox.test(dNdS_youngstrata$dnds[dNdS_youngstrata$DE=='Down'],dNdS_youngstrata$dnds[dNdS_youngstrata$DE=='NON'],exact = FALSE) 
-#W = 47, p-value = 0.7608
-
 wilcox.test(dNdS_oldstrata$dn[dNdS_oldstrata$DE=='Up'],dNdS_oldstrata$dn[dNdS_oldstrata$DE=='NON'],exact = FALSE) 
-#W = 1143.5, p-value = 0.0163
+#W = 1156.5, p-value = 0.01943
 wilcox.test(dNdS_oldstrata$ds[dNdS_oldstrata$DE=='Up'],dNdS_oldstrata$ds[dNdS_oldstrata$DE=='NON'],exact = FALSE) 
-#W = 1020.5, p-value = 0.1466
+#W = 1028.5, p-value = 0.1721
 
 wilcox.test(dNdS_oldstrata$dn[dNdS_oldstrata$DE=='Down'],dNdS_oldstrata$dn[dNdS_oldstrata$DE=='NON'],exact = FALSE) 
-#W = 1797.5, p-value = 0.003051
+#W = 1968.5, p-value = 0.002656
 wilcox.test(dNdS_oldstrata$ds[dNdS_oldstrata$DE=='Down'],dNdS_oldstrata$ds[dNdS_oldstrata$DE=='NON'],exact = FALSE) 
-#W = 1940, p-value = 0.0001384
+#W = 2108, p-value = 0.0001539
 
 wilcox.test(dNdS_oldstrata$dn[dNdS_oldstrata$DE=='Up'],dNdS_oldstrata$dn[dNdS_oldstrata$DE=='Down'],exact = FALSE) 
-#W = 211, p-value = 0.779
+#W = 226, p-value = 0.8113
 wilcox.test(dNdS_oldstrata$ds[dNdS_oldstrata$DE=='Up'],dNdS_oldstrata$ds[dNdS_oldstrata$DE=='Down'],exact = FALSE) 
-#W = 142, p-value = 0.1244
+#W = 154, p-value = 0.1223
 
 wilcox.test(dNdS_oldstrata$dnds[dNdS_oldstrata$DE=='Up'],dNdS_oldstrata$dnds[dNdS_oldstrata$DE=='NON'],exact = FALSE) 
-#W = 1077, p-value = 0.05896
+#W = 1001, p-value = 0.05473
 wilcox.test(dNdS_oldstrata$dnds[dNdS_oldstrata$DE=='Down'],dNdS_oldstrata$dnds[dNdS_oldstrata$DE=='NON'],exact = FALSE) 
-#W = 1199, p-value = 0.5491
+#W = 1337, p-value = 0.819
 wilcox.test(dNdS_oldstrata$dnds[dNdS_oldstrata$DE=='Up'],dNdS_oldstrata$dnds[dNdS_oldstrata$DE=='Down'],exact = FALSE) 
-#W = 287, p-value = 0.02079
+#W = 281, p-value = 0.04061
 
 ###scatter point figures, on 29.jan.2019
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dn_exp_correlation_DEpool_bw.pdf", width=8, height=8)
@@ -259,129 +252,6 @@ ggplot(dNdS_new, aes(x=dnds, y=abs,color=DE)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
-
-#correlation test
-cor.test(dNdS_new$dn[dNdS_new$DE2 == "DE"], dNdS_new$abs[dNdS_new$DE2 == "DE"], method=c("pearson"))
-###Pearson's product-moment correlation
-
-data:  dNdS_new$dn[dNdS_new$DE2 == "DE"] and dNdS_new$abs[dNdS_new$DE2 == "DE"]
-t = 4.8697, df = 163, p-value = 2.625e-06
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
-  0.2153214 0.4828725
-sample estimates:
-  cor 
-0.3563809 
-####
-
-cor.test(dNdS_new$dn[dNdS_new$DE2 == "NON"], dNdS_new$abs[dNdS_new$DE2 == "NON"], method=c("pearson"))
-###Pearson's product-moment correlation
-data:  dNdS_new$dn[dNdS_new$DE2 == "NON"] and dNdS_new$abs[dNdS_new$DE2 == "NON"]
-t = 3.6017, df = 5947, p-value = 0.0003187
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
-0.02126718 0.07198101
-sample estimates:
-cor 
-0.04665415 
-####
-
-cor.test(dNdS_new$ds[dNdS_new$DE2 == "DE"], dNdS_new$abs[dNdS_new$DE2 == "DE"], method=c("pearson"))
-####Pearson's product-moment correlation
-
-data:  dNdS_new$ds[dNdS_new$DE2 == "DE"] and dNdS_new$abs[dNdS_new$DE2 == "DE"]
-t = 5.1701, df = 163, p-value = 6.778e-07
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
-  0.2361026 0.4994861
-sample estimates:
-  cor 
-0.3753465 
-#####
-
-cor.test(dNdS_new$ds[dNdS_new$DE2 == "NON"], dNdS_new$abs[dNdS_new$DE2 == "NON"], method=c("pearson"))
-###Pearson's product-moment correlation
-data:  dNdS_new$ds[dNdS_new$DE2 == "NON"] and dNdS_new$abs[dNdS_new$DE2 == "NON"]
-t = 2.8698, df = 5947, p-value = 0.004122
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
-  0.01178676 0.06254091
-sample estimates:
-  cor 
-0.03718782 
-###
-
-cor.test(dNdS_new$dnds[dNdS_new$DE2 == "DE"], dNdS_new$abs[dNdS_new$DE2 == "DE"], method=c("pearson"))
-####Pearson's product-moment correlation
-
-data:  dNdS_new$dnds[dNdS_new$DE2 == "DE"] and dNdS_new$abs[dNdS_new$DE2 == "DE"]
-t = 4.1453, df = 162, p-value = 5.459e-05
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
-  0.1642168 0.4419495
-sample estimates:
-  cor 
-0.3096734 
-####
-
-cor.test(dNdS_new$dnds[dNdS_new$DE2 == "NON"], dNdS_new$abs[dNdS_new$DE2 == "NON"], method=c("pearson"))
-###Pearson's product-moment correlation
-
-data:  dNdS_new$dnds[dNdS_new$DE2 == "NON"] and dNdS_new$abs[dNdS_new$DE2 == "NON"]
-t = 3.7127, df = 5936, p-value = 0.0002069
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
-  0.02272453 0.07347819
-sample estimates:
-  cor 
-0.04813243 
-####
-
-#####
-y <- lm(abs ~ DE2/dn-1, data = dNdS_new)
-summary(y)
-###
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-DE2DE     1.219627   0.019665  62.020  < 2e-16 ***
-  DE2NON    0.181282   0.003107  58.350  < 2e-16 ***
-  DE2DE:dn  9.790683   0.463936  21.104  < 2e-16 ***
-  DE2NON:dn 1.093559   0.424047   2.579  0.00994 ** 
-  ---
-  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.2385 on 6110 degrees of freedom
-Multiple R-squared:  0.6025,	Adjusted R-squared:  0.6022
-
-###
-y1 <- lm(abs ~ DE2/ds-1, data = dNdS_new)
-summary(y1)
-###
-Estimate Std. Error t value Pr(>|t|)    
-DE2DE      1.21110    0.01961  61.763   <2e-16 ***
-  DE2NON     0.18155    0.00309  58.745   <2e-16 ***
-  DE2DE:ds  20.43307    0.91582  22.311   <2e-16 ***
-  DE2NON:ds  1.43608    0.69597   2.063   0.0391 *  
-  ---
-  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.2375 on 6110 degrees of freedom
-Multiple R-squared:  0.6055,	Adjusted R-squared:  0.6052
-###
-
-y2 <- lm(abs ~ DE2/dnds-1, data = dNdS_new)
-summary(y2)
-###
-Coefficients:
-  Estimate Std. Error t value Pr(>|t|)    
-DE2DE        1.358e+00  1.930e-02  70.374   <2e-16 ***
-  DE2NON       1.821e-01  3.204e-03  56.823   <2e-16 ***
-  DE2DE:dnds  -7.323e-06  8.262e-06  -0.886    0.375    
-DE2NON:dnds  2.630e-09  1.230e-07   0.021    0.983    
----
-  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-###
-
 
 ##load data of dN/dS between Mvsl and Mvsv, on 31.Jan.2019.
 dNdS_MvslMvsv <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/dNdS/28jan2019/Mvsl_Mvsv/Mvsl_Mvsv_dnds_exp_all_fi.txt', header = T)
