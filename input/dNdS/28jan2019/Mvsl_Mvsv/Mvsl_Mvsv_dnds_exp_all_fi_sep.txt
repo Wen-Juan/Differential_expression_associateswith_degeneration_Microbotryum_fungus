@@ -20,7 +20,7 @@ MvSl-1064-A1-R4_A1g00591	Black	OldStrata	0.4638	0.1619	0.3492	Down	Vhighmutation
 MvSl-1064-A1-R4_A1g00624	Purple	OldStrata	0.3694	0.0381	0.1032	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_A1g00644	Black	OldStrata	0.9347	0.0496	0.0531	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_A1g00646	Black	OldStrata	0.6809	0.0402	0.0591	Down	Vhighmutations	A1
-MvSl-1064-A1-R4_A1g00668	Orange	ColorStrata	0.2218	0.0242	0.1093	Down	Vhighmutations	A1
+MvSl-1064-A1-R4_A1g00668	Orange	OldStrata	0.2218	0.0242	0.1093	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_A1g00752	Black	OldStrata	0.5962	0.0883	0.1481	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_A1g00853	Purple	OldStrata	0.2106	0.0352	0.1669	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_A1g00958	Black	OldStrata	0.2006	0.0305	0.1522	Down	Vhighmutations	A1
@@ -30,7 +30,7 @@ MvSl-1064-A1-R4_A1g01137	Black	OldStrata	0.2791	0.0703	0.2519	Down	Vhighmutation
 MvSl-1064-A1-R4_A1g01174	Black	OldStrata	0.0928	0.0102	0.1094	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_A1g01212	Black	OldStrata	0.1179	0.0103	0.0871	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_A1g01253	Black	OldStrata	0.2809	0.0168	0.06	Down	Vhighmutations	A1
-MvSl-1064-A1-R4_A1g01261	Orange	ColorStrata	0.3914	0.0287	0.0732	Down	Vhighmutations	A1
+MvSl-1064-A1-R4_A1g01261	Orange	OldStrata	0.3914	0.0287	0.0732	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_A1g01384	Black	OldStrata	0.3675	0.0366	0.0995	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_A1g01404	Black	OldStrata	0.5268	0.1322	0.2509	Down	Vhighmutations	A1
 MvSl-1064-A1-R4_MC01-1g01952	Auto	Auto	0.0813	0.0055	0.0673	Down	Vhighmutations	A1
@@ -219,7 +219,7 @@ MvSl-1064-A1-R4_A1g00575	Black	OldStrata	0.4773	0.0304	0.0637	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g00593	Blue	OldStrata	0.1287	0.0225	0.1747	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g00645	Black	OldStrata	0.3405	0.0247	0.0725	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g00647	Black	OldStrata	0.3445	0.0408	0.1184	NON	Neutral	A1
-MvSl-1064-A1-R4_A1g00669	Orange	ColorStrata	0.4256	0.0393	0.0924	NON	Neutral	A1
+MvSl-1064-A1-R4_A1g00669	Orange	OldStrata	0.4256	0.0393	0.0924	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g00693	Black	OldStrata	0.086	0.0114	0.1326	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g00694	Black	OldStrata	0.4949	0.0303	0.0612	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g00726	Black	OldStrata	0.2974	0.03	0.1009	NON	Neutral	A1
@@ -254,7 +254,7 @@ MvSl-1064-A1-R4_A1g01173	Black	OldStrata	0.2465	0.0384	0.1559	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g01189	Black	OldStrata	0.5125	0.0329	0.0643	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g01219	Black	OldStrata	0.2849	0.0274	0.0962	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g01227	Purple	OldStrata	0.3936	0.0228	0.058	NON	Neutral	A1
-MvSl-1064-A1-R4_A1g01252	Orange	ColorStrata	0.4355	0.0286	0.0657	NON	Neutral	A1
+MvSl-1064-A1-R4_A1g01252	Orange	OldStrata	0.4355	0.0286	0.0657	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g01271	Black	OldStrata	0.0782	0.0108	0.138	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g01272	Black	OldStrata	0.0999	0.0143	0.143	NON	Neutral	A1
 MvSl-1064-A1-R4_A1g01317	Purple	OldStrata	0.2059	0.0154	0.0748	NON	Neutral	A1
@@ -6424,7 +6424,7 @@ MvSl-1064-A2-R4_A2g00208	Black	OldStrata	0.3743	0.1543	0.4123	Down	Lowmutations	
 MvSl-1064-A2-R4_A2g00431	Purple	OldStrata	0.399	0.0333	0.0833	Down	Lowmutations	A2
 MvSl-1064-A2-R4_A2g01002	Black	OldStrata	0.8265	0.0476	0.0576	Down	Lowmutations	A2
 MvSl-1064-A2-R4_A2g01534	Black	OldStrata	0.7221	0.0411	0.0569	Down	Lowmutations	A2
-MvSl-1064-A2-R4_A2g00904	Orange	ColorStrata	0.2783	0.0293	0.1052	Down	Lowmutations	A2
+MvSl-1064-A2-R4_A2g00904	Orange	OldStrata	0.2783	0.0293	0.1052	Down	Lowmutations	A2
 MvSl-1064-A2-R4_A2g00568	Black	OldStrata	0.7244	0.1097	0.1515	Down	Lowmutations	A2
 MvSl-1064-A2-R4_A2g01112	Purple	OldStrata	0.3105	0.0269	0.0866	Down	Lowmutations	A2
 MvSl-1064-A2-R4_A2g01187	Black	OldStrata	0.2171	0.0342	0.1577	Down	Lowmutations	A2
@@ -6434,7 +6434,7 @@ MvSl-1064-A2-R4_A2g00825	Black	OldStrata	0.2546	0.0635	0.2495	Down	Lowmutations	
 MvSl-1064-A2-R4_A2g01392	Black	OldStrata	0.142	0.0138	0.0975	Down	Lowmutations	A2
 MvSl-1064-A2-R4_A2g00841	Black	OldStrata	0.0786	0.0082	0.1046	Down	Lowmutations	A2
 MvSl-1064-A2-R4_A2g00196	Black	OldStrata	0.6756	0.0324	0.048	Down	Lowmutations	A2
-MvSl-1064-A2-R4_A2g01419	Orange	ColorStrata	0.374	0.027	0.0721	Down	Lowmutations	A2
+MvSl-1064-A2-R4_A2g01419	Orange	OldStrata	0.374	0.027	0.0721	Down	Lowmutations	A2
 MvSl-1064-A2-R4_A2g01135	Black	OldStrata	0.3684	0.0317	0.086	Down	Lowmutations	A2
 MvSl-1064-A2-R4_A2g00821	Black	OldStrata	0.6003	0.1415	0.2357	Down	Lowmutations	A2
 MvSl-1064-A2-R4_MC01g02233	Auto	Auto	0.0813	0.0055	0.0673	Down	Lowmutations	A2
@@ -6623,7 +6623,7 @@ MvSl-1064-A2-R4_A2g00559	Black	OldStrata	0.4106	0.0267	0.065	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g00210	Blue	OldStrata	0.1148	0.0194	0.1693	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g01535	Black	OldStrata	0.4383	0.0279	0.0637	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g00315	Black	OldStrata	0.2638	0.0282	0.1069	NON	Neutral	A2
-MvSl-1064-A2-R4_A2g00902	Orange	ColorStrata	0.4138	0.0384	0.0929	NON	Neutral	A2
+MvSl-1064-A2-R4_A2g00902	Orange	OldStrata	0.4138	0.0384	0.0929	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g00976	Black	OldStrata	0.086	0.0114	0.1326	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g00975	Black	OldStrata	0.421	0.0285	0.0677	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g00239	Black	OldStrata	0.252	0.0177	0.0704	NON	Neutral	A2
@@ -6658,7 +6658,7 @@ MvSl-1064-A2-R4_A2g01393	Black	OldStrata	0.2607	0.0373	0.143	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g00403	Black	OldStrata	0.5304	0.0301	0.0567	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g01387	Black	OldStrata	0.2491	0.0259	0.1039	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g01519	Purple	OldStrata	0.2772	0.0199	0.072	NON	Neutral	A2
-MvSl-1064-A2-R4_A2g00195	Orange	ColorStrata	0.3538	0.0283	0.0801	NON	Neutral	A2
+MvSl-1064-A2-R4_A2g00195	Orange	OldStrata	0.3538	0.0283	0.0801	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g01394	Black	OldStrata	0.0788	0.0108	0.1372	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g01395	Black	OldStrata	0.0673	0.0094	0.1391	NON	Neutral	A2
 MvSl-1064-A2-R4_A2g00957	Purple	OldStrata	0.2612	0.0213	0.0816	NON	Neutral	A2
