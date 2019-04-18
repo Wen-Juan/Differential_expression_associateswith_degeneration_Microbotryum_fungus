@@ -26,7 +26,7 @@ p_dN <- ggplot(dNdS_new, aes(x=youngold, y=dn, fill=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=11),axis.text.y = element_text(colour="black",size=11))
 dev.off()
 
-
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dN_updownnon_twoparts28012019.pdf", width=8, height=8)
 p_dN3 <- ggplot(dNdS_new, aes(x=youngold, y=dn, fill=DE)) + 
   scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
@@ -52,6 +52,7 @@ p_dS <- ggplot(dNdS_new, aes(x=youngold, y=ds, fill=DE2)) +
 dev.off()
 
 
+pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_ds_updownnon_twoparts28012019.pdf", width=8, height=8)
 p_dS3 <- ggplot(dNdS_new, aes(x=youngold, y=ds, fill=DE)) + 
   scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), labels=c("A2 biased","Not biased","A1 biased"), name="Bias direction") +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
