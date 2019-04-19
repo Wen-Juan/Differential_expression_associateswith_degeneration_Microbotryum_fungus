@@ -60,7 +60,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_earlystopcodon_indels_combine2figs.pdf", width=12, height=8)
 par(mar=c(10,10,6,6))
-plot_grid(pa,pb,labels=c('A','B'))
+plot_grid(pb,pa,labels=c('A','B'))
 dev.off()
 
 
