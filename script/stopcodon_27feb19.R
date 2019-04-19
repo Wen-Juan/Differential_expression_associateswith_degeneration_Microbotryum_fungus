@@ -26,24 +26,21 @@ dev.off()
 
 ##stats
 old_de <- c(25,18)
-old_nonde <- c(54,73)
-prop.test(old_de, old_nonde) #X-squared = 5.5596, df = 1, p-value = 0.01838
+old_nonde <- c(56,75)
+prop.test(old_de, old_nonde) #X-squared = 5.2951, df = 1, p-value = 0.02138
 
 auto_de <- c(4,7)
 auto_nonde <- c(40,21)
 prop.test(auto_de, auto_nonde) #X-squared = 3.6165, df = 1, p-value = 0.05721
 
-young_nonde <- c(4,1)
-auto_nonde <- c(40,14)
-prop.test(young_nonde, auto_nonde) #X-squared = 1.0898e-31, df = 1, p-value = 1
 
 old_de <- c(25,7)
-auto_de <- c(54,21)
-prop.test(old_de,auto_de) #X-squared = 0.57631, df = 1, p-value = 0.4478
+auto_de <- c(56,21)
+prop.test(old_de,auto_de) #X-squared = 0.40605, df = 1, p-value = 0.524
 
 old_nonde <- c(18,4)
-auto_nonde <- c(73,40)
-prop.test(old_nonde,auto_nonde) #X-squared = 2.6678, df = 1, p-value = 0.1024
+auto_nonde <- c(75,40)
+prop.test(old_nonde,auto_nonde) #X-squared = 2.462, df = 1, p-value = 0.1166
 
 diff_indel2 <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/04Feb2019/diff_indel.txt', header = T)
 str(diff_indel2)
@@ -107,18 +104,6 @@ ggplot(diff_prot_length_rand1, aes(x=ratioprot, y=abs, color=DE2, shape=DE2)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-cor.test(diff_prot_length_rand1$ratioprot[diff_prot_length_rand1$DE2 == "DE"], diff_prot_length_rand1$abs[diff_prot_length_rand1$DE2 == "DE"], method=c("pearson"))
-##Pearson's product-moment correlation
-data:  diff_prot_length_rand$ratioprot[diff_prot_length_rand$DE2 ==  and diff_prot_length_rand$abs[diff_prot_length_rand$DE2 == "DE"]    "DE"] and diff_prot_length_rand$abs[diff_prot_length_rand$DE2 == "DE"]
-t = 3.4544, df = 593, p-value = 0.000591
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
-  0.06075304 0.21836252
-sample estimates:
-  cor 
-0.1404474 
-###
-cor.test(diff_prot_length_rand1$ratioprot[diff_prot_length_rand1$DE2 == "aNON"], diff_prot_length_rand1$abs[diff_prot_length_rand1$DE2 == "aNON"], method=c("pearson"))
 #t = -1.1143, df = 7952, p-value = 0.2652
 diff_prot_length_rand_rmcentro <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold!="Centro") 
 diff_prot_length_rand_oldstrata <- subset(diff_prot_length_rand,diff_prot_length_rand$youngold=="OldStrata")
@@ -293,19 +278,6 @@ ggplot(stopcodon_ratio_rmcentro, aes(x=ratiocds, y=logFC.A1.A2, color=DE)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
-y <-lm(logFC.A1.A2~ratioprot*DE, data=stopcodon_ratio_rmcentro)
-summary(y)
-y1 <-lm(logFC.A1.A2~ratioprot+DE, data=stopcodon_ratio_rmcentro)
-summary(y1)
-anova(y,y1)
-
-y2 <-lm(logFC.A1.A2~ratiocds*DE, data=stopcodon_ratio_rmcentro)
-summary(y2)
-y3 <-lm(logFC.A1.A2~ratiocds+DE, data=stopcodon_ratio_rmcentro)
-summary(y3)
-anova(y2,y3)
-
-
 #stats on 4Feb.2019
 stopcodon_oldstrata <- subset(stopcodon_ratio_rmcentro, stopcodon_ratio_rmcentro$youngold=="OldStrata")
 wilcox.test(stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='Up'],stopcodon_oldstrata$ratioprot[stopcodon_oldstrata$DE=='NON'], exact = FALSE) 
@@ -412,6 +384,7 @@ ggplot(stopcodon_ratio_rmcentro, aes(x=youngold, y=cdsratioa1a2)) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()
 
+####April 18 2019, move orange strata genes to old strata.
 stopcodon_ratio_sep <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/stopcodon/19jan2019/Mvsl_a1a2_exp_cds_protein_compart_sep.txt', header = T)
 str(stopcodon_ratio_sep)
 
@@ -422,11 +395,11 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 ggplot(stopcodon_ratio_sep1, aes(x=youngold, y=cdsa2expest, fill=interaction(haploid,DE))) +
          scale_fill_manual(values = c("firebrick2","firebrick4","light grey","dark grey","dodgerblue2","dodgerblue4"), labels=c("A2-biased at A1","A2-biased at A2","Not-biased at A1","Not-biased at A2","A1-biased at A1","A1-biased at A2")) +
          geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
-         ylim(0.9,1.3) +  
+         ylim(0.975,1.05) +  
   scale_x_discrete(labels=c("Autosome", "PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Ratio of coding sequence length/(3*protein length)') +
   theme_bw() + 
-  theme(legend.position = c(0.2, 0.75)) +
+  theme(legend.position = c(0.85, 0.75)) +
   theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
   theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
 dev.off()

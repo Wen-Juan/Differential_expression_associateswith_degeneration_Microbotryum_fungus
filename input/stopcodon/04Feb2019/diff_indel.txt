@@ -53,6 +53,8 @@ old	DE	1
 old	DE	5
 old	DE	1
 old	DE	3
+old	DE	1
+old	DE	1
 byoung	NON	1
 byoung	NON	1
 byoung	NON	2
@@ -62,8 +64,6 @@ byoung	NON	1
 byoung	NON	1
 byoung	NON	1
 byoung	NON	2
-byoung	NON	1
-byoung	NON	3
 byoung	NON	1
 old	NON	7
 old	NON	1
@@ -136,6 +136,8 @@ old	NON	1
 old	NON	1
 old	NON	1
 old	NON	1
+old	NON	1
+old	NON	3
 old	NON	1
 old	NON	2
 Auto	NON	1
