@@ -108,8 +108,23 @@ dev.off()
 
 ##stats on 28jan2019
 dNdS_youngstrata <- subset(dNdS_new, dNdS_new$youngold=="ColorStrata")
+mean(dNdS_youngstrata$dn[dNdS_youngstrata$DE2=='DE']) #0.013
+mean(dNdS_youngstrata$dn[dNdS_youngstrata$DE2=='NON']) #0.005730769
+mean(dNdS_youngstrata$ds[dNdS_youngstrata$DE2=='DE']) #0.0128
+
 dNdS_oldstrata <- subset(dNdS_new, dNdS_new$youngold=="OldStrata")
-  
+mean(dNdS_oldstrata$dn[dNdS_oldstrata$DE2=='DE']) #0.05336977
+mean(dNdS_oldstrata$dn[dNdS_oldstrata$DE2=='NON']) #0.03256509
+
+dNdS_PAR <- subset(dNdS_new, dNdS_new$youngold=="bPAR")
+mean(dNdS_PAR$dn[dNdS_PAR$DE2=='DE']) #0
+mean(dNdS_PAR$dn[dNdS_PAR$DE2=='NON']) #0.000132
+
+dNdS_auto <- subset(dNdS_new, dNdS_new$youngold=="Auto")
+mean(dNdS_auto$dn[dNdS_auto$DE2=='DE']) #0
+mean(dNdS_auto$dn[dNdS_auto$DE2=='NON']) #0
+
+
 mean(dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE']) #1.787892
 x<-dNdS_youngstrata$dnds[dNdS_youngstrata$DE2=='DE']
 se <-function(x) sqrt(var(x)/length(x))
