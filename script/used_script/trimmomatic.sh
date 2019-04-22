@@ -1,19 +1,6 @@
-#!/bin/bash
-
-#BSUB -L /bin/bash
-#BSUB -o trim_output.txt
-#BSUB -e trim_error.txt
-#BSUB -u wenjuan.ma@unil.ch
-#BSUB -N
-#BSUB -n 15
-#BSUB -R "span[ptile=15]"
-#BSUB -R "rusage[mem=40000]"
-#BSUB -M 40000000
-#BSUB -J trimmomatic.sh
-
 module add UHTS/Analysis/trimmomatic/0.36
 
-ADAPTERS="/scratch/beegfs/weekly/wjma/RNAseq_Microbotryum/TruSeq2-PE.fa"
+ADAPTERS="~/RNAseq_Microbotryum/TruSeq2-PE.fa"
 
 for f in *_1.fq.gz
 
