@@ -20,7 +20,8 @@ Within this folder there are files of dN, dS, and dN/dS data file.
 1.5./input/TE_degeneration/
 Within this folder there are files of TE insertions at various distance intervals both up and downstream 20kb, with and without oriented differences between given allele pairs. There are also TE annotation files and TE consenseus sequence file (in Fasta format).
 
-1.6/input/Genomic_assignment/
+1.6/input/Stopcodon/
+Within this folder, there are files that show ratio of protein/coding sequence length between a1 and a2 alleles. There are also files for genes with unequal protein length between given alleles, and we then quantified the indel number, premature stop codon numbers and did comparisons across genomic compartments.
 
 1.7/input/Genomic_assignment/
 
