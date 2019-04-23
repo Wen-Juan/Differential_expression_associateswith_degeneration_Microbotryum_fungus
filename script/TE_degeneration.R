@@ -395,25 +395,3 @@ pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidsel
 par(mar=c(10,10,10,10))
 plot_grid(p_e,p_d, p_c, p_b, p_a, p_f, p_g, p_h,p_i,labels=c('A','B','C','D','E','F','G','H','I'))
 dev.off()
-
-#loading data on 24Jan.2019, check distribution of coding sequence length
-a1cds_length <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/A1A2_homolog/A1_cds_length.txt', header = F)
-str(a1cds_length)
-a2cds_length <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/A1A2_homolog/A2_cds_length.txt', header = F)
-str(a2cds_length)
-length_diff <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/A1A2_homolog/homolog_length_variation.txt', header = F)
-str(length_diff)
-
-ggplot(data=a1cds_length, aes(a1cds_length$V2)) + 
-  xlim(0,7500) +
-  ylim(0,2000) +
-  geom_histogram(binwidth=200)
-
-ggplot(data=a2cds_length, aes(a2cds_length$V2)) + 
-  xlim(0,7500) +
-  geom_histogram(binwidth=200)
-
-ggplot(length_diff, aes(length_diff$V8)) + 
-  xlim(0,1000) +
-  ylim(0,40) +
-  geom_histogram(binwidth=25)
