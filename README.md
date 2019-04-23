@@ -23,6 +23,8 @@ Within this folder there are files of TE insertions at various distance interval
 1.6/input/Stopcodon/
 Within this folder, there are files that show ratio of protein/coding sequence length between a1 and a2 alleles. There are also files for genes with unequal protein length between given alleles, and we then quantified the indel number, premature stop codon numbers and did comparisons across genomic compartments.
 
-1.7/input/Genomic_assignment/
+1.7/input/Intron_content/
+Within this folder, there are files that show both oriented and nonoriented intron length differences between DE and Non-DE genes. In addition, there are also coding sequence and protein fasta files for both a1 and a2 genomes, so we could use these files to generate the comparisons of gene prediction model bias against non-recombining regions.
 
-1.8/input/Genomic_assignment/
+1.8/input/GCcontent/
+Within this folder,there are files that show both oriended and nonoriended overall GC (GC0) and 3rd position (GC3) differences between given allele pairs.
