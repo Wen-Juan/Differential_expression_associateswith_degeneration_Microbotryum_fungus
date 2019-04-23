@@ -1,4 +1,0 @@
-DE_numbers	
-NUM_DE	134
-NUM_UP_DE	82
-NUM_DOWN_DE	52

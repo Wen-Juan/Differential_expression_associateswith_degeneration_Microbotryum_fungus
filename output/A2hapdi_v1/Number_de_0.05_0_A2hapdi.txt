@@ -1,4 +1,0 @@
-DE_numbers	logFC.water.rich	logFC.water.diploid	logFC.rich.diploid
-NUM_DE	7058	2259	7044
-NUM_UP_DE	3536	1215	3504
-NUM_DOWN_DE	3522	1044	3540

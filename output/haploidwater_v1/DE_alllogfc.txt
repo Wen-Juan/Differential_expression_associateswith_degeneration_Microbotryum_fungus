@@ -1,6 +1,0 @@
-DE criteria	A1 bias	A2 bias
-0 < Log2(A1/A2) ²1	38	65
-1< Log2(A1/A2) ²2 	68	87
-2< Log2(A1/A2) ²3	17	24
-Log2(A1/A2) >3	17	27
-Log2(A1/A2) >0 ( in total)	140	203
