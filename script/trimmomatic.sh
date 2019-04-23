@@ -1,3 +1,5 @@
+###these scripts are to trim raw paired-end sequencing reads.
+
 module add UHTS/Analysis/trimmomatic/0.36
 
 ADAPTERS="~/RNAseq_Microbotryum/TruSeq2-PE.fa"

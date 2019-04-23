@@ -1,3 +1,5 @@
+###These scripts published below, are used to select reciprocal best BLAST hits between two lists of coding sequences or protein sequences.
+
 #P.J.A. Cock, J.M. Chilton, B. Gruening, J.E. Johnson, N. Soranzo GigaScience 2015, 4:39 https://doi.org/10.1186/s13742-015-0080-7
 #You should also cite the NCBI BLAST+ tools:
 #BLAST+: architecture and applications. C. Camacho et al. BMC Bioinformatics 2009, 10:421. https://doi.org/10.1186/1471-2105-10-421
