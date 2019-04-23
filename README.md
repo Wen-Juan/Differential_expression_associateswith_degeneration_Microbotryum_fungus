@@ -6,4 +6,6 @@ To better navigate for the datasets and scripts, here are a brief README informa
 
 There are in total 8 different sub-folders for this project: 
 1. 70percent_homologousgenes
+Within this folder, there are dataset files which were generated using various protein similarity thresholds: 30%, 70% and 85% using reciprocol best BLASTp Hit (RBBH). 
+
 2. 
