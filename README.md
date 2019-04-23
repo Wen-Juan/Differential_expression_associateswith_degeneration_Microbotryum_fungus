@@ -5,7 +5,10 @@ In this project, we aim to investigate the association between differential gene
 To better navigate for the datasets and scripts, here are a brief README information. 
 
 There are in total 8 different sub-folders for this project: 
-1. 70percent_homologousgenes
+1. /70percent_homologousgenes/
 Within this folder, there are dataset files which were generated using various protein similarity thresholds: 30%, 70% and 85% using reciprocol best BLASTp Hit (RBBH). 
 
-2. 
+2./Genomic_assignment/
+Within this folder, there are genome annotation files in .gff3 formats, as well as genome locations and gene list of various evolutionary strata (young evolutionary strata include red and green strata; old evolutionary strata include purple, blue, orange and black strata).
+
+
