@@ -29,5 +29,5 @@ Within this folder, there are files that show both oriented and nonoriented intr
 1.8/input/GCcontent/
 Within this folder,there are files that show both oriended and nonoriended overall GC (GC0) and 3rd position (GC3) differences between given allele pairs.
 
-### The next folder if script
+### The next folder for scripts
 Within this folder, there are most scrips used for this projects. Including from RBBH.py to generate single copy homolog list between a1 and a2 haploid genomes, to identify differential gene expression from Kallisto mapping to EdgeR analysis, prank.sh and PAML were used to calculate dN, dS etc data. Finally there are also R script for each degenerative traits for plotting some of the graphs. For each script, it always starts with a short explanation for what this script is for. Enjoy!
