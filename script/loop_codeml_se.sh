@@ -1,11 +1,11 @@
-# module
+###This script is to simultaneously run thousands of files of paired fasta sequences to run PAML for calculating dN, dS, or dN/dS.
+## module
 module add Phylogeny/paml/4.9g
 
 for i in *.fa.best.phy; do
 
 out_ctl_file="codeml.test.txt"
 echo $out_ctl_file
-
 
 results_f=`echo $i | sed 's/.fa.best.phy/.results.txt/g'`
 

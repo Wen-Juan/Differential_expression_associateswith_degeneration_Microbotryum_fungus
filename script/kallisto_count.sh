@@ -1,3 +1,5 @@
+### This script is to use Kallisto mapping algorithm to systematically quantify a series of RNAseq libraries/samples.
+
 module add UHTS/Analysis/kallisto/0.44.0
 
 for f in *_pairedR1.fq.gz

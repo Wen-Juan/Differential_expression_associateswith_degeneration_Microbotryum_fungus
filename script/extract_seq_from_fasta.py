@@ -1,3 +1,5 @@
+###This python script can extract gene sequences from a fasta file, using an index input file of gene list.
+
 infile1 = open("Auto_NonDE_a1list.txt","r")
 infile2 = open("MvSl-1064-A1-R4_prot1.fasta","r")
 outfile = open("Auto_NonDE_a1list_prot.fasta","w")

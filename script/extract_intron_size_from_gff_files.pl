@@ -1,3 +1,4 @@
+### This perl script can extract intron size from a gff/gff3 annotation file.
 #!/usr/bin/perl
 use strict;
 use warnings;

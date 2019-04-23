@@ -1,3 +1,6 @@
+##This python script was written with help from Darren Parker (darrenjamesparker@gmail.com).
+##This python script can extract sequences from two fasta files, requiring an extra file which lists the pairs of given two sequences.
+
 #! /usr/bin/env python
 
 list_pairs = open("Mvs11_MvslD_70sim50cov_singlecopy_ortholog_list.txt",'r')
