@@ -1,7 +1,0 @@
-compartment	bias	ratio
-Autosome	DE	0.016949153
-Autosome	Non_DE	0.011970653
-bPAR	DE	0
-bPAR	Non_DE	0.018348624
-NRR	DE	0.68627451
-NRR	Non_DE	0.51048951
