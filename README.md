@@ -4,4 +4,6 @@
 
 #### To better navigate for the datasets and scripts, here are a brief README information. 
 
-##### There are
+##### There are in total 8 different sub-folders for this project: 
+1. 70percent_homologousgenes
+2. 
