@@ -4,7 +4,7 @@ In this project, we aim to investigate the association between differential gene
 
 To better navigate for the datasets and scripts, here are a brief README information. 
 
-There are in total 8 different sub-folders for this project input folder: 
+### There are in total 8 different sub-folders for this project input folder: 
 1.1/input/70percent_homologousgenes/
 Within this folder, there are dataset files which were generated using various protein similarity thresholds: 30%, 70% and 85% using reciprocol best BLASTp Hit (RBBH). 
 
@@ -28,3 +28,6 @@ Within this folder, there are files that show both oriented and nonoriented intr
 
 1.8/input/GCcontent/
 Within this folder,there are files that show both oriended and nonoriended overall GC (GC0) and 3rd position (GC3) differences between given allele pairs.
+
+### The next folder if script
+Within this folder, there are most scrips used for this projects. Including from RBBH.py to generate single copy homolog list between a1 and a2 haploid genomes, to identify differential gene expression from Kallisto mapping to EdgeR analysis, prank.sh and PAML were used to calculate dN, dS etc data. Finally there are also R script for each degenerative traits for plotting some of the graphs.
