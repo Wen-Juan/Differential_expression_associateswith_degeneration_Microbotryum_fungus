@@ -1,10 +1,10 @@
 ## Differential gene expression is associated with degeneration of mating-type chromosomes in the absence of sexual antagonism
 
-In this project, we aim to investigate the association between differential gene expression and sequence degeneration on mating-type chromosome in an anther smut fungus species Microbotryum lychnidis-dioicae. The various forms of degenerative traits we are analyzing are synonymous substitution rate (dN), transposable element insertions (TEs), premature stop codons, intron content and GC content. 
+In this project, we aim to investigate the association between differential gene expression and sequence degeneration on mating-type chromosome in an anther smut fungus species Microbotryum lychnidis-dioicae. The various forms of degenerative traits we are analyzing are non-synonymous substitution rate (dN), transposable element insertions (TEs), premature stop codons, intron content and GC content. 
 
 To better navigate for the datasets and scripts, here are a brief README information. 
 
-### Input folder with 8 sub-folders: 
+### Input folder including 8 sub-folders: 
 1.1  /input/70percent_homologousgenes/
 Within this folder, there are dataset files which were generated using various protein similarity thresholds: 30%, 70% and 85% using reciprocol best BLASTp Hit (RBBH). 
 
