@@ -21,17 +21,17 @@ Within this folder, there are files of dN, dS, and dN/dS data file for M.lychnid
 Within this folder, there are files of dN, dS and dN/dS of ortholog alleles of a1 haploid genomes between M.lychnidis-dioicae and M.lagerhemii, as well as ortholog alleles of a2 haploid genomes between these two species. 
 
 1.6  /input/TE_degeneration/
-Within this folder, there are files of TE insertions at various distance intervals both up and downstream 20kb, with and without oriented differences between given allele pairs based on the gene expression level (e.g. with higher expression or lower expression). There are also TE annotation files and TE consenseus sequence file (in Fasta format).
+Within this folder, there are files of TE insertions at various distance intervals both up and downstream 20kb, with and without oriented differences between given allele pairs based on the gene expression level (e.g. with higher expression or lower expression). There are also TE annotation files of M. lychnidis-dioicae and TE consenseus sequence file (in Fasta format).
 
 1.7  /input/Stopcodon/
-Within this folder, there are files that show ratio of protein/coding sequence length between a1 and a2 alleles. There are also files for genes with unequal protein length between given alleles, and we then quantified the indel number, premature stop codon numbers and did comparisons across genomic compartments.
+Within this folder, there are files that show ratios of protein/coding sequence length between a1 and a2 alleles (with oriented differences between alleles based on gene expression levels). There are also files for genes with unequal protein length between given alleles, and we then quantified the indel number, premature stop codon numbers across genomic compartments.
 
 1.8  /input/Intron_content/
 Within this folder, there are files that show both oriented and nonoriented intron length differences between DE and Non-DE genes. In addition, there are also coding sequence and protein fasta files for both a1 and a2 genomes, so we could use these files to generate the comparisons of gene prediction model bias against non-recombining regions.
 
 1.9  /input/GCcontent/
-Within this folder,there are files that show both oriended and nonoriended overall GC (GC0) and 3rd position (GC3) differences between given allele pairs.
+Within this folder,there are files that show both oriended and nonoriended overall GC (GC0) and 3rd position (GC3) differences between given allele pairs, based on gene expression levels between given allele pairs.
 
 
 ### Script folder
-Within this folder, there are scrips used for this projects. Including from RBBH.py to generate single copy homolog list between a1 and a2 haploid genomes, scripts to identify differential gene expression from Kallisto mapping to EdgeR analysis, prank.sh and PAML were used to calculate dN, dS etc data. Finally there are also R scripts for each degenerative traits for plotting some of the graphs. For each script, it always starts with a short explanation for what this script is for. Enjoy!
+Within this folder, there are scripts used for this project. Including from RBBH.py to generate single-copy homolog list between a1 and a2 haploid genomes, scripts to identify differential gene expression from Kallisto pseudo-alignment mapping to EdgeR analysis, prank.sh and PAML were used to calculate dN, dS etc data. Finally, there are also R scripts for each degenerative traits for plotting some of the graphs. For each script, it always starts with a short explanation for what this script is for. If you spot any error, please do get in touch and would love to get feedbacks:) Enjoy!
