@@ -16,7 +16,10 @@ prank.sh: to align sequence in a pair-wise fashion for input of PAML.
 loop_codeml_se.sh: to calculate dN, dS, dN/dS gene evolutionary rate;
 
 
-various R scripts: for each degenerative traits for plotting some of the graphs. 
+various R scripts: for each degenerative traits for plotting some of the graphs;
+
+
+....etc.
 
 
 
