@@ -10,7 +10,10 @@ trimmomatic.sh: trim raw reads to remove low quality reads, adapters etc.
 RBBH.py: generate single-copy homolog list between a1 and a2 haploid genomes, scripts to identify differential gene expression from Kallisto pseudo-alignment mapping to EdgeR analysis; 
 
 
-prank.sh and PAML: were used to calculate dN, dS etc data;
+prank.sh: to align sequence in a pair-wise fashion for input of PAML.
+
+
+loop_codeml_se.sh: to calculate dN, dS, dN/dS gene evolutionary rate;
 
 
 various R scripts: for each degenerative traits for plotting some of the graphs. 
