@@ -1,4 +1,4 @@
-These scripts were written by Fantin Carpentier <fantin.carpentier@gmail.com>, please contact Fantin if you run into any issue with these scripts.
+These scripts were written by Fantin Carpentier (fantin.carpentier@gmail.com), please contact Fantin if you run into any issue with these scripts.
 
 ### USAGE:
 
