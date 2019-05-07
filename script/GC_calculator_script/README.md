@@ -1,4 +1,4 @@
-## These scripts were written by Fantin Carpentier <fantin.carpentier@gmail.com>, please contact Fantin if you run into any issue with these scripts.
+These scripts were written by Fantin Carpentier <fantin.carpentier@gmail.com>, please contact Fantin if you run into any issue with these scripts.
 
 ### USAGE:
 
@@ -8,4 +8,4 @@ bash GCcalculation.sh -a fasta_file
 
 #### The output will be located in the same place as the GCcalculation.sh and GCcalculation.awk scripts
 
-#named with the basename of the fasta
+#### named with the basename of the fasta
