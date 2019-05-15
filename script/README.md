@@ -27,15 +27,29 @@ prank.sh: to align sequence in a pair-wise fashion for input of PAML.
 loop_codeml_se.sh: to calculate dN, dS, dN/dS gene evolutionary rate;
 
     bash loop_codeml_se.sh
+kallisto_index.sh: build index of transcriptome for kallisto mapping.
 
-various R scripts: for each degenerative traits for plotting some of the graphs;scripts to identify differential gene expression from Kallisto pseudo-alignment mapping to EdgeR analysis; 
+    bash kallisto_count.sh
+kallisto_count.sh: kallisto to map RNAseq reads against transcriptome.
 
+    bash kallisto_count.sh
+kallisto_matrix.sh: kallisto matrix script.
+
+    bash kallisto_matrix.sh
 /script/GC_calculator_script/: scripts to calculate overall GC0 and GC3 percentage;
 
      bash GCcalculation.sh -a fasta_file 
+various R scripts, edgeR.r: scripts to identify differential gene expression from Kallisto pseudo-alignment mapping to EdgeR analysis. 
      
-....etc.
+     edgeR.r
 
-
+below R scripts are for each degenerative traits, e.g. dN, dS, TEs, premature stop codons, GC and introns for plotting the graphs and analysis.
+     
+     dNdS.R
+     TE_degeneration.R
+     Premature_stopcodon.R
+     GC_content.R
+     intron_content.R
+     
 
 ### For each script, it always starts with a short explanation for what this script is for.
