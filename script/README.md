@@ -6,6 +6,7 @@
 
 trimmomatic.sh: trim raw reads to remove low quality reads, adapters etc.
 
+            bash trimmomatic.sh
 
 RBBH.py: generate single-copy homolog list between a1 and a2 haploid genomes, scripts to identify differential gene expression from Kallisto pseudo-alignment mapping to EdgeR analysis; 
 
