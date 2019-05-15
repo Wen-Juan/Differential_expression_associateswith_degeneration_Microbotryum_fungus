@@ -60,4 +60,6 @@ Scripts in /script/GC_calculator_script/ folder has scripts to calculate GC0 and
 Furthermore, there are also R scripts for each degenerative traits for plotting some of the graphs. For each script, it always starts with a short explanation for what this script is for.
 
     edgeR.r
+    dNdS.R
+    
 ### If you spot any error, please do get in touch and would love to get feedbacks:) Enjoy!
