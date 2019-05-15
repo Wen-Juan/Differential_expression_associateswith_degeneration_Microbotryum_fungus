@@ -2,7 +2,6 @@
 
 In this project, we aim to investigate the association between differential gene expression and sequence degeneration on mating-type chromosomes in an anther smut fungus Microbotryum lychnidis-dioicae. We have analyzed a various forms of degenerative traits, such as elevated non-synonymous substitution rate (dN), transposable element insertions (TEs), premature stop codons, intron content and GC content. 
 
-To better navigate for the datasets and scripts, here is a brief README information. 
 
 # Input folder including 9 sub-folders: 
 
