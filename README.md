@@ -47,8 +47,14 @@ Script RBBH.py to generate single-copy homolog list between a1 and a2 haploid ge
     python RBBH.py
 Scripts to identify differential gene expression from Kallisto pseudo-alignment mapping to EdgeR analysis.
 
-    bash 
+    bash kallisto_index.sh
+    bash kallisto_count.sh
+    bash kallisto_matrix.sh
+Scripts prank.sh and PAML were used to calculate dN, dS etc data.
 
-prank.sh and PAML were used to calculate dN, dS etc data, /script/GC_calculator_script/ folder has scripts to calculate GC0 and GC3 content. Furthermore, there are also R scripts for each degenerative traits for plotting some of the graphs. For each script, it always starts with a short explanation for what this script is for.
+    bash prank.sh
+Scripts in /script/GC_calculator_script/ folder has scripts to calculate GC0 and GC3 content. 
+
+Furthermore, there are also R scripts for each degenerative traits for plotting some of the graphs. For each script, it always starts with a short explanation for what this script is for.
 
 ### If you spot any error, please do get in touch and would love to get feedbacks:) Enjoy!
