@@ -24,7 +24,7 @@ various R scripts: for each degenerative traits for plotting some of the graphs;
 
 /script/GC_calculator_script/: scripts to calculate overall GC0 and GC3 percentage;
 
-     python 
+     bash GCcalculation.sh -a fasta_file 
      
 ....etc.
 
