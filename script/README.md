@@ -36,6 +36,9 @@ kallisto_count.sh: kallisto to map RNAseq reads against transcriptome.
 kallisto_matrix.sh: kallisto matrix script.
 
     bash kallisto_matrix.sh
+extract_intron_size_from_gff_files.pl: script to calculate intron number and length from gff file.
+
+    perl extract_intron_size_from_gff_files.pl
 /script/GC_calculator_script/: scripts to calculate overall GC0 and GC3 percentage;
 
      bash GCcalculation.sh -a fasta_file 
