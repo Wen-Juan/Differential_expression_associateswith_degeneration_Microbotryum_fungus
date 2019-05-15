@@ -2,7 +2,7 @@ These scripts were written by Fantin Carpentier (fantin.carpentier@gmail.com), p
 
 ### USAGE:
 
-bash GCcalculation.sh -a fasta_file
+    bash GCcalculation.sh -a fasta_file
 
 ##### The GCcalculation.sh script first shape the fasta to be used in the GCcalculation.awk script
 
