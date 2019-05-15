@@ -61,5 +61,8 @@ Furthermore, there are also R scripts for each degenerative traits for plotting 
 
     edgeR.r
     dNdS.R
+    TE_degeneration.R
+    Premature_stopcodon.R
+    GC_content.R
     
 ### If you spot any error, please do get in touch and would love to get feedbacks:) Enjoy!
