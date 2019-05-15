@@ -2,18 +2,22 @@
 
 In this project, we aim to investigate the association between differential gene expression and sequence degeneration on mating-type chromosomes in an anther smut fungus Microbotryum lychnidis-dioicae. We have analyzed a various forms of degenerative traits, such as elevated non-synonymous substitution rate (dN), transposable element insertions (TEs), premature stop codons, intron content and GC content. 
 
-To better navigate for the datasets and scripts, here are a brief README information. 
+To better navigate for the datasets and scripts, here is a brief README information. 
 
-### Input folder including 9 sub-folders: 
+# Input folder including 9 sub-folders: 
+
+## Step1 Characterize homologous genes between a1 and a2 haploid genomes and genomic assignment
 ##### 1.1  /input/70percent_homologousgenes/
 Within this folder, there are dataset files which were generated using various protein similarity thresholds: 30%, 70% and 85% using reciprocol best BLASTp Hit (RBBH). There is also the file which we filtered out the TE-related genes for all downstream analysis.
 
 ##### 1.2  /input/Genomic_assignment/
 Within this folder, there are genome annotation files in .gff3 formats, as well as gene location assignment and gene list of various evolutionary strata (young evolutionary strata include red and green strata; old evolutionary strata include purple, blue, orange and black strata, as described in the publication by Branco et al. 2017, PNAS).
 
+## Step2 Quantify RNAseq counts and perform differential gene expression (DE) analysis
 ##### 1.3  /input/Kallisto_quantify_count/
 Within this folder, there are count files (output file from Kallisto pseudo-alignment mapping), design and matrix files which were used for running downstream differential gene expression analysis using EdgeR. 
 
+## Step3 Calculate dN, dS, dN/dS, analyze relatioinship between DE and dN, dS and dN/dS.
 ##### 1.4  /input/dNdS/
 Within this folder, there are files of dN, dS, and dN/dS data file for M.lychnidis-dioicae. Here we computed these gene evolutionary rate between homologous alleles of a1 and a2 haploid mating types.
 
