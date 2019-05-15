@@ -41,6 +41,14 @@ Within this folder,there are files that show both oriended and nonoriended overa
 
 
 ### Script folder
-Within this folder, there are scripts used for this project. Including from RBBH.py to generate single-copy homolog list between a1 and a2 haploid genomes, scripts to identify differential gene expression from Kallisto pseudo-alignment mapping to EdgeR analysis, prank.sh and PAML were used to calculate dN, dS etc data, /script/GC_calculator_script/ folder has scripts to calculate GC0 and GC3 content. Furthermore, there are also R scripts for each degenerative traits for plotting some of the graphs. For each script, it always starts with a short explanation for what this script is for.
+Within this folder, there are scripts used for this project. 
+Script RBBH.py to generate single-copy homolog list between a1 and a2 haploid genomes.
+
+    python RBBH.py
+Scripts to identify differential gene expression from Kallisto pseudo-alignment mapping to EdgeR analysis.
+
+    bash 
+
+prank.sh and PAML were used to calculate dN, dS etc data, /script/GC_calculator_script/ folder has scripts to calculate GC0 and GC3 content. Furthermore, there are also R scripts for each degenerative traits for plotting some of the graphs. For each script, it always starts with a short explanation for what this script is for.
 
 ### If you spot any error, please do get in touch and would love to get feedbacks:) Enjoy!
