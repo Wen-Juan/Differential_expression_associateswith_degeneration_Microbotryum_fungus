@@ -56,7 +56,7 @@ Scripts prank.sh and PAML were used to calculate dN, dS etc data.
     bash loop_codeml_se.sh
 Scripts in /script/GC_calculator_script/ folder has scripts to calculate GC0 and GC3 content. 
 
-    bash 
+    bash GCcalculation.sh -a fasta_file
 Furthermore, there are also R scripts for each degenerative traits for plotting some of the graphs. For each script, it always starts with a short explanation for what this script is for.
 
     edgeR.r
