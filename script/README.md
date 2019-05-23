@@ -1,6 +1,6 @@
 # Within script folder, there are scripts used for this project. 
 
-### For each script, it always starts with a short explanation for what this script is for.
+## For each script, it always starts with a short explanation for what this script is for.
 
 ## Scripts include:
 
