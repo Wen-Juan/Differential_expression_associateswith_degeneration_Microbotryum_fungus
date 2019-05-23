@@ -1,5 +1,6 @@
 # Within script folder, there are scripts used for this project. 
 
+### For each script, it always starts with a short explanation for what this script is for.
 
 ## Scripts include:
 
@@ -54,5 +55,3 @@ below R scripts are for each degenerative traits, e.g. dN, dS, TEs, premature st
      GC_content.R
      intron_content.R
      
-
-### For each script, it always starts with a short explanation for what this script is for.
