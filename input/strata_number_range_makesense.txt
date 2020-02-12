@@ -1,0 +1,13 @@
+In Fantin's file NRR (1217) genes, including:
+Black strata genes:  1185
+Purple and blue strata genes: 28
+Orange strata genes: 4
+
+BUT, it does not include:
+Centromere region: 104 
+Green strata genes: 5
+Red strata genes: 33
+
+In total all strata and centromere together is 1359 genes.
+
+This NRR naming scheme is the same as reported in Fantin's mid-thesis report.

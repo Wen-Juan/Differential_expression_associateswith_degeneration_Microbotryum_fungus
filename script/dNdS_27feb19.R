@@ -28,7 +28,7 @@ dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_dN_updownnon_twoparts28012019.pdf", width=8, height=8)
 p_dN3 <- ggplot(dNdS_new, aes(x=youngold, y=dn, fill=DE)) + 
-  scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), guide = FALSE)  +
+  #scale_fill_manual(values = c("firebrick3","light grey","dodgerblue3"), guide = FALSE)  +
   geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85) +
   ylim(0,0.08) +  
   theme_bw() + theme(legend.position = c(0.2, 0.7)) +

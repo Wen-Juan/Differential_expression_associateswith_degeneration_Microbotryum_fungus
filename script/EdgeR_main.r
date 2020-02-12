@@ -37,14 +37,14 @@ sub_analyse = paste(args[1])
 FDR2use = as.numeric(paste(args[2]))
 
 # example
-# sub_analyse <- 'A1MintMvSl'
-# FDR2use  <- 0.05
+sub_analyse <- 'haploidwater_new4'
+FDR2use  <- 0.05
 
 datapath <- "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/input/"
 outpath <- paste("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/", sub_analyse, sep="")
 dir.create(file.path(outpath))
 
-annotation <- read.delim(file.path(datapath, "A1MintMvSl_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
+annotation <- read.delim(file.path(datapath, "haploidwater_new4_annotation.txt"), sep="\t", header=TRUE, stringsAsFactors=FALSE) 
 
 count <- read.table(file.path(datapath, paste(sub_analyse,'_count.txt', sep="")), header=T, row.names=1)
 count <- round(count, digits=0)
@@ -80,7 +80,7 @@ write(paste(nrow(sum10), "_", sep=""), filter_file, append=T)
 write(summary(rowSums(cpm(sum10)/ncol(sum10))), filter_file, append=T, sep='\t', ncol=6)
 
 dgl <- dgl[aveLogCPM(dgl) > 0,] # filter by average reads
-dgl <- dgl[rowSums(cpm(dgl)>1) > 1,] #filter by at least half of the samples cpm have to be no less than 1 for each sex.
+dgl <- dgl[rowSums(cpm(dgl)>1) >= 1,] #filter by at least half of the samples cpm have to be no less than 1 for each sex.
 
 write(paste("dgl"), filter_file, append=T)
 write(paste(nrow(dgl), "_", sep=""), filter_file, append=T)
@@ -108,6 +108,33 @@ pdf(file.path(outpath,paste('MDS_', sub_analyse, '.pdf', sep="")))
 par(mar=c(5,5,4,3))
 
 y <- dgl
+### calculate TPM####################################
+dgl <- DGEList(counts=count, group=design$group, genes=annotation)
+dgl <- DGEList(counts=count, group=design$group, genes=data.frame(annotation$length))
+dgl <- calcNormFactors(dgl)
+dgl_rpkm <- rpkm(dgl)
+write.table(dgl_rpkm, "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_differentialexpression_Microbotryumfungi/output/tpm/rpkm.txt", sep="\t", col.names=T)
+
+tpm_from_rpkm <- function(x) {
+  rpkm.sum <- colSums(x)
+  return(t(t(x) / (1e-06 * rpkm.sum)))
+}
+
+tpm <- tpm_from_rpkm(dgl_rpkm)
+write.table(tpm, "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_differentialexpression_Microbotryumfungi/output/tpm/tpm.txt", sep="\t", col.names=T)
+
+# Calculate TPM from normalized counts: methods2
+calc_tpm <- function(x, gene.length) {
+  x <- as.matrix(x)
+  len.norm.lib.size <- colSums(x / gene.length)
+  return((t(t(x) / len.norm.lib.size) * 1e06) / gene.length)
+}
+
+tpm2 <- calc_tpm(dgl, dgl$genes$annotation.length)
+write.table(tpm2, "/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_differentialexpression_Microbotryumfungi/output/tpm/tpm2.txt", sep="\t", col.names=T)
+##################################
+
+
 colnames(y) <- paste(colnames(y), design$group, sep="\n")
 #cols = c(col.M23, col.F23,col.M27,col.F27, col.M31, col.F31,col.M43,col.F43,col.R43,col.M46,col.F46,col.R46)#for tvedora
 cols = c(col.mint_1,col.mint_2,col.mint_3,col.mvsl_1,col.mvsl_2)

@@ -11,16 +11,16 @@ diff_indel <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_post
 str(diff_indel)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_early_stopcodon_protdiff.pdf", width=8, height=8)
-pa <- ggplot(diff_indel, aes(x=Comp, y=prop, fill=DE)) + 
-  scale_fill_manual(values = c("white","grey"),labels=c("DE","Non-DE"), name="Bias direction") +
-  geom_bar(position="dodge", stat="identity", alpha=0.85, width=0.6, color = "black") +
-  ylim(0,0.7) +  
+ggplot(diff_indel, aes(x=Comp, y=prop, fill=DE)) + 
+  scale_fill_manual(values = c("black","light grey"),labels=c("DE","Non-DE")) +
+  geom_bar(position="dodge", stat="identity", alpha=0.95, width=0.6, color = "black") +
+  ylim(0,0.6) +  
   theme_bw() + 
   theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome+PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Proportion of genes with different stop codon positions') +
-  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+  theme(axis.title.x = element_text(size=16,colour = "black"),axis.title.y = element_text(size=16,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=16),axis.text.y = element_text(colour="black",size=16))
 dev.off()
 
 
@@ -46,16 +46,16 @@ diff_indel2 <- read.table('/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_pos
 str(diff_indel2)
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_indels_mean_compartment.pdf", width=8, height=8)
-pb <- ggplot(diff_indel2, aes(x=comp, y=indel, fill=DE)) +
-  scale_fill_manual(values = c("white","grey"),guide =FALSE) +
-  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.85, color = "black") +
+ggplot(diff_indel2, aes(x=comp, y=indel, fill=DE)) +
+  scale_fill_manual(values = c("black","grey"),guide =FALSE) +
+  geom_boxplot(notch=FALSE,outlier.shape=NA,alpha=0.75, color = "black") +
   ylim(0,7) +  
   theme_bw() + 
   theme(legend.position = c(0.2, 0.8)) +
   scale_x_discrete(labels=c("Autosome+PAR", "Young strata","Old strata")) + 
   labs(x='Genomic compartment', y='Mean indel number') +
-  theme(axis.title.x = element_text(size=12,colour = "black"),axis.title.y = element_text(size=12,colour = "black")) +
-  theme(axis.text.x = element_text(colour="black",size=12),axis.text.y = element_text(colour="black",size=12))
+  theme(axis.title.x = element_text(size=16,colour = "black"),axis.title.y = element_text(size=16,colour = "black")) +
+  theme(axis.text.x = element_text(colour="black",size=16),axis.text.y = element_text(colour="black",size=16))
 dev.off()
 
 pdf("/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Mvsl_earlystopcodon_indels_combine2figs.pdf", width=12, height=8)
