@@ -117,7 +117,7 @@ sorted.perm <- sort(my.perm)
 lowCI <- sorted.perm[25]
 highCI <- sorted.perm[975]
 
-RMpalette <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac")
+RMpalette <- c("#f0f9e8", "#bae4bc", "black", "#43a2ca", "red")
 
 #mating type chromosome
 pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/MAT_nn_expressionratio.pdf", width=7,height=5)
@@ -140,8 +140,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 MAT <- subset(MAT_sort, MAT_sort$chr == "aMAT")
 Chr_pos <- rollmean(smooth(MAT$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(MAT$absLogFC )),20)
-plot(MAT$start, MAT$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on MAT")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(MAT$start, MAT$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, xlim=c(0,3500000), ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on MAT")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -200,8 +200,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr01 <- subset(Chr01_sort, Chr01_sort$chr == "Chr01")
 Chr_pos <- rollmean(smooth(Chr01$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr01$absLogFC)),20)
-plot(Chr01$start, Chr01$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr01")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr01$start, Chr01$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, xlim=c(0,3500000),ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr01")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -211,8 +211,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr02 <- subset(Chr02_sort, Chr02_sort$chr == "Chr02")
 Chr_pos <- rollmean(smooth(Chr02$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr02$absLogFC)),20)
-plot(Chr02$start, Chr02$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr02")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr02$start, Chr02$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)",  xlim=c(0,3500000),ylab="Log2(a1/a2)",main="Expression ratio on Chr02")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -222,8 +222,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr03 <- subset(Chr03_sort, Chr03_sort$chr == "Chr03")
 Chr_pos <- rollmean(smooth(Chr03$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr03$absLogFC)),20)
-plot(Chr03$start, Chr03$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr03")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr03$start, Chr03$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr03")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -233,8 +233,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr04 <- subset(Chr04_sort, Chr04_sort$chr == "Chr04")
 Chr_pos <- rollmean(smooth(Chr04$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr04$logFC.A1.A2)),20)
-plot(Chr04$start, Chr04$logFC.A1.A2,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-10,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr04")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr04$start, Chr04$logFC.A1.A2,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-10,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr04")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -243,8 +243,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr04 <- subset(Chr04_sort, Chr04_sort$chr == "Chr04")
 Chr_pos <- rollmean(smooth(Chr04$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr04$absLogFC)),20)
-plot(Chr04$start, Chr04$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr04")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr04$start, Chr04$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr04")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 #autosome chromosome5
@@ -253,8 +253,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr05 <- subset(Chr05_sort, Chr05_sort$chr == "Chr05")
 Chr_pos <- rollmean(smooth(Chr05$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr05$absLogFC)),20)
-plot(Chr05$start, Chr05$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr05")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr05$start, Chr05$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr05")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -264,8 +264,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr06 <- subset(Chr06_sort, Chr06_sort$chr == "Chr06")
 Chr_pos <- rollmean(smooth(Chr06$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr06$absLogFC)),20)
-plot(Chr06$start, Chr06$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr06")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr06$start, Chr06$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr06")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -275,8 +275,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr07 <- subset(Chr07_sort, Chr07_sort$chr == "Chr07")
 Chr_pos <- rollmean(smooth(Chr07$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr07$absLogFC)),20)
-plot(Chr07$start, Chr07$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr07")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr07$start, Chr07$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr07")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -286,8 +286,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr08 <- subset(Chr08_sort, Chr08_sort$chr == "Chr08")
 Chr_pos <- rollmean(smooth(Chr08$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr08$absLogFC)),20)
-plot(Chr08$start, Chr08$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr08")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr08$start, Chr08$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr08")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -297,8 +297,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr09 <- subset(Chr09_sort, Chr09_sort$chr == "Chr09")
 Chr_pos <- rollmean(smooth(Chr09$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr09$absLogFC)),20)
-plot(Chr09$start, Chr09$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr09")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr09$start, Chr09$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr09")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -308,8 +308,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr10 <- subset(Chr10_sort, Chr10_sort$chr == "Chr10")
 Chr_pos <- rollmean(smooth(Chr10$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr10$absLogFC)),20)
-plot(Chr10$start, Chr10$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr10")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr10$start, Chr10$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr10")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -319,8 +319,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr11 <- subset(Chr11_sort, Chr11_sort$chr == "Chr11")
 Chr_pos <- rollmean(smooth(Chr11$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr11$absLogFC)),20)
-plot(Chr11$start, Chr11$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr11")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr11$start, Chr11$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10),  xlim=c(0,3500000),xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr11")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -330,8 +330,8 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr12 <- subset(Chr12_sort, Chr12_sort$chr == "Chr12")
 Chr_pos <- rollmean(smooth(Chr12$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr12$absLogFC)),20)
-plot(Chr12$start, Chr12$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr12")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr12$start, Chr12$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, xlim=c(0,3500000), ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr12")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
 
@@ -341,7 +341,7 @@ pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haplo
 Chr13 <- subset(Chr13_sort, Chr13_sort$chr == "Chr13")
 Chr_pos <- rollmean(smooth(Chr13$start),20)
 Chr_ratio <- rollmean(smooth(na.approx(Chr13$absLogFC)),20)
-plot(Chr13$start, Chr13$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr13")
-lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+plot(Chr13$start, Chr13$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20,  xlim=c(0,3500000), ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr13")
+lines(Chr_pos, Chr_ratio,type="l",lwd=4, col=RMpalette[5])
 
 dev.off()
