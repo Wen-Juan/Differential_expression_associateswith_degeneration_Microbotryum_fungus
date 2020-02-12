@@ -1,5 +1,0 @@
-sample	treatment	haploid	group
-A1_1	water	A1	Water_A1
-A1_2	water	A1	Water_A1
-A2_1	water	A2	Water_A2
-A2_2	water	A2	Water_A2

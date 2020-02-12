@@ -1,3 +1,5 @@
+##These are script to run prank for codon alignment.
+
 module add SequenceAnalysis/MultipleSequenceAlignment/prank/170427
 
 for i in *.fa;

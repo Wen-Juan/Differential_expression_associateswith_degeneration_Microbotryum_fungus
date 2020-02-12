@@ -1,3 +1,5 @@
+#This script is to build matrix of multiple RNAseq samples with read counts, using output from Kallisto for instance.
+
 ##before launching the matrix perl script, you need to load edgeR and qvalue packages from R.
 #source("https://bioconductor.org/biocLite.R")
 #biocLite("edgeR")

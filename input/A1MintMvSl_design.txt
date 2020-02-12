@@ -1,6 +1,0 @@
-sample	treatment	haploid	group
-MintM1	Mint	D	Mint
-MintM2	Mint	D	Mint
-MintM3	Mint	D	Mint
-MvSlM1	MvSl	D	MvSl
-MvSlM2	MvSl	D	MvSl

@@ -1,7 +1,0 @@
-sample	treatment	haploid	group
-water1	water	W	Water
-water2	water	W	Water
-rich1	rich	R	Rich
-rich2	rich	R	Rich
-di1	dikaryon	D	Diploid
-di2	dikaryon	D	Diploid

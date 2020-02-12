@@ -134,6 +134,17 @@ lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 
 dev.off()
 
+#MAT absolute log2
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Abs_MAT_nn_expressionratio.pdf", width=7,height=5)
+
+MAT <- subset(MAT_sort, MAT_sort$chr == "aMAT")
+Chr_pos <- rollmean(smooth(MAT$start),20)
+Chr_ratio <- rollmean(smooth(na.approx(MAT$absLogFC )),20)
+plot(MAT$start, MAT$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on MAT")
+lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+
+dev.off()
+
 wilcox.test(MAT$ratio[MAT$ortholog=='genegain'],MAT$ratio[MAT$ortholog=='sortholog'],exact = FALSE) 
 #W = 127120, p-value < 2.2e-16
 wilcox.test(Chr1$ratio[Chr1$ortholog=='genegain'],Chr1$ratio[Chr1$ortholog=='sortholog'],exact = FALSE) 
@@ -184,24 +195,34 @@ lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 
 dev.off()
 
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/asb_Chr01_nn_expressionratio.pdf", width=7,height=5)
+
+Chr01 <- subset(Chr01_sort, Chr01_sort$chr == "Chr01")
+Chr_pos <- rollmean(smooth(Chr01$start),20)
+Chr_ratio <- rollmean(smooth(na.approx(Chr01$absLogFC)),20)
+plot(Chr01$start, Chr01$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr01")
+lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+
+dev.off()
+
 ##autosome chromosome2
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr02_nn_expressionratio.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/abs_Chr02_nn_expressionratio.pdf", width=7,height=5)
 
 Chr02 <- subset(Chr02_sort, Chr02_sort$chr == "Chr02")
 Chr_pos <- rollmean(smooth(Chr02$start),20)
-Chr_ratio <- rollmean(smooth(na.approx(Chr02$logFC.A1.A2)),20)
-plot(Chr02$start, Chr02$logFC.A1.A2,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-10,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr02")
+Chr_ratio <- rollmean(smooth(na.approx(Chr02$absLogFC)),20)
+plot(Chr02$start, Chr02$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr02")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 
 dev.off()
 
 #autosome chromosome3
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr03_nn_expressionratio.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/abs_Chr03_nn_expressionratio.pdf", width=7,height=5)
 
 Chr03 <- subset(Chr03_sort, Chr03_sort$chr == "Chr03")
 Chr_pos <- rollmean(smooth(Chr03$start),20)
-Chr_ratio <- rollmean(smooth(na.approx(Chr03$logFC.A1.A2)),20)
-plot(Chr03$start, Chr03$logFC.A1.A2,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-10,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr03")
+Chr_ratio <- rollmean(smooth(na.approx(Chr03$absLogFC)),20)
+plot(Chr03$start, Chr03$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr03")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 
 dev.off()
@@ -217,46 +238,55 @@ lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 
 dev.off()
 
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/asb_Chr04_nn_expressionratio.pdf", width=7,height=5)
+
+Chr04 <- subset(Chr04_sort, Chr04_sort$chr == "Chr04")
+Chr_pos <- rollmean(smooth(Chr04$start),20)
+Chr_ratio <- rollmean(smooth(na.approx(Chr04$absLogFC)),20)
+plot(Chr04$start, Chr04$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr04")
+lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
+
+dev.off()
 #autosome chromosome5
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr05_nn_expressionratio.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/abs_Chr05_nn_expressionratio.pdf", width=7,height=5)
 
 Chr05 <- subset(Chr05_sort, Chr05_sort$chr == "Chr05")
 Chr_pos <- rollmean(smooth(Chr05$start),20)
-Chr_ratio <- rollmean(smooth(na.approx(Chr05$logFC.A1.A2)),20)
-plot(Chr05$start, Chr05$logFC.A1.A2,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-10,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr05")
+Chr_ratio <- rollmean(smooth(na.approx(Chr05$absLogFC)),20)
+plot(Chr05$start, Chr05$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr05")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 
 dev.off()
 
 #autosome chromosome6
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr06_nn_expressionratio.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/abs_Chr06_nn_expressionratio.pdf", width=7,height=5)
 
 Chr06 <- subset(Chr06_sort, Chr06_sort$chr == "Chr06")
 Chr_pos <- rollmean(smooth(Chr06$start),20)
-Chr_ratio <- rollmean(smooth(na.approx(Chr06$logFC.A1.A2)),20)
-plot(Chr06$start, Chr06$logFC.A1.A2,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-10,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr06")
+Chr_ratio <- rollmean(smooth(na.approx(Chr06$absLogFC)),20)
+plot(Chr06$start, Chr06$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr06")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 
 dev.off()
 
 #auto chr07
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr07_nn_expressionratio.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/abs_Chr07_nn_expressionratio.pdf", width=7,height=5)
 
 Chr07 <- subset(Chr07_sort, Chr07_sort$chr == "Chr07")
 Chr_pos <- rollmean(smooth(Chr07$start),20)
-Chr_ratio <- rollmean(smooth(na.approx(Chr07$logFC.A1.A2)),20)
-plot(Chr07$start, Chr07$logFC.A1.A2,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-10,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr07")
+Chr_ratio <- rollmean(smooth(na.approx(Chr07$absLogFC)),20)
+plot(Chr07$start, Chr07$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr07")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 
 dev.off()
 
 #auto chr08
-pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/Chr08_nn_expressionratio.pdf", width=7,height=5)
+pdf(file="/Users/Wen-Juan/Dropbox (Amherst College)/Amherst_postdoc/github/Haploidselection_and_dosagecompensation_in_Microbotryum/output/figures/abs_Chr08_nn_expressionratio.pdf", width=7,height=5)
 
 Chr08 <- subset(Chr08_sort, Chr08_sort$chr == "Chr08")
 Chr_pos <- rollmean(smooth(Chr08$start),20)
-Chr_ratio <- rollmean(smooth(na.approx(Chr08$logFC.A1.A2)),20)
-plot(Chr08$start, Chr08$logFC.A1.A2,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(-10,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr08")
+Chr_ratio <- rollmean(smooth(na.approx(Chr08$absLogFC)),20)
+plot(Chr08$start, Chr08$absLogFC,col=alpha(RMpalette[3], 0.5),pch=20, ylim=c(0,10), xlab="Position(bp)", ylab="Log2(a1/a2)",main="Expression ratio on Chr08")
 lines(Chr_pos, Chr_ratio,type="l",lwd=5, col=RMpalette[5])
 
 dev.off()

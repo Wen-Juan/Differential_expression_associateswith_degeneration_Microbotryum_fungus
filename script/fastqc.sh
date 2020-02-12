@@ -1,16 +1,4 @@
-# LSBATCH: User input
-#!/bin/bash
-
-#BSUB -L /bin/bash
-#BSUB -o fastqc2_output.txt
-#BSUB -e fastqc2_error.txt
-#BSUB -u wenjuan.ma@unil.ch
-#BSUB -N
-#BSUB -n 20
-#BSUB -R "span[ptile=20]"
-#BSUB -R "rusage[mem=50000]"
-#BSUB -M 50000000
-#BSUB -J fastqc2.sh
+#This script is to assess quality control of raw or trimmed paired-end fastq read files.
 
 module add UHTS/Quality_control/fastqc/0.11.7
 
